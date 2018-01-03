@@ -10,6 +10,7 @@ public class DragCard : MonoBehaviour {
 	public int cardOrder_num = 0;
 	public Sprite[] cardWho_spr;
 	public GameObject obj;
+	public GameObject[] gameObj;
 
 	int posX,posY;
 
@@ -26,7 +27,7 @@ public class DragCard : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		cardFadeOut ();//카드가 나타나게한다
+		cardFadeIn ();//카드가 나타나게한다
 		posX =(int)transform.position.x;
 		posY = (int)transform.position.y;
 		//각각 프리펩카드의 위치순서를 확인하고 오더넘버를 정해준다-4
@@ -126,7 +127,7 @@ public class DragCard : MonoBehaviour {
 	public void OnMouseUp()
 	{
 		//카드를 놓았을때 제자리로 돌아갈 것인지 카드를 낸 것인지 확인한다
-		check = false;
+
 		if (wldObjectPos.x > -4 && wldObjectPos.x < 4.5) {
 			if (wldObjectPos.y < 3.33 && wldObjectPos.y > -2.57) {
 				//obj.GetComponent<DataHandler>().LoadData ();//★★★★★★★★★★★★★★★★★★★★
@@ -135,14 +136,30 @@ public class DragCard : MonoBehaviour {
 				PrefabsMake.index_H_list.Clear();
 				Debug.Log (PrefabsMake.index_H_list.Count);
 				PrefabsMake.index_H_list=obj.GetComponent<DataHandler>().LoadData (PrefabsMake.chapter_num,PrefabsMake.type_num);
-				Destroy(this.gameObject);
+
+				gameObj = GameObject.FindGameObjectsWithTag ("Card");
+
+				for (int i = 0; i < gameObj.Length; i++) {
+					cardFadeOut ();
+					Destroy (gameObj[i],0.5f);
+				}
 
 			}//EndOfIf
-		}//EndOfIf
+		}else{//EndOfIf
+			check = false;
+		}
 	}//EndOfOnMouseUp
 
 
 
+	public void cardFadeIn(){
+		switch (bgck) {
+		case true:
+			StartCoroutine ("imgFadeIn");
+			bgck = false;
+			break;
+		}	
+	}
 	public void cardFadeOut(){
 		switch (bgck) {
 		case true:
@@ -152,10 +169,21 @@ public class DragCard : MonoBehaviour {
 		}	
 	}
 
-	IEnumerator imgFadeOut(){
+	IEnumerator imgFadeIn(){
 
 		color = GetComponent<SpriteRenderer>().color;		
 		for (float i = 0f; i < 255f; i += 0.05f) {				
+			color.a = Mathf.Lerp (0f, 1f, i);
+			this.GetComponent<SpriteRenderer>().color = color;
+			yield return null;
+		}
+
+	}
+
+	IEnumerator imgFadeOut(){
+
+		color = GetComponent<SpriteRenderer>().color;		
+		for (float i = 255f; i > 1f; i -= 0.05f) {				
 			color.a = Mathf.Lerp (0f, 1f, i);
 			this.GetComponent<SpriteRenderer>().color = color;
 			yield return null;
