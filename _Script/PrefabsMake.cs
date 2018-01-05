@@ -20,6 +20,9 @@ public class PrefabsMake : MonoBehaviour {
 	float rCardX = 6f;
 	float[] CardY = {3f,1.5f,0f,-1.5f};
 
+	//일러스트 보여주기
+
+	public GameObject[] spr_illust;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +45,10 @@ public class PrefabsMake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		if (type_num > 1) {
+			spr_illust [0].SetActive (true);
+		}
 		
 		
 	}
@@ -141,19 +148,15 @@ public class PrefabsMake : MonoBehaviour {
 			}
 		}
 
-
-
-
-
-
-
-
 		/*
 		Instantiate (prfCard, new Vector3 (-6f, 2.4f, 0), Quaternion.identity);
 		Instantiate (prfCard, new Vector3 (-6f, 1.2f, 0), Quaternion.identity);
 		Instantiate (prfCard, new Vector3 (-6f, -0.4f, 0), Quaternion.identity);
 		Instantiate (prfCard, new Vector3 (-6f, -2f, 0), Quaternion.identity);
-		*/
-		
+		*/	
 	}
+
+
+
+
 }

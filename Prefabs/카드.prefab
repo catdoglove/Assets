@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114398367804633240}
   m_Layer: 0
   m_Name: "\uCE74\uB4DC"
-  m_TagString: Untagged
+  m_TagString: Card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 12f0ef362cf33504fb9eee6bedc5e0fa, type: 3}
   - {fileID: 21300000, guid: 12f0ef362cf33504fb9eee6bedc5e0fa, type: 3}
   obj: {fileID: 1209084499906926}
+  gameObj: []
 --- !u!212 &212833547175671414
 SpriteRenderer:
   m_ObjectHideFlags: 1

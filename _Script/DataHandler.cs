@@ -27,9 +27,22 @@ public class DataHandler : MonoBehaviour {
 		int i_chapter = ch_num;
 		int i_type = tp_num;
 
+
+		switch (tp_num) {
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+
+		}
 		int ci = 0;
 		for(var i=0; i< data.Count; i++){
-			
 			int ch = (int)data[i]["Chapter"];
 			int tp = (int)data[i]["Type"];
 			if (ch == i_chapter) {
@@ -37,7 +50,7 @@ public class DataHandler : MonoBehaviour {
 					int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
 					if (h_Card == 1) {
 						index_list.Add(i + 1);
-						Debug.Log (index_list[ci].ToString ()+index_list.Count);
+						Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 						ci++;
 					}
 				}
