@@ -25,38 +25,73 @@ public class DataHandler : MonoBehaviour {
 		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
 
 		int i_chapter = ch_num;
-		int i_type = tp_num;
-
+		int i_type = 0;//카드종류
+		int ci = 0;
 
 		switch (tp_num) {
+		case 0://첫번째카드
+			i_type = 2;//when카드번호
+			for(var i=0; i< data.Count; i++){
+				int ch = (int)data[i]["Chapter"];
+				int tp = (int)data[i]["Type"];
+				if (ch == i_chapter) {
+					if (tp == i_type) {
+						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						if (h_Card == 1) {
+							index_list.Add(i + 1);
+							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
+							ci++;
+						}
+					}
+				}
+			}//EndOfFor
+
+			break;
 		case 1:
+			PrefabsMake.index_H_list.Clear();
+			i_type = 3;//where카드번호
+
+			for(var i=0; i< data.Count; i++){
+				int ch = (int)data[i]["Chapter"];
+				int tp = (int)data[i]["Type"];
+				if (ch == i_chapter) {
+					if (tp == i_type) {
+						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						if (h_Card == 1) {
+							index_list.Add(i + 1);
+							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
+							ci++;
+						}
+					}
+				}
+			}//EndOfFor
 			break;
 		case 2:
+			PrefabsMake.index_H_list.Clear();
+			i_type = 2;//who카드번호
+
+			for(var i=0; i< data.Count; i++){
+				int ch = (int)data[i]["Chapter"];
+				int tp = (int)data[i]["Type"];
+				if (ch == i_chapter) {
+					if (tp == i_type) {
+						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						if (h_Card == 1) {
+							index_list.Add(i + 1);
+							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
+							ci++;
+						}
+					}
+				}
+			}//EndOfFor
 			break;
 		case 3:
 			break;
 		case 4:
 			break;
-		case 5:
-			break;
 
 		}
-		int ci = 0;
-		for(var i=0; i< data.Count; i++){
-			int ch = (int)data[i]["Chapter"];
-			int tp = (int)data[i]["Type"];
-			if (ch == i_chapter) {
-				if (tp == i_type) {
-					int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-					if (h_Card == 1) {
-						index_list.Add(i + 1);
-						Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
-						ci++;
-					}
-				}
-			}
 
-		}
 		return index_list;
 	}//EndOfLoadData
 }

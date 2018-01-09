@@ -134,17 +134,16 @@ public class DragCard : MonoBehaviour {
 				//obj.GetComponent<DataHandler>().LoadData ();//★★★★★★★★★★★★★★★★★★★★
 				//여기에 일러스트 띠우고 카드로 새로 뽑는것을 코딩 일러스셋엑티브 후 페이드인
 				PrefabsMake.type_num++;
-				PrefabsMake.index_H_list.Clear();
+				PrefabsMake.call_card++;
 				Debug.Log (PrefabsMake.index_H_list.Count +"리스트갯수");
 
 
-				PrefabsMake.index_H_list=obj.GetComponent<DataHandler>().LoadData (PrefabsMake.chapter_num,PrefabsMake.type_num);
 
 				gameObj = GameObject.FindGameObjectsWithTag ("Card");
 				//cardFadeOut ();
 				for (int i = 0; i < gameObj.Length; i++) {
 					
-					Destroy (gameObj[i],0.5f);
+					Destroy (gameObj[i],0.2f);
 				}
 
 			}//EndOfIf

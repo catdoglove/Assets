@@ -18,7 +18,7 @@ public class CardShuffler : MonoBehaviour {
 	public List<int> ShuffleHandler(List<int> cardI){
 		for (int i = 0; i < cardI.Count; i++) {
 			int tempSave = cardI [i];
-			int randomIndex = Random.Range (0,7);
+			int randomIndex = Random.Range (0,cardI.Count);
 			cardI [i] = cardI [randomIndex];
 			cardI [randomIndex] = tempSave;
 		}	

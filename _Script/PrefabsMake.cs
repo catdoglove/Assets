@@ -11,7 +11,8 @@ public class PrefabsMake : MonoBehaviour {
 	public Transform prfCard;
 	//챕터 넘버 1~~
 	public static int chapter_num=1;
-	public static int type_num=1;
+	public static int type_num=0;
+	public static int call_card = 0;
 	public GameObject obj;
 
 	public static List<int> index_H_list =new List<int>();
@@ -46,8 +47,15 @@ public class PrefabsMake : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (type_num > 1) {
+		if (call_card == 1) {
 			spr_illust [0].SetActive (true);
+			//생성된 리스트에 받아온 데이터값을 넣어준다-1
+			index_H_list = obj.GetComponent<DataHandler>().LoadData (chapter_num,type_num);
+			//리스트에 입력된 데이터를 랜덤으로 섞어준다-2
+			index_H_list = obj.GetComponent<CardShuffler> ().ShuffleHandler (index_H_list);
+			//카드를 클론으로 처음 생성해준다-3
+			MakingCard(index_H_list.Count);
+			call_card--;
 		}
 		
 		
