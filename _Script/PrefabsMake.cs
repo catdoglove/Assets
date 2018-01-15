@@ -17,9 +17,9 @@ public class PrefabsMake : MonoBehaviour {
 
 	public static List<int> index_H_list =new List<int>();
 
-	float lCardX = -6f;
-	float rCardX = 6f;
-	float[] CardY = {3f,1.5f,0f,-1.5f};
+	float lCardX = -7f;
+	float rCardX = 7f;
+	float[] CardY = {3.5f,1.8f,0.15f,-1.5f};
 
 	//일러스트 보여주기
 

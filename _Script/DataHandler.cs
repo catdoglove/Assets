@@ -68,7 +68,7 @@ public class DataHandler : MonoBehaviour {
 			break;
 		case 2:
 			PrefabsMake.index_H_list.Clear();
-			i_type = 2;//who카드번호
+			i_type = 1;//who카드번호
 
 			for(var i=0; i< data.Count; i++){
 				int ch = (int)data[i]["Chapter"];
@@ -86,8 +86,33 @@ public class DataHandler : MonoBehaviour {
 			}//EndOfFor
 			break;
 		case 3:
+			PrefabsMake.index_H_list.Clear();
+			i_type = 4;//who카드번호
+
+			for(var i=0; i< data.Count; i++){
+				int ch = (int)data[i]["Chapter"];
+				int tp = (int)data[i]["Type"];
+				if (ch == i_chapter) {
+					if (tp == i_type) {
+						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						if (h_Card == 1) {
+							index_list.Add(i + 1);
+							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
+							ci++;
+						}
+					}else if (tp == i_type+1) {
+						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						if (h_Card == 1) {
+							index_list.Add(i + 1);
+							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
+							ci++;
+						}
+					}
+				}
+			}//EndOfFor
 			break;
 		case 4:
+			
 			break;
 
 		}

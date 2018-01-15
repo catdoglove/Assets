@@ -12,6 +12,9 @@ public class DragCard : MonoBehaviour {
 	public GameObject obj;
 	public GameObject[] gameObj;
 
+	//카드의 인덱스넘버를기억할께! when where who what what end 
+	public static int[] card_index= new int[6] {0,0,0,0,0,0}; 
+
 
 	int posX,posY;
 
@@ -33,15 +36,15 @@ public class DragCard : MonoBehaviour {
 		posY = (int)transform.position.y;
 		//각각 프리펩카드의 위치순서를 확인하고 오더넘버를 정해준다-4
 		switch (posX) {
-		case -6:
+		case -7:
 			switch (posY) { 
 			case 3:
 				cardOrder_num = 0;
-				GetComponent<SpriteRenderer> ().sortingOrder = 1;
+				GetComponent<SpriteRenderer> ().sortingOrder = 5;
 				break;
 			case 1:
 				cardOrder_num = 1;
-				GetComponent<SpriteRenderer> ().sortingOrder = 2;
+				GetComponent<SpriteRenderer> ().sortingOrder = 4;
 				break;
 			case 0:
 				cardOrder_num = 2;
@@ -49,19 +52,19 @@ public class DragCard : MonoBehaviour {
 				break;
 			case -1:
 				cardOrder_num = 3;
-				GetComponent<SpriteRenderer> ().sortingOrder = 4;
+				GetComponent<SpriteRenderer> ().sortingOrder = 2;
 				break;
 			}
 			break;
-		case 6:
+		case 7:
 			switch (posY) {
 			case 3:
 				cardOrder_num = 4;
-				GetComponent<SpriteRenderer> ().sortingOrder = 1;
+				GetComponent<SpriteRenderer> ().sortingOrder = 5;
 				break;
 			case 1:
 				cardOrder_num = 5;
-				GetComponent<SpriteRenderer> ().sortingOrder = 2;
+				GetComponent<SpriteRenderer> ().sortingOrder = 4;
 				break;
 			case 0:
 				cardOrder_num = 6;
@@ -69,7 +72,7 @@ public class DragCard : MonoBehaviour {
 				break;
 			case -1:
 				cardOrder_num = 7;
-				GetComponent<SpriteRenderer> ().sortingOrder = 4;
+				GetComponent<SpriteRenderer> ().sortingOrder = 2;
 				break;
 			}
 			break;
@@ -84,6 +87,7 @@ public class DragCard : MonoBehaviour {
 			Vector2 mouseDragPos = new Vector2 (Input.mousePosition.x, Input.mousePosition.y);
 			wldObjectPos = Camera.main.ScreenToWorldPoint (mouseDragPos);
 			transform.position = Vector2.MoveTowards(transform.position,wldObjectPos,0.9f);
+
 			//if (Input.touchCount > 0) {
 			//pos = Input.GetTouch (0).position;    // 터치한 위치
 			//pos = Input.mousePosition; 
@@ -93,28 +97,28 @@ public class DragCard : MonoBehaviour {
 			
 			switch (cardOrder_num) { //각각 프리펩카드의 위치순서를 확인해서 돌아갈 자리를 찾아준다
 			case 0:
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-6f, 2.4f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, 2.95f),cardSpeed);
 				break;
 			case 1 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-6f, 1.2f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, 1.3f),cardSpeed);
 				break;
 			case 2 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-6f, -0.4f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, -0.35f),cardSpeed);
 				break;
 			case 3 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-6f, -2f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, -2f),cardSpeed);
 				break;
 			case 4 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (6f, 2.4f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, 2.95f),cardSpeed);
 				break;
 			case 5 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (6f, 1.2f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, 1.3f),cardSpeed);
 				break;
 			case 6 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (6f, -0.4f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, -0.35f),cardSpeed);
 				break;
 			case 7 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (6f, -2f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, -2f),cardSpeed);
 				break;
 			}//EndOfSwitch
 		}
@@ -133,8 +137,10 @@ public class DragCard : MonoBehaviour {
 			if (wldObjectPos.y < 3.33 && wldObjectPos.y > -2.57) {
 				//obj.GetComponent<DataHandler>().LoadData ();//★★★★★★★★★★★★★★★★★★★★
 				//여기에 일러스트 띠우고 카드로 새로 뽑는것을 코딩 일러스셋엑티브 후 페이드인
+				//card_index//////////////////////////////////////////////////////////////////////////////여기하는중
 				PrefabsMake.type_num++;
 				PrefabsMake.call_card++;
+
 				Debug.Log (PrefabsMake.index_H_list.Count +"리스트갯수");
 
 
