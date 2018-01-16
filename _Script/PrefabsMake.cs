@@ -14,6 +14,10 @@ public class PrefabsMake : MonoBehaviour {
 	public static int type_num=0;
 	public static int call_card = 0;
 	public GameObject obj;
+	public Sprite[] cardIllust_spr;
+
+	//카드의 인덱스넘버를기억할께! when where who what what end 
+	public static int[] card_index= new int[6] {0,0,0,0,0,0}; 
 
 	public static List<int> index_H_list =new List<int>();
 
@@ -42,13 +46,38 @@ public class PrefabsMake : MonoBehaviour {
 		}
 		//_exp = (int)data[0]["EXP"];
 		*/
-	}
+	}//End of Start
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (call_card == 1) {
-			spr_illust [0].SetActive (true);
+			
+
+			switch (PrefabsMake.type_num) {
+			case 1:
+				break;
+			case 2:
+				spr_illust [0].SetActive (true);
+				spr_illust [0].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				break;
+			case 3:
+				spr_illust [1].SetActive (true);
+				spr_illust [1].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				break;
+			case 4:
+				spr_illust [2].SetActive (true);
+				spr_illust [2].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				break;
+			case 5:
+				spr_illust [3].SetActive (true);
+				spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				break;
+
+
+			}
+
+
 			//생성된 리스트에 받아온 데이터값을 넣어준다-1
 			index_H_list = obj.GetComponent<DataHandler>().LoadData (chapter_num,type_num);
 			//리스트에 입력된 데이터를 랜덤으로 섞어준다-2
