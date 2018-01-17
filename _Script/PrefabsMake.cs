@@ -53,25 +53,40 @@ public class PrefabsMake : MonoBehaviour {
 
 		if (call_card == 1) {
 			
-
+			int type_check = 0;
 			switch (PrefabsMake.type_num) {
 			case 1:
 				break;
-			case 2:
+			case 2://배경
 				spr_illust [0].SetActive (true);
 				spr_illust [0].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
 				break;
-			case 3:
+			case 3://인물
+
 				spr_illust [1].SetActive (true);
 				spr_illust [1].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
 				break;
 			case 4:
-				spr_illust [2].SetActive (true);
-				spr_illust [2].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
+				Debug.Log ("않이"+type_check);
+				if (type_check == 5) {
+					spr_illust [3].SetActive (true);
+					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				} else {
+					spr_illust [2].SetActive (true);
+					spr_illust [2].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index [PrefabsMake.type_num - 1] - 1];
+				}
 				break;
 			case 5:
-				spr_illust [3].SetActive (true);
-				spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
+				Debug.Log ("않이"+type_check);
+				if (type_check == 5) {
+					spr_illust [3].SetActive (true);
+					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
+				} else {
+					spr_illust [2].SetActive (true);
+					spr_illust [2].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index [PrefabsMake.type_num - 1] - 1];
+				}
 				break;
 
 

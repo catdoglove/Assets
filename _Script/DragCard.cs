@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 public class DragCard : MonoBehaviour {
 	//눌리고 떼는 것을 감지하기 위해 IPointerDownHandler와 IPointerUpHandler 를 상속받는다.
 	bool check;
@@ -135,15 +136,13 @@ public class DragCard : MonoBehaviour {
 			if (wldObjectPos.y < 3.33 && wldObjectPos.y > -2.57) {
 				//obj.GetComponent<DataHandler>().LoadData ();//★★★★★★★★★★★★★★★★★★★★
 				//여기에 일러스트 띠우고 카드로 새로 뽑는것을 코딩 일러스셋엑티브 후 페이드인
-				//card_index//////////////////////////////////////////////////////////////////////////////여기하는중
+
 				int end_check=0;
-				end_check = PlayerPrefs.GetInt (""+PrefabsMake.card_index [PrefabsMake.type_num], 0);
-				if (end_check == 6) {////////////////////////////////////////////////////게임끝
-			
-				}
-
-
 				PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
+				end_check = PlayerPrefs.GetInt (""+PrefabsMake.card_index [PrefabsMake.type_num], 0);
+				if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
+					SceneManager.LoadScene("title");
+				}
 				Debug.Log (PrefabsMake.type_num +"번에"+PrefabsMake.index_H_list[cardOrder_num]+"카드");
 				PrefabsMake.type_num++;//턴
 				PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
