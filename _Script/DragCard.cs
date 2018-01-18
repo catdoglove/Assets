@@ -16,6 +16,8 @@ public class DragCard : MonoBehaviour {
 
 
 
+
+
 	int posX,posY;
 
 	float cardSpeed=0.04f;
@@ -79,6 +81,7 @@ public class DragCard : MonoBehaviour {
 		}
 		//랜덤으로 셔플된 카드를 중복없이 각각카드에 출력-5
 		GetComponent<SpriteRenderer>().sprite = cardWho_spr[PrefabsMake.index_H_list[cardOrder_num]];
+
 	}
 	
 	// Update is called once per frame
@@ -137,8 +140,10 @@ public class DragCard : MonoBehaviour {
 				//obj.GetComponent<DataHandler>().LoadData ();//★★★★★★★★★★★★★★★★★★★★
 				//여기에 일러스트 띠우고 카드로 새로 뽑는것을 코딩 일러스셋엑티브 후 페이드인
 
+
 				int end_check=0;
 				PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
+				PlayerPrefs.SetInt ("ch"+1+"haveCard"+PrefabsMake.index_H_list[cardOrder_num],0);
 				end_check = PlayerPrefs.GetInt (""+PrefabsMake.card_index [PrefabsMake.type_num], 0);
 				if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
 					SceneManager.LoadScene("title");

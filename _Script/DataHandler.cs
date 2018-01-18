@@ -38,7 +38,7 @@ public class DataHandler : MonoBehaviour {
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
 					if (tp == i_type) {
-						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,0);
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
@@ -58,7 +58,9 @@ public class DataHandler : MonoBehaviour {
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
 					if (tp == i_type) {
+						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
@@ -77,7 +79,9 @@ public class DataHandler : MonoBehaviour {
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
 					if (tp == i_type) {
+						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
@@ -95,7 +99,9 @@ public class DataHandler : MonoBehaviour {
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
 					if (tp == i_type) {
+						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;
@@ -105,7 +111,9 @@ public class DataHandler : MonoBehaviour {
 							ci++;
 						}
 					}else if (tp == i_type+1) {
+						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;
@@ -115,7 +123,9 @@ public class DataHandler : MonoBehaviour {
 							ci++;
 						}
 					}else if (tp == i_type-3) {
+						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;
@@ -143,7 +153,9 @@ public class DataHandler : MonoBehaviour {
 					int tp = (int)data[i]["Type"];
 					if (ch == i_chapter) {
 						if (tp == i_type) {
+							i++;
 							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+							i--;
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
@@ -152,7 +164,9 @@ public class DataHandler : MonoBehaviour {
 								ci++;
 							}
 						}else if (tp == i_type+1) {
+							i++;
 							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+							i--;
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
@@ -172,7 +186,9 @@ public class DataHandler : MonoBehaviour {
 					int tp = (int)data[i]["Type"];
 					if (ch == i_chapter) {
 						if (tp == i_type) {
+							i++;
 							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+							i--;
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
@@ -181,7 +197,9 @@ public class DataHandler : MonoBehaviour {
 								ci++;
 							}
 						}else if (tp == i_type+1) {
+							i++;
 							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+							i--;
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
@@ -202,7 +220,9 @@ public class DataHandler : MonoBehaviour {
 					int tp = (int)data[i]["Type"];
 					if (ch == i_chapter) {
 						if (tp == i_type) {
+							i++;
 							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+							i--;
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
@@ -211,7 +231,9 @@ public class DataHandler : MonoBehaviour {
 								ci++;
 							}
 						}else if (tp == i_type+2) {
+							i++;
 							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+							i--;
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
@@ -236,7 +258,9 @@ public class DataHandler : MonoBehaviour {
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
 					if (tp == i_type) {
+						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;

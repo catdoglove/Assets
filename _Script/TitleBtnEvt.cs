@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TitleBtnEvt : MonoBehaviour {
 
@@ -25,6 +26,18 @@ public class TitleBtnEvt : MonoBehaviour {
 		} else {
 			Screen.SetResolution (Screen.width, Screen.width / 3 * 2, true);
 		}
+
+		//데이터로드
+		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
+		for(var i=0; i< data.Count; i++){
+			int ch = (int)data[i]["Chapter"];
+			if (ch == 1) {
+				int k = PlayerPrefs.GetInt ("ch"+1+"cards"+i,1);
+				if(k == 1){
+					PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,1);
+				}
+			}
+		}//EndOfFor
 	}
 
 	public void showBlackBack(){
@@ -48,6 +61,11 @@ public class TitleBtnEvt : MonoBehaviour {
 		optionWindow.SetActive (false);
 		startWindow.SetActive (false);
 		blackBackImg.SetActive (false);
+	}
+
+	public void loadGame1(){
+		
+		SceneManager.LoadScene ("Game");
 	}
 
 }

@@ -32,7 +32,7 @@ public class PrefabsMake : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//생성된 리스트에 받아온 데이터값을 넣어준다-1
-		index_H_list = obj.GetComponent<DataHandler>().LoadData (chapter_num,type_num);
+		index_H_list = obj.GetComponent<DataHandler>().LoadData (chapter_num,type_num);/////////////////매우중요스태틱이아닌다른함수부르기
 		//리스트에 입력된 데이터를 랜덤으로 섞어준다-2
 		index_H_list = obj.GetComponent<CardShuffler> ().ShuffleHandler (index_H_list);
 		//카드를 클론으로 처음 생성해준다-3
@@ -92,14 +92,13 @@ public class PrefabsMake : MonoBehaviour {
 
 			}
 
-
-			//생성된 리스트에 받아온 데이터값을 넣어준다-1
-			index_H_list = obj.GetComponent<DataHandler>().LoadData (chapter_num,type_num);
-			//리스트에 입력된 데이터를 랜덤으로 섞어준다-2
-			index_H_list = obj.GetComponent<CardShuffler> ().ShuffleHandler (index_H_list);
-			//카드를 클론으로 처음 생성해준다-3
-			MakingCard(index_H_list.Count);
-			call_card--;
+				//생성된 리스트에 받아온 데이터값을 넣어준다-1
+				index_H_list = obj.GetComponent<DataHandler> ().LoadData (chapter_num, type_num);
+				//리스트에 입력된 데이터를 랜덤으로 섞어준다-2
+				index_H_list = obj.GetComponent<CardShuffler> ().ShuffleHandler (index_H_list);
+				//카드를 클론으로 처음 생성해준다-3
+				MakingCard (index_H_list.Count);
+				call_card--;
 		}
 		
 		
@@ -108,6 +107,7 @@ public class PrefabsMake : MonoBehaviour {
 	//-카드를 클론으로 처음 생성해준다-3
 	public void MakingCard(int cardcnt){
 		int i = 0;
+
 		switch (cardcnt) {
 		case 1:
 			i = 0;
