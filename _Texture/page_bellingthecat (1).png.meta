@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:_Texture/page_bellingthecat (1).png.meta
 guid: cf0fd78db96285a49a2cbfd62e7d2936
 timeCreated: 1516341629
+=======
+guid: 3ec267f29e76e3946a5563a808e0d5db
+timeCreated: 1516687319
+>>>>>>> 9f2a882484acfedb15bacd33134c567be71be81e:_Texture/page_bellingthecat (1).png.meta
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
