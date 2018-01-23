@@ -19,7 +19,40 @@ public class DataHandler : MonoBehaviour {
 		
 	}
 
+	//엔딩을 로드
+	public int LoadEnd(int ch_num, int[] end_num){
+		List<Dictionary<string,object>> data = CSVReader.Read("StoryBook");
+		int k=0;
+		for (var i = 0; i < data.Count; i++) {
+			int ch = (int)data[i]["Chapter"];
+			int one = (int)data[i]["First"];
+			if (ch == ch_num) {
+				if (end_num [0] == one) {
+					one = (int)data[i]["Second"];
+					if (end_num [1] == one) {
+						one = (int)data[i]["Third"];
+						if (end_num [2] == one) {
+							one = (int)data[i]["Fourth"];
+							if (end_num [3] == one) {
+								one = (int)data[i]["Fifth"];
+								if (end_num [4] == one) {
+									one = (int)data[i]["Sixth"];
+									if (end_num [5] == one) {
+										//SceneManager.LoadScene("title");
+										k=i+1;
+										Debug.Log ("---------------------------------------성공");
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}//endOfFor
 
+		return k;
+	}
+		
 	//데이터를 불러오는 함수 불러오는값: 게임 플레이 순서별로 해당되는 타입의 배열반환하는 값 s -1
 	public List<int> LoadData(int ch_num, int tp_num){
 		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
@@ -237,7 +270,7 @@ public class DataHandler : MonoBehaviour {
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
-								PlayerPrefs.SetInt (""+k,i_type+1);
+								PlayerPrefs.SetInt (""+k,i_type+2);
 								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 								ci++;
 							}

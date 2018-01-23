@@ -19,6 +19,9 @@ public class PrefabsMake : MonoBehaviour {
 	//카드의 인덱스넘버를기억할께! when where who what what end 
 	public static int[] card_index= new int[6] {0,0,0,0,0,0}; 
 
+	//엔딩
+	public static int end_mach=0;
+
 	public static List<int> index_H_list =new List<int>();
 
 	float lCardX = -7f;
@@ -26,8 +29,9 @@ public class PrefabsMake : MonoBehaviour {
 	float[] CardY = {3.5f,1.8f,0.15f,-1.5f};
 
 	//일러스트 보여주기
-
 	public GameObject[] spr_illust;
+	//엔딩 보여주기
+	public Sprite[] endIllust_spr;
 
 	// Use this for initialization
 	void Start () {
@@ -51,7 +55,16 @@ public class PrefabsMake : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (call_card == 1) {
+		//엔딩확인하기
+		if(end_mach == 1){
+			int end;
+			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
+			if (end != 0) {
+				spr_illust [4].SetActive (true);
+				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
+			}
+			
+		}else if (call_card == 1) {
 			
 			int type_check = 0;
 			switch (PrefabsMake.type_num) {
@@ -68,7 +81,6 @@ public class PrefabsMake : MonoBehaviour {
 				break;
 			case 4:
 				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
-				Debug.Log ("않이"+type_check);
 				if (type_check == 5) {
 					spr_illust [3].SetActive (true);
 					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
@@ -79,7 +91,6 @@ public class PrefabsMake : MonoBehaviour {
 				break;
 			case 5:
 				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
-				Debug.Log ("않이"+type_check);
 				if (type_check == 5) {
 					spr_illust [3].SetActive (true);
 					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];

@@ -145,15 +145,22 @@ public class DragCard : MonoBehaviour {
 				PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
 				PlayerPrefs.SetInt ("ch"+1+"haveCard"+PrefabsMake.index_H_list[cardOrder_num],0);
 				end_check = PlayerPrefs.GetInt (""+PrefabsMake.card_index [PrefabsMake.type_num], 0);
+				Debug.Log ("--------------------------------------------------------"+PrefabsMake.type_num);
+				Debug.Log ("--------------------------------------------------------"+PrefabsMake.card_index [PrefabsMake.type_num]);
+				Debug.Log ("--------------------------------------------------------"+end_check);
 				if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
-					SceneManager.LoadScene("title");
+					PrefabsMake.card_index[4] = 0;
+					PrefabsMake.card_index[5] = PrefabsMake.index_H_list[cardOrder_num];
+					PrefabsMake.end_mach = 1;
+					Debug.Log ("--------------------------------------------------------");
+
+				} else {
+					Debug.Log (PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list [cardOrder_num] + "카드");
+					PrefabsMake.type_num++;//턴
+					PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
+
+					Debug.Log (PrefabsMake.index_H_list.Count + "리스트갯수");
 				}
-				Debug.Log (PrefabsMake.type_num +"번에"+PrefabsMake.index_H_list[cardOrder_num]+"카드");
-				PrefabsMake.type_num++;//턴
-				PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
-
-				Debug.Log (PrefabsMake.index_H_list.Count +"리스트갯수");
-
 
 
 				gameObj = GameObject.FindGameObjectsWithTag ("Card");
