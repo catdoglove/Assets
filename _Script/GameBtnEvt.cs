@@ -33,5 +33,14 @@ public class GameBtnEvt : MonoBehaviour {
 	}
 	public void loadTitleScene(){
 		SceneManager.LoadScene ("title");
+
+		//초기화
+		PrefabsMake.card_index= new int[6] {0,0,0,0,0,0}; 
+		PrefabsMake.end_mach=0;
+		PrefabsMake.index_H_list.Clear();
+		PrefabsMake.chapter_num=1;
+		PrefabsMake.type_num=0;
+		PrefabsMake.call_card = 0;
+
 	}
 }

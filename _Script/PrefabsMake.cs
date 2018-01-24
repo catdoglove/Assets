@@ -63,6 +63,7 @@ public class PrefabsMake : MonoBehaviour {
 				spr_illust [4].SetActive (true);
 				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
 			}
+			spr_illust [5].SetActive (true);
 			
 		}else if (call_card == 1) {
 			

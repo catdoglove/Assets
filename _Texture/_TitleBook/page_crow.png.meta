@@ -1,12 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: f27d27fb2ab65944a8103f05c25a4d54
-timeCreated: 1516341631
-=======
-guid: b35090df410e51444807c1074a716d0a
-timeCreated: 1516687326
->>>>>>> 9f2a882484acfedb15bacd33134c567be71be81e
-licenseType: Free
+guid: cd3fb5c329fc9c24cb6cfcd2b078b916
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -41,7 +34,7 @@ TextureImporter:
     mipBias: -1
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -62,6 +55,24 @@ TextureImporter:
   textureFormatSet: 0
   platformSettings:
   - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1

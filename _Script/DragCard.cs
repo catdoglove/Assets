@@ -149,7 +149,9 @@ public class DragCard : MonoBehaviour {
 				Debug.Log ("--------------------------------------------------------"+PrefabsMake.card_index [PrefabsMake.type_num]);
 				Debug.Log ("--------------------------------------------------------"+end_check);
 				if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
-					PrefabsMake.card_index[4] = 0;
+					if(PrefabsMake.card_index[5]==0){
+						PrefabsMake.card_index[4] = 0;
+					}
 					PrefabsMake.card_index[5] = PrefabsMake.index_H_list[cardOrder_num];
 					PrefabsMake.end_mach = 1;
 					Debug.Log ("--------------------------------------------------------");
