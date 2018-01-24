@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameBtnEvt : MonoBehaviour {
 
 	public static int ref_check = 0;
+	public GameObject returnTitSpr;
 
 
 	// Use this for initialization
@@ -42,5 +43,14 @@ public class GameBtnEvt : MonoBehaviour {
 		PrefabsMake.type_num=0;
 		PrefabsMake.call_card = 0;
 
+	}
+
+
+	//나가기팝업
+	public void openBackWnd(){
+		returnTitSpr.SetActive (true);
+	}
+	public void closeBackWnd(){
+		returnTitSpr.SetActive (false);
 	}
 }
