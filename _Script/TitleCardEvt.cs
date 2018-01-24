@@ -120,5 +120,10 @@ public class TitleCardEvt : MonoBehaviour {
 		powderCardWid.SetActive (true);
 	}
 
+	public void cardWidClose(){
+		mixCardWid.SetActive (false);
+		powderCardWid.SetActive (false);
+	}
+
 
 }
