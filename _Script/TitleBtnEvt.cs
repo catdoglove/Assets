@@ -32,10 +32,12 @@ public class TitleBtnEvt : MonoBehaviour {
 		for(var i=0; i< data.Count; i++){
 			int ch = (int)data[i]["Chapter"];
 			if (ch == 1) {
+				i++;
 				int k = PlayerPrefs.GetInt ("ch"+1+"cards"+i,1);
 				if(k == 1){
 					PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,1);
 				}
+				i--;
 			}
 		}//EndOfFor
 	}

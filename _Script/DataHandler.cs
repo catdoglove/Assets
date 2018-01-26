@@ -103,7 +103,7 @@ public class DataHandler : MonoBehaviour {
 				}
 			}//EndOfFor
 			break;
-		case 2://----------------------------3배경인물
+		case 2://----------------------------3인물
 			PrefabsMake.index_H_list.Clear();
 			i_type = 1;//who카드번호
 
@@ -124,7 +124,7 @@ public class DataHandler : MonoBehaviour {
 				}
 			}//EndOfFor
 			break;
-		case 3://---------------------------4배경인물+A
+		case 3://---------------------------4인물물건
 			PrefabsMake.index_H_list.Clear();
 			i_type = 4;//what카드번호
 			for(var i=0; i< data.Count; i++){
@@ -139,18 +139,6 @@ public class DataHandler : MonoBehaviour {
 							index_list.Add(i + 1);
 							int k=i+1;
 							PlayerPrefs.SetInt (""+k,i_type);
-							Debug.Log ("왜카드가안나오죠?"+i+1);
-							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
-							ci++;
-						}
-					}else if (tp == i_type+1) {
-						i++;
-						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-						i--;
-						if (h_Card == 1) {
-							index_list.Add(i + 1);
-							int k=i+1;
-							PlayerPrefs.SetInt (""+k,i_type+1);
 							Debug.Log ("왜카드가안나오죠?"+i+1);
 							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 							ci++;
@@ -171,15 +159,12 @@ public class DataHandler : MonoBehaviour {
 				}
 			}//EndOfFor
 			break;
-		case 4://---------------------------------배경인물+a+b
+		case 4://---------------------------------행동
 			PrefabsMake.index_H_list.Clear ();
 			int type_n = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [3], 0);
 
 			Debug.Log ("왜"+PrefabsMake.card_index [3]);
-			switch (type_n) {
-			case 0:
-				break;
-			case 1:
+
 				i_type = 5;//act카드번호
 				for(var i=0; i< data.Count; i++){
 					int ch = (int)data[i]["Chapter"];
@@ -196,90 +181,9 @@ public class DataHandler : MonoBehaviour {
 								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 								ci++;
 							}
-						}else if (tp == i_type+1) {
-							i++;
-							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-							i--;
-							if (h_Card == 1) {
-								index_list.Add(i + 1);
-								int k=i+1;
-								PlayerPrefs.SetInt (""+k,i_type+1);
-								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
-								ci++;
-							}
 						}
 					}
 				}//EndOfFor
-				break;
-
-			case 4:
-				i_type = 5;//act카드번호
-				for(var i=0; i< data.Count; i++){
-					int ch = (int)data[i]["Chapter"];
-					int tp = (int)data[i]["Type"];
-					if (ch == i_chapter) {
-						if (tp == i_type) {
-							i++;
-							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-							i--;
-							if (h_Card == 1) {
-								index_list.Add(i + 1);
-								int k=i+1;
-								PlayerPrefs.SetInt (""+k,i_type);
-								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
-								ci++;
-							}
-						}else if (tp == i_type+1) {
-							i++;
-							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-							i--;
-							if (h_Card == 1) {
-								index_list.Add(i + 1);
-								int k=i+1;
-								PlayerPrefs.SetInt (""+k,i_type+1);
-								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
-								ci++;
-							}
-						}
-					}
-				}//EndOfFor
-				
-				break;
-
-			case 5:
-				i_type = 4;//what카드번호
-				for(var i=0; i< data.Count; i++){
-					int ch = (int)data[i]["Chapter"];
-					int tp = (int)data[i]["Type"];
-					if (ch == i_chapter) {
-						if (tp == i_type) {
-							i++;
-							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-							i--;
-							if (h_Card == 1) {
-								index_list.Add(i + 1);
-								int k=i+1;
-								PlayerPrefs.SetInt (""+k,i_type);
-								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
-								ci++;
-							}
-						}else if (tp == i_type+2) {
-							i++;
-							int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-							i--;
-							if (h_Card == 1) {
-								index_list.Add(i + 1);
-								int k=i+1;
-								PlayerPrefs.SetInt (""+k,i_type+2);
-								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
-								ci++;
-							}
-						}
-					}
-				}//EndOfFor
-				break;
-			}//EndOfSwitch
-
 			break;
 
 		case 5://---------------------------------배경인물+a+b+z
