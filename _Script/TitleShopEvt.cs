@@ -13,6 +13,7 @@ public class TitleShopEvt : MonoBehaviour {
 	AllNumber allNum = new AllNumber ();
 
 	public void showShopWindow(){
+		//돈을리프레시
 		shopWindow.SetActive (true);
 		chpNum = allNum.chapter1;
 		changeChapter ();

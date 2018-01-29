@@ -40,6 +40,7 @@ public class DataHandler : MonoBehaviour {
 									if (end_num [5] == one) {
 										//SceneManager.LoadScene("title");
 										k=i+1;
+										PlayerPrefs.SetInt ("books"+k, 1);//도감에저장
 										Debug.Log ("---------------------------------------성공");
 									}
 								}
