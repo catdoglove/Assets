@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class TitleBtnEvt : MonoBehaviour {
 
 	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, optionWindow, startWindow;
+	public GameObject TitleSpr;
 
 	// Use this for initialization
 	void Start () {
@@ -69,5 +70,11 @@ public class TitleBtnEvt : MonoBehaviour {
 		
 		SceneManager.LoadScene ("Game");
 	}
+
+
+	public void titleSprFalse(){
+		TitleSpr.SetActive (false);
+	}
+
 
 }
