@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TitleBackMove : MonoBehaviour {
 
@@ -24,11 +25,16 @@ public class TitleBackMove : MonoBehaviour {
 		backImgPos = backImg.transform.position;	
 		backImgPos2.y = 5.3f;
 		
-		while (backImg.transform.position.y < 5.3f) {
+		while (backImg.transform.position.y < 5.2f) {
 			yield return new WaitForSeconds (0.03f);
 			imgSpeed = imgSpeed - 0.08f;
 			if (imgSpeed < 0) {	break; }
 			transform.position = Vector2.MoveTowards (transform.position, backImgPos2, imgSpeed*Time.deltaTime);
 		}
+		SceneManager.LoadScene ("title"); //씬전환
 	}
+
+
+
+
 }
