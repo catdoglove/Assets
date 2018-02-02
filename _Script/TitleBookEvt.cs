@@ -134,12 +134,18 @@ public class TitleBookEvt : MonoBehaviour {
 	}
 
 	public void closeBlind(){
-		pageNum--;
-		if (PlayerPrefs.GetInt ("clearbook" + pageNum, 0) == 1) {
+		int p = pageNum;
+		p = p*2;
+		blind [0].SetActive (true);
+		blind [1].SetActive (true);
+		p=p-2;
+		booksImg [0].GetComponent<Image> ().sprite = books_spr[p];
+		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
 			blind [0].SetActive (false);
 		}
-		pageNum++;
-		if (PlayerPrefs.GetInt ("clearbook" + pageNum, 0) == 1) {
+		p=p+1;
+		booksImg [1].GetComponent<Image> ().sprite = books_spr[p];
+		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
 			blind [1].SetActive (false);
 		}
 	}

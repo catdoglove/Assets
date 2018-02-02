@@ -13,6 +13,12 @@ public class TitleCardEvt : MonoBehaviour {
 	public GameObject mixCardWid, powderCardWid;
 
 	public void showCardWindow(){
+		//카드코딩을할것임
+		//일단불러오기
+		//처음1챕터와 인물로선택되어있음
+		//List<Dictionary<string,object>> data = CSVReader.Read("CardData");
+
+
 		cardWindow.SetActive (true);
 		chpNum = allNum.chapter1;
 		typeNum = allNum.typeWho;
