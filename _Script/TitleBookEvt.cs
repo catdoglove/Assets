@@ -42,7 +42,7 @@ public class TitleBookEvt : MonoBehaviour {
 			}
 		}//EndOfFor
 		//도감완성여부판단
-		for (int j = 0; j < k; j++) {
+		for (int j = 0; j < k+1; j++) {
 			int s = 0;
 			for (int i = 0; i < bookSeries [j]; i++) {
 				if (bookLoad [i] == 1) {
@@ -53,13 +53,17 @@ public class TitleBookEvt : MonoBehaviour {
 				PlayerPrefs.SetInt ("clearbook" + j, 1);
 			}
 		}
-		//다모은건 없ㅐ기
+		//다모은건 없ㅐ기\
+		booksImg [0].GetComponent<Image> ().sprite = books_spr[0];
 		if (PlayerPrefs.GetInt ("clearbook" + 0, 0) == 1) {
 			blind [0].SetActive (false);
 		}
+		booksImg [1].GetComponent<Image> ().sprite = books_spr[1];
 		if (PlayerPrefs.GetInt ("clearbook" + 1, 0) == 1) {
 			blind [1].SetActive (false);
 		}
+
+
 		//그림표시하기
 		//int l=0;
 		//for (int i = 0; i < k; i++) {
