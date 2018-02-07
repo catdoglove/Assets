@@ -9,15 +9,25 @@ public class TitleCardEvt : MonoBehaviour {
 	public GameObject cardWindow, chpBtn1,chpBtn2, typeBtn1, typeBtn2, typeBtn3, typeBtn4, typeBtn5, typeBtn6;
 	int chpNum = 0, typeNum = 0;
 	AllNumber allNum = new AllNumber ();
+	//미리로드해둔 데이터를 가져오기위해서
+	DataLoad dtLoad = new DataLoad();
 
 	public GameObject mixCardWid, powderCardWid;
+
+
+	/// <summary>
+	/// 카드오브젝트컨트롤
+	/// 카드그림스프라이트인스펙터에서불러오기
+	/// </summary>
+	public GameObject[] cardBtn;
+	public Sprite[] card_spr;
 
 	public void showCardWindow(){
 		//카드코딩을할것임
 		//일단불러오기
 		//처음1챕터와 인물로선택되어있음
 		//List<Dictionary<string,object>> data = CSVReader.Read("CardData");
-
+		//dtLoad.what_list_ch1.Add(1);
 
 		cardWindow.SetActive (true);
 		chpNum = allNum.chapter1;
@@ -37,6 +47,7 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 	void changeChapter(){
+		initializeCard ();
 		switch(chpNum){
 		case 1 : //챕터1
 			chpBtn1.GetComponent<Image> ().sprite = chpImgSpr [1];
@@ -80,6 +91,7 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 	void changeType(){
+		initializeCard ();
 		switch (typeNum) {
 		case 1: //누가
 			allTypeClose();
@@ -129,6 +141,14 @@ public class TitleCardEvt : MonoBehaviour {
 	public void cardWidClose(){
 		mixCardWid.SetActive (false);
 		powderCardWid.SetActive (false);
+	}
+
+
+	public void initializeCard(){//카드셋엑티브false로초기화
+		for (int i = 0; i < 16; i++) {
+			cardBtn [i].SetActive (true);
+			cardBtn [i].GetComponent<Image> ().sprite = card_spr [i];
+		}
 	}
 
 
