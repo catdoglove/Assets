@@ -21,6 +21,8 @@ public class TitleBookEvt : MonoBehaviour {
 	AllNumber allNum = new AllNumber ();
 
 	public void showBookWindow(){
+		blind [0].SetActive (true);
+		blind [1].SetActive (true);
 		List<Dictionary<string,object>> data = CSVReader.Read("StoryBook");
 
 		int k=0;
