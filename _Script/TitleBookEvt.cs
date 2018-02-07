@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class TitleBookEvt : MonoBehaviour {
 	
-	public Sprite [] chpImgSpr;
-	public GameObject bookWindow,chpBtn1,chpBtn2;
+	public Sprite [] chpImgSpr,bookpageSpr,bookstorySpr;
+	public GameObject bookWindow,chpBtn1,chpBtn2,bookpageImg,pageImg;
 	int chpNum = 0, bookNum = 0, pageNum = 0;
 	public Text pageTxt;
 
@@ -143,7 +143,7 @@ public class TitleBookEvt : MonoBehaviour {
 		blind [0].SetActive (true);
 		blind [1].SetActive (true);
 		p=p-2;
-		booksImg [0].GetComponent<Image> ().sprite = books_spr[p];
+		booksImg [0].GetComponent<Image> ().sprite = books_spr[p]; //p 페이지넘버
 		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
 			blind [0].SetActive (false);
 		}
@@ -152,6 +152,16 @@ public class TitleBookEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
 			blind [1].SetActive (false);
 		}
+	}
+
+	//총22페지
+	public void showBookPage(){
+		//pageImg.GetComponent<Image> ().sprite = bookpageSpr[0];
+		bookpageImg.SetActive (true);
+	}
+
+	public void closeBookPage(){
+		bookpageImg.SetActive (false);
 	}
 
 }
