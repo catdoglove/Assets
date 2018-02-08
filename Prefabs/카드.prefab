@@ -59,8 +59,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.38, y: 1.6}
-    newSize: {x: 1.83, y: 1.93}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardOrder_num: 0
   cardWho_spr:
-  - {fileID: 21300000, guid: 6be6e174f05d1024d8a53c2931d4f590, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
   - {fileID: 21300000, guid: f4130f10b3c059d4d8f2edfdb0eabcac, type: 3}
@@ -183,12 +183,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6be6e174f05d1024d8a53c2931d4f590, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9196215183e474d4b9f570216bce4065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.83, y: 1.93}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

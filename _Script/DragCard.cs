@@ -14,7 +14,8 @@ public class DragCard : MonoBehaviour {
 	public GameObject[] gameObj;
 
 
-
+	SoundEvt soundE = new SoundEvt();
+	public static int soundck =0;
 
 
 
@@ -129,10 +130,13 @@ public class DragCard : MonoBehaviour {
 	{
 		check = true;
 		cardSpeed = 0.8f;
+		soundck = 99; //효과음소리
+
 	}//EndOfOnMouseDown
 
 	public void OnMouseUp()
 	{
+		
 		//카드를 놓았을때 제자리로 돌아갈 것인지 카드를 낸 것인지 확인한다
 
 		if (wldObjectPos.x > -4 && wldObjectPos.x < 4.5) {
@@ -140,6 +144,7 @@ public class DragCard : MonoBehaviour {
 				//obj.GetComponent<DataHandler>().LoadData ();//★★★★★★★★★★★★★★★★★★★★
 				//여기에 일러스트 띠우고 카드로 새로 뽑는것을 코딩 일러스셋엑티브 후 페이드인
 
+				soundck = 88;//효과음소리
 
 				int end_check=0;
 				PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];

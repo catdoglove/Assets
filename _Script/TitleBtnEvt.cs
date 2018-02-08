@@ -9,6 +9,8 @@ public class TitleBtnEvt : MonoBehaviour {
 	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, optionWindow, startWindow;
 	public GameObject TitleSpr;
 
+	public static AudioSource bgm_title;
+
 	// Use this for initialization
 	void Start () {
 		//화면 해상도
@@ -41,6 +43,12 @@ public class TitleBtnEvt : MonoBehaviour {
 				i--;
 			}
 		}//EndOfFor
+
+		bgm_title = this.gameObject.GetComponent<AudioSource> ();
+		if (PlayerPrefs.GetInt ("soundBGmute", 0)==1) {		
+			TitleBtnEvt.bgm_title.mute = true;
+		}
+
 	}
 
 	public void showBlackBack(){
