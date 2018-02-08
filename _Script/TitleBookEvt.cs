@@ -31,7 +31,9 @@ public class TitleBookEvt : MonoBehaviour {
 			k = i + 1;
 			bookLoad [i] = PlayerPrefs.GetInt ("books"+k, 0);//도감모으기에 성공한걸불러오기
 		}
-		//데이터불러오기
+		//이야기데이터불러오기
+		//시리즈넘버가달라지는 부분을체크해서 어디서부터 어디까지가 하나 인지 확인해줌
+		//가변2차원리스트배열로고치면될지도?
 		k = 0;
 		for (var i = 0; i < data.Count; i++) {
 			int sr = (int)data[i]["Series"];
