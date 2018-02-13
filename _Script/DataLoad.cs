@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DataLoad : MonoBehaviour {
 	public static List<List<int>> data_list =new List<List<int>>();
-
+	public static List<List<int>> story_list =new List<List<int>>();
 	// Use this for initialization
 	void Start () {
 		dataLoadFirst ();
@@ -17,14 +17,34 @@ public class DataLoad : MonoBehaviour {
 
 	/// <summary>
 	/// 배열에 저장되는규칙 who1when2where3what4atc5end6
-	/// 0->1챕터who1->1,1
+	/// 이렇게하는 이유는 들갈방이 세가지 [챕터][타입][순서]=인덱스값으로 가져오기때문
+	/// 0->1챕터who1->1,1  내용물->[0][0]=[챕터와타입][방번호]->저장된값인덱스번호
 	/// ~
 	/// 5->1챕터end6->1,6
 	/// 6~11 2챕터
 	/// 
+	/// 도감 배열에 저장되는 규칙
+	/// 0->1챕터 시리즈1->1,1
 	/// </summary>
 
 	public void dataLoadFirst(){
+		//이야기로딩및도감모음여부확인
+		List<Dictionary<string,object>> data1 = CSVReader.Read ("StoryBook");
+		int ch_c = 1;
+		int sr_c = 0;
+		for (int j = 0; j < 10; j++) {
+			story_list.Add(new List<int>());
+			for (int i = 0; i < data1.Count; i++) {
+				int ch = (int)data1 [i] ["Chapter"];
+				int sr = (int)data1 [i] ["Series"];
+				if (ch == ch_c) {
+					if (sr == sr_c) {
+						story_list [j].Add (i + 1);
+					}
+				}
+			}//endOfFor
+			sr_c++;
+		}//endOfFor
 		
 		//1챕터 로드-------------------------------------1
 		List<Dictionary<string,object>> data = CSVReader.Read ("CardData");
