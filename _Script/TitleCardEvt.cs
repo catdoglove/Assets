@@ -13,6 +13,9 @@ public class TitleCardEvt : MonoBehaviour {
 	DataLoad dtLoad = new DataLoad();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> ea2be3506979635c90a89a541459f5a3aa622e21
 	public GameObject mixCardWid, powderCardWid;
 
 
