@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TitleOptionEvt : MonoBehaviour {
 
 	public Sprite [] onoffImgSpr,korengImgSpr;
-	public GameObject bgmBtn, seBtn, laugBtn;
+	public GameObject bgmBtn, seBtn, laugBtn, laugNotReady;
 	public Button onoffBtn,onoffBtn2,onoffBtn3;
 	public SpriteState sprste = new SpriteState();
 	int ck,ck2,ck3;
@@ -50,6 +50,8 @@ public class TitleOptionEvt : MonoBehaviour {
 	}
 
 	public void laugOnOff(){
+		StartCoroutine ("imsi_LaugNotReady");
+		/* 준비중
 		switch (ck3) {
 		case 0: //off
 			laugBtn.GetComponent<Image> ().sprite = korengImgSpr [2];
@@ -66,5 +68,14 @@ public class TitleOptionEvt : MonoBehaviour {
 			ck3 = 0;
 			break;
 		}
+		*/
+
+	}
+
+	//준비중
+	IEnumerator imsi_LaugNotReady(){
+		laugNotReady.SetActive (true);
+		yield return new WaitForSeconds (2f);
+		laugNotReady.SetActive (false);
 	}
 }
