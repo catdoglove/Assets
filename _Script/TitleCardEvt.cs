@@ -10,7 +10,7 @@ public class TitleCardEvt : MonoBehaviour {
 	int chpNum = 0, typeNum = 0;
 	AllNumber allNum = new AllNumber ();
 	//미리로드해둔 데이터를 가져오기위해서
-
+	DataLoad dtLoad = new DataLoad();
 
 	public GameObject mixCardWid, powderCardWid;
 
@@ -23,8 +23,6 @@ public class TitleCardEvt : MonoBehaviour {
 	public Sprite[] card_spr;
 
 	public void showCardWindow(){
-		
-
 		//카드코딩을할것임
 		//일단불러오기
 		//처음1챕터와 인물로선택되어있음
