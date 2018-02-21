@@ -6,12 +6,13 @@ using UnityEngine.UI;
 public class TitleCardEvt : MonoBehaviour {
 	
 	public Sprite [] chpImgSpr, typeImgSpr;
-	public GameObject cardWindow, chpBtn1,chpBtn2, typeBtn1, typeBtn2, typeBtn3, typeBtn4, typeBtn5, typeBtn6;
+	public GameObject cardWindow, chpBtn1,chpBtn2, typeBtn1, typeBtn2, typeBtn3, typeBtn4, typeBtn5;
 	int chpNum = 0, typeNum = 0;
 	AllNumber allNum = new AllNumber ();
 	//미리로드해둔 데이터를 가져오기위해서
+	DataLoad dtLoad = new DataLoad();
 
-
+<<<<<<< HEAD
 	public GameObject mixCardWid, powderCardWid;
 
 
@@ -22,9 +23,9 @@ public class TitleCardEvt : MonoBehaviour {
 	public GameObject[] cardBtn;
 	public Sprite[] card_spr;
 
+=======
+>>>>>>> parent of 9f2a882... 메뉴수정, 팝업임시
 	public void showCardWindow(){
-		
-
 		//카드코딩을할것임
 		//일단불러오기
 		//처음1챕터와 인물로선택되어있음
@@ -78,16 +79,11 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 	public void clickType4(){
-		typeNum = allNum.typeAct;
-		changeType ();
-	}
-
-	public void clickType5(){
 		typeNum = allNum.typeWhat;
 		changeType ();
 	}
 
-	public void clickType6(){
+	public void clickType5(){
 		typeNum = allNum.typeEnd;
 		changeType ();
 	}
@@ -107,17 +103,13 @@ public class TitleCardEvt : MonoBehaviour {
 			allTypeClose();
 			typeBtn3.GetComponent<Image> ().sprite = typeImgSpr [5];
 			break;
-		case 4: //행동
+		case 4: //무엇을
 			allTypeClose();
 			typeBtn4.GetComponent<Image> ().sprite = typeImgSpr [7];
 			break;
-		case 5: //무엇을
+		case 5: //결말
 			allTypeClose();
-			typeBtn5.GetComponent<Image> ().sprite = typeImgSpr [11];
-			break;
-		case 6: //결말
-			allTypeClose();
-			typeBtn6.GetComponent<Image> ().sprite = typeImgSpr [9];
+			typeBtn5.GetComponent<Image> ().sprite = typeImgSpr [9];
 			break;
 		}
 	}
@@ -127,9 +119,9 @@ public class TitleCardEvt : MonoBehaviour {
 		typeBtn2.GetComponent<Image> ().sprite = typeImgSpr [2];
 		typeBtn3.GetComponent<Image> ().sprite = typeImgSpr [4];
 		typeBtn4.GetComponent<Image> ().sprite = typeImgSpr [6];
-		typeBtn5.GetComponent<Image> ().sprite = typeImgSpr [10];
-		typeBtn6.GetComponent<Image> ().sprite = typeImgSpr [8];
+		typeBtn5.GetComponent<Image> ().sprite = typeImgSpr [8];
 	}
+<<<<<<< HEAD
 
 	public void mixCard(){
 		mixCardWid.SetActive (true);
@@ -154,4 +146,6 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 
+=======
+>>>>>>> parent of 9f2a882... 메뉴수정, 팝업임시
 }
