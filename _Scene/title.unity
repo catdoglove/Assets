@@ -526,9 +526,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< HEAD
 =======
       m_Calls: []
 >>>>>>> d008a6a432265cc957c73cb246f5f15b86601f7c
+=======
+>>>>>>> parent of 329ca9a... Merge branch 'master' of https://github.com/catdoglove/Assets
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &108653319
@@ -648,6 +651,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
 =======
 <<<<<<< HEAD
@@ -667,6 +671,9 @@ RectTransform:
 >>>>>>> parent of 081e24e... 도감 데이터로드
 >>>>>>> ea2be3506979635c90a89a541459f5a3aa622e21
 >>>>>>> d008a6a432265cc957c73cb246f5f15b86601f7c
+=======
+  m_LocalScale: {x: 0.01388889, y: 0.01388889, z: 0.01388889}
+>>>>>>> parent of 329ca9a... Merge branch 'master' of https://github.com/catdoglove/Assets
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 735269803}
@@ -10452,8 +10459,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+<<<<<<< HEAD
 =======
 >>>>>>> d008a6a432265cc957c73cb246f5f15b86601f7c
+=======
+>>>>>>> parent of 329ca9a... Merge branch 'master' of https://github.com/catdoglove/Assets
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1587581649
