@@ -1,6 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Prefabs/移대뱶.prefab.meta
 guid: 5c8d3a3cfe749a147ab30085d4e7f16a
 timeCreated: 1509430061
+=======
+<<<<<<< HEAD
+guid: 5908a99ce16458541bac0b231667bc43
+folderAsset: yes
+timeCreated: 1519196202
+=======
+guid: 5a18643f065463f4bb882be1dd2a6a2b
+folderAsset: yes
+timeCreated: 1519195229
+>>>>>>> d008a6a432265cc957c73cb246f5f15b86601f7c
+>>>>>>> 2482c5ee9cfc70561ca4795474055d9db3e33ac3:_Scene/etc.meta
 licenseType: Free
 NativeFormatImporter:
   externalObjects: {}
