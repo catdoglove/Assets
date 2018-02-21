@@ -3,14 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DataLoad : MonoBehaviour {
-	
 	public static List<List<int>> data_list =new List<List<int>>();
 	public static List<List<int>> story_list =new List<List<int>>();
-	public List<int[]> who_list_ch1 =new List<int[]>();
-
 	// Use this for initialization
 	void Start () {
-		
+		dataLoadFirst ();
 	}
 	
 	// Update is called once per frame
@@ -30,7 +27,7 @@ public class DataLoad : MonoBehaviour {
 	/// 0->1챕터 시리즈1->1,1
 	/// </summary>
 
-	public void dataLoadFirst1(){
+	public void dataLoadFirst(){
 		//이야기로딩및도감모음여부확인
 		List<Dictionary<string,object>> data1 = CSVReader.Read ("StoryBook");
 		int ch_c = 1;
@@ -48,26 +45,28 @@ public class DataLoad : MonoBehaviour {
 			}//endOfFor
 			sr_c++;
 		}//endOfFor
-	}
-
-	public void dataLoadFirst(){
+		
 		//1챕터 로드-------------------------------------1
-		List<Dictionary<string,object>> data = CSVReader.Read ("StoryBook");
-		//리스트1차배열생성[0][0]------------------------2
-		//포문안에서2차열생성----------------------------3
-		//다음챕터도 반복--------------------------------4
-		int k = 0;
-		for (var i = 0; i < data.Count; i++) {
-			int ch = (int)data [i] ["Chapter"];
-			int tp = (int)data [i] ["Type"];
-			if (ch == 1) {
-				if (tp == 1) {
-					i++;
-					//PlayerPrefs.SetInt ("who" + k, i);
-					i--;
-					k++;
+		List<Dictionary<string,object>> data = CSVReader.Read ("CardData");
+		int ch_i = 1;
+		int tp_i = 1;
+		for (int j = 0; j < 6; j++) {
+			//리스트1차배열생성[0][0]------------------------2
+			data_list.Add(new List<int>());
+			//포문안에서2차열생성----------------------------3
+			for (int i = 0; i < data.Count; i++) {
+				int ch = (int)data [i] ["Chapter"];
+				int tp = (int)data [i] ["Type"];
+				if (ch == ch_i) {
+					if (tp == tp_i) {
+						data_list [j].Add (i + 1);
+					}
 				}
-			}
-		}
+			}//endOfFor
+			tp_i++;
+		}//endOfFor
+
+		//다음챕터도 반복--------------------------------4
+
 	}
 }

@@ -7,7 +7,7 @@ public class TitleBookEvt : MonoBehaviour {
 	
 	public Sprite [] chpImgSpr,bookpageSpr,bookstorySpr;
 	public GameObject bookWindow,chpBtn1,chpBtn2,bookpageImg,pageImg;
-	int chpNum = 0, bookNum = 0, pageNum = 0;
+	int chpNum = 0, bookNum = 0, pageNum = 1;
 	public Text pageTxt;
 
 	//도감데이터불러오기
@@ -17,21 +17,30 @@ public class TitleBookEvt : MonoBehaviour {
 	public Sprite[] books_spr;
 	public int[] bookLoadSeries;
 	public int[] bookSeries;
+	int k;
+
+	//도감페이지넘버표시
+	public GameObject[] bookPageNum;
+	public Sprite[] page_spr;
 
 	AllNumber allNum = new AllNumber ();
 
 	public void showBookWindow(){
+
+
 		blind [0].SetActive (true);
 		blind [1].SetActive (true);
 		List<Dictionary<string,object>> data = CSVReader.Read("StoryBook");
 
-		int k=0;
+		k=0;
 		int n=0;
 		for (int i = 0; i < data.Count; i++) {
 			k = i + 1;
 			bookLoad [i] = PlayerPrefs.GetInt ("books"+k, 0);//도감모으기에 성공한걸불러오기
 		}
-		//데이터불러오기
+		//이야기데이터불러오기
+		//시리즈넘버가달라지는 부분을체크해서 어디서부터 어디까지가 하나 인지 확인해줌
+		//가변2차원리스트배열로고치면될지도?
 		k = 0;
 		for (var i = 0; i < data.Count; i++) {
 			int sr = (int)data[i]["Series"];
@@ -44,11 +53,15 @@ public class TitleBookEvt : MonoBehaviour {
 			}
 		}//EndOfFor
 		//도감완성여부판단
+		PlayerPrefs.SetInt("k",k);
+		Debug.Log ("--------------"+k);
+		int h = 0;
 		for (int j = 0; j < k+1; j++) {
 			int s = 0;
 			for (int i = 0; i < bookSeries [j]; i++) {
-				if (bookLoad [i] == 1) {
+				if (bookLoad [h] == 1) {
 					s++;
+					h++;
 				}
 			}
 			if (s == bookSeries [j]) {
@@ -160,6 +173,35 @@ public class TitleBookEvt : MonoBehaviour {
 	public void showBookPage(){
 		//pageImg.GetComponent<Image> ().sprite = bookpageSpr[0];
 		bookpageImg.SetActive (true);
+
+		//도감에서 터치했을때 자세한내용을보여준다
+		int p = pageNum;
+		p = p * 2;
+		p = p - 2;
+		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
+			int st = DataLoad.story_list [p] [i]-1;
+			bookPageNum [i].SetActive (false);
+			if (bookLoad[st] == 1) {
+				bookPageNum [i].SetActive (true);
+				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i];
+			}
+		}
+
+
+		/*
+		k = PlayerPrefs.GetInt ("k", 0);
+			for (int i = 0; i < bookSeries [p]; i++) {
+				if (bookLoad [i] == 1) {
+					
+				}
+			}
+
+
+			
+			if (s == bookSeries [j]) {
+				PlayerPrefs.SetInt ("clearbook" + j, 1);
+			}
+*/
 	}
 
 	public void closeBookPage(){
