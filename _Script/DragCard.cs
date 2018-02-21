@@ -140,7 +140,7 @@ public class DragCard : MonoBehaviour {
 		//카드를 놓았을때 제자리로 돌아갈 것인지 카드를 낸 것인지 확인한다
 
 		if (wldObjectPos.x > -4 && wldObjectPos.x < 4.5) {
-			if (wldObjectPos.y < 3.44 && wldObjectPos.y > -2.77) {
+			if (wldObjectPos.y < 3.33 && wldObjectPos.y > -2.57) {
 				//obj.GetComponent<DataHandler>().LoadData ();//★★★★★★★★★★★★★★★★★★★★
 				//여기에 일러스트 띠우고 카드로 새로 뽑는것을 코딩 일러스셋엑티브 후 페이드인
 
@@ -177,9 +177,7 @@ public class DragCard : MonoBehaviour {
 					Destroy (gameObj[i],0.2f);
 				}
 
-			}else{//EndOfIf
-				check = false;
-			}
+			}//EndOfIf
 		}else{//EndOfIf
 			check = false;
 		}
