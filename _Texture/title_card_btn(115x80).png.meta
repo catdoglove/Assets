@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a2a6f0e6f478ddd43af4f00b256218a8
-timeCreated: 1516687856
+timeCreated: 1510898533
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -14,8 +14,6 @@ TextureImporter:
     21300014: title_card_btn(115x80)_7
     21300016: title_card_btn(115x80)_8
     21300018: title_card_btn(115x80)_9
-    21300020: title_card_btn(115x80)_10
-    21300022: title_card_btn(115x80)_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -121,7 +119,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 400
+        y: 320
         width: 115
         height: 80
       alignment: 0
@@ -135,7 +133,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 115
-        y: 400
+        y: 320
         width: 115
         height: 80
       alignment: 0
@@ -149,7 +147,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
+        y: 240
         width: 115
         height: 80
       alignment: 0
@@ -163,7 +161,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 115
-        y: 320
+        y: 240
         width: 115
         height: 80
       alignment: 0
@@ -177,7 +175,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
+        y: 160
         width: 115
         height: 80
       alignment: 0
@@ -191,7 +189,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 115
-        y: 240
+        y: 160
         width: 115
         height: 80
       alignment: 0
@@ -205,7 +203,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 160
+        y: 80
         width: 115
         height: 80
       alignment: 0
@@ -219,7 +217,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 115
-        y: 160
+        y: 80
         width: 115
         height: 80
       alignment: 0
@@ -233,34 +231,6 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 80
-        width: 115
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: title_card_btn(115x80)_9
-      rect:
-        serializedVersion: 2
-        x: 115
-        y: 80
-        width: 115
-        height: 80
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: title_card_btn(115x80)_10
-      rect:
-        serializedVersion: 2
-        x: 0
         y: 0
         width: 115
         height: 80
@@ -271,7 +241,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: title_card_btn(115x80)_11
+      name: title_card_btn(115x80)_9
       rect:
         serializedVersion: 2
         x: 115
