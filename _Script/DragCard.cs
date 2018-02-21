@@ -14,7 +14,7 @@ public class DragCard : MonoBehaviour {
 	public GameObject[] gameObj;
 
 
-	SoundEvt soundE = new SoundEvt();
+
 	public static int soundck =0;
 
 
