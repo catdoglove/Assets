@@ -12,10 +12,6 @@ public class TitleCardEvt : MonoBehaviour {
 	//미리로드해둔 데이터를 가져오기위해서
 	DataLoad dtLoad = new DataLoad();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> ea2be3506979635c90a89a541459f5a3aa622e21
 	public GameObject mixCardWid, powderCardWid;
 
 
@@ -26,8 +22,7 @@ public class TitleCardEvt : MonoBehaviour {
 	public GameObject[] cardBtn;
 	public Sprite[] card_spr;
 
-=======
->>>>>>> parent of 9f2a882... 메뉴수정, 팝업임시
+
 	public void showCardWindow(){
 		//카드코딩을할것임
 		//일단불러오기
@@ -124,7 +119,6 @@ public class TitleCardEvt : MonoBehaviour {
 		typeBtn4.GetComponent<Image> ().sprite = typeImgSpr [6];
 		typeBtn5.GetComponent<Image> ().sprite = typeImgSpr [8];
 	}
-<<<<<<< HEAD
 
 	public void mixCard(){
 		mixCardWid.SetActive (true);
@@ -149,6 +143,4 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 
-=======
->>>>>>> parent of 9f2a882... 메뉴수정, 팝업임시
 }

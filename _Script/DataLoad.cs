@@ -3,18 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DataLoad : MonoBehaviour {
-<<<<<<< HEAD
-<<<<<<< HEAD
+	
 	public static List<List<int>> data_list =new List<List<int>>();
 	public static List<List<int>> story_list =new List<List<int>>();
-=======
 	public List<int[]> who_list_ch1 =new List<int[]>();
 
->>>>>>> parent of 1d27cbd... 데이터를 로딩화면에서 로드한다
-=======
-	public List<int[]> who_list_ch1 =new List<int[]>();
-
->>>>>>> ea2be3506979635c90a89a541459f5a3aa622e21
 	// Use this for initialization
 	void Start () {
 		
@@ -25,8 +18,6 @@ public class DataLoad : MonoBehaviour {
 		
 	}
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 	/// <summary>
 	/// 배열에 저장되는규칙 who1when2where3what4atc5end6
 	/// 이렇게하는 이유는 들갈방이 세가지 [챕터][타입][순서]=인덱스값으로 가져오기때문
@@ -39,7 +30,7 @@ public class DataLoad : MonoBehaviour {
 	/// 0->1챕터 시리즈1->1,1
 	/// </summary>
 
-	public void dataLoadFirst(){
+	public void dataLoadFirst1(){
 		//이야기로딩및도감모음여부확인
 		List<Dictionary<string,object>> data1 = CSVReader.Read ("StoryBook");
 		int ch_c = 1;
@@ -57,13 +48,9 @@ public class DataLoad : MonoBehaviour {
 			}//endOfFor
 			sr_c++;
 		}//endOfFor
-		
-=======
+	}
+
 	public void dataLoadFirst(){
->>>>>>> parent of 1d27cbd... 데이터를 로딩화면에서 로드한다
-=======
-	public void dataLoadFirst(){
->>>>>>> ea2be3506979635c90a89a541459f5a3aa622e21
 		//1챕터 로드-------------------------------------1
 		List<Dictionary<string,object>> data = CSVReader.Read ("StoryBook");
 		//리스트1차배열생성[0][0]------------------------2
