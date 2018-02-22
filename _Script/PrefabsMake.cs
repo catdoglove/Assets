@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PrefabsMake : MonoBehaviour {
 
@@ -33,6 +34,12 @@ public class PrefabsMake : MonoBehaviour {
 	//엔딩 보여주기
 	public Sprite[] endIllust_spr;
 
+	//성공,실패
+	public static int soundck =0;
+	public Sprite[] succfail_spr;
+	public GameObject succfailImg;
+
+
 	// Use this for initialization
 	void Start () {
 		//생성된 리스트에 받아온 데이터값을 넣어준다-1
@@ -59,11 +66,18 @@ public class PrefabsMake : MonoBehaviour {
 		if(end_mach == 1){
 			int end;
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
-			if (end != 0) {
+			if (end != 0) { //성공
 				spr_illust [4].SetActive (true);
 				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
+				succfailImg.GetComponent<Image> ().sprite = succfail_spr [0];
+				soundck = 11;
+			}else { //실패
+				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
+				soundck = 22;				
 			}
 			spr_illust [5].SetActive (true);
+			end_mach = 0;
+
 			
 		}else if (call_card == 1) {
 			

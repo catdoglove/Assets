@@ -7,8 +7,8 @@ public class SoundEvt : MonoBehaviour {
 
 	public static AudioSource se_touch;
 	public static AudioClip sp_touch;
-	public AudioSource se_touch1,se_book;
-	public AudioClip sp_touch1,sp_book;
+	public AudioSource se_touch1,se_book,se_game_success,se_game_fail;
+	public AudioClip sp_touch1,sp_book,sp_game_success,sp_game_fail;
 	public GameObject muteImg,muteBGImg;
 	public Sprite [] spr_mute;
 
@@ -24,6 +24,13 @@ public class SoundEvt : MonoBehaviour {
 
 		se_book = gameObject.GetComponent<AudioSource> ();
 		se_book.clip=sp_book;
+
+		se_game_success = gameObject.GetComponent<AudioSource> ();
+		se_game_success.clip=sp_game_success;
+
+		se_game_fail = gameObject.GetComponent<AudioSource> ();
+		se_game_fail.clip=sp_game_fail;
+
 
 		if (PlayerPrefs.GetInt ("soundmute", 0)==1) {
 			se_touch.mute = true;
@@ -43,6 +50,8 @@ public class SoundEvt : MonoBehaviour {
 	}
 
 	void Update(){
+
+		//카드
 		if (DragCard.soundck == 99) {
 			touchSound ();
 			DragCard.soundck = 0;
@@ -50,6 +59,16 @@ public class SoundEvt : MonoBehaviour {
 			bookSound ();
 			DragCard.soundck = 0;			
 		}
+
+		//게임
+		if (PrefabsMake.soundck == 11) { //성공
+			gameSuccessSound ();
+			PrefabsMake.soundck = 0;
+		} else if (PrefabsMake.soundck == 22) { //실패
+			gameFailSound ();
+			PrefabsMake.soundck = 0;			
+		}
+
 	}
 
 	public void touchSound(){
@@ -66,18 +85,37 @@ public class SoundEvt : MonoBehaviour {
 		se_book.Play ();
 	}
 
+	public void gameSuccessSound(){
+		se_game_success = gameObject.GetComponent<AudioSource> ();
+		se_game_success.clip=sp_game_success;
+		se_game_success.loop = false;
+		se_game_success.Play ();
+	}
+
+	public void gameFailSound(){
+		se_game_fail = gameObject.GetComponent<AudioSource> ();
+		se_game_fail.clip=sp_game_fail;
+		se_game_fail.loop = false;
+		se_game_fail.Play ();
+	}
+
+
+
+
 
 	public void soundMute(){
 		if (se_touch.mute == false) {
 			se_touch.mute = true;
 			se_book.mute = true;
 			se_touch1.mute = true;
+			se_game_success.mute = true;
 			muteImg.GetComponent<Image>().sprite=spr_mute[1];
 			PlayerPrefs.SetInt("soundmute",1);
 		} else {
 			se_touch.mute = false;
 			se_book.mute = false;
 			se_touch1.mute = false;
+			se_game_fail.mute = true;
 			muteImg.GetComponent<Image>().sprite=spr_mute[0];
 			PlayerPrefs.SetInt("soundmute",0);
 		}
