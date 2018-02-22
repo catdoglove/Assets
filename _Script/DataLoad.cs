@@ -59,7 +59,7 @@ public class DataLoad : MonoBehaviour {
 				int tp = (int)data [i] ["Type"];
 				if (ch == ch_i) {
 					if (tp == tp_i) {
-						data_list [j].Add (i + 1);
+						data_list [j].Add (i);
 					}
 				}
 			}//endOfFor

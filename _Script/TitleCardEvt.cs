@@ -147,10 +147,26 @@ public class TitleCardEvt : MonoBehaviour {
 
 
 	public void initializeCard(){//카드셋엑티브false로초기화
+		/*
 		for (int i = 0; i < 16; i++) {
 			cardBtn [i].SetActive (true);
 			cardBtn [i].GetComponent<Image> ().sprite = card_spr [i];
 		}
+		*/
+		//배열에들어갈숫자계산
+		int i_tp = (chpNum-1) * 6 + typeNum-1;
+		//전부초기화
+		for (int i = 0; i < 16; i++) {
+			cardBtn[i].SetActive (false);
+		}
+		for (int j = 0; j < DataLoad.data_list [i_tp].Count; j++) {
+			int num = DataLoad.data_list [i_tp] [j];
+			cardBtn [j].SetActive (true);
+			cardBtn [j].GetComponent<Image> ().sprite = card_spr [num];
+		}
+
+			
+
 	}
 
 

@@ -12,11 +12,19 @@ public class TitleShopEvt : MonoBehaviour {
 
 	AllNumber allNum = new AllNumber ();
 
+	/// <summary>
+	/// Shows the shop window.
+	/// 처음띠워질때 챕터1을 띠움
+	/// 장소,인물,행동,사물,엔딩
+	/// 1돈뽑기2동영상뽑기
+	/// </summary>
 	public void showShopWindow(){
 		//돈을리프레시
+
 		shopWindow.SetActive (true);
 		chpNum = allNum.chapter1;
 		changeChapter ();
+
 	}
 
 	public void clickCh1(){
