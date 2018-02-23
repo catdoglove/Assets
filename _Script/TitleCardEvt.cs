@@ -22,6 +22,8 @@ public class TitleCardEvt : MonoBehaviour {
 	public GameObject[] cardBtn;
 	public Sprite[] card_spr;
 
+	public static int i_tp=0;
+
 	public void showCardWindow(){
 		
 
@@ -154,7 +156,7 @@ public class TitleCardEvt : MonoBehaviour {
 		}
 		*/
 		//배열에들어갈숫자계산
-		int i_tp = (chpNum-1) * 6 + typeNum-1;
+		i_tp = (chpNum-1) * 6 + typeNum-1;
 		//전부초기화
 		for (int i = 0; i < 16; i++) {
 			cardBtn[i].SetActive (false);
@@ -168,6 +170,19 @@ public class TitleCardEvt : MonoBehaviour {
 			
 
 	}
+	//자신의이름을 불러와서몇번째버튼인지판단해서 맞는 그림을 띄워준다
+	public void cardDetailShow(){
+		//GameObject[] g_Obj = GameObject.FindGameObjectsWithTag ("Card");
+		//자신의 이름을 불러옴
+		string str=this.gameObject.name;
+		//자신의 이름에 달린 번를 불러옴
+		int c_Num = int.Parse(str.Substring (4)) - 1;
+		//카드의 인덱스를불러옴
+		int num = DataLoad.data_list [i_tp] [c_Num];
+		//카드그림출력
+
+	}
+
 
 
 }
