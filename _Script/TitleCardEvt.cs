@@ -12,7 +12,7 @@ public class TitleCardEvt : MonoBehaviour {
 	//미리로드해둔 데이터를 가져오기위해서
 
 
-	public GameObject mixCardWid, powderCardWid;
+	public GameObject mixCardWid, powderCardWid, newCardWid, infoCardWid;
 
 
 	/// <summary>
@@ -142,9 +142,23 @@ public class TitleCardEvt : MonoBehaviour {
 		powderCardWid.SetActive (true);
 	}
 
+	public void newCard(){
+		newCardWid.SetActive (true);
+	}
+
+	public void infoCard(){
+		infoCardWid.SetActive (true);
+	}
+
+	public void infoCardclose(){
+		infoCardWid.SetActive (false);
+	}
+
+
 	public void cardWidClose(){
 		mixCardWid.SetActive (false);
 		powderCardWid.SetActive (false);
+		newCardWid.SetActive (false);
 	}
 
 
