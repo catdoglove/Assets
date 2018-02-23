@@ -1257,10 +1257,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 204043256}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -1274,7 +1270,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2594,10 +2589,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 378189540}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -2611,7 +2602,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3493,10 +3483,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 463863990}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -3510,7 +3496,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4186,24 +4171,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
       - m_Target: {fileID: 552073945}
         m_MethodName: cardDetailShow
-=======
-      - m_Target: {fileID: 764904246}
-        m_MethodName: infoCard
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 828473471}
-        m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5031,10 +5000,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 634093040}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -5048,7 +5013,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6829,11 +6793,7 @@ RectTransform:
   m_GameObject: {fileID: 833427199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-<<<<<<< HEAD
-  m_LocalScale: {x: 0.016650947, y: 0.016650947, z: 0.016650947}
-=======
   m_LocalScale: {x: 0.016666666, y: 0.016666666, z: 0.016666666}
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
   m_Children:
   - {fileID: 788818208}
   m_Father: {fileID: 0}
@@ -7520,10 +7480,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 968944371}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -7537,7 +7493,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8392,10 +8347,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1117267093}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -8409,7 +8360,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8979,10 +8929,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1250891896}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -8996,7 +8942,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9367,10 +9312,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1274280480}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -9384,7 +9325,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9811,10 +9751,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1384238286}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -9828,7 +9764,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10330,10 +10265,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1429396375}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -10347,7 +10278,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10748,10 +10678,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1458469620}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -10765,7 +10691,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11589,10 +11514,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1535342503}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -11606,7 +11527,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12134,10 +12054,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1592086002}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -12151,7 +12067,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12844,10 +12759,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 1687127756}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -12861,7 +12772,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14702,10 +14612,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-<<<<<<< HEAD
-      - m_Target: {fileID: 2023444331}
-        m_MethodName: cardDetailShow
-=======
       - m_Target: {fileID: 764904246}
         m_MethodName: infoCard
         m_Mode: 1
@@ -14719,7 +14625,6 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
->>>>>>> c2c7ff754875349e01f29ab951392f10374cc796
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
