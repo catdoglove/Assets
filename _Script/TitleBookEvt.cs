@@ -170,7 +170,7 @@ public class TitleBookEvt : MonoBehaviour {
 	}
 
 	//총22페지
-	public void showBookPage(){
+	public void showBookPage1(){
 		//pageImg.GetComponent<Image> ().sprite = bookpageSpr[0];
 		bookpageImg.SetActive (true);
 
@@ -178,30 +178,43 @@ public class TitleBookEvt : MonoBehaviour {
 		int p = pageNum;
 		p = p * 2;
 		p = p - 2;
-		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
-			int st = DataLoad.story_list [p] [i]-1;
+		for (int i = 0; i < 5; i++) {
 			bookPageNum [i].SetActive (false);
-			if (bookLoad[st] == 1) {
-				bookPageNum [i].SetActive (true);
-				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i];
-			}
+			bookPageNum [i].GetComponent<Image> ().sprite = page_spr [0];
 		}
 
+		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
+			int st = DataLoad.story_list [p] [i]-1;
+			//Debug.Log ("------도감스토리리스트"+p);
+			//Debug.Log ("------도감인덱스"+st);
+			bookPageNum [i].SetActive (true);
+			if (bookLoad [st] == 1) {
+				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
+			} 
+		}
+	}
+	public void showBookPage2(){
+		//pageImg.GetComponent<Image> ().sprite = bookpageSpr[0];
+		bookpageImg.SetActive (true);
 
-		/*
-		k = PlayerPrefs.GetInt ("k", 0);
-			for (int i = 0; i < bookSeries [p]; i++) {
-				if (bookLoad [i] == 1) {
-					
-				}
-			}
+		//도감에서 터치했을때 자세한내용을보여준다
+		int p = pageNum;
+		p = p * 2;
+		p = p - 1;
+		for (int i = 0; i < 5; i++) {
+			bookPageNum [i].SetActive (false);
+			bookPageNum [i].GetComponent<Image> ().sprite = page_spr [0];
+		}
 
-
-			
-			if (s == bookSeries [j]) {
-				PlayerPrefs.SetInt ("clearbook" + j, 1);
-			}
-*/
+		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
+			int st = DataLoad.story_list [p] [i]-1;
+			//Debug.Log ("------도감스토리리스트"+p);
+			//Debug.Log ("------도감인덱스"+st);
+			bookPageNum [i].SetActive (true);
+			if (bookLoad [st] == 1) {
+				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
+			} 
+		}
 	}
 
 	public void closeBookPage(){

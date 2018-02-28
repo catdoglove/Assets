@@ -21,8 +21,11 @@ public class TitleCardEvt : MonoBehaviour {
 	/// </summary>
 	public GameObject[] cardBtn;
 	public Sprite[] card_spr;
-
 	public static int i_tp=0;
+	public GameObject cardInfoImg;
+	// 카드의 갯수를표시해주는변수들
+	public Text[] cardNum_txt;
+
 
 	public void showCardWindow(){
 		
@@ -72,6 +75,9 @@ public class TitleCardEvt : MonoBehaviour {
 	public void clickType2(){
 		typeNum = allNum.typeWhen;
 		changeType ();
+		for (int j = 0; j <15; j++) {
+			cardNum_txt [j].text = "∞";
+		}
 	}
 
 	public void clickType3(){
@@ -179,7 +185,12 @@ public class TitleCardEvt : MonoBehaviour {
 			int num = DataLoad.data_list [i_tp] [j];
 			cardBtn [j].SetActive (true);
 			cardBtn [j].GetComponent<Image> ().sprite = card_spr [num];
+			//카드의숫자를 띄워준다
+			int h =PlayerPrefs.GetInt("cardnum"+num,0);
+			cardNum_txt [j].text = ""+ h;
 		}
+
+
 
 			
 
@@ -194,7 +205,8 @@ public class TitleCardEvt : MonoBehaviour {
 		//카드의 인덱스를불러옴
 		int num = DataLoad.data_list [i_tp] [c_Num];
 		//카드그림출력
-
+		cardInfoImg.GetComponent<Image>().sprite=card_spr[num];
+	
 	}
 
 
