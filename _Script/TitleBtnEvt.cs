@@ -6,10 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class TitleBtnEvt : MonoBehaviour {
 
-	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, optionWindow, startWindow;
+	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, optionWindow, startWindow,goGameWindow;
 	public GameObject TitleSpr;
 
-	public static AudioSource bgm_title;
 
 	// Use this for initialization
 	void Start () {
@@ -44,10 +43,7 @@ public class TitleBtnEvt : MonoBehaviour {
 			}
 		}//EndOfFor
 
-		bgm_title = this.gameObject.GetComponent<AudioSource> ();
-		if (PlayerPrefs.GetInt ("soundBGmute", 0)==1) {		
-			TitleBtnEvt.bgm_title.mute = true;
-		}
+
 
 	}
 
@@ -72,6 +68,7 @@ public class TitleBtnEvt : MonoBehaviour {
 		optionWindow.SetActive (false);
 		startWindow.SetActive (false);
 		blackBackImg.SetActive (false);
+		goGameWindow.SetActive (false);
 	}
 
 	public void loadGame1(){
@@ -82,6 +79,15 @@ public class TitleBtnEvt : MonoBehaviour {
 
 	public void titleSprFalse(){
 		TitleSpr.SetActive (false);
+	}
+
+
+	public void goGameWidT(){
+		goGameWindow.SetActive (true);
+	}
+
+	public void goGameWidF(){
+		goGameWindow.SetActive (false);
 	}
 
 

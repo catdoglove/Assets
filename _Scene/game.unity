@@ -744,7 +744,7 @@ RectTransform:
   m_GameObject: {fileID: 561107449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013884774, y: 0.013884774, z: 0.013884774}
+  m_LocalScale: {x: 0.013893821, y: 0.013893821, z: 0.013893821}
   m_Children:
   - {fileID: 334077468}
   - {fileID: 566789344}
@@ -1524,7 +1524,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1113987145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.838684, y: 0.10412598, z: 0}
+  m_LocalPosition: {x: 4.838684, y: 0.1000061, z: 0}
   m_LocalScale: {x: 0.8499054, y: 0.8499054, z: 0.8499054}
   m_Children:
   - {fileID: 1498115388}
@@ -1534,8 +1534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.838685, y: 0.1041392}
-  m_SizeDelta: {x: 1269.5, y: 720.24}
+  m_AnchoredPosition: {x: 4.8387, y: 0.1}
+  m_SizeDelta: {x: 1476.7, y: 837.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1498115387
 GameObject:
@@ -1570,7 +1570,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -4.2, y: 45}
-  m_SizeDelta: {x: 675.7, y: 263.6}
+  m_SizeDelta: {x: 650, y: 241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1498115389
 MonoBehaviour:
@@ -1710,10 +1710,14 @@ MonoBehaviour:
   se_book: {fileID: 0}
   se_game_success: {fileID: 0}
   se_game_fail: {fileID: 0}
+  se_cardup: {fileID: 0}
+  se_carddown: {fileID: 0}
   sp_touch1: {fileID: 8300000, guid: fff380aa139ca114bac7b7cf22da38c4, type: 3}
   sp_book: {fileID: 8300000, guid: f4ae33b62f077564484c6cd13cfaa649, type: 3}
   sp_game_success: {fileID: 8300000, guid: 332bbaa06383a1543b3509f98fcd7885, type: 3}
   sp_game_fail: {fileID: 8300000, guid: bb16dbc4fa5fbfa48a35b5dcbff2f64d, type: 3}
+  sp_cardup: {fileID: 8300000, guid: 687984892790f2d42aabe6064daa2f2f, type: 3}
+  sp_carddown: {fileID: 8300000, guid: 2093d361fa0781348aed041c6c6097fe, type: 3}
   muteImg: {fileID: 0}
   muteBGImg: {fileID: 0}
   spr_mute: []
@@ -2320,7 +2324,7 @@ RectTransform:
   m_GameObject: {fileID: 2089707586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013884774, y: 0.013884774, z: 0.013884774}
+  m_LocalScale: {x: 0.013893821, y: 0.013893821, z: 0.013893821}
   m_Children:
   - {fileID: 1113987149}
   - {fileID: 909310226}

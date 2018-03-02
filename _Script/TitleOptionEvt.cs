@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TitleOptionEvt : MonoBehaviour {
 
@@ -10,6 +11,26 @@ public class TitleOptionEvt : MonoBehaviour {
 	public Button onoffBtn,onoffBtn2,onoffBtn3;
 	public SpriteState sprste = new SpriteState();
 	int ck,ck2,ck3;
+
+
+	public static AudioSource bgm_title;
+	public GameObject muteImg,muteBGImg;
+	public Sprite [] spr_mute;
+
+	void Start () {
+
+		//배경과 효과음 이미지변경
+		bgm_title = this.gameObject.GetComponent<AudioSource> ();
+		if (PlayerPrefs.GetInt ("soundmute", 0)==1) {
+			muteImg.GetComponent<Image>().sprite=spr_mute[1];
+		}
+		if (PlayerPrefs.GetInt ("soundBGmute", 0)==1) {	
+			muteBGImg.GetComponent<Image>().sprite=spr_mute[1];			
+			bgm_title.mute = true;
+		}
+	}
+
+
 
 	public void btnImgOnOff(){
 		switch (ck) {
