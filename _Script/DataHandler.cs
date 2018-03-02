@@ -54,6 +54,19 @@ public class DataHandler : MonoBehaviour {
 
 		return k;
 	}
+
+	public void checkHave(){
+
+		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
+		for (var i = 0; i < data.Count; i++) {
+			PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,0);//가지고있는카드초기화
+			int cc = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);//카드수
+			cc--;
+			if (cc >= 0) {
+				PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,1);
+			}//EndOfIf
+		}//EndOfFor
+	}
 		
 	//데이터를 불러오는 함수 불러오는값: 게임 플레이 순서별로 해당되는 타입의 배열반환하는 값 s -1
 	public List<int> LoadData(int ch_num, int tp_num){

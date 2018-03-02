@@ -80,7 +80,7 @@ public class PrefabsMake : MonoBehaviour {
 
 			
 		}else if (call_card == 1) {
-			
+			//카드를 놓았을때 그림을띄워준다
 			int type_check = 0;
 			switch (PrefabsMake.type_num) {
 			case 1:

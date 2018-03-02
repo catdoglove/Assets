@@ -10,6 +10,11 @@ public class TitleBtnEvt : MonoBehaviour {
 	public GameObject TitleSpr;
 
 
+	//카드가없을때뜨는경고
+	public string[] not_str;
+	public Text warring_txt;
+	public GameObject warringCard;
+
 	// Use this for initialization
 	void Start () {
 		//화면 해상도
@@ -29,19 +34,7 @@ public class TitleBtnEvt : MonoBehaviour {
 			Screen.SetResolution (Screen.width, Screen.width / 3 * 2, true);
 		}
 
-		//데이터로드
-		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
-		for(var i=0; i< data.Count; i++){
-			int ch = (int)data[i]["Chapter"];
-			if (ch == 1) {
-				i++;
-				int k = PlayerPrefs.GetInt ("ch"+1+"cards"+i,1);
-				if(k == 1){
-					PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,1);
-				}
-				i--;
-			}
-		}//EndOfFor
+	
 
 
 
@@ -72,8 +65,31 @@ public class TitleBtnEvt : MonoBehaviour {
 	}
 
 	public void loadGame1(){
+		//여기서카드가 없을때를생각해주기
+		int cc = 0;
+		int f = 0;
+		for (int j = 0; j < 6; j++) {
+
+			for (int i = 0; i < DataLoad.data_list [j].Count; i++) {
+				
+				cc = cc+ PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
+			if (cc == 0) {
+				not_str[6] = not_str[6]  + not_str [j];
+				f = 1;
+			}
+		}//endOfFor
+
+		if (f == 1) {
+			not_str [6] =not_str [6] +"\n카드가 없습니다.";
+			warring_txt.text = not_str [6];
+			warringCard.SetActive (true);
+			StartCoroutine ("cardNotReady");////->코룬틴
 		
-		SceneManager.LoadScene ("Game");
+		} else {
+		
+			SceneManager.LoadScene ("Game");
+		}
 	}
 
 
@@ -81,6 +97,13 @@ public class TitleBtnEvt : MonoBehaviour {
 		TitleSpr.SetActive (false);
 	}
 
+	//코룬틴<--
+	IEnumerator cardNotReady(){
+		
+		yield return new WaitForSeconds (2f);
+		warringCard.SetActive (false);
+		not_str [6] = "";
+	}
 
 	public void goGameWidT(){
 		goGameWindow.SetActive (true);
