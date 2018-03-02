@@ -11,7 +11,7 @@ public class TitleBookEvt : MonoBehaviour {
 	public Text pageTxt;
 
 	//도감데이터불러오기
-	public int[] bookLoad = new int[22];
+	public int[] bookLoad = new int[23];
 	public GameObject[] blind;
 	public GameObject[] booksImg;
 	public Sprite[] books_spr;
@@ -37,6 +37,7 @@ public class TitleBookEvt : MonoBehaviour {
 		for (int i = 0; i < data.Count; i++) {
 			k = i + 1;
 			bookLoad [i] = PlayerPrefs.GetInt ("books"+k, 0);//도감모으기에 성공한걸불러오기
+
 		}
 		//이야기데이터불러오기
 		//시리즈넘버가달라지는 부분을체크해서 어디서부터 어디까지가 하나 인지 확인해줌
@@ -47,14 +48,20 @@ public class TitleBookEvt : MonoBehaviour {
 			bookLoadSeries [i] = sr;
 			if (i != 0) {
 				if (bookLoadSeries [i - 1] != bookLoadSeries [i]) {
-					bookSeries [k] = i;
+					if (k == 0) {
+						bookSeries [k] = i;
+					} else {
+						bookSeries [k] = i;
+						for (int j = k; j > 0; j--) {
+							bookSeries [k] = bookSeries [k] - bookSeries [k - j];
+						}
+					}
 					k++;
 				}
 			}
 		}//EndOfFor
 		//도감완성여부판단
 		PlayerPrefs.SetInt("k",k);
-		Debug.Log ("--------------"+k);
 		int h = 0;
 		for (int j = 0; j < k+1; j++) {
 			int s = 0;
@@ -158,6 +165,7 @@ public class TitleBookEvt : MonoBehaviour {
 		blind [0].SetActive (true);
 		blind [1].SetActive (true);
 		p=p-2;
+
 		booksImg [0].GetComponent<Image> ().sprite = books_spr[p]; //p 페이지넘버
 		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
 			blind [0].SetActive (false);
@@ -185,8 +193,6 @@ public class TitleBookEvt : MonoBehaviour {
 
 		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
 			int st = DataLoad.story_list [p] [i]-1;
-			//Debug.Log ("------도감스토리리스트"+p);
-			//Debug.Log ("------도감인덱스"+st);
 			bookPageNum [i].SetActive (true);
 			if (bookLoad [st] == 1) {
 				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
@@ -208,8 +214,6 @@ public class TitleBookEvt : MonoBehaviour {
 
 		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
 			int st = DataLoad.story_list [p] [i]-1;
-			//Debug.Log ("------도감스토리리스트"+p);
-			//Debug.Log ("------도감인덱스"+st);
 			bookPageNum [i].SetActive (true);
 			if (bookLoad [st] == 1) {
 				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];

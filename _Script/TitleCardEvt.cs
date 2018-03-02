@@ -186,7 +186,7 @@ public class TitleCardEvt : MonoBehaviour {
 			cardBtn [j].SetActive (true);
 			cardBtn [j].GetComponent<Image> ().sprite = card_spr [num];
 			//카드의숫자를 띄워준다
-			int h =PlayerPrefs.GetInt("cardnum"+num,0);
+			int h =PlayerPrefs.GetInt("ch"+1+"cardnum"+num,0);//카드갯수
 			cardNum_txt [j].text = ""+ h;
 		}
 
