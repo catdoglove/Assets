@@ -814,7 +814,7 @@ RectTransform:
   m_GameObject: {fileID: 111062311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.01388889, y: 0.01388889, z: 0.01388889}
+  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 735269803}
@@ -7220,6 +7220,30 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2a5448f77acbc5044bcfb32bc35dd807, type: 3}
   bookLoadSeries: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   bookSeries: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  bookPage_spr:
+  - {fileID: 21300000, guid: c8abc84c2ba4c094b8b6c1f55f11bc9f, type: 3}
+  - {fileID: 21300000, guid: 839605fd4d4a2434eac5d9c73ebeb0e2, type: 3}
+  - {fileID: 21300000, guid: 8d58dcf51e5111b4a88497ca86a26d8a, type: 3}
+  - {fileID: 21300000, guid: 7ee4e0e61b5f37e409234d5b6a71e21a, type: 3}
+  - {fileID: 21300000, guid: a1bd1074fc321ad469221c2f80510234, type: 3}
+  - {fileID: 21300000, guid: b176037635e36c94c92f140be46bcb78, type: 3}
+  - {fileID: 21300000, guid: 680a3f4e62e4eaa4c8ad44271f74ab8f, type: 3}
+  - {fileID: 21300000, guid: e4cef9a993996f24d99d55e58720aacc, type: 3}
+  - {fileID: 21300000, guid: aeb64011d6d5af247a135e7abfe42874, type: 3}
+  - {fileID: 21300000, guid: 2cbc698fa8597f7489eb2d7fef4424c3, type: 3}
+  - {fileID: 21300000, guid: f27d27fb2ab65944a8103f05c25a4d54, type: 3}
+  - {fileID: 21300000, guid: e009fd0a5514cd741a61996db42cd28e, type: 3}
+  - {fileID: 21300000, guid: 28a1839a87189fc4ea03483856893a39, type: 3}
+  - {fileID: 21300000, guid: b3ebb5e977fc92d4291e8ae21c282c94, type: 3}
+  - {fileID: 21300000, guid: 8686339d92b472e43aaf9d1cef3fc4b0, type: 3}
+  - {fileID: 21300000, guid: 935b17ffe7907ff4fba3e076a0f9f327, type: 3}
+  - {fileID: 21300000, guid: f65926d66bf6b8a438e452a172350f1f, type: 3}
+  - {fileID: 21300000, guid: cf0fd78db96285a49a2cbfd62e7d2936, type: 3}
+  - {fileID: 21300000, guid: de588020f0a9b314b854870b83ec1757, type: 3}
+  - {fileID: 21300000, guid: cc9ef75d8c8e6e740b6fd74419b3421b, type: 3}
+  - {fileID: 21300000, guid: 303957a71a5dabf4dbac829fbd63f9e2, type: 3}
+  - {fileID: 21300000, guid: cd3fb5c329fc9c24cb6cfcd2b078b916, type: 3}
+  bookStoryImg: {fileID: 427257583}
   bookPageNum:
   - {fileID: 1446712710}
   - {fileID: 301880570}
@@ -14010,17 +14034,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 764904247}
-        m_MethodName: showBookWindow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 764904244}
         m_MethodName: showBlackBack
         m_Mode: 1
@@ -14034,6 +14047,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 828473471}
         m_MethodName: touchSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904247}
+        m_MethodName: showBookWindow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

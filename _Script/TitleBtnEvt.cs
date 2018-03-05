@@ -79,7 +79,7 @@ public class TitleBtnEvt : MonoBehaviour {
 				f = 1;
 			}
 		}//endOfFor
-
+		SceneManager.LoadScene ("Game");
 		if (f == 1) {
 			not_str [6] =not_str [6] +"\n카드가 없습니다.";
 			warring_txt.text = not_str [6];
@@ -88,7 +88,7 @@ public class TitleBtnEvt : MonoBehaviour {
 		
 		} else {
 		
-			SceneManager.LoadScene ("Game");
+			//SceneManager.LoadScene ("Game");
 		}
 	}
 
