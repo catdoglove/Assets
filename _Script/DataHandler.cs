@@ -59,19 +59,23 @@ public class DataHandler : MonoBehaviour {
 
 		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
 		for (var i = 0; i < data.Count; i++) {
-			PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,0);//가지고있는카드초기화
+			int h = 1;
+			PlayerPrefs.SetInt ("ch" + h + "haveCard" + i, 1);
+			Debug.Log ("ch" + h + "haveCard" + i);
+			/*PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,0);//가지고있는카드초기화
 			int cc = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);//카드수
 			cc--;
 			if (cc >= 0) {
 				PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,1);
 			}//EndOfIf
+			*/
 		}//EndOfFor
 	}
 		
 	//데이터를 불러오는 함수 불러오는값: 게임 플레이 순서별로 해당되는 타입의 배열반환하는 값 s -1
 	public List<int> LoadData(int ch_num, int tp_num){
 		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
-
+		checkHave ();
 
 
 		int i_chapter = ch_num;
@@ -86,10 +90,10 @@ public class DataHandler : MonoBehaviour {
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
 					if (tp == i_type) {
-						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,0);
+						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						Debug.Log ("ch"+i_chapter+"haveCard"+i);
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
-							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 							ci++;
 						}
 					}
@@ -108,10 +112,10 @@ public class DataHandler : MonoBehaviour {
 					if (tp == i_type) {
 						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
+						Debug.Log ("ch"+i_chapter+"haveCard"+i);
 						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
-							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 							ci++;
 						}
 					}
@@ -132,7 +136,6 @@ public class DataHandler : MonoBehaviour {
 						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
-							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 							ci++;
 						}
 					}
@@ -155,7 +158,6 @@ public class DataHandler : MonoBehaviour {
 							int k=i+1;
 							PlayerPrefs.SetInt (""+k,i_type);
 							Debug.Log ("왜카드가안나오죠?"+i+1);
-							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 							ci++;
 						}
 					}else if (tp == i_type-3) {
@@ -167,7 +169,6 @@ public class DataHandler : MonoBehaviour {
 							int k=i+1;
 							Debug.Log ("왜카드가안나오죠?"+i+1);
 							PlayerPrefs.SetInt (""+k,i_type-3);
-							Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 							ci++;
 						}
 					}
@@ -193,7 +194,6 @@ public class DataHandler : MonoBehaviour {
 								index_list.Add(i + 1);
 								int k=i+1;
 								PlayerPrefs.SetInt (""+k,i_type);
-								Debug.Log (index_list[ci].ToString ()+"리스트"+index_list.Count);
 								ci++;
 							}
 						}
@@ -217,7 +217,6 @@ public class DataHandler : MonoBehaviour {
 							index_list.Add(i + 1);
 							int k=i+1;
 							PlayerPrefs.SetInt (""+k,i_type);
-							Debug.Log (index_list[ci].ToString ()+"마지막리스트"+index_list.Count);
 							ci++;
 						}
 					}
