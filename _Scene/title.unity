@@ -2055,6 +2055,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904247}
+        m_MethodName: bookPageChange2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &301880573
@@ -2553,6 +2564,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904247}
+        m_MethodName: bookPageChange4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7243,7 +7265,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: cc9ef75d8c8e6e740b6fd74419b3421b, type: 3}
   - {fileID: 21300000, guid: 303957a71a5dabf4dbac829fbd63f9e2, type: 3}
   - {fileID: 21300000, guid: cd3fb5c329fc9c24cb6cfcd2b078b916, type: 3}
+  - {fileID: 21300000, guid: 2a5448f77acbc5044bcfb32bc35dd807, type: 3}
+  bookExplain_spr:
+  - {fileID: 21300000, guid: 400a0afe809fe2547b13dadc0c1e951e, type: 3}
+  - {fileID: 21300002, guid: 400a0afe809fe2547b13dadc0c1e951e, type: 3}
+  - {fileID: 21300000, guid: d028490e48bd0e7488d3d5ffce508742, type: 3}
+  - {fileID: 21300002, guid: d028490e48bd0e7488d3d5ffce508742, type: 3}
+  - {fileID: 21300004, guid: d028490e48bd0e7488d3d5ffce508742, type: 3}
+  - {fileID: 21300000, guid: 3eb85d321f30b7e43ad4b48b4aa719ce, type: 3}
+  - {fileID: 21300002, guid: 3eb85d321f30b7e43ad4b48b4aa719ce, type: 3}
+  - {fileID: 21300004, guid: 3eb85d321f30b7e43ad4b48b4aa719ce, type: 3}
+  - {fileID: 21300006, guid: 3eb85d321f30b7e43ad4b48b4aa719ce, type: 3}
+  - {fileID: 21300000, guid: c375fd3e38607234297b8b03984f5fca, type: 3}
+  - {fileID: 21300000, guid: 587eea228408bc643bc167b299ac042a, type: 3}
+  - {fileID: 21300002, guid: 587eea228408bc643bc167b299ac042a, type: 3}
+  - {fileID: 21300000, guid: 2fc2360276aac5d4ca9d1dad888ebdfa, type: 3}
+  - {fileID: 21300002, guid: 2fc2360276aac5d4ca9d1dad888ebdfa, type: 3}
+  - {fileID: 21300000, guid: 7284b55af54df32478c7e0960c9ef1e2, type: 3}
+  - {fileID: 21300002, guid: 7284b55af54df32478c7e0960c9ef1e2, type: 3}
+  - {fileID: 21300004, guid: 7284b55af54df32478c7e0960c9ef1e2, type: 3}
+  - {fileID: 21300000, guid: 9d634387e1687574d9b738473432c831, type: 3}
+  - {fileID: 21300002, guid: 9d634387e1687574d9b738473432c831, type: 3}
+  - {fileID: 21300000, guid: 78b0fa48deaa3df49a9347e952382bbd, type: 3}
+  - {fileID: 21300002, guid: 78b0fa48deaa3df49a9347e952382bbd, type: 3}
+  - {fileID: 21300000, guid: 4456768a723bd0d44a2b750abe941b88, type: 3}
   bookStoryImg: {fileID: 427257583}
+  bookExplainImg: {fileID: 1018648912}
   bookPageNum:
   - {fileID: 1446712710}
   - {fileID: 301880570}
@@ -12500,6 +12547,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904247}
+        m_MethodName: bookPageChange1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1446712713
@@ -16704,6 +16762,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904247}
+        m_MethodName: bookPageChange3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1925352586
@@ -17704,6 +17773,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828473471}
         m_MethodName: bookSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904247}
+        m_MethodName: bookPageChange5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
