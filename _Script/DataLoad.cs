@@ -5,9 +5,78 @@ using UnityEngine;
 public class DataLoad : MonoBehaviour {
 	public static List<List<int>> data_list =new List<List<int>>();
 	public static List<List<int>> story_list =new List<List<int>>();
+	string str;
 	// Use this for initialization
 	void Start () {
 		dataLoadFirst ();
+
+		//처음할때 자신만의 코드를 만들어줌
+		int c=0;
+		if (c == PlayerPrefs.GetInt ("first", 0)) {
+			for (int i = 0; i < 16; i++) {
+				int a = Random.Range (0, 16);//0~15
+
+				switch (a) {
+				case 0:
+					str = str + "0";
+					break;
+				case 1:
+					str = str + "1";
+					break;
+				case 2:
+					str = str + "2";
+					break;
+				case 3:
+					str = str + "3";
+					break;
+				case 4:
+					str = str + "4";
+					break;
+				case 5:
+					str = str + "5";
+					break;
+				case 6:
+					str = str + "6";
+					break;
+				case 7:
+					str = str + "7";
+					break;
+				case 8:
+					str = str + "8";
+					break;
+				case 9:
+					str = str + "9";
+					break;
+				case 10:
+					str = str + "a";
+					break;
+				case 11:
+					str = str + "b";
+					break;
+				case 12:
+					str = str + "c";
+					break;
+				case 13:
+					str = str + "d";
+					break;
+				case 14:
+					str = str + "e";
+					break;
+				case 15:
+					str = str + "f";
+					break;
+				default:
+					break;
+				}
+
+				//코인이 저장되는 이름을 자기의 코드로해줌
+				//PlayerPrefs.SetInt (str, 0);
+
+			}
+			PlayerPrefs.SetString ("code", str);
+			Debug.Log(str);
+			PlayerPrefs.Save ();
+		}
 	}
 	
 	// Update is called once per frame

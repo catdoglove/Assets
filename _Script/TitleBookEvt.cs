@@ -241,9 +241,6 @@ public class TitleBookEvt : MonoBehaviour {
 		//pageImg.GetComponent<Image> ().sprite = bookpageSpr[0];
 		bookpageImg.SetActive (true);
 
-
-
-
 		//도감에서 터치했을때 자세한내용을보여준다
 		p = pageNum;
 		p = p * 2;
@@ -323,6 +320,5 @@ public class TitleBookEvt : MonoBehaviour {
 				}
 			} 
 		}
-
 	}
 }

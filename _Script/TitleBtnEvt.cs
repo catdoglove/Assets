@@ -15,6 +15,9 @@ public class TitleBtnEvt : MonoBehaviour {
 	public Text warring_txt;
 	public GameObject warringCard;
 
+	//고유코드띄워주기
+	public Text code_txt;
+
 	// Use this for initialization
 	void Start () {
 		//화면 해상도
@@ -45,6 +48,9 @@ public class TitleBtnEvt : MonoBehaviour {
 	}
 
 	public void showOptionWindow(){
+		string str = PlayerPrefs.GetString ("code", "");
+		Debug.Log(str);
+		code_txt.text = "고유ID : " + str;
 		optionWindow.SetActive (true);
 		showBlackBack ();
 	}

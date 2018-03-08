@@ -17,6 +17,7 @@ public class TitleOptionEvt : MonoBehaviour {
 	public GameObject muteImg,muteBGImg;
 	public Sprite [] spr_mute;
 
+
 	void Start () {
 
 		//배경과 효과음 이미지변경
