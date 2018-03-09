@@ -118,6 +118,7 @@ public class DataLoad : MonoBehaviour {
 		
 		//1챕터 로드-------------------------------------1
 		List<Dictionary<string,object>> data = CSVReader.Read ("CardData");
+		PlayerPrefs.SetInt ("datacount",data.Count);
 		int ch_i = 1;
 		int tp_i = 1;
 		for (int j = 0; j < 6; j++) {

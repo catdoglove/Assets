@@ -74,8 +74,17 @@ public class TitleShopEvt : MonoBehaviour {
 	//구매버튼12개
 	//구매시뽑은카드를 쭉보여준다
 	public void buyCard1(){
-		number = 5;
-		randomCard (4,5);
+		int cc = 0;
+		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
+			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+		}
+		Debug.Log ("total" + cc);
+		if (cc < 60) {
+			number = 5;
+			randomCard (4, 5);
+		} else {
+			//카드수가너무많음ㄷ
+		}
 	}
 
 	void oneCard(){
@@ -108,19 +117,46 @@ public class TitleShopEvt : MonoBehaviour {
 				*/
 				coin_txt.text="100";
 			}
+			//옆집에서스프라이트가져오기
 			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [0]);
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
 			showCard.GetComponent<Image> ().sprite = card_spr;
 		} else {
 			//돈이부족하다
+			coin = coin - 100;
 
 		}
 
 	}
 
 	public void touchShopCard(){
-		blackBack.SetActive (false);
-		showCard.SetActive (false);
+		
+		switch (number) {
+		case 1:
+			blackBack.SetActive (false);
+			showCard.SetActive (false);
+			break;
+		case 5:
+			blackBack.SetActive (false);
+			showCard.SetActive (false);
+			number--;
+			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [number]);
+			showCard.GetComponent<Image> ().sprite = card_spr;
+			blackBack.SetActive (true);
+			showCard.SetActive (true);
+
+			break;
+		default:
+			blackBack.SetActive (false);
+			showCard.SetActive (false);
+			number--;
+			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [number]);
+			showCard.GetComponent<Image> ().sprite = card_spr;
+			blackBack.SetActive (true);
+			showCard.SetActive (true);
+			break;
+		}
+
 	}
 }

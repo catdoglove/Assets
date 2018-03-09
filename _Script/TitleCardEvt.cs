@@ -209,6 +209,7 @@ public class TitleCardEvt : MonoBehaviour {
 	
 	}
 
+	//다른곳으로스프라이트빌려주기
 	public Sprite cardImgReturnShop(int num){
 		return card_spr [num];
 	}
