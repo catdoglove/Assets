@@ -209,6 +209,9 @@ public class TitleCardEvt : MonoBehaviour {
 	
 	}
 
+	public Sprite cardImgReturnShop(int num){
+		return card_spr [num];
+	}
 
 
 }

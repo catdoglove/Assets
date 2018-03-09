@@ -71,10 +71,11 @@ public class DataLoad : MonoBehaviour {
 
 				//코인이 저장되는 이름을 자기의 코드로해줌
 				//PlayerPrefs.SetInt (str, 0);
-
+				//튜토리얼 보여주기
 			}
 			PlayerPrefs.SetString ("code", str);
 			Debug.Log(str);
+			PlayerPrefs.SetInt ("first", 1);
 			PlayerPrefs.Save ();
 		}
 	}

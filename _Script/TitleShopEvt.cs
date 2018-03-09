@@ -15,11 +15,15 @@ public class TitleShopEvt : MonoBehaviour {
 
 	//카드뽑기
 	public GameObject[] getCards;
-	public Sprite[] card_spr;
+	//public Sprite[] card_spr;
 	public static int gameCoin;
 	//카드뽑기카드이미지
 	public GameObject blackBack;
 	public GameObject showCard;
+	public int[] randCard_i;
+	public GameObject GM;
+	public Sprite card_spr;
+	int number;
 
 
 	//돈
@@ -70,7 +74,8 @@ public class TitleShopEvt : MonoBehaviour {
 	//구매버튼12개
 	//구매시뽑은카드를 쭉보여준다
 	public void buyCard1(){
-		
+		number = 5;
+		randomCard (4,5);
 	}
 
 	void oneCard(){
@@ -91,26 +96,31 @@ public class TitleShopEvt : MonoBehaviour {
 		if (coin >= 200 * num) {
 			int ran = DataLoad.data_list [type].Count;
 			int a = 0;
-			switch (num) {
-			case 1:
-				a = Random.Range (0, ran);
-
-				break;
-			case 5:
-				a = Random.Range (0, ran);
-				break;
-			default:
-				break;
+			for (int i = 0; i < num; i++) {
+				int r =DataLoad.data_list[type][Random.Range (0, ran)];
+				randCard_i[i] = r;
+				Debug.Log (randCard_i [i]);
+				/*
+				int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + r, 0);
+				k++;
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + r, k);
+				PlayerPrefs.Save ();
+				*/
+				coin_txt.text="100";
 			}
+			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [0]);
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
+			showCard.GetComponent<Image> ().sprite = card_spr;
 		} else {
 			//돈이부족하다
+
 		}
 
 	}
 
 	public void touchShopCard(){
-		
+		blackBack.SetActive (false);
+		showCard.SetActive (false);
 	}
 }
