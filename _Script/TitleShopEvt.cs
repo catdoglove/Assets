@@ -7,7 +7,9 @@ using UnityEngine.UI;
 public class TitleShopEvt : MonoBehaviour {
 	
 	public Sprite [] chpImgSpr;
-	public GameObject shopWindow, chpBtn1,chpBtn2;
+	public GameObject shopWindow, shopIWindow, chpBtn1,chpBtn2;
+
+	public GameObject shopChoPop, cardChoPop;
 	int chpNum = 0;
 
 
@@ -30,13 +32,14 @@ public class TitleShopEvt : MonoBehaviour {
 	public Text coin_txt;
 	string str;
 
+
 	/// <summary>
 	/// Shows the shop window.
 	/// 처음띠워질때 챕터1을 띠움
 	/// 장소,인물,행동,사물,엔딩
 	/// 1돈뽑기2광고뽑기
 	/// </summary>
-	public void showShopWindow(){
+	public void showShopWindow(){ //카드구매창
 		//돈을리프레시
 
 		str = PlayerPrefs.GetString ("code", "");
@@ -47,6 +50,25 @@ public class TitleShopEvt : MonoBehaviour {
 		changeChapter ();
 
 	}
+
+	public void showShopIWindow(){ //아이템 구매창
+		shopIWindow.SetActive (true);		
+	}
+
+	public void showShopChoWindow(){ //종류창
+		shopChoPop.SetActive (true);		
+	}
+	public void closeShopChoWindow(){
+		shopChoPop.SetActive (false);		
+	}
+
+	public void showCardChoWindow(){ //카드선택창
+		cardChoPop.SetActive (true);		
+	}
+	public void closeCardChoWindow(){
+		cardChoPop.SetActive (false);		
+	}
+
 
 	public void clickCh1(){
 		chpNum = allNum.chapter1;

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class TitleBtnEvt : MonoBehaviour {
 
-	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, optionWindow, startWindow,goGameWindow;
+	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, shopIWindow,optionWindow, startWindow,goGameWindow;
 	public GameObject TitleSpr;
 
 
@@ -64,6 +64,7 @@ public class TitleBtnEvt : MonoBehaviour {
 		bookWindow.SetActive (false);
 		cardWindow.SetActive (false);
 		shopWindow.SetActive (false);
+		shopIWindow.SetActive (false);
 		optionWindow.SetActive (false);
 		startWindow.SetActive (false);
 		blackBackImg.SetActive (false);
