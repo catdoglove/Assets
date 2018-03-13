@@ -148,6 +148,7 @@ public class DragCard : MonoBehaviour {
 
 				int end_check=0;
 				PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
+				//이미 낸카드는 다안나오게함
 				PlayerPrefs.SetInt ("ch"+1+"haveCard"+PrefabsMake.index_H_list[cardOrder_num],0);
 				end_check = PlayerPrefs.GetInt (""+PrefabsMake.card_index [PrefabsMake.type_num], 0);
 				Debug.Log ("--------------------------------------------------------"+PrefabsMake.type_num);

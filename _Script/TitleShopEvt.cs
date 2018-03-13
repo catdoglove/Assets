@@ -153,6 +153,7 @@ public class TitleShopEvt : MonoBehaviour {
 				//뉴 표시를 보여줌
 				newCard.SetActive (true);
 				//PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
+				//PlayerPrefs.Save();
 			}
 		} else {
 			//돈이부족하다
@@ -180,6 +181,7 @@ public class TitleShopEvt : MonoBehaviour {
 				//뉴 표시를 보여줌
 				newCard.SetActive (true);
 				//PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
+				//PlayerPrefs.Save();
 			}
 
 			break;

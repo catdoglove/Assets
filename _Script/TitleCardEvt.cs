@@ -20,11 +20,14 @@ public class TitleCardEvt : MonoBehaviour {
 	/// 카드그림스프라이트인스펙터에서불러오기
 	/// </summary>
 	public GameObject[] cardBtn;
+	public GameObject[] cardBlind;
 	public Sprite[] card_spr;
 	public static int i_tp=0;
 	public GameObject cardInfoImg;
 	// 카드의 갯수를표시해주는변수들
 	public Text[] cardNum_txt;
+	//카드가루
+	public Text cardDust_txt;
 
 
 	public void showCardWindow(){
@@ -188,6 +191,13 @@ public class TitleCardEvt : MonoBehaviour {
 			//카드의숫자를 띄워준다
 			int h =PlayerPrefs.GetInt("ch"+1+"cardnum"+num,0);//카드갯수
 			cardNum_txt [j].text = ""+ h;
+			//카드가 얻은 적있는 카드인지 확인해준다
+			/*
+			int iscb = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + num, 0);
+			if (iscb == 0) {
+				cardBlind [j].SetActive (true);
+			}
+			*/
 		}
 
 
@@ -200,18 +210,53 @@ public class TitleCardEvt : MonoBehaviour {
 		//GameObject[] g_Obj = GameObject.FindGameObjectsWithTag ("Card");
 		//자신의 이름을 불러옴
 		string str=this.gameObject.name;
-		//자신의 이름에 달린 번를 불러옴
+		//자신의 이름에 달린 번호를 불러옴
 		int c_Num = int.Parse(str.Substring (4)) - 1;
 		//카드의 인덱스를불러옴
 		int num = DataLoad.data_list [i_tp] [c_Num];
 		//카드그림출력
 		cardInfoImg.GetComponent<Image>().sprite=card_spr[num];
-	
+		//카드번호저장
+
+		PlayerPrefs.SetInt ("instantnum", num);
 	}
 
 	//다른곳으로스프라이트빌려주기
 	public Sprite cardImgReturnShop(int num){
 		return card_spr [num];
+	}
+
+	//카드갈기
+	public void cardChangeToDust(){
+		//카드불러옴 가루불러옴
+		int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
+		int dust = PlayerPrefs.GetInt ("dust", 0);
+		if (iscn > 0) {
+			//카드갈기
+			iscn--;
+			dust = dust + 10;
+			//PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), iscn);
+			//PlayerPrefs.SetInt ("dust", dust);
+			//PlayerPrefs.Save ();
+		}else{
+			//카드가 없어서 못갈아
+		}
+	}
+
+	//카드생성
+	public void dustChangeToCard(){
+		int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
+		int dust = PlayerPrefs.GetInt ("dust", 0);
+		if (dust >= 100) {
+			dust = dust - 100;
+			iscn++;
+			//PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), iscn);
+			//PlayerPrefs.SetInt ("dust", dust);
+			//PlayerPrefs.Save ();
+		} else {
+			//가루가 없서 못만들어
+		}
+
 	}
 
 

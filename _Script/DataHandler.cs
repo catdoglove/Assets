@@ -43,6 +43,14 @@ public class DataHandler : MonoBehaviour {
 										k=i+1;
 										PlayerPrefs.SetInt ("books"+k, 1);//도감에저장
 										Debug.Log ("---------------------------------------성공");
+										//카드소모
+										for (int j = 1; j < 6; j++) {
+											int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + end_num [j], 0);
+											iscn--;
+											//PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
+											//PlayerPrefs.Save();
+										}
+
 									}
 								}
 							}
@@ -68,6 +76,7 @@ public class DataHandler : MonoBehaviour {
 			if (cc >= 0) {
 				PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,1);
 			}//EndOfIf
+			//PlayerPrefs.Save();
 			*/
 		}//EndOfFor
 	}
