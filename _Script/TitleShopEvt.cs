@@ -26,6 +26,7 @@ public class TitleShopEvt : MonoBehaviour {
 	public GameObject GM;
 	public Sprite card_spr;
 	int number;
+	public GameObject newCard;
 
 
 	//돈
@@ -121,6 +122,7 @@ public class TitleShopEvt : MonoBehaviour {
 		str = PlayerPrefs.GetString ("code", "");
 		int coin = PlayerPrefs.GetInt(str,1000);
 
+		//할인되는 가격미리더해주기
 		if (num == 5) {
 			coin = coin + 100;
 		}
@@ -144,39 +146,42 @@ public class TitleShopEvt : MonoBehaviour {
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
 			showCard.GetComponent<Image> ().sprite = card_spr;
+			//지금 뽑은 카드가 새 카드인지 확인해보자
+			int isnc = 0;
+			isnc = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + randCard_i [0], 0);
+			if (isnc == 0) {
+				//뉴 표시를 보여줌
+				newCard.SetActive (true);
+				//PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
+			}
 		} else {
 			//돈이부족하다
 			coin = coin - 100;
-
 		}
-
 	}
 
 	public void touchShopCard(){
-		
+		newCard.SetActive (false);
+		blackBack.SetActive (false);
+		showCard.SetActive (false);
 		switch (number) {
 		case 1:
-			blackBack.SetActive (false);
-			showCard.SetActive (false);
-			break;
-		case 5:
-			blackBack.SetActive (false);
-			showCard.SetActive (false);
-			number--;
-			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [number]);
-			showCard.GetComponent<Image> ().sprite = card_spr;
-			blackBack.SetActive (true);
-			showCard.SetActive (true);
-
 			break;
 		default:
-			blackBack.SetActive (false);
-			showCard.SetActive (false);
 			number--;
 			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [number]);
 			showCard.GetComponent<Image> ().sprite = card_spr;
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
+			//지금 뽑은 카드가 새 카드인지 확인해보자
+			int isnc = 0;
+			isnc = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + randCard_i [number], 0);
+			if (isnc == 0) {
+				//뉴 표시를 보여줌
+				newCard.SetActive (true);
+				//PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
+			}
+
 			break;
 		}
 

@@ -935,7 +935,7 @@ RectTransform:
   m_GameObject: {fileID: 111062311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013884041, y: 0.013884041, z: 0.013884041}
+  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 303846454}
@@ -9029,6 +9029,7 @@ MonoBehaviour:
   randCard_i: 0000000000000000000000000000000000000000
   GM: {fileID: 764904240}
   card_spr: {fileID: 0}
+  newCard: {fileID: 1062100749}
   coin_txt: {fileID: 1666527458}
 --- !u!114 &764904246
 MonoBehaviour:
@@ -10110,7 +10111,7 @@ RectTransform:
   m_GameObject: {fileID: 833427199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.01666085, y: 0.01666085, z: 0.01666085}
+  m_LocalScale: {x: 0.016666668, y: 0.016666668, z: 0.016666668}
   m_Children:
   - {fileID: 788818208}
   m_Father: {fileID: 0}
@@ -12062,7 +12063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1062100750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20244,7 +20245,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 5c06c0bb858a19f42b75d3470b053a6e, type: 3}
     m_FontSize: 22
     m_FontStyle: 0
     m_BestFit: 0
