@@ -9,7 +9,7 @@ public class TitleShopEvt : MonoBehaviour {
 	public Sprite [] chpImgSpr;
 	public GameObject shopWindow, shopIWindow, chpBtn1,chpBtn2;
 
-	public GameObject shopChoPop, cardChoPop;
+	public GameObject shopChoPop, adCardWnd, oneCardWnd, fiveCardWnd, buyCardPop, adCardPop;
 	int chpNum = 0;
 
 
@@ -34,13 +34,20 @@ public class TitleShopEvt : MonoBehaviour {
 	string str;
 
 
+	public void showShopChoWindow(){ //상점선택열기
+		shopChoPop.SetActive (true);		
+	}
+	public void closeShopChoWindow(){
+		shopChoPop.SetActive (false);		
+	}
+
 	/// <summary>
 	/// Shows the shop window.
 	/// 처음띠워질때 챕터1을 띠움
 	/// 장소,인물,행동,사물,엔딩
 	/// 1돈뽑기2광고뽑기
 	/// </summary>
-	public void showShopWindow(){ //카드구매창
+	public void showShopWindow(){ 
 		//돈을리프레시
 
 		str = PlayerPrefs.GetString ("code", "");
@@ -50,24 +57,41 @@ public class TitleShopEvt : MonoBehaviour {
 		chpNum = allNum.chapter1;
 		changeChapter ();
 
-	}
+	}//카드상점열기
 
-	public void showShopIWindow(){ //아이템 구매창
+	public void showShopIWindow(){ //꾸미기상점열기
 		shopIWindow.SetActive (true);		
 	}
-
-	public void showShopChoWindow(){ //종류창
-		shopChoPop.SetActive (true);		
-	}
-	public void closeShopChoWindow(){
-		shopChoPop.SetActive (false);		
+	public void showAdCardWindow(){ //광고카드
+		adCardWnd.SetActive (true);		
 	}
 
-	public void showCardChoWindow(){ //카드선택창
-		cardChoPop.SetActive (true);		
+	public void showOneCardWindow(){ //1장카드
+		oneCardWnd.SetActive (true);		
 	}
-	public void closeCardChoWindow(){
-		cardChoPop.SetActive (false);		
+
+	public void showFiveCardWindow(){ //5장카드
+		fiveCardWnd.SetActive (true);		
+	}
+
+	public void closeAOFWindow(){
+		adCardWnd.SetActive (false);		
+		oneCardWnd.SetActive (false);	
+		fiveCardWnd.SetActive (false);		
+	}
+
+	//구매확인창들
+	public void showBuyCard(){
+		buyCardPop.SetActive (true);
+	}
+
+	public void showADSCard(){
+		adCardPop.SetActive (true);
+	}
+
+	public void FalseBuyAdCard(){
+		adCardPop.SetActive (false);
+		buyCardPop.SetActive (false);
 	}
 
 

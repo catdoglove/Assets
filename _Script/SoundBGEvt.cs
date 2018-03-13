@@ -11,6 +11,11 @@ public class SoundBGEvt : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		loadingBG = this.gameObject.GetComponent<AudioSource> ();		
+		if (PlayerPrefs.GetInt ("soundBGmute", 0) == 1) {		
+			loadingBG.mute = true;
+		} else {
+			loadingBG.mute = false;
+		}
 	}
 
 	void FixedUpdate(){
