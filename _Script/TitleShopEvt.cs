@@ -25,8 +25,9 @@ public class TitleShopEvt : MonoBehaviour {
 	public int[] randCard_i;
 	public GameObject GM;
 	public Sprite card_spr;
-	int number;
 	public GameObject newCard;
+	//카드뽑기정보전달
+	int type_i, cardNum_i;
 
 
 	//돈
@@ -63,14 +64,17 @@ public class TitleShopEvt : MonoBehaviour {
 		shopIWindow.SetActive (true);		
 	}
 	public void showAdCardWindow(){ //광고카드
+		cardNum_i = 2;
 		adCardWnd.SetActive (true);		
 	}
 
 	public void showOneCardWindow(){ //1장카드
+		cardNum_i = 1;
 		oneCardWnd.SetActive (true);		
 	}
 
 	public void showFiveCardWindow(){ //5장카드
+		cardNum_i = 5;
 		fiveCardWnd.SetActive (true);		
 	}
 
@@ -92,6 +96,10 @@ public class TitleShopEvt : MonoBehaviour {
 	public void FalseBuyAdCard(){
 		adCardPop.SetActive (false);
 		buyCardPop.SetActive (false);
+	}
+
+	public void buyCardYes(){
+		cardNumCk ();
 	}
 
 
@@ -120,26 +128,35 @@ public class TitleShopEvt : MonoBehaviour {
 
 	//구매버튼12개
 	//구매시뽑은카드를 쭉보여준다
-	public void buyCard1(){
+	public void buyAct(){
+		type_i = 4;
+	}
+	public void buyWho(){
+		type_i = 0;
+	}
+	public void buyEnding(){
+		type_i = 5;
+	}
+	public void buyWhat(){
+		type_i = 3;
+	}
+	public void buyWhere(){
+		type_i = 2;
+	}
+
+	void cardNumCk(){
 		int cc = 0;
 		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
 			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
 		}
 		Debug.Log ("total" + cc);
 		if (cc < 60) {
-			number = 5;
-			randomCard (4, 5);
+			randomCard (type_i, cardNum_i);
 		} else {
 			//카드수가너무많음ㄷ
 		}
 	}
 
-	void oneCard(){
-
-	}
-	void fiveCard(){
-
-	}
 
 	//카드랜덤뽑기
 	void randomCard(int type,int num){
@@ -183,24 +200,27 @@ public class TitleShopEvt : MonoBehaviour {
 			//돈이부족하다
 			coin = coin - 100;
 		}
+
+
 	}
 
+	//뽑은카드와검은화면을터치했을때
 	public void touchShopCard(){
 		newCard.SetActive (false);
 		blackBack.SetActive (false);
 		showCard.SetActive (false);
-		switch (number) {
+		switch (cardNum_i) {
 		case 1:
 			break;
 		default:
-			number--;
-			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [number]);
+			cardNum_i--;
+			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [cardNum_i]);
 			showCard.GetComponent<Image> ().sprite = card_spr;
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
 			//지금 뽑은 카드가 새 카드인지 확인해보자
 			int isnc = 0;
-			isnc = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + randCard_i [number], 0);
+			isnc = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + randCard_i [cardNum_i], 0);
 			if (isnc == 0) {
 				//뉴 표시를 보여줌
 				newCard.SetActive (true);
