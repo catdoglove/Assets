@@ -414,7 +414,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 735269803}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -935,7 +935,7 @@ RectTransform:
   m_GameObject: {fileID: 111062311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888888, y: 0.013888888, z: 0.013888888}
+  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 303846454}
@@ -1657,7 +1657,7 @@ RectTransform:
   - {fileID: 447779381}
   - {fileID: 154402664}
   m_Father: {fileID: 735269803}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1869,6 +1869,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -1926,6 +1927,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &206872666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2798,7 +2800,7 @@ RectTransform:
   - {fileID: 1612143384}
   - {fileID: 231163963}
   m_Father: {fileID: 735269803}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4033,6 +4035,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -4090,6 +4093,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &378544632
 GameObject:
   m_ObjectHideFlags: 0
@@ -5522,6 +5526,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyEnding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &456872615
@@ -5729,6 +5744,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -5786,6 +5802,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &469918797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6557,127 +6574,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!1 &543620699
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 543620700}
-  - component: {fileID: 543620703}
-  - component: {fileID: 543620702}
-  - component: {fileID: 543620701}
-  m_Layer: 5
-  m_Name: Button
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &543620700
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 543620699}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 352.14996, y: 112.3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 735269803}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 352.14996, y: 112.3}
-  m_SizeDelta: {x: 146.7, y: 126.3}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &543620701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 543620699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 543620702}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 764904245}
-        m_MethodName: buyCard1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
---- !u!114 &543620702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 543620699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bc932fbafa1afca42ad7e0c92a147d18, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &543620703
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 543620699}
 --- !u!1 &552073940
 GameObject:
   m_ObjectHideFlags: 0
@@ -6850,6 +6746,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -6907,6 +6804,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &555712770
 GameObject:
   m_ObjectHideFlags: 0
@@ -7355,7 +7253,7 @@ RectTransform:
   m_LocalScale: {x: 0.99980855, y: 0.99980855, z: 0.99980855}
   m_Children: []
   m_Father: {fileID: 735269803}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7945,6 +7843,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904245}
         m_MethodName: showBuyCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWhere
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8682,6 +8591,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -8739,6 +8649,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &635503360
 GameObject:
   m_ObjectHideFlags: 0
@@ -9476,7 +9387,6 @@ RectTransform:
   - {fileID: 521327396}
   - {fileID: 833409803}
   - {fileID: 704285752}
-  - {fileID: 543620700}
   - {fileID: 58794230}
   - {fileID: 1108088135}
   - {fileID: 584254075}
@@ -10061,6 +9971,7 @@ MonoBehaviour:
   - {fileID: 1429396370}
   - {fileID: 1458469615}
   - {fileID: 204043251}
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -10135,6 +10046,7 @@ MonoBehaviour:
   - {fileID: 1303193791}
   - {fileID: 1010027455}
   - {fileID: 1768149350}
+  cardDust_txt: {fileID: 0}
 --- !u!114 &764904247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11086,7 +10998,7 @@ RectTransform:
   m_GameObject: {fileID: 833427199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.016666666, y: 0.016666666, z: 0.016666666}
+  m_LocalScale: {x: 0.016666668, y: 0.016666668, z: 0.016666668}
   m_Children:
   - {fileID: 788818208}
   m_Father: {fileID: 0}
@@ -11402,7 +11314,7 @@ RectTransform:
   - {fileID: 225184636}
   - {fileID: 1038462370}
   m_Father: {fileID: 735269803}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11973,6 +11885,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -12030,6 +11943,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!114 &933051422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12181,6 +12095,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904245}
         m_MethodName: showADSCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWho
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12529,6 +12454,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -12586,6 +12512,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &971351751
 GameObject:
   m_ObjectHideFlags: 0
@@ -12916,7 +12843,7 @@ RectTransform:
   - {fileID: 1137415587}
   - {fileID: 687565026}
   m_Father: {fileID: 735269803}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13033,6 +12960,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904245}
         m_MethodName: showBuyCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyEnding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13947,7 +13885,7 @@ RectTransform:
   m_LocalScale: {x: 0.99980855, y: 0.99980855, z: 0.99980855}
   m_Children: []
   m_Father: {fileID: 735269803}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14414,6 +14352,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -14471,6 +14410,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1122191513
 GameObject:
   m_ObjectHideFlags: 0
@@ -14953,6 +14893,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWho
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1191246071
@@ -15133,6 +15084,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904245}
         m_MethodName: showBuyCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyEnding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15410,6 +15372,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWhat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1241194841
@@ -15617,6 +15590,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -15674,6 +15648,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1270687275
 GameObject:
   m_ObjectHideFlags: 0
@@ -16140,6 +16115,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -16197,6 +16173,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1295041876
 GameObject:
   m_ObjectHideFlags: 0
@@ -16856,6 +16833,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -16913,6 +16891,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1393786429
 GameObject:
   m_ObjectHideFlags: 0
@@ -17514,6 +17493,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -17571,6 +17551,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1431793170
 GameObject:
   m_ObjectHideFlags: 0
@@ -18144,6 +18125,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -18201,6 +18183,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1458655466
 GameObject:
   m_ObjectHideFlags: 0
@@ -19051,6 +19034,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -19108,6 +19092,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1538658234
 GameObject:
   m_ObjectHideFlags: 0
@@ -19507,7 +19492,7 @@ RectTransform:
   - {fileID: 1849716651}
   - {fileID: 1368404784}
   m_Father: {fileID: 735269803}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -19874,6 +19859,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -19931,6 +19917,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1601930284
 GameObject:
   m_ObjectHideFlags: 0
@@ -20180,6 +20167,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904245}
         m_MethodName: showADSCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyAct
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21336,6 +21334,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyAct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1668970609
@@ -21611,6 +21620,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -21668,6 +21678,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &1689771212
 GameObject:
   m_ObjectHideFlags: 0
@@ -22155,6 +22166,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWho
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1732868353
@@ -22564,6 +22586,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWhere
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1777187669
@@ -22817,6 +22850,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyAct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1828772738
@@ -22997,6 +23041,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 828473471}
         m_MethodName: touchSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyCardYes
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23925,6 +23980,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWhat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1940292015
@@ -24758,6 +24824,7 @@ MonoBehaviour:
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
   cardBtn: []
+  cardBlind: []
   card_spr:
   - {fileID: 21300000, guid: a95dbeef9c4f7fa458616ece3aa1ece4, type: 3}
   - {fileID: 21300000, guid: 903b4cf3d856556489649a976847c06c, type: 3}
@@ -24815,6 +24882,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
+  cardDust_txt: {fileID: 0}
 --- !u!1 &2024654363
 GameObject:
   m_ObjectHideFlags: 0
@@ -24892,6 +24960,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904245}
         m_MethodName: showADSCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWhat
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25624,6 +25703,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904245}
         m_MethodName: showADSCard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 764904245}
+        m_MethodName: buyWhere
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
