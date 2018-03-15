@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DataHandler : MonoBehaviour {
 
+	public GameObject newImg;
+
 
 
 	List<int> index_list =new List<int>();
@@ -41,6 +43,11 @@ public class DataHandler : MonoBehaviour {
 									if (end_num [5] == one) {
 										//SceneManager.LoadScene("title");
 										k=i+1;
+										//새로얻은카드인지확인해서뉴표시를띄워주자!
+										//돈500+500
+										if (PlayerPrefs.GetInt ("books" + k, 0) == 0) {
+											newImg.SetActive (true);
+										}
 										PlayerPrefs.SetInt ("books"+k, 1);//도감에저장
 										Debug.Log ("---------------------------------------성공");
 										//카드소모

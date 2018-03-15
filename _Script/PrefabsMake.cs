@@ -68,6 +68,7 @@ public class PrefabsMake : MonoBehaviour {
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
 				spr_illust [4].SetActive (true);
+				Debug.Log ("?????????"+end);
 				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [0];
 				soundck = 11;

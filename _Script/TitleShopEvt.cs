@@ -28,7 +28,7 @@ public class TitleShopEvt : MonoBehaviour {
 	public GameObject newCard;
 	//카드뽑기정보전달
 	int type_i, cardNum_i;
-
+	int num_i;
 
 	//돈
 	public Text coin_txt;
@@ -145,6 +145,7 @@ public class TitleShopEvt : MonoBehaviour {
 	}
 
 	void cardNumCk(){
+		num_i = cardNum_i;
 		int cc = 0;
 		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
 			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
@@ -168,6 +169,7 @@ public class TitleShopEvt : MonoBehaviour {
 			coin = coin + 100;
 		}
 		if (coin >= 200 * num) {
+			buyCardPop.SetActive (false);
 			int ran = DataLoad.data_list [type].Count;
 			int a = 0;
 			for (int i = 0; i < num; i++) {
@@ -209,18 +211,19 @@ public class TitleShopEvt : MonoBehaviour {
 		newCard.SetActive (false);
 		blackBack.SetActive (false);
 		showCard.SetActive (false);
-		switch (cardNum_i) {
+
+		switch (num_i) {
 		case 1:
 			break;
 		default:
-			cardNum_i--;
-			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [cardNum_i]);
+			num_i--;
+			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [num_i]);
 			showCard.GetComponent<Image> ().sprite = card_spr;
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
 			//지금 뽑은 카드가 새 카드인지 확인해보자
 			int isnc = 0;
-			isnc = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + randCard_i [cardNum_i], 0);
+			isnc = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + randCard_i [num_i], 0);
 			if (isnc == 0) {
 				//뉴 표시를 보여줌
 				newCard.SetActive (true);
