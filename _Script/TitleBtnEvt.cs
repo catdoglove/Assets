@@ -8,10 +8,10 @@ public class TitleBtnEvt : MonoBehaviour {
 
 	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, shopIWindow,optionWindow, startWindow,goGameWindow;
 	public GameObject TitleSpr;
+    
 
-
-	//카드가없을때뜨는경고
-	public string[] not_str;
+    //카드가없을때뜨는경고
+    public string[] not_str;
 	public Text warring_txt;
 	public GameObject warringCard;
 
@@ -37,11 +37,11 @@ public class TitleBtnEvt : MonoBehaviour {
 			Screen.SetResolution (Screen.width, Screen.width / 3 * 2, true);
 		}
 
-	
+       
+   
 
 
-
-	}
+    }
 
 	public void showBlackBack(){
 		blackBackImg.SetActive (true);

@@ -13,6 +13,7 @@ public class TitleShopEvt : MonoBehaviour {
 	int chpNum = 0;
 
 
+
 	AllNumber allNum = new AllNumber ();
 
 	//카드뽑기
@@ -125,6 +126,8 @@ public class TitleShopEvt : MonoBehaviour {
 			break;
 		}
 	}
+
+
 
 	//구매버튼12개
 	//구매시뽑은카드를 쭉보여준다

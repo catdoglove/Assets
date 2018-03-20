@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameBtnEvt : MonoBehaviour {
 
 	public static int ref_check = 0;
-	public GameObject returnTitSpr;
+	public GameObject returnTitSpr, gameBookGO, gameBookmarkGO1, gameBookmarkGO2;
+    public Sprite[] gameBookSpr,gameBookmarkSpr;
 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    // Use this for initialization
+    void Start () {
+
+        gameBookGO.GetComponent<Image>().sprite = gameBookSpr[PlayerPrefs.GetInt("decoBook", 0)];
+        gameBookmarkGO1.GetComponent<Image>().sprite = gameBookmarkSpr[PlayerPrefs.GetInt("decoBookmark", 0)];
+        gameBookmarkGO2.GetComponent<Image>().sprite = gameBookmarkSpr[PlayerPrefs.GetInt("decoBookmark", 0)+1];
+        
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
 
 	public void cardRefresh(){
 		if (PrefabsMake.index_H_list.Count > 8) {

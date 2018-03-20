@@ -744,7 +744,7 @@ RectTransform:
   m_GameObject: {fileID: 561107449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013883928, y: 0.013883928, z: 0.013883928}
+  m_LocalScale: {x: 0.013888888, y: 0.013888888, z: 0.013888888}
   m_Children:
   - {fileID: 334077468}
   - {fileID: 566789344}
@@ -1197,6 +1197,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   returnTitSpr: {fileID: 909310225}
+  gameBookGO: {fileID: 334077467}
+  gameBookmarkGO1: {fileID: 566789343}
+  gameBookmarkGO2: {fileID: 1901482201}
+  gameBookSpr:
+  - {fileID: 21300000, guid: 80ed3c6367162a345a58b01cd42bd4bc, type: 3}
+  - {fileID: 21300000, guid: 09d8d9d29c621504da6d4ff46eca4d31, type: 3}
+  - {fileID: 21300000, guid: 75dd06f9efaaa454eaefc4036a6c9111, type: 3}
+  - {fileID: 21300000, guid: 130198a2ecf048142afa50e361e3f36e, type: 3}
+  - {fileID: 21300000, guid: 4640bd2185b008c44bff9ce7416f601d, type: 3}
+  gameBookmarkSpr:
+  - {fileID: 21300000, guid: 239545832737c514184c7ae109d812bb, type: 3}
+  - {fileID: 21300002, guid: 239545832737c514184c7ae109d812bb, type: 3}
+  - {fileID: 21300000, guid: aa20975ee160e9849acb9528888d2112, type: 3}
+  - {fileID: 21300002, guid: aa20975ee160e9849acb9528888d2112, type: 3}
+  - {fileID: 21300000, guid: eb886d012cb74d84ab17258262fd9dab, type: 3}
+  - {fileID: 21300002, guid: eb886d012cb74d84ab17258262fd9dab, type: 3}
+  - {fileID: 21300000, guid: d95ca6178f81ec3438faf4c73d5f1ef0, type: 3}
+  - {fileID: 21300002, guid: d95ca6178f81ec3438faf4c73d5f1ef0, type: 3}
 --- !u!1 &872796715
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,7 +2412,7 @@ RectTransform:
   m_GameObject: {fileID: 2089707586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013883928, y: 0.013883928, z: 0.013883928}
+  m_LocalScale: {x: 0.013888888, y: 0.013888888, z: 0.013888888}
   m_Children:
   - {fileID: 1113987149}
   - {fileID: 909310226}

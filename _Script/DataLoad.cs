@@ -1,14 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DataLoad : MonoBehaviour {
 	public static List<List<int>> data_list =new List<List<int>>();
 	public static List<List<int>> story_list =new List<List<int>>();
 	string str;
-	// Use this for initialization
-	void Start () {
-		dataLoadFirst ();
+
+
+    public GameObject[] titleSignGO;
+    public Sprite[] titleSignSpr;
+    // Use this for initialization
+    void Start () {
+
+        //표지판
+        titleSignGO[0].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0)];
+        titleSignGO[1].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0) + 1];
+        titleSignGO[2].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0) + 2];
+
+        dataLoadFirst ();
 
 		//처음할때 자신만의 코드를 만들어줌
 		int c=0;
