@@ -87,6 +87,16 @@ public class DataLoad : MonoBehaviour {
 			PlayerPrefs.SetString ("code", str);
 			Debug.Log(str);
 			PlayerPrefs.SetInt ("first", 1);
+
+			//언제카드처음부터가지고있게하기
+			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 8, 1);
+			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 11, 1);
+			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 10, 1);
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 8, 2);
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 11, 2);
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 10, 2);
+
+
 			PlayerPrefs.Save ();
 		}
 	}

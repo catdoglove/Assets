@@ -54,8 +54,9 @@ public class DataHandler : MonoBehaviour {
 										for (int j = 1; j < 6; j++) {
 											int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + end_num [j], 0);
 											iscn--;
-											//PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
-											//PlayerPrefs.Save();
+											end_num [j]--;
+											PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
+											PlayerPrefs.Save();
 										}
 
 									}
@@ -70,28 +71,12 @@ public class DataHandler : MonoBehaviour {
 		return k;
 	}
 
-	public void checkHave(){
 
-		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
-		for (var i = 0; i < data.Count; i++) {
-			int h = 1;
-			PlayerPrefs.SetInt ("ch" + h + "haveCard" + i, 1);
-			Debug.Log ("ch" + h + "haveCard" + i);
-			/*PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,0);//가지고있는카드초기화
-			int cc = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);//카드수
-			cc--;
-			if (cc >= 0) {
-				PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,1);
-			}//EndOfIf
-			//PlayerPrefs.Save();
-			*/
-		}//EndOfFor
-	}
 		
 	//데이터를 불러오는 함수 불러오는값: 게임 플레이 순서별로 해당되는 타입의 배열반환하는 값 s -1
 	public List<int> LoadData(int ch_num, int tp_num){
 		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
-		checkHave ();
+
 
 
 		int i_chapter = ch_num;
@@ -106,12 +91,14 @@ public class DataHandler : MonoBehaviour {
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
 					if (tp == i_type) {
+						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
 						Debug.Log ("ch"+i_chapter+"haveCard"+i);
 						if (h_Card == 1) {
-							index_list.Add(i + 1);
+							index_list.Add(i);
 							ci++;
 						}
+						i--;
 					}
 				}
 			}//EndOfFor
@@ -128,7 +115,7 @@ public class DataHandler : MonoBehaviour {
 					if (tp == i_type) {
 						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-						Debug.Log ("ch"+i_chapter+"haveCard"+i);
+						Debug.Log ("ch"+i_chapter+"haveCard"+i+"="+h_Card);
 						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);

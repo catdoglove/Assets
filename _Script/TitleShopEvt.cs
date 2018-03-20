@@ -154,7 +154,7 @@ public class TitleShopEvt : MonoBehaviour {
 			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
 		}
 		Debug.Log ("total" + cc);
-		if (cc < 60) {
+		if (cc < 100) {
 			randomCard (type_i, cardNum_i);
 		} else {
 			//카드수가너무많음ㄷ
@@ -179,12 +179,12 @@ public class TitleShopEvt : MonoBehaviour {
 				int r =DataLoad.data_list[type][Random.Range (0, ran)];
 				randCard_i[i] = r;
 				Debug.Log (randCard_i [i]);
-				/*
+
 				int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + r, 0);
 				k++;
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + r, k);
 				PlayerPrefs.Save ();
-				*/
+
 				coin_txt.text="100";
 			}
 			//옆집에서스프라이트가져오기
@@ -198,12 +198,14 @@ public class TitleShopEvt : MonoBehaviour {
 			if (isnc == 0) {
 				//뉴 표시를 보여줌
 				newCard.SetActive (true);
-				//PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
-				//PlayerPrefs.Save();
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
+				PlayerPrefs.Save();
 			}
 		} else {
 			//돈이부족하다
-			coin = coin - 100;
+			if (num == 5) {
+				coin = coin - 100;
+			}
 		}
 
 
@@ -230,8 +232,8 @@ public class TitleShopEvt : MonoBehaviour {
 			if (isnc == 0) {
 				//뉴 표시를 보여줌
 				newCard.SetActive (true);
-				//PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
-				//PlayerPrefs.Save();
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [num_i], 1);
+				PlayerPrefs.Save();
 			}
 
 			break;
