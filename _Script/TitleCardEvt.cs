@@ -39,6 +39,9 @@ public class TitleCardEvt : MonoBehaviour {
 		//List<Dictionary<string,object>> data = CSVReader.Read("CardData");
 		//dtLoad.what_list_ch1.Add(1);
 
+		int d = PlayerPrefs.GetInt ("dust", 0);
+		cardDust_txt.text = d.ToString ();
+
 		cardWindow.SetActive (true);
 		chpNum = allNum.chapter1;
 		typeNum = allNum.typeWho;
@@ -183,6 +186,7 @@ public class TitleCardEvt : MonoBehaviour {
 		//전부초기화
 		for (int i = 0; i < 16; i++) {
 			cardBtn[i].SetActive (false);
+			cardBlind [i].SetActive (false);
 		}
 		for (int j = 0; j < DataLoad.data_list [i_tp].Count; j++) {
 			int num = DataLoad.data_list [i_tp] [j];
@@ -190,14 +194,15 @@ public class TitleCardEvt : MonoBehaviour {
 			cardBtn [j].GetComponent<Image> ().sprite = card_spr [num];
 			//카드의숫자를 띄워준다
 			int h =PlayerPrefs.GetInt("ch"+1+"cardnum"+num,0);//카드갯수
+			Debug.Log(h+"====------"+num);
 			cardNum_txt [j].text = ""+ h;
 			//카드가 얻은 적있는 카드인지 확인해준다
-			/*
+
 			int iscb = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + num, 0);
 			if (iscb == 0) {
 				cardBlind [j].SetActive (true);
 			}
-			*/
+
 		}
 
 
@@ -217,44 +222,76 @@ public class TitleCardEvt : MonoBehaviour {
 		//카드그림출력
 		cardInfoImg.GetComponent<Image>().sprite=card_spr[num];
 		//카드번호저장
-
+		PlayerPrefs.SetInt ("cinstantnum", c_Num);
 		PlayerPrefs.SetInt ("instantnum", num);
 	}
 
 	//다른곳으로스프라이트빌려주기
-	public Sprite cardImgReturnShop(int num){
-		return card_spr [num];
+	public Sprite cardImgReturnShop(int nums){
+		return card_spr [nums];
 	}
 
 	//카드갈기
 	public void cardChangeToDust(){
-		//카드불러옴 가루불러옴
-		int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
-		int dust = PlayerPrefs.GetInt ("dust", 0);
-		if (iscn > 0) {
-			//카드갈기
-			iscn--;
-			dust = dust + 10;
-			//PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), iscn);
-			//PlayerPrefs.SetInt ("dust", dust);
-			//PlayerPrefs.Save ();
-		}else{
-			//카드가 없어서 못갈아
+		//카드가언제카드일때는못함
+		int swt = PlayerPrefs.GetInt ("instantnum", 0);
+		switch (swt) {
+		case 8:
+			break;
+		case 10:
+			break;
+		case 11:
+			break;
+		default:
+			//카드불러옴 가루불러옴
+			int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
+			int dust = PlayerPrefs.GetInt ("dust", 0);
+			if (iscn > 0) {
+				//카드갈기
+				iscn--;
+				dust = dust + 10;
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), iscn);
+				PlayerPrefs.SetInt ("dust", dust);
+				PlayerPrefs.Save ();
+				cardNum_txt [PlayerPrefs.GetInt ("cinstantnum", 0)].text = ""+iscn;
+				cardDust_txt.text = ""+dust;
+				powderCardWid.SetActive (false);
+			}else{
+				//카드가 없어서 못갈아
+			}
+			break;
 		}
+
+
 	}
 
 	//카드생성
 	public void dustChangeToCard(){
-		int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
-		int dust = PlayerPrefs.GetInt ("dust", 0);
-		if (dust >= 100) {
-			dust = dust - 100;
-			iscn++;
-			//PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), iscn);
-			//PlayerPrefs.SetInt ("dust", dust);
-			//PlayerPrefs.Save ();
-		} else {
-			//가루가 없서 못만들어
+		//카드가언제카드일때는못함
+		int swt = PlayerPrefs.GetInt ("instantnum", 0);
+		switch (swt) {
+		case 8:
+			break;
+		case 10:
+			break;
+		case 11:
+			break;
+		default:
+			int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
+			int dust = PlayerPrefs.GetInt ("dust", 0);
+			if (dust >= 100) {
+				dust = dust - 100;
+				iscn++;
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), iscn);
+				PlayerPrefs.SetInt ("dust", dust);
+				PlayerPrefs.Save ();
+				cardNum_txt [PlayerPrefs.GetInt ("cinstantnum", 0)].text = ""+iscn;
+				cardDust_txt.text = ""+dust;
+				newCardWid.SetActive (false);
+			} else {
+				//가루가 없서 못만들어
+			}
+			break;
 		}
 
 	}
