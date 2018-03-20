@@ -45,7 +45,7 @@ public class TitleBookEvt : MonoBehaviour {
 			k = i + 1;
 			//PlayerPrefs.SetInt ("books"+k, 0);
 			bookLoad [i] = PlayerPrefs.GetInt ("books"+k, 0);//도감모으기에 성공한걸불러오기
-			//Debug.Log(bookLoad [i]);
+
 		}
 		//이야기데이터불러오기
 		//시리즈넘버가달라지는 부분을체크해서 어디서부터 어디까지가 하나 인지 확인해줌
@@ -73,8 +73,6 @@ public class TitleBookEvt : MonoBehaviour {
 		int h = 0;
 		for (int j = 0; j < k+1; j++) {
 			PlayerPrefs.SetInt ("clearbook" + j, 0);
-			//Debug.Log("clearbook" + j);
-			//Debug.Log(PlayerPrefs.GetInt ("clearbook" + j, 0));
 			int s = 0;
 			for (int i = 0; i < bookSeries [j]; i++) {
 				Debug.Log (bookLoad [h]+"--"+h);
@@ -97,7 +95,6 @@ public class TitleBookEvt : MonoBehaviour {
 		booksImg [0].GetComponent<Image> ().sprite = books_spr[0];
 		if (PlayerPrefs.GetInt ("clearbook" + 0, 0) == 1) {
 
-			//Debug.Log (PlayerPrefs.GetInt ("clearbook" + 0, 0));
 			blind [0].SetActive (false);
 		}
 		booksImg [1].GetComponent<Image> ().sprite = books_spr[1];

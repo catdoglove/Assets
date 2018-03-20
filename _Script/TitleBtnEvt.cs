@@ -56,6 +56,9 @@ public class TitleBtnEvt : MonoBehaviour {
 	}
 
 	public void showStartWindow(){
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 8, 1);
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 11, 1);
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 10, 1);
 		startWindow.SetActive (true);
 		showBlackBack ();
 	}
@@ -75,18 +78,21 @@ public class TitleBtnEvt : MonoBehaviour {
 		//여기서카드가 없을때를생각해주기
 		int cc = 0;
 		int f = 0;
+		int k = 1;
 		for (int j = 0; j < 6; j++) {
-
+			cc = 0;
 			for (int i = 0; i < DataLoad.data_list [j].Count; i++) {
-				
-				cc = cc+ PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+				k = DataLoad.data_list [j] [i];
+				cc = cc+ PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + k, 0);
+				Debug.Log (k+"=========="+cc);
+
 			}
 			if (cc == 0) {
 				not_str[6] = not_str[6]  + not_str [j];
 				f = 1;
 			}
 		}//endOfFor
-		SceneManager.LoadScene ("Game");
+
 		if (f == 1) {
 			not_str [6] =not_str [6] +"\n카드가 없습니다.";
 			warring_txt.text = not_str [6];
@@ -94,7 +100,26 @@ public class TitleBtnEvt : MonoBehaviour {
 			StartCoroutine ("cardNotReady");////->코룬틴
 		
 		} else {
-		
+			//카드초기화
+			List<Dictionary<string,object>> data = CSVReader.Read("CardData");
+			for (var i = 0; i < data.Count; i++) {
+				int h = 1;
+				//PlayerPrefs.SetInt ("ch" + h + "haveCard" + i, 1);
+				int hm = (int)data[i]["Index"];
+				h = i + 1;
+				PlayerPrefs.SetInt ("ch"+1+"haveCard"+h,0);//가지고있는카드초기화
+				int ccc = PlayerPrefs.GetInt ("ch"+1+"cardnum"+i,0);//카드수
+				ccc--;
+				Debug.Log ("i=" + i + "cc" + ccc);
+
+				if (ccc >= 0) {
+					PlayerPrefs.SetInt ("ch"+1+"haveCard"+h,1);
+				}//EndOfIf
+
+				PlayerPrefs.Save();
+
+			}//EndOfFor
+			SceneManager.LoadScene ("Game");
 			//SceneManager.LoadScene ("Game");
 		}
 	}
