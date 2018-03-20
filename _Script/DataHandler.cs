@@ -54,6 +54,7 @@ public class DataHandler : MonoBehaviour {
 										for (int j = 1; j < 6; j++) {
 											int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + end_num [j], 0);
 											iscn--;
+											end_num [j]--;
 											PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
 											PlayerPrefs.Save();
 										}

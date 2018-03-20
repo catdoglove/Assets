@@ -284,8 +284,10 @@ public class TitleCardEvt : MonoBehaviour {
 				iscn++;
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), iscn);
 				PlayerPrefs.SetInt ("dust", dust);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + PlayerPrefs.GetInt ("instantnum", 0), 1);
 				PlayerPrefs.Save ();
 				cardNum_txt [PlayerPrefs.GetInt ("cinstantnum", 0)].text = ""+iscn;
+				cardBlind [PlayerPrefs.GetInt ("cinstantnum", 0)].SetActive (false);
 				cardDust_txt.text = ""+dust;
 				newCardWid.SetActive (false);
 			} else {
