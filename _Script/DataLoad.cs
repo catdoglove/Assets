@@ -14,6 +14,15 @@ public class DataLoad : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
+		//언제카드처음부터가지고있게하기
+		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 8, 1);
+		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 11, 1);
+		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 10, 1);
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 8, 2);
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 11, 2);
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 10, 2);
+
+
         //표지판
         titleSignGO[0].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0)];
         titleSignGO[1].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0) + 1];
