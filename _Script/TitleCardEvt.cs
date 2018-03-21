@@ -28,6 +28,8 @@ public class TitleCardEvt : MonoBehaviour {
 	public Text[] cardNum_txt;
 	//카드가루
 	public Text cardDust_txt;
+	//페이드
+	Color color;
 
 
 	public void showCardWindow(){
@@ -256,6 +258,7 @@ public class TitleCardEvt : MonoBehaviour {
 				cardNum_txt [PlayerPrefs.GetInt ("cinstantnum", 0)].text = ""+iscn;
 				cardDust_txt.text = ""+dust;
 				powderCardWid.SetActive (false);
+				//StartCoroutine ("imgFadeOut");
 			}else{
 				//카드가 없어서 못갈아
 			}
@@ -290,6 +293,7 @@ public class TitleCardEvt : MonoBehaviour {
 				cardBlind [PlayerPrefs.GetInt ("cinstantnum", 0)].SetActive (false);
 				cardDust_txt.text = ""+dust;
 				newCardWid.SetActive (false);
+				//StartCoroutine ("imgFadeIn");
 			} else {
 				//가루가 없서 못만들어
 			}
@@ -298,5 +302,33 @@ public class TitleCardEvt : MonoBehaviour {
 
 	}
 
+
+	//그거할것임페이드인
+	IEnumerator imgFadeIn(){
+
+		color = cardInfoImg.GetComponent<Image>().color;	
+
+		for (float i = 0f; i < 1f; i += 0.05f) {
+			Debug.Log (i);
+			color.a = Mathf.Lerp (0f, 1f, i);
+			cardInfoImg.GetComponent<Image>().color = color;
+			yield return null;
+		}
+		infoCardWid.SetActive (false);
+	}
+
+	IEnumerator imgFadeOut(){
+
+		color = cardInfoImg.GetComponent<Image>().color;	
+
+		for (float i = 1f; i > 0f; i -= 0.05f) {
+			color.a = Mathf.Lerp (0f, 1f, i);
+			cardInfoImg.GetComponent<Image>().color = color;
+			yield return null;
+		}
+		color.a = Mathf.Lerp (0f, 1f, 1f);
+		cardInfoImg.GetComponent<Image>().color = color;
+		infoCardWid.SetActive (false);
+	}
 
 }

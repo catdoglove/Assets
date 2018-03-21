@@ -11,6 +11,7 @@ public class DataHandler : MonoBehaviour {
 	List<int> index_list =new List<int>();
 
 
+
 	// Use this for initialization
 	void Start () {
 		
@@ -52,9 +53,9 @@ public class DataHandler : MonoBehaviour {
 										Debug.Log ("---------------------------------------성공");
 										//카드소모
 										for (int j = 1; j < 6; j++) {
+											end_num [j]--;
 											int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + end_num [j], 0);
 											iscn--;
-											end_num [j]--;
 											PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
 											PlayerPrefs.Save();
 										}//endOfFor
@@ -230,4 +231,7 @@ public class DataHandler : MonoBehaviour {
 
 		return index_list;
 	}//EndOfLoadData
+
+
+
 }

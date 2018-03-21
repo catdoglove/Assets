@@ -33,6 +33,9 @@ public class PrefabsMake : MonoBehaviour {
 	public GameObject[] spr_illust;
 	//엔딩 보여주기
 	public Sprite[] endIllust_spr;
+	//엔딩페이드
+	Color color, colorS;
+
 
 	//성공,실패
 	public static int soundck =0;
@@ -68,17 +71,24 @@ public class PrefabsMake : MonoBehaviour {
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
 				spr_illust [4].SetActive (true);
+			
+				//페이드인
+				StartCoroutine ("imgFadeIn");
 				Debug.Log ("?????????"+end);
 				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [0];
+				//페이드인
+				//StartCoroutine ("imgFadeInS");
 				soundck = 11;
 			}else { //실패
+				//페이드인
+				//StartCoroutine ("imgFadeInS");
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
 				soundck = 22;				
 			}
 			spr_illust [5].SetActive (true);
 			end_mach = 0;
-
+			call_card = 0;
 			
 		}else if (call_card == 1) {
 			//카드를 놓았을때 그림을띄워준다
@@ -236,6 +246,25 @@ public class PrefabsMake : MonoBehaviour {
 	}
 
 
+	IEnumerator imgFadeIn(){
 
+		color = spr_illust [4].GetComponent<SpriteRenderer>().color;	
 
+		for (float i = 0f; i < 1f; i += 0.05f) {
+			color.a = Mathf.Lerp (0f, 1f, i);
+			spr_illust [4].GetComponent<SpriteRenderer>().color = color;
+			yield return null;
+		}
+	}
+	IEnumerator imgFadeInS(){
+
+		colorS = succfailImg.GetComponent<SpriteRenderer>().color;	
+
+		for (float i = 0f; i < 1f; i += 0.05f) {
+			Debug.Log (i);
+			colorS.a = Mathf.Lerp (0f, 1f, i);
+			succfailImg.GetComponent<SpriteRenderer>().color = colorS;
+			yield return null;
+		}
+	}
 }

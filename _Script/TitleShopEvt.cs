@@ -249,13 +249,15 @@ public class TitleShopEvt : MonoBehaviour {
 	//그거할것임페이드인
 	IEnumerator imgFadeIn(){
 
-		color = showCard.GetComponent<Image>().color;		
-		for (float i = 0f; i < 255f; i += 0.05f) {				
+		color = showCard.GetComponent<Image>().color;	
+
+		for (float i = 0f; i < 1f; i += 0.05f) {
+			Debug.Log (i);
 			color.a = Mathf.Lerp (0f, 1f, i);
 			showCard.GetComponent<Image>().color = color;
 			yield return null;
 		}
-		StopCoroutine ("imgFadeIn");
+		//StopCoroutine ("imgFadeIn");
 	}
 
 }
