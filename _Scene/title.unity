@@ -389,7 +389,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 764904250}
-        m_MethodName: item_BookReload
+        m_MethodName: item_Bookmark4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -420,7 +420,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300002, guid: acf9d930ebdba0f4a981bb33af3af463, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 9c3edc838fae13e4aaa0f05caf7497aa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 97186695}
   - component: {fileID: 97186694}
   m_Layer: 0
-  m_Name: "\uD1A0\uB07C"
+  m_Name: rabbit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1192,7 +1192,7 @@ RectTransform:
   m_GameObject: {fileID: 111062311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.013898595, y: 0.013898595, z: 0.013898595}
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 303846454}
@@ -7551,7 +7551,7 @@ GameObject:
   - component: {fileID: 504115337}
   - component: {fileID: 504115336}
   m_Layer: 0
-  m_Name: "\uADF8\uB9BC\uC790"
+  m_Name: shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12330,7 +12330,7 @@ GameObject:
   - component: {fileID: 810537250}
   - component: {fileID: 810537249}
   m_Layer: 0
-  m_Name: "\uBC84\uC12F"
+  m_Name: mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12915,7 +12915,7 @@ RectTransform:
   m_GameObject: {fileID: 833427199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.016666666, y: 0.016666666, z: 0.016666666}
+  m_LocalScale: {x: 0.016678315, y: 0.016678315, z: 0.016678315}
   m_Children:
   - {fileID: 912302140}
   - {fileID: 810537248}
@@ -13761,7 +13761,7 @@ GameObject:
   - component: {fileID: 912302142}
   - component: {fileID: 912302141}
   m_Layer: 0
-  m_Name: "\uBD80\uC5C9\uC774"
+  m_Name: owl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14992,7 +14992,7 @@ GameObject:
   - component: {fileID: 1011325516}
   - component: {fileID: 1011325515}
   m_Layer: 0
-  m_Name: "\uC9D0\uBD07\uB530\uB9AC"
+  m_Name: backpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19320,7 +19320,7 @@ GameObject:
   - component: {fileID: 1383933330}
   - component: {fileID: 1383933329}
   m_Layer: 0
-  m_Name: "\uAC70\uBBF8"
+  m_Name: spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21770,7 +21770,7 @@ GameObject:
   - component: {fileID: 1501728954}
   - component: {fileID: 1501728953}
   m_Layer: 0
-  m_Name: "\uB9C8\uC2DC\uBA5C\uB85C"
+  m_Name: marshmallow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21838,7 +21838,7 @@ GameObject:
   - component: {fileID: 1522594627}
   - component: {fileID: 1522594626}
   m_Layer: 0
-  m_Name: "\uACE0\uAD6C\uB9C8"
+  m_Name: sweetpotato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27228,7 +27228,7 @@ GameObject:
   - component: {fileID: 1842060216}
   - component: {fileID: 1842060215}
   m_Layer: 0
-  m_Name: "\uC2A4\uD29C"
+  m_Name: soup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28415,7 +28415,7 @@ GameObject:
   - component: {fileID: 1932031570}
   - component: {fileID: 1932031569}
   m_Layer: 0
-  m_Name: "\uC8FC\uBA39\uBC25"
+  m_Name: rice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28928,7 +28928,7 @@ GameObject:
   - component: {fileID: 1956529910}
   - component: {fileID: 1956529909}
   m_Layer: 0
-  m_Name: "\uC0DD\uC120"
+  m_Name: fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29168,7 +29168,7 @@ GameObject:
   - component: {fileID: 1978080020}
   - component: {fileID: 1978080019}
   m_Layer: 0
-  m_Name: "\uADF8\uB8E8\uD130\uAE30"
+  m_Name: tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

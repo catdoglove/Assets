@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 9c3edc838fae13e4aaa0f05caf7497aa
-timeCreated: 1521608714
+guid: 6a5bf68d4b773c240b5ca5331ef9334d
+timeCreated: 1521609002
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: title_deco_bookmark(270x165)_0
-    21300002: title_deco_bookmark(270x165)_1
-    21300004: title_deco_bookmark(270x165)_2
-    21300006: title_deco_bookmark(270x165)_3
+    21300000: bookmark (4)_0
+    21300002: bookmark (4)_1
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -109,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: title_deco_bookmark(270x165)_0
+      name: bookmark (4)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 270
-        height: 165
+        width: 95
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,41 +121,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: title_deco_bookmark(270x165)_1
+      name: bookmark (4)_1
       rect:
         serializedVersion: 2
-        x: 270
+        x: 95
         y: 0
-        width: 270
-        height: 165
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: title_deco_bookmark(270x165)_2
-      rect:
-        serializedVersion: 2
-        x: 540
-        y: 0
-        width: 270
-        height: 165
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: title_deco_bookmark(270x165)_3
-      rect:
-        serializedVersion: 2
-        x: 810
-        y: 0
-        width: 270
-        height: 165
+        width: 95
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -9,7 +9,7 @@ public class DataLoad : MonoBehaviour {
 	string str;
 
 
-    public GameObject[] titleSignGO;
+    public GameObject[] titleSignGO, titleBackgGO;
     public Sprite[] titleSignSpr;
     // Use this for initialization
     void Start () {
@@ -27,6 +27,16 @@ public class DataLoad : MonoBehaviour {
         titleSignGO[0].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0)];
         titleSignGO[1].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0) + 1];
         titleSignGO[2].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0) + 2];
+
+        //뒷배경
+        for(int i = 0; i < 12; i++)
+        {
+            if(PlayerPrefs.GetInt("decoBackG" + titleBackgGO[i], 0) == 1)
+            {
+                Debug.Log("test");
+                titleBackgGO[i].SetActive(true);
+            }
+        }
 
         dataLoadFirst ();
 
