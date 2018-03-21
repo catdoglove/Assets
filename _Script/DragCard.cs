@@ -197,12 +197,9 @@ public class DragCard : MonoBehaviour {
 		}	
 	}
 	public void cardFadeOut(){
-		switch (bgck) {
-		case true:
+
 			StartCoroutine ("imgFadeOut");
-			bgck = false;
-			break;
-		}	
+
 	}
 
 	IEnumerator imgFadeIn(){
@@ -219,7 +216,7 @@ public class DragCard : MonoBehaviour {
 	IEnumerator imgFadeOut(){
 
 		color = GetComponent<SpriteRenderer>().color;		
-		for (float i = 255f; i > 1f; i -= 0.05f) {				
+		for (float i = 255f; i > 0f; i -= 0.05f) {				
 			color.a = Mathf.Lerp (0f, 1f, i);
 			this.GetComponent<SpriteRenderer>().color = color;
 			yield return null;

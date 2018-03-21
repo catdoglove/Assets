@@ -30,6 +30,8 @@ public class TitleShopEvt : MonoBehaviour {
 	//카드뽑기정보전달
 	int type_i, cardNum_i;
 	int num_i;
+	//카드페이드인
+	Color color;
 
 	//돈
 	public Text coin_txt;
@@ -191,6 +193,7 @@ public class TitleShopEvt : MonoBehaviour {
 			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [0]);
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
+			StartCoroutine ("imgFadeIn");
 			showCard.GetComponent<Image> ().sprite = card_spr;
 			//지금 뽑은 카드가 새 카드인지 확인해보자
 			int isnc = 0;
@@ -226,6 +229,7 @@ public class TitleShopEvt : MonoBehaviour {
 			showCard.GetComponent<Image> ().sprite = card_spr;
 			blackBack.SetActive (true);
 			showCard.SetActive (true);
+			StartCoroutine ("imgFadeIn");
 			//지금 뽑은 카드가 새 카드인지 확인해보자
 			int isnc = 0;
 			isnc = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + randCard_i [num_i], 0);
@@ -240,4 +244,20 @@ public class TitleShopEvt : MonoBehaviour {
 		}
 
 	}
+
+
+	//그거할것임페이드인
+	IEnumerator imgFadeIn(){
+
+		color = showCard.GetComponent<Image>().color;	
+
+		for (float i = 0f; i < 1f; i += 0.05f) {
+			Debug.Log (i);
+			color.a = Mathf.Lerp (0f, 1f, i);
+			showCard.GetComponent<Image>().color = color;
+			yield return null;
+		}
+		//StopCoroutine ("imgFadeIn");
+	}
+
 }
