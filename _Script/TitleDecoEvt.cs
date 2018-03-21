@@ -17,6 +17,23 @@ public class TitleDecoEvt : MonoBehaviour {
     void Start()
     {
         changeSign();
+
+        //뒷배경
+        for (int i = 0; i < 12; i++)
+        {
+            if (PlayerPrefs.GetInt("decoBackG" + titleBackgGO[i], 0) == 1)
+            {
+                titleBackgGO[i].SetActive(true);
+            }
+        }
+        /*
+        //배경초기화코드! 나중에 지울것
+        for (int i = 0; i < 12; i++)
+        {
+            PlayerPrefs.SetInt("decoBackG" + titleBackgGO[i], 0);
+            titleBackgGO[i].SetActive(false);
+        }
+        */
     }
 
         public void clickTitleMark()
@@ -96,56 +113,72 @@ public class TitleDecoEvt : MonoBehaviour {
     //배경꾸밈
     public void item_BackG1()
     {
+        PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[0], 1);
         titleBackgGO[0].SetActive(true);
     }
     public void item_BackG2()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[1], 1);
         titleBackgGO[1].SetActive(true);
     }
     public void item_BackG3()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[2], 1);
         titleBackgGO[2].SetActive(true);
     }
     public void item_BackG4()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[3], 1);
         titleBackgGO[3].SetActive(true);
     }
 
     public void item_BackG5()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 1);
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 0);
         titleBackgGO[4].SetActive(true);
         titleBackgGO[5].SetActive(false);
     }
     public void item_BackG6()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 0);
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 1);
         titleBackgGO[4].SetActive(false);
         titleBackgGO[5].SetActive(true);
     }
 
     public void item_BackG7()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[6], 1);
         titleBackgGO[6].SetActive(true);
     }
     public void item_BackG8()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[7], 1);
         titleBackgGO[7].SetActive(true);
     }
     public void item_BackG9()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[8], 1);
         titleBackgGO[8].SetActive(true);
     }
     public void item_BackG10()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[9], 1);
         titleBackgGO[9].SetActive(true);
     }
 
     public void item_BackG11()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 1);
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 0);
         titleBackgGO[10].SetActive(true);
         titleBackgGO[11].SetActive(false);
     }
     public void item_BackG12()
     {
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 0);
+        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
         titleBackgGO[10].SetActive(false);
         titleBackgGO[11].SetActive(true);
     }
@@ -180,6 +213,10 @@ public class TitleDecoEvt : MonoBehaviour {
     public void item_Bookmark3()
     {
         PlayerPrefs.SetInt("decoBookmark", 6);
+    }
+    public void item_Bookmark4()
+    {
+        PlayerPrefs.SetInt("decoBookmark", 8);
     }
 
     //임시초기화
