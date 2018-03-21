@@ -57,7 +57,7 @@ public class DataHandler : MonoBehaviour {
 											end_num [j]--;
 											PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
 											PlayerPrefs.Save();
-										}
+										}//endOfFor
 
 									}
 								}
