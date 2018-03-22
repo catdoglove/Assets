@@ -22,67 +22,7 @@ public class DataLoad : MonoBehaviour {
 		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 11, 2);
 		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 10, 2);
 
-		/*
-		//토끼
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 4, 3);
-		//거북이
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 6, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 6, 3);
-		//돌
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 28, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 28, 1);
-		//간
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 25, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 25, 1);
-		//자다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 45, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 45, 1);
-		//속다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 34, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 34, 1);
-		//따가다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 44, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 44, 1);
-		//도망가다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 35, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 35, 1);
-		//그리고
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 52, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 52, 1);
-		//지다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 53, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 53, 1);
-		//떠나다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 46, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 46, 1);
-		//돌아오다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 47, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 47, 1);
-		//당하다
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 50, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 50, 1);
-		//들판
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 12, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 12, 3);
-		//숲
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 22, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 22, 3);
-		//바닷가
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 13, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 13, 3);
-		//용궁
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 14, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 14, 3);
 
-		//처음에나올카드들
-		PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 9, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 13, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 5, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 7, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 34, 1);
-		PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 53, 1);
-		*/
         //표지판
         titleSignGO[0].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0)];
         titleSignGO[1].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0) + 1];
@@ -175,8 +115,8 @@ public class DataLoad : MonoBehaviour {
 			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 11, 2);
 			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 10, 2);
 
-
 			PlayerPrefs.Save ();
+
 		}
 	}
 	

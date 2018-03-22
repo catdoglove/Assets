@@ -160,6 +160,8 @@ public class TitleShopEvt : MonoBehaviour {
 			randomCard (type_i, cardNum_i);
 		} else {
 			//카드수가너무많음ㄷ
+			GM.GetComponent<TitleCardEvt>().shopWarring();
+			GM.GetComponent<TitleCardEvt>().warringWord_txt.text="카드의 수가 너무 많아요";
 		}
 	}
 
@@ -223,6 +225,8 @@ public class TitleShopEvt : MonoBehaviour {
 			}
 		} else {
 			//돈이부족하다
+			GM.GetComponent<TitleCardEvt>().shopWarring();
+			GM.GetComponent<TitleCardEvt>().warringWord_txt.text="코인이 부족해요";
 			if (num == 5) {
 				coin = coin - 100;
 			}

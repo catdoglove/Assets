@@ -344,4 +344,7 @@ public class TitleCardEvt : MonoBehaviour {
 		cardWarring_obj.SetActive (false);
 	}
 
+	public void shopWarring(){
+		StartCoroutine ("NotReady");
+	}
 }
