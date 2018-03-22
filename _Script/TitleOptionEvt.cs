@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleOptionEvt : MonoBehaviour {
 
-	public Sprite [] onoffImgSpr,korengImgSpr;
-	public GameObject bgmBtn, seBtn, laugBtn, laugNotReady;
+	public Sprite [] onoffImgSpr,korengImgSpr, helpImgSpr;
+	public GameObject bgmBtn, seBtn, laugBtn, laugNotReady, helpWnd, helpImgGO;
 	public Button onoffBtn,onoffBtn2,onoffBtn3;
 	public SpriteState sprste = new SpriteState();
-	int ck,ck2,ck3;
+	int ck,ck2,ck3, pageNum=0;
 
 
 	public static AudioSource bgm_title;
@@ -71,7 +71,40 @@ public class TitleOptionEvt : MonoBehaviour {
 		}
 	}
 
-	public void laugOnOff(){
+    public void showHelpWnd()
+    {
+        helpWnd.SetActive(true);
+    }
+
+    public void closeHelpWnd()
+    {
+        helpWnd.SetActive(false);
+    }
+
+    public void showTitleHelpWnd()
+    {
+        helpWnd.SetActive(false);
+        pageNum = 0;
+        helpImgGO.GetComponent<Image>().sprite = helpImgSpr[pageNum];
+        helpImgGO.SetActive(true);
+    }
+
+    public void pageTitle()
+    {
+        if(pageNum < 7)
+        {
+            pageNum++;
+            helpImgGO.GetComponent<Image>().sprite = helpImgSpr[pageNum];
+        }
+        else { helpImgGO.SetActive(false); }
+    }
+
+    public void showGameHelpWnd()
+    {
+        Debug.Log("준비중");
+    }
+
+    public void laugOnOff(){
 		StartCoroutine ("imsi_LaugNotReady");
 		/* 준비중
 		switch (ck3) {
