@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleOptionEvt : MonoBehaviour {
 
-	public Sprite [] onoffImgSpr,korengImgSpr, helpImgSpr;
+	public Sprite [] onoffImgSpr,korengImgSpr, helpImgSpr, helpGameImgSpr;
 	public GameObject bgmBtn, seBtn, laugBtn, laugNotReady, helpWnd, helpImgGO;
 	public Button onoffBtn,onoffBtn2,onoffBtn3;
 	public SpriteState sprste = new SpriteState();
-	int ck,ck2,ck3, pageNum=0;
+	int ck,ck2,ck3, pageNum=0, ckTG;
 
 
 	public static AudioSource bgm_title;
@@ -83,27 +83,51 @@ public class TitleOptionEvt : MonoBehaviour {
 
     public void showTitleHelpWnd()
     {
+        ckTG = 1;
         helpWnd.SetActive(false);
         pageNum = 0;
         helpImgGO.GetComponent<Image>().sprite = helpImgSpr[pageNum];
         helpImgGO.SetActive(true);
     }
 
-    public void pageTitle()
-    {
-        if(pageNum < 7)
-        {
-            pageNum++;
-            helpImgGO.GetComponent<Image>().sprite = helpImgSpr[pageNum];
-        }
-        else { helpImgGO.SetActive(false); }
-    }
-
     public void showGameHelpWnd()
     {
-        Debug.Log("준비중");
+        ckTG = 2;
+        helpWnd.SetActive(false);
+        pageNum = 0;
+        helpImgGO.GetComponent<Image>().sprite = helpGameImgSpr[pageNum];
+        helpImgGO.SetActive(true);
+
     }
 
+    public void pageHelp()
+    {
+        switch (ckTG)
+        {
+            case 1://타이틀도움말
+
+                if (pageNum < 7)
+                {
+                    pageNum++;
+                    helpImgGO.GetComponent<Image>().sprite = helpImgSpr[pageNum];
+                }
+                else { helpImgGO.SetActive(false); }
+
+                break;
+
+            case 2: //게임도움말
+                
+                if (pageNum < 6)
+                {
+                    pageNum++;
+                    helpImgGO.GetComponent<Image>().sprite = helpGameImgSpr[pageNum];
+                }
+                else { helpImgGO.SetActive(false); }
+
+                break;
+        }
+    }
+        
     public void laugOnOff(){
 		StartCoroutine ("imsi_LaugNotReady");
 		/* 준비중
