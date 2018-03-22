@@ -48,6 +48,7 @@ public class DataHandler : MonoBehaviour {
 										//돈500+500
 										if (PlayerPrefs.GetInt ("books" + k, 0) == 0) {
 											newImg.SetActive (true);
+											PlayerPrefs.SetInt ("new",1);
 										}
 										PlayerPrefs.SetInt ("books"+k, 1);//도감에저장
 										Debug.Log ("---------------------------------------성공");

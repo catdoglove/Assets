@@ -165,9 +165,9 @@ public class TitleShopEvt : MonoBehaviour {
 
 
 	//카드랜덤뽑기
-	void randomCard(int type,int num){
+	public void randomCard(int type,int num){
 		str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,1000);
+		int coin = PlayerPrefs.GetInt(str,10000);
 
 		//할인되는 가격미리더해주기
 		if (num == 5) {
@@ -187,8 +187,25 @@ public class TitleShopEvt : MonoBehaviour {
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + r, k);
 				PlayerPrefs.Save ();
 
-				coin_txt.text="100";
+
 			}
+			switch (num) {
+			case 1:
+				coin = coin - 200;
+				break;
+			case 2:
+				
+				break;
+			case 5:
+				coin = coin - 1000;
+				break;
+			default:
+				break;
+			}
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.Save ();
+			coin_txt.text=""+coin;
+
 			//옆집에서스프라이트가져오기
 			card_spr = GM.GetComponent<TitleCardEvt> ().cardImgReturnShop (randCard_i [0]);
 			blackBack.SetActive (true);

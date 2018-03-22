@@ -41,6 +41,9 @@ public class PrefabsMake : MonoBehaviour {
 	public static int soundck =0;
 	public Sprite[] succfail_spr;
 	public GameObject succfailImg;
+	public GameObject succfailSpace;
+	public Text succfail_text;
+	string succfail_str;
 
 
 	// Use this for initialization
@@ -78,12 +81,20 @@ public class PrefabsMake : MonoBehaviour {
 				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [0];
 				//페이드인
-				//StartCoroutine ("imgFadeInS");
+				StartCoroutine ("imgFadeInS");
+				succfail_str="500";
+				if(PlayerPrefs.GetInt ("new",0)==1){
+					succfail_str="500 + 500";
+					PlayerPrefs.SetInt ("new",0);
+				}
+				succfail_text.text = succfail_str;
 				soundck = 11;
 			}else { //실패
 				//페이드인
-				//StartCoroutine ("imgFadeInS");
+				StartCoroutine ("imgFadeInS");
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
+				succfail_str="";
+				succfail_text.text = succfail_str;
 				soundck = 22;				
 			}
 			spr_illust [5].SetActive (true);
@@ -258,12 +269,13 @@ public class PrefabsMake : MonoBehaviour {
 	}
 	IEnumerator imgFadeInS(){
 
-		colorS = succfailImg.GetComponent<SpriteRenderer>().color;	
+		colorS = succfailImg.GetComponent<Image>().color;	
 
 		for (float i = 0f; i < 1f; i += 0.05f) {
 			Debug.Log (i);
 			colorS.a = Mathf.Lerp (0f, 1f, i);
-			succfailImg.GetComponent<SpriteRenderer>().color = colorS;
+			succfailImg.GetComponent<Image>().color = colorS;
+			succfailSpace.GetComponent<Image>().color = colorS;
 			yield return null;
 		}
 	}

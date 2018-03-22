@@ -31,6 +31,8 @@ public class TitleCardEvt : MonoBehaviour {
 	//페이드
 	Color color;
 
+	public GameObject cardWarring_obj;
+	public Text warringWord_txt;
 
 	public void showCardWindow(){
 		
@@ -258,9 +260,11 @@ public class TitleCardEvt : MonoBehaviour {
 				cardNum_txt [PlayerPrefs.GetInt ("cinstantnum", 0)].text = ""+iscn;
 				cardDust_txt.text = ""+dust;
 				powderCardWid.SetActive (false);
-				//StartCoroutine ("imgFadeOut");
+				StartCoroutine ("imgFadeOut");
 			}else{
 				//카드가 없어서 못갈아
+				StartCoroutine ("NotReady");
+				warringWord_txt.text = "카드가 없어요";
 			}
 			break;
 		}
@@ -293,9 +297,11 @@ public class TitleCardEvt : MonoBehaviour {
 				cardBlind [PlayerPrefs.GetInt ("cinstantnum", 0)].SetActive (false);
 				cardDust_txt.text = ""+dust;
 				newCardWid.SetActive (false);
-				//StartCoroutine ("imgFadeIn");
+				StartCoroutine ("imgFadeIn");
 			} else {
 				//가루가 없서 못만들어
+				StartCoroutine ("NotReady");
+				warringWord_txt.text = "재료가 부족해요";
 			}
 			break;
 		}
@@ -314,7 +320,7 @@ public class TitleCardEvt : MonoBehaviour {
 			cardInfoImg.GetComponent<Image>().color = color;
 			yield return null;
 		}
-		infoCardWid.SetActive (false);
+		//infoCardWid.SetActive (false);
 	}
 
 	IEnumerator imgFadeOut(){
@@ -328,7 +334,14 @@ public class TitleCardEvt : MonoBehaviour {
 		}
 		color.a = Mathf.Lerp (0f, 1f, 1f);
 		cardInfoImg.GetComponent<Image>().color = color;
-		infoCardWid.SetActive (false);
+		//infoCardWid.SetActive (false);
+	}
+
+	//준비중
+	IEnumerator NotReady(){
+		cardWarring_obj.SetActive (true);
+		yield return new WaitForSeconds (1f);
+		cardWarring_obj.SetActive (false);
 	}
 
 }
