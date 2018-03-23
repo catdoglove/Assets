@@ -243,6 +243,7 @@ public class TitleShopEvt : MonoBehaviour {
 
 		switch (num_i) {
 		case 1:
+			GM.GetComponent<TutorialEvt> ().tutorialTalkBtn ();
 			break;
 		default:
 			num_i--;

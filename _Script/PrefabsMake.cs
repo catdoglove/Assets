@@ -46,6 +46,10 @@ public class PrefabsMake : MonoBehaviour {
 	string succfail_str;
 
 
+	//튜토리얼
+	public GameObject GM;
+
+
 	// Use this for initialization
 	void Start () {
 		//생성된 리스트에 받아온 데이터값을 넣어준다-1
@@ -70,6 +74,7 @@ public class PrefabsMake : MonoBehaviour {
 
 		//엔딩확인하기
 		if(end_mach == 1){
+			GM.GetComponent<TutorialEvt>().tutorialSpace_obj.SetActive (true);
 			int end;
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
@@ -109,6 +114,8 @@ public class PrefabsMake : MonoBehaviour {
 			call_card = 0;
 			
 		}else if (call_card == 1) {
+			GM.GetComponent<TutorialEvt>().tutorialSpace_obj.SetActive (true);
+			PlayerPrefs.SetInt ("dontmove", 1);
 			//카드를 놓았을때 그림을띄워준다
 			int type_check = 0;
 			switch (PrefabsMake.type_num) {

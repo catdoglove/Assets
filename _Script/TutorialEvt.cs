@@ -5,20 +5,41 @@ using UnityEngine.UI;
 
 public class TutorialEvt : MonoBehaviour {
 	public Text tutorial_txt;
-	public GameObject tutorialSpace_obj, tutorialreward_obj;
+	public GameObject tutorialSpace_obj, tutorialreward_obj, tutotialdel_btn;
 	public GameObject tutorialTalk_btn;
 	public GameObject[] tutorialBack_obj;
-	public int tutorial_i;
+	public int tutorial_i, game_i;
 	List<Dictionary<string,object>> data;
+	int b = 0;
+
+	public GameObject[] closeall;
 
 	// Use this for initialization
 	void Start () {
-		int c = PlayerPrefs.GetInt ("tutorial", 0);
-		if (c == 0) {
+		int s = PlayerPrefs.GetInt ("tutorial_i", 0);
+		if (s == 4 && game_i == 4) {
 			data = CSVReader.Read ("tutorial");
+			tutorial_i = PlayerPrefs.GetInt ("tutorial_i", 0);
+
 			tutorialSpace_obj.SetActive (true);
-			tutorial_txt.text =""+data [0] ["txt"];
-			//tutorialBack_obj.SetActive (true);
+			tutorial_i++;
+			tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+			tutotialdel_btn.SetActive (false);
+		} else {
+			int c = PlayerPrefs.GetInt ("tutorial", 0);
+			if (c == 0) {
+				data = CSVReader.Read ("tutorial");
+				tutorialSpace_obj.SetActive (true);
+				tutorial_txt.text = "" + data [0] ["txt"];
+				//tutorialBack_obj.SetActive (true);
+			}else if(c==2){
+				data = CSVReader.Read ("tutorial");
+				tutorialSpace_obj.SetActive (true);
+				PlayerPrefs.SetInt ("tutorial_i", 25);
+				tutorial_i=PlayerPrefs.GetInt ("tutorial_i", 0);
+				tutorial_txt.text = "" + data [PlayerPrefs.GetInt ("tutorial_i", 0)] ["txt"];
+
+			}
 		}
 	}
 	
@@ -28,118 +49,319 @@ public class TutorialEvt : MonoBehaviour {
 	}
 
 	public void tutorialTalkBtn(){
-		if (tutorial_i < 44) {
-			
+		if (tutorial_i < 46) {
 			switch (tutorial_i) {
-			case 91:
+			case 1:
+				tutorialBack_obj [0].SetActive (true);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
 				break;
-			case 94:
+			case 2:
+				if (b == 0) {
+					tutorialBack_obj [0].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					b++;
+				} else {
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
 				break;
-			case 99:
+			case 4:
+				if (b == 0) {
+					tutorialBack_obj [1].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					b++;
+				} else {
+					tutorialBack_obj [1].SetActive (false);
+					tutorialBack_obj [2].SetActive (true);
+					//처음에나올카드들
+					for(int i=0;i<54;i++){
+						PlayerPrefs.SetInt ("ch"+1+"haveCard"+i,0);
+					}
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 8, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 12, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 6, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 4, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 33, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 52, 1);
+
+					PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 9, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 13, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 7, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 5, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 34, 1);
+					PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 53, 1);
+					PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
+					PlayerPrefs.SetInt ("dontmove", 1);
+					PlayerPrefs.Save ();
+					b = 0;
+				}
 				break;
-			case 911:
+			case 9:
+				PlayerPrefs.SetInt ("dontmove", 2);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
 				break;
-			case 912:
+			case 11:
+				PlayerPrefs.SetInt ("dontmove", 2);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
 				break;
-			case 914:
+			case 12:
+				PlayerPrefs.SetInt ("dontmove", 2);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
 				break;
-			case 920:
+			case 14:
+				PlayerPrefs.SetInt ("dontmove", 2);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
 				break;
-			case 925:
+			case 17:
+				PlayerPrefs.SetInt ("dontmove", 2);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
+				break;
+			case 20:
+				PlayerPrefs.SetInt ("dontmove", 2);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
+				PlayerPrefs.Save ();
+				break;
+			case 25:
 				//씬이동
+				if (PlayerPrefs.GetInt ("tutorial", 0) == 2) {
+					
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+
+				} else {
+					PlayerPrefs.SetInt ("dontmove", 2);
+					tutorialSpace_obj.SetActive (false);
+					PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
+					PlayerPrefs.SetInt ("tutorial", 2);
+					PlayerPrefs.Save ();
+				}
 				break;
-			case 926:
+			case 26:
+				tutorialBack_obj [3].SetActive (true);
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
 				break;
-			case 927:
+			case 27:
+				if (b == 0) {
+					tutorialBack_obj [3].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					b++;
+				} else {
+					tutorialBack_obj [4].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
+
+
 				break;
-			case 930:
+			case 28:
+				if (b == 0) {
+					tutorialBack_obj [4].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					b++;
+				} else {
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
 				break;
-			case 931:
+			case 30:
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				closeall [0].SetActive (false);
+				closeall [1].SetActive (false);
+				closeall [2].SetActive (false);
 				break;
-			case 936:
+			case 31:
+				if (b == 0) {
+					tutorialBack_obj [5].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					b++;
+				} else {
+					tutorialBack_obj [5].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
 				break;
-			case 937:
+
+
+			case 36:
+				tutorial_i++;
+				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				closeall [3].SetActive (false);
+				closeall [2].SetActive (false);
 				break;
-			case 939:
+			case 37:
+				if (b == 0) {
+					tutorialBack_obj [6].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					b++;
+				} else {
+					tutorialBack_obj [6].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
 				break;
-			case 942:
+			case 39:
+				if (b == 0) {
+					tutorialBack_obj [7].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					b++;
+				} else {
+					tutorialBack_obj [7].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					string str = PlayerPrefs.GetString ("code", "");
+					PlayerPrefs.SetInt(str,900);
+					b = 0;
+				}
 				break;
-			case 943:
+			case 42:
+				if (b == 0) {
+					tutorialBack_obj [8].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					b++;
+				} else {
+					tutorialBack_obj [8].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
 				break;
-			case 9199:
-				//처음에나올카드들
-				PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 9, 1);
-				PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 13, 1);
-				PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 5, 1);
-				PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 7, 1);
-				PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 34, 1);
-				PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + 53, 1);
+			case 43:
+				if (b == 0) {
+					tutorialBack_obj [9].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					b++;
+				} else {
+					tutorialBack_obj [9].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
+				break;
+			case 44:
+				if (b == 0) {
+					tutorialBack_obj [10].SetActive (true);
+					tutorialSpace_obj.SetActive (false);
+					b++;
+				} else {
+					tutorialBack_obj [10].SetActive (false);
+					tutorialSpace_obj.SetActive (true);
+					tutorial_i++;
+					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					b = 0;
+				}
+				break;
+			case 45:
+				tutorialSpace_obj.SetActive (false);
+				tutorial_i++;
+				break;
+			case 46:
+				tutorialSpace_obj.SetActive (false);
+				tutorialreward_obj.SetActive (true);
+		//토끼
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 4, 3);
+				//거북이
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 6, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 6, 3);
+				//돌
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 28, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 28, 1);
+				//간
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 25, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 25, 1);
+				//자다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 45, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 45, 1);
+				//속다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 34, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 34, 1);
+				//따가다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 44, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 44, 1);
+				//도망가다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 35, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 35, 1);
+				//그리고
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 52, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 52, 1);
+				//지다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 53, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 53, 1);
+				//떠나다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 46, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 46, 1);
+				//돌아오다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 47, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 47, 1);
+				//당하다
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 50, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 50, 1);
+				//들판
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 12, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 12, 3);
+				//숲
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 22, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 22, 3);
+				//바닷가
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 13, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 13, 3);
+				//용궁
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 14, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 14, 3);
+
+				PlayerPrefs.SetInt ("tutorial", 99);
+				PlayerPrefs.SetInt ("tutorial_i", 99);
 				break;
 
 			default:
 				tutorial_i++;
 				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+				PlayerPrefs.SetInt ("tutorial_i", tutorial_i);
+				PlayerPrefs.Save ();
 				break;
 			}
 		} else {
 			tutorialSpace_obj.SetActive (false);
 			//tutorialBack_obj.SetActive (false);
-			tutorialreward_obj.SetActive (true);
-			/*
-		//토끼
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 4, 3);
-			//거북이
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 6, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 6, 3);
-			//돌
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 28, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 28, 1);
-			//간
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 25, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 25, 1);
-			//자다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 45, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 45, 1);
-			//속다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 34, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 34, 1);
-			//따가다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 44, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 44, 1);
-			//도망가다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 35, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 35, 1);
-			//그리고
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 52, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 52, 1);
-			//지다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 53, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 53, 1);
-			//떠나다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 46, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 46, 1);
-			//돌아오다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 47, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 47, 1);
-			//당하다
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 50, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 50, 1);
-			//들판
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 12, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 12, 3);
-			//숲
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 22, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 22, 3);
-			//바닷가
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 13, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 13, 3);
-			//용궁
-			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 14, 1);
-			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 14, 3);
+			//tutorialreward_obj.SetActive (true);
 
-
-			*/
 		}
+	}
+
+	public void closeReward(){
+		tutorialreward_obj.SetActive (false);
 	}
 }

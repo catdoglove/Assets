@@ -7,7 +7,6 @@ public class DataHandler : MonoBehaviour {
 	public GameObject newImg;
 
 
-
 	List<int> index_list =new List<int>();
 
 
@@ -95,7 +94,6 @@ public class DataHandler : MonoBehaviour {
 					if (tp == i_type) {
 						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-						Debug.Log ("ch"+i_chapter+"haveCard"+i);
 						if (h_Card == 1) {
 							index_list.Add(i);
 							ci++;
@@ -117,7 +115,6 @@ public class DataHandler : MonoBehaviour {
 					if (tp == i_type) {
 						i++;
 						int h_Card = PlayerPrefs.GetInt ("ch"+i_chapter+"haveCard"+i,1);
-						Debug.Log ("ch"+i_chapter+"haveCard"+i+"="+h_Card);
 						i--;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);

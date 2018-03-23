@@ -94,11 +94,14 @@ public class TitleBtnEvt : MonoBehaviour {
 		}//endOfFor
 
 		if (f == 1) {
-			not_str [6] =not_str [6] +"\n카드가 없습니다.";
-			warring_txt.text = not_str [6];
-			warringCard.SetActive (true);
-			StartCoroutine ("cardNotReady");////->코룬틴
-		
+			if (PlayerPrefs.GetInt ("tutorial", 0) == 0) {
+				SceneManager.LoadScene ("Game");
+			} else {
+				not_str [6] = not_str [6] + "\n카드가 없습니다.";
+				warring_txt.text = not_str [6];
+				warringCard.SetActive (true);
+				StartCoroutine ("cardNotReady");
+			}
 		} else {
 			//카드초기화
 			List<Dictionary<string,object>> data = CSVReader.Read("CardData");
@@ -107,12 +110,19 @@ public class TitleBtnEvt : MonoBehaviour {
 				//PlayerPrefs.SetInt ("ch" + h + "haveCard" + i, 1);
 				int hm = (int)data[i]["Index"];
 				h = i + 1;
-				PlayerPrefs.SetInt ("ch"+1+"haveCard"+h,0);//가지고있는카드초기화
+				if (PlayerPrefs.GetInt ("tutorial_i", 0) == 4) {
+
+				} else {
+					PlayerPrefs.SetInt ("ch"+1+"haveCard"+h,0);//가지고있는카드초기화
+				}
 				int ccc = PlayerPrefs.GetInt ("ch"+1+"cardnum"+i,0);//카드수
 				ccc--;
 				Debug.Log ("i=" + i + "cc" + ccc);
 
-				if (ccc >= 0) {
+
+				if (PlayerPrefs.GetInt ("tutorial_i", 0) == 4) {
+
+				}else if (ccc >= 0) {
 					PlayerPrefs.SetInt ("ch"+1+"haveCard"+h,1);
 				}//EndOfIf
 
