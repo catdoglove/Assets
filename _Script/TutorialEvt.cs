@@ -41,6 +41,10 @@ public class TutorialEvt : MonoBehaviour {
 
 			}
 		}
+		if (PlayerPrefs.GetInt ("tutorial", 0) == 99) {
+			tutorial_i = PlayerPrefs.GetInt ("tutorial_i", 0);
+			
+		}
 	}
 	
 	// Update is called once per frame
@@ -320,16 +324,16 @@ public class TutorialEvt : MonoBehaviour {
 				tutorial_i++;
 				break;
 			case 45:
-                    data = CSVReader.Read("tutorial");
-                    tutorialSpace_obj.SetActive (false);
+				data = CSVReader.Read ("tutorial");
+				tutorialSpace_obj.SetActive (false);
 				tutorialreward_obj.SetActive (true);
-                    closeall[2].SetActive(false);
-                    closeall[4].SetActive(false);
-                    closeall[5].SetActive(false);
-                    closeall[6].SetActive(false);
-                    closeall[8].SetActive(false);
+				closeall [2].SetActive (false);
+				closeall [4].SetActive (false);
+				closeall [5].SetActive (false);
+				closeall [6].SetActive (false);
+				closeall [8].SetActive (false);
                     //토끼
-                    PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 4, 3);
 				//거북이
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 6, 1);
@@ -382,6 +386,9 @@ public class TutorialEvt : MonoBehaviour {
 
 				PlayerPrefs.SetInt ("tutorial", 99);
 				PlayerPrefs.SetInt ("tutorial_i", 99);
+				tutorial_i = 99;
+				break;
+			case 99:
 				break;
 
 			default:

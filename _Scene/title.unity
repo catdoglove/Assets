@@ -8468,7 +8468,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 482927407}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 387.3, y: -523, z: 0}
+  m_LocalPosition: {x: 387.57, y: -523, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_Children: []
   m_Father: {fileID: 570320277}
@@ -8476,8 +8476,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 387.3, y: -523}
-  m_SizeDelta: {x: 219.3, y: 492.2}
+  m_AnchoredPosition: {x: 387.57, y: -523}
+  m_SizeDelta: {x: 219.85, y: 492.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &482927409
 MonoBehaviour:
@@ -13750,6 +13750,29 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4456768a723bd0d44a2b750abe941b88, type: 3}
   bookStoryImg: {fileID: 427257583}
   bookExplainImg: {fileID: 1018648912}
+  bookHint_spr:
+  - {fileID: 21300000, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300002, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300004, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300006, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300008, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300010, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300012, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300014, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300016, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300018, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300020, guid: 19da9e26426d5e749b47aae747703969, type: 3}
+  - {fileID: 21300000, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300002, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300004, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300006, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300008, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300010, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300012, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300014, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300016, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300018, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
+  - {fileID: 21300020, guid: a2eda55b79e4cd541924a6e9400d9415, type: 3}
   bookPageNum:
   - {fileID: 1446712710}
   - {fileID: 301880570}
@@ -13979,6 +14002,7 @@ MonoBehaviour:
   - {fileID: 1621023673}
   - {fileID: 162478648}
   - {fileID: 52200117}
+  itemPrice_i: 
 --- !u!114 &764904251
 MonoBehaviour:
   m_ObjectHideFlags: 0

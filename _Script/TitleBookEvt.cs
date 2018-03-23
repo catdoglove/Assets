@@ -25,6 +25,7 @@ public class TitleBookEvt : MonoBehaviour {
 	public Sprite[] bookExplain_spr;
 	public GameObject bookStoryImg;
 	public GameObject bookExplainImg;
+	public Sprite[] bookHint_spr;
 
 	//도감페이지넘버표시
 	public GameObject[] bookPageNum;
@@ -231,7 +232,15 @@ public class TitleBookEvt : MonoBehaviour {
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
 				}
-			} 
+			} else {
+				if (i == 0) {
+					for (int g = 0; g < p; g++) {
+						d = d + bookSeries [g];
+					}
+					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
+				}
+			}
+			 
 		}
 	}
 	public void showBookPage2(){
@@ -251,10 +260,10 @@ public class TitleBookEvt : MonoBehaviour {
 		}
 		bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [22];
 		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
-			int st = DataLoad.story_list [p] [i]-1;
+			int st = DataLoad.story_list [p] [i] - 1;
 			bookPageNum [i].SetActive (true);
 			if (bookLoad [st] == 1) {
-				Debug.Log (bookLoad [st]+"-"+st);
+				Debug.Log (bookLoad [st] + "-" + st);
 				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
 				//이야기안에페이지그림변경하기
 				if (i == 0) {
@@ -263,6 +272,13 @@ public class TitleBookEvt : MonoBehaviour {
 					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
+				}
+			} else {
+				if (i == 0) {
+					for (int g = 0; g < p; g++) {
+						d = d + bookSeries [g];
+					}
+					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
 				}
 			} 
 		}
@@ -300,22 +316,30 @@ public class TitleBookEvt : MonoBehaviour {
 	public void bookPageChangeShot(int s){
 		int d = 0;
 		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
-			int st = DataLoad.story_list [p] [i]-1;
+			int st = DataLoad.story_list [p] [i] - 1;
 			bookPageNum [i].SetActive (true);
 			if (bookLoad [st] == 1) {
-				Debug.Log (bookLoad [st]+"-------------------------------------"+st);
+				Debug.Log (bookLoad [st] + "-------------------------------------" + st);
 				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
 				//이야기안에페이지그림변경하기
 				if (i == s) {
 					for (int g = 0; g < p; g++) {
 						d = d + bookSeries [g];
 					}
-					Debug.Log (d+"---------------------");
+					Debug.Log (d + "---------------------");
 					d = d + s;
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
 				}
-			} 
+			} else {
+				if (i == s) {
+					for (int g = 0; g < p; g++) {
+						d = d + bookSeries [g];
+					}
+					d = d + s;
+					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
+				} 
+			}
 		}
 	}
 }

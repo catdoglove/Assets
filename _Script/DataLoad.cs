@@ -14,8 +14,8 @@ public class DataLoad : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        PlayerPrefs.SetInt("tutorial", 0);
-        PlayerPrefs.SetInt("tutorial_i", 0);
+        //PlayerPrefs.SetInt("tutorial", 0);
+        //PlayerPrefs.SetInt("tutorial_i", 0);
 
         //언제카드처음부터가지고있게하기
         PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 8, 1);

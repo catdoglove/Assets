@@ -169,7 +169,7 @@ public class TitleShopEvt : MonoBehaviour {
 	//카드랜덤뽑기
 	public void randomCard(int type,int num){
 		str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,10000);
+		int coin = PlayerPrefs.GetInt(str,0);
 
 		//할인되는 가격미리더해주기
 		if (num == 5) {

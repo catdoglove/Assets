@@ -11,7 +11,7 @@ public class TitleDecoEvt : MonoBehaviour {
     public GameObject[] titleSignGO, titleBackgGO, titleItemSpr, gameItemSpr;
     int MarkNum = 0;
     int signNum = 0;
-
+	public int[] itemPrice_i;
 
 
     void Start()
@@ -73,8 +73,20 @@ public class TitleDecoEvt : MonoBehaviour {
 
     public void item_Sign0()
     { //기본
-        PlayerPrefs.SetInt("decoSign", 0);
-        changeSign();
+		int g = PlayerPrefs.GetInt("sing0",0);
+		int p = itemPrice_i [0];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt ("decoSign", 0);
+			changeSign ();
+		}else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("sing0", 1);
+			PlayerPrefs.SetInt ("decoSign", 0);
+			changeSign ();
+		}
+       
     }
 
     public void item_Sign1()
