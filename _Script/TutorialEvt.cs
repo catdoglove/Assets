@@ -37,7 +37,7 @@ public class TutorialEvt : MonoBehaviour {
 				tutorialSpace_obj.SetActive (true);
 				PlayerPrefs.SetInt ("tutorial_i", 25);
 				tutorial_i=PlayerPrefs.GetInt ("tutorial_i", 0);
-				tutorial_txt.text = "" + data [PlayerPrefs.GetInt ("tutorial_i", 0)] ["txt"];
+				tutorial_txt.text = "다시 모닥불로 돌아왔어요.";
 
 			}
 		}
@@ -209,15 +209,40 @@ public class TutorialEvt : MonoBehaviour {
 				}
 				break;
 
+                case 35:
+                    data = CSVReader.Read("tutorial");
+                    if (b == 0)
+                    {
+                        tutorialBack_obj[11].SetActive(true);
+                        tutorialSpace_obj.SetActive(false);
+                        b++;
+                    }
+                    else
+                    {
+                        tutorialBack_obj[11].SetActive(false);
+                        tutorialSpace_obj.SetActive(true);
+                        tutorial_i++;
+                        tutorial_txt.text = "" + data[tutorial_i]["txt"];
+                        b = 0;
+                        
+                    }
+                    break;
 
-			case 36:
-				tutorial_i++;
-				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
-				closeall [3].SetActive (false);
-				closeall [2].SetActive (false);
+                case 36:
+                    data = CSVReader.Read("tutorial");
+                    
+                        tutorial_i++;
+                        tutorial_txt.text = "" + data[tutorial_i]["txt"];
+                       
+                        closeall[3].SetActive(false);
+                        closeall[2].SetActive(false);
+                        closeall[7].SetActive(false);
+                    
+				
 				break;
 			case 37:
-				if (b == 0) {
+                    data = CSVReader.Read("tutorial");
+                    if (b == 0) {
 					tutorialBack_obj [6].SetActive (true);
 					tutorialSpace_obj.SetActive (false);
 					b++;
@@ -230,7 +255,8 @@ public class TutorialEvt : MonoBehaviour {
 				}
 				break;
 			case 39:
-				if (b == 0) {
+                    data = CSVReader.Read("tutorial");
+                    if (b == 0) {
 					tutorialBack_obj [7].SetActive (true);
 					tutorialSpace_obj.SetActive (false);
 					b++;
@@ -240,12 +266,15 @@ public class TutorialEvt : MonoBehaviour {
 					tutorial_i++;
 					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
 					string str = PlayerPrefs.GetString ("code", "");
-					PlayerPrefs.SetInt(str,900);
+                        int coins= PlayerPrefs.GetInt(str, 0);
+                        coins = coins + 900;
+                        PlayerPrefs.SetInt(str,coins);
 					b = 0;
 				}
 				break;
 			case 42:
-				if (b == 0) {
+                    data = CSVReader.Read("tutorial");
+                    if (b == 0) {
 					tutorialBack_obj [8].SetActive (true);
 					tutorialSpace_obj.SetActive (false);
 					b++;
@@ -258,7 +287,8 @@ public class TutorialEvt : MonoBehaviour {
 				}
 				break;
 			case 43:
-				if (b == 0) {
+                    data = CSVReader.Read("tutorial");
+                    if (b == 0) {
 					tutorialBack_obj [9].SetActive (true);
 					tutorialSpace_obj.SetActive (false);
 					b++;
@@ -266,32 +296,40 @@ public class TutorialEvt : MonoBehaviour {
 					tutorialBack_obj [9].SetActive (false);
 					tutorialSpace_obj.SetActive (true);
 					tutorial_i++;
-					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					//tutorial_txt.text = "" + data [tutorial_i] ["txt"];
 					b = 0;
 				}
 				break;
 			case 44:
-				if (b == 0) {
+                    data = CSVReader.Read("tutorial");
+                    if (b == 0) {
 					tutorialBack_obj [10].SetActive (true);
 					tutorialSpace_obj.SetActive (false);
 					b++;
 				} else {
 					tutorialBack_obj [10].SetActive (false);
-					tutorialSpace_obj.SetActive (true);
+					//tutorialSpace_obj.SetActive (true);
 					tutorial_i++;
-					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
+					//tutorial_txt.text = "" + data [tutorial_i] ["txt"];
 					b = 0;
 				}
 				break;
-			case 45:
-				tutorialSpace_obj.SetActive (false);
+			case 48:
+                    data = CSVReader.Read("tutorial");
+                    tutorialSpace_obj.SetActive (false);
 				tutorial_i++;
 				break;
-			case 46:
-				tutorialSpace_obj.SetActive (false);
+			case 45:
+                    data = CSVReader.Read("tutorial");
+                    tutorialSpace_obj.SetActive (false);
 				tutorialreward_obj.SetActive (true);
-		//토끼
-				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
+                    closeall[2].SetActive(false);
+                    closeall[4].SetActive(false);
+                    closeall[5].SetActive(false);
+                    closeall[6].SetActive(false);
+                    closeall[8].SetActive(false);
+                    //토끼
+                    PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 4, 3);
 				//거북이
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 6, 1);

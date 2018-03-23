@@ -41,7 +41,7 @@ public class PrefabsMake : MonoBehaviour {
 	public static int soundck =0;
 	public Sprite[] succfail_spr;
 	public GameObject succfailImg;
-	public GameObject succfailSpace;
+	public GameObject succfailSpace, coinImg;
 	public Text succfail_text;
 	string succfail_str;
 
@@ -78,11 +78,12 @@ public class PrefabsMake : MonoBehaviour {
 			int end;
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
+
+                coinImg.SetActive(true);
 				spr_illust [4].SetActive (true);
 			
 				//페이드인
 				StartCoroutine ("imgFadeIn");
-				Debug.Log ("?????????"+end);
 				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [0];
 				//돈
@@ -103,6 +104,8 @@ public class PrefabsMake : MonoBehaviour {
 				soundck = 11;
 			}else { //실패
 				//페이드인
+                
+                coinImg.SetActive(false);
 				StartCoroutine ("imgFadeInS");
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
 				succfail_str="";
@@ -286,7 +289,6 @@ public class PrefabsMake : MonoBehaviour {
 		colorS = succfailImg.GetComponent<Image>().color;	
 
 		for (float i = 0f; i < 1f; i += 0.05f) {
-			Debug.Log (i);
 			colorS.a = Mathf.Lerp (0f, 1f, i);
 			succfailImg.GetComponent<Image>().color = colorS;
 			succfailSpace.GetComponent<Image>().color = colorS;

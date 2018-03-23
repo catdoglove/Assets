@@ -14,8 +14,11 @@ public class DataLoad : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-		//언제카드처음부터가지고있게하기
-		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 8, 1);
+        PlayerPrefs.SetInt("tutorial", 0);
+        PlayerPrefs.SetInt("tutorial_i", 0);
+
+        //언제카드처음부터가지고있게하기
+        PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 8, 1);
 		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 11, 1);
 		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 10, 1);
 		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 8, 2);
@@ -33,7 +36,6 @@ public class DataLoad : MonoBehaviour {
         {
             if(PlayerPrefs.GetInt("decoBackG" + titleBackgGO[i], 0) == 1)
             {
-                Debug.Log("test");
                 titleBackgGO[i].SetActive(true);
             }
         }

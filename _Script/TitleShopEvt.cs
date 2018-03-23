@@ -274,12 +274,10 @@ public class TitleShopEvt : MonoBehaviour {
 		color = showCard.GetComponent<Image>().color;	
 
 		for (float i = 0f; i < 1f; i += 0.05f) {
-			Debug.Log (i);
 			color.a = Mathf.Lerp (0f, 1f, i);
 			showCard.GetComponent<Image>().color = color;
 			yield return null;
 		}
-		//StopCoroutine ("imgFadeIn");
 	}
 
 }

@@ -159,7 +159,6 @@ public class DataHandler : MonoBehaviour {
 							index_list.Add(i + 1);
 							int k=i+1;
 							PlayerPrefs.SetInt (""+k,i_type);
-							Debug.Log ("왜카드가안나오죠?"+i+1);
 							ci++;
 						}
 					}else if (tp == i_type-3) {
@@ -169,7 +168,6 @@ public class DataHandler : MonoBehaviour {
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;
-							Debug.Log ("왜카드가안나오죠?"+i+1);
 							PlayerPrefs.SetInt (""+k,i_type-3);
 							ci++;
 						}
@@ -180,8 +178,7 @@ public class DataHandler : MonoBehaviour {
 		case 4://---------------------------------행동
 			PrefabsMake.index_H_list.Clear ();
 			int type_n = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [3], 0);
-
-			Debug.Log ("왜"+PrefabsMake.card_index [3]);
+                
 
 				i_type = 5;//act카드번호
 				for(var i=0; i< data.Count; i++){

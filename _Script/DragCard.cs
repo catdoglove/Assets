@@ -149,44 +149,88 @@ public class DragCard : MonoBehaviour {
 			if (wldObjectPos.x > -4 && wldObjectPos.x < 4.5) {
 				if (wldObjectPos.y < 3.44 && wldObjectPos.y > -2.77) {
 					Debug.Log (PrefabsMake.index_H_list [cardOrder_num]);
-					//튜토
-					if (PlayerPrefs.GetInt ("tutorial_i", 0) == 13) {
-						if (PrefabsMake.index_H_list [cardOrder_num] == 5) {
-							
-							soundck = 88;//효과음소리
+                    //튜토
+                    if (PlayerPrefs.GetInt("tutorial_i", 0) == 13) {
+                        if (PrefabsMake.index_H_list[cardOrder_num] == 5) {
 
-							int end_check = 0;
-							PrefabsMake.card_index [PrefabsMake.type_num] = PrefabsMake.index_H_list [cardOrder_num];
-							//이미 낸카드는 다안나오게함
-							PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + PrefabsMake.index_H_list [cardOrder_num], 0);
-							end_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num], 0);
-							if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
-								if (PrefabsMake.card_index [5] == 0) {
-									PrefabsMake.card_index [4] = 0;
-								}
-								PrefabsMake.card_index [5] = PrefabsMake.index_H_list [cardOrder_num];
-								PrefabsMake.end_mach = 1;
-								Debug.Log ("--------------------------------------------------------");
+                            soundck = 88;//효과음소리
 
-							} else {
-								Debug.Log (PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list [cardOrder_num] + "카드");
-								PrefabsMake.type_num++;//턴
-								PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
+                            int end_check = 0;
+                            PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
+                            //이미 낸카드는 다안나오게함
+                            PlayerPrefs.SetInt("ch" + 1 + "haveCard" + PrefabsMake.index_H_list[cardOrder_num], 0);
+                            end_check = PlayerPrefs.GetInt("" + PrefabsMake.card_index[PrefabsMake.type_num], 0);
+                            if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
+                                if (PrefabsMake.card_index[5] == 0) {
+                                    PrefabsMake.card_index[4] = 0;
+                                }
+                                PrefabsMake.card_index[5] = PrefabsMake.index_H_list[cardOrder_num];
+                                PrefabsMake.end_mach = 1;
+                                Debug.Log("--------------------------------------------------------");
 
-								Debug.Log (PrefabsMake.index_H_list.Count + "리스트갯수");
-							}
+                            } else {
+                                Debug.Log(PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list[cardOrder_num] + "카드");
+                                PrefabsMake.type_num++;//턴
+                                PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
+
+                                Debug.Log(PrefabsMake.index_H_list.Count + "리스트갯수");
+                            }
 
 
-							gameObj = GameObject.FindGameObjectsWithTag ("Card");
-							//cardFadeOut ();
-							for (int i = 0; i < gameObj.Length; i++) {
+                            gameObj = GameObject.FindGameObjectsWithTag("Card");
+                            //cardFadeOut ();
+                            for (int i = 0; i < gameObj.Length; i++) {
 
-								Destroy (gameObj [i], 0.2f);
-							}
-						} else {
-							check = false;
-						}
-					} else {
+                                Destroy(gameObj[i], 0.2f);
+                            }
+                        } else {
+                            check = false;
+                        }
+                    } else if (PlayerPrefs.GetInt("tutorial_i", 0) == 21) {
+                        if (PrefabsMake.index_H_list[cardOrder_num] == 53)
+                        {
+
+                            soundck = 88;//효과음소리
+
+                            int end_check = 0;
+                            PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
+                            //이미 낸카드는 다안나오게함
+                            PlayerPrefs.SetInt("ch" + 1 + "haveCard" + PrefabsMake.index_H_list[cardOrder_num], 0);
+                            end_check = PlayerPrefs.GetInt("" + PrefabsMake.card_index[PrefabsMake.type_num], 0);
+                            if (end_check == 6)
+                            {////////////////////////////////////////////////////게임끝/////////여기를 수정
+                                if (PrefabsMake.card_index[5] == 0)
+                                {
+                                    PrefabsMake.card_index[4] = 0;
+                                }
+                                PrefabsMake.card_index[5] = PrefabsMake.index_H_list[cardOrder_num];
+                                PrefabsMake.end_mach = 1;
+                                Debug.Log("--------------------------------------------------------");
+
+                            }
+                            else
+                            {
+                                Debug.Log(PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list[cardOrder_num] + "카드");
+                                PrefabsMake.type_num++;//턴
+                                PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
+
+                                Debug.Log(PrefabsMake.index_H_list.Count + "리스트갯수");
+                            }
+
+
+                            gameObj = GameObject.FindGameObjectsWithTag("Card");
+                            //cardFadeOut ();
+                            for (int i = 0; i < gameObj.Length; i++)
+                            {
+
+                                Destroy(gameObj[i], 0.2f);
+                            }
+                        }
+                        else
+                        {
+                            check = false;
+                        }
+                    } else{
 
 
 
