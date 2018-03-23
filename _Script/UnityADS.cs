@@ -5,7 +5,7 @@ using UnityEngine.Advertisements;
 
 public class UnityADS : MonoBehaviour {
 
-    private string gameId = "1486550";//★테스트ID , Window > Services 설정 테스트 바꿀것
+    private string gameId = "1486550";//★테스트ID , Window > Services 설정 테스트 바꿀것 1744485
     public string placementId = "rewardedVideo";
 
     public GameObject GM;

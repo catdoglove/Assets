@@ -38,6 +38,7 @@ public class AdmobADS : MonoBehaviour {
 
     private void RequestInterstitial()
     {
+        //ca-app-pub-9179569099191885/5213228385 우리id바꿀것★
         string adUnitId = "ca-app-pub-3940256099942544/1033173712";
         // Initialize an InterstitialAd.
         interstitial = new InterstitialAd(adUnitId);
