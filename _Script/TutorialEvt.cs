@@ -30,6 +30,7 @@ public class TutorialEvt : MonoBehaviour {
 			if (c == 0) {
 				data = CSVReader.Read ("tutorial");
 				tutorialSpace_obj.SetActive (true);
+
 				tutorial_txt.text = "" + data [0] ["txt"];
 				//tutorialBack_obj.SetActive (true);
 			}else if(c==2){
@@ -42,6 +43,7 @@ public class TutorialEvt : MonoBehaviour {
 			}
 		}
 		if (PlayerPrefs.GetInt ("tutorial", 0) == 99) {
+			PlayerPrefs.SetInt ("dontmove", 2);
 			tutorial_i = PlayerPrefs.GetInt ("tutorial_i", 0);
 			
 		}

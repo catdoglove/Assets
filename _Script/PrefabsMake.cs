@@ -74,7 +74,11 @@ public class PrefabsMake : MonoBehaviour {
 
 		//엔딩확인하기
 		if(end_mach == 1){
-			GM.GetComponent<TutorialEvt>().tutorialSpace_obj.SetActive (true);
+			if (PlayerPrefs.GetInt ("tutorial", 0) == 99) {
+				
+			} else {
+				GM.GetComponent<TutorialEvt> ().tutorialSpace_obj.SetActive (true);
+			}
 			int end;
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
@@ -117,8 +121,13 @@ public class PrefabsMake : MonoBehaviour {
 			call_card = 0;
 			
 		}else if (call_card == 1) {
-			GM.GetComponent<TutorialEvt>().tutorialSpace_obj.SetActive (true);
-			PlayerPrefs.SetInt ("dontmove", 1);
+			if (PlayerPrefs.GetInt ("tutorial", 0) == 99) {
+
+			} else {
+				GM.GetComponent<TutorialEvt> ().tutorialSpace_obj.SetActive (true);
+				PlayerPrefs.SetInt ("dontmove", 1);
+			}
+
 			//카드를 놓았을때 그림을띄워준다
 			int type_check = 0;
 			switch (PrefabsMake.type_num) {

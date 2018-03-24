@@ -37,6 +37,7 @@ public class TitleShopEvt : MonoBehaviour {
 	public Text coin_txt;
 	string str;
 
+	public Text coind_txt;
 
 	public void showShopChoWindow(){ //상점선택열기
 		shopChoPop.SetActive (true);		
@@ -64,6 +65,9 @@ public class TitleShopEvt : MonoBehaviour {
 	}//카드상점열기
 
 	public void showShopIWindow(){ //꾸미기상점열기
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		coind_txt.text = "" + coin;
 		shopIWindow.SetActive (true);		
 	}
 	public void showAdCardWindow(){ //광고카드
@@ -175,6 +179,9 @@ public class TitleShopEvt : MonoBehaviour {
 		if (num == 5) {
 			coin = coin + 100;
 		}
+		if (num == 2) {
+			coin = coin + 400;
+		}
 		if (coin >= 200 * num) {
 			buyCardPop.SetActive (false);
 			int ran = DataLoad.data_list [type].Count;
@@ -196,7 +203,7 @@ public class TitleShopEvt : MonoBehaviour {
 				coin = coin - 200;
 				break;
 			case 2:
-				
+				coin = coin - 400;
 				break;
 			case 5:
 				coin = coin - 1000;

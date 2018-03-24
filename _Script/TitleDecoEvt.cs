@@ -11,11 +11,16 @@ public class TitleDecoEvt : MonoBehaviour {
     public GameObject[] titleSignGO, titleBackgGO, titleItemSpr, gameItemSpr;
     int MarkNum = 0;
     int signNum = 0;
+
 	public int[] itemPrice_i;
 
 
+	//돈
+	public Text coin_txt;
+
     void Start()
     {
+		
         changeSign();
 
         //뒷배경
@@ -80,35 +85,109 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (g == 1) {
 			PlayerPrefs.SetInt ("decoSign", 0);
 			changeSign ();
-		}else if (coin >= p) {
+		} else if (coin >= p) {
 			coin = coin - p;
 			PlayerPrefs.SetInt ("sing0", 1);
 			PlayerPrefs.SetInt ("decoSign", 0);
+			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
+		} else {
+			//돈이모자라
 		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
        
     }
 
     public void item_Sign1()
     { //붉은
-        PlayerPrefs.SetInt("decoSign", 3);
-        changeSign();
+		int g = PlayerPrefs.GetInt("sing1",0);
+		int p = itemPrice_i [1];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt ("decoSign", 3);
+			changeSign ();
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("sing1", 1);
+			PlayerPrefs.SetInt ("decoSign", 3);
+			PlayerPrefs.SetInt (str, coin);
+			changeSign ();
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+
+		coin_txt.text = "" + coin;
     }
 
     public void item_Sign2()
     { //푸른
-        PlayerPrefs.SetInt("decoSign", 6);
-        changeSign();
+		int g = PlayerPrefs.GetInt("sing2",0);
+		int p = itemPrice_i [2];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt ("decoSign", 6);
+			changeSign ();
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("sing2", 1);
+			PlayerPrefs.SetInt ("decoSign", 6);
+			PlayerPrefs.SetInt (str, coin);
+			changeSign ();
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+
+		coin_txt.text = "" + coin;
     }
 
     public void item_Sign3()
     { //덤뷸
-        PlayerPrefs.SetInt("decoSign", 9);
-        changeSign();
+		int g = PlayerPrefs.GetInt("sing3",0);
+		int p = itemPrice_i [0];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt ("decoSign", 9);
+			changeSign ();
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("sing3", 1);
+			PlayerPrefs.SetInt ("decoSign", 9);
+			PlayerPrefs.SetInt (str, coin);
+			changeSign ();
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+
+		coin_txt.text = "" + coin;
     }
 
     public void item_Sign4()
     { //덩굴
+		int g = PlayerPrefs.GetInt("sing3",0);
+		int p = itemPrice_i [0];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt ("decoSign", 9);
+			changeSign ();
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("sing3", 1);
+			PlayerPrefs.SetInt ("decoSign", 9);
+			PlayerPrefs.SetInt (str, coin);
+			changeSign ();
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
         PlayerPrefs.SetInt("decoSign", 12);
         changeSign();
     }

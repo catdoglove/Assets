@@ -1549,7 +1549,7 @@ RectTransform:
   m_GameObject: {fileID: 111062311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.013905411, y: 0.013905411, z: 0.013905411}
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 303846454}
@@ -13457,6 +13457,7 @@ MonoBehaviour:
   card_spr: {fileID: 0}
   newCard: {fileID: 1062100749}
   coin_txt: {fileID: 1666527458}
+  coind_txt: {fileID: 1395881983}
 --- !u!114 &764904246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14002,7 +14003,8 @@ MonoBehaviour:
   - {fileID: 1621023673}
   - {fileID: 162478648}
   - {fileID: 52200117}
-  itemPrice_i: 
+  itemPrice_i: 58020000580200008c0a0000b80b0000c80000002c010000900100009001000084030000e8030000f4010000e80300004c040000dc05000008070000d0070000e8030000e8030000b80b00008c0a0000f4010000f401000008070000d0070000
+  coin_txt: {fileID: 1395881983}
 --- !u!114 &764904251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15296,7 +15298,7 @@ RectTransform:
   m_GameObject: {fileID: 833427199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.016666666, y: 0.016666666, z: 0.016666666}
+  m_LocalScale: {x: 0.016686494, y: 0.016686494, z: 0.016686494}
   m_Children:
   - {fileID: 912302140}
   - {fileID: 810537248}
