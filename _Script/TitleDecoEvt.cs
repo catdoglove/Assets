@@ -7,7 +7,7 @@ public class TitleDecoEvt : MonoBehaviour {
 
     //titleSignSpr : 15, titleBackgSpr: 12
     public Sprite[] markImgSpr, titleSignSpr;
-    public GameObject markTitle, markGame, titleView, gameView;
+    public GameObject markTitle, markGame, titleView, gameView, warningPop;
     public GameObject[] titleSignGO, titleBackgGO, titleItemSpr, gameItemSpr;
     int MarkNum = 0;
     int signNum = 0;
@@ -92,12 +92,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
 		} else {
-			//돈이모자라
-		}
+			StartCoroutine("cardNotReady");
+        }
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
        
     }
 
@@ -117,12 +117,13 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
 		} else {
-			//돈이모자라
-		}
+			StartCoroutine("cardNotReady");
+            Debug.Log("돈부족");
+        }
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     public void item_Sign2()
@@ -141,12 +142,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     public void item_Sign3()
@@ -165,12 +166,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     public void item_Sign4()
@@ -189,12 +190,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     public void changeSign()
@@ -203,7 +204,7 @@ public class TitleDecoEvt : MonoBehaviour {
         titleSignGO[0].GetComponent<Image>().sprite = titleSignSpr[signNum];
         titleSignGO[1].GetComponent<Image>().sprite = titleSignSpr[signNum + 1];
         titleSignGO[2].GetComponent<Image>().sprite = titleSignSpr[signNum + 2];
-        //Debug.Log(i);
+        ////Debug.Log(i);
     }
 
     //배경꾸밈
@@ -223,12 +224,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[0].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_BackG2()
     {
@@ -246,12 +247,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[1].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
 
     }
     public void item_BackG3()
@@ -270,12 +271,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[2].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_BackG4()
     {
@@ -293,12 +294,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[3].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     public void item_BackG5()
@@ -321,12 +322,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			titleBackgGO[4].SetActive(true);
 			titleBackgGO[5].SetActive(false);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_BackG6()
     {
@@ -348,12 +349,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			titleBackgGO[4].SetActive(false);
 			titleBackgGO[5].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     public void item_BackG7()
@@ -372,12 +373,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[6].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_BackG8()
     {
@@ -395,12 +396,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[7].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_BackG9()
     {
@@ -418,12 +419,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[8].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_BackG10()
     {
@@ -441,12 +442,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[9].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     public void item_BackG11()
@@ -470,12 +471,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			titleBackgGO[10].SetActive(true);
 			titleBackgGO[11].SetActive(false);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_BackG12()
     {
@@ -497,12 +498,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			titleBackgGO[10].SetActive(false);
 			titleBackgGO[11].SetActive(true);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     //책꾸밈
@@ -520,12 +521,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBook", 1);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_Book2()
     {
@@ -541,12 +542,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBook", 2);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_Book3()
     {
@@ -562,12 +563,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBook", 3);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_Book4()
     {
@@ -583,12 +584,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBook", 4);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
 
     //책갈피꾸밈
@@ -606,12 +607,13 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBookmark", 2);
 		} else {
-			//돈이모자라
-		}
+			StartCoroutine("cardNotReady");
+            Debug.Log("돈부족");
+        }
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_Bookmark2()
     {
@@ -627,12 +629,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBookmark", 4);
 		} else {
-			//돈이모자라
-		}
+			StartCoroutine("cardNotReady");
+        }
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_Bookmark3()
     {
@@ -648,12 +650,12 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBookmark", 6);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
 
-		Debug.Log (p);
+		//Debug.Log (p);
     }
     public void item_Bookmark4()
     {
@@ -669,11 +671,11 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt (str, coin);
 			PlayerPrefs.SetInt("decoBookmark", 8);
 		} else {
-			//돈이모자라
+			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
-		Debug.Log (p);
+		//Debug.Log (p);
 
     }
 
@@ -682,6 +684,17 @@ public class TitleDecoEvt : MonoBehaviour {
     {
         PlayerPrefs.SetInt("decoBook", 0);
         PlayerPrefs.SetInt("decoBookmark", 0);
+    }
+
+
+
+                
+    //코룬틴<--
+    IEnumerator cardNotReady()
+    {
+        warningPop.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        warningPop.SetActive(false);
     }
 
 

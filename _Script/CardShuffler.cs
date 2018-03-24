@@ -23,7 +23,7 @@ public class CardShuffler : MonoBehaviour {
 			cardI [randomIndex] = tempSave;
 		}	
 		for (int i = 0; i < cardI.Count; i++) {
-			Debug.Log (cardI [i]);
+			//Debug.Log (cardI [i]);
 		}
 
 		return cardI;

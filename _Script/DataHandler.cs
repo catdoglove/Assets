@@ -50,7 +50,7 @@ public class DataHandler : MonoBehaviour {
 											PlayerPrefs.SetInt ("new",1);
 										}
 										PlayerPrefs.SetInt ("books"+k, 1);//도감에저장
-										Debug.Log ("---------------------------------------성공");
+										//Debug.Log ("---------------------------------------성공");
 										//카드소모
 										for (int j = 1; j < 6; j++) {
 											end_num [j]--;

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class TitleBtnEvt : MonoBehaviour {
 
 	public GameObject blackBackImg, bookWindow, cardWindow, shopWindow, shopIWindow,optionWindow, startWindow,goGameWindow;
-	public GameObject TitleSpr;
+	public GameObject TitleSpr, goOutPop;
     
 
     //카드가없을때뜨는경고
@@ -18,8 +18,8 @@ public class TitleBtnEvt : MonoBehaviour {
 	//고유코드띄워주기
 	public Text code_txt;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		//화면 해상도
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		float screenNum =(float)Screen.height/(float)Screen.width;
@@ -36,20 +36,37 @@ public class TitleBtnEvt : MonoBehaviour {
 		} else {
 			Screen.SetResolution (Screen.width, Screen.width / 3 * 2, true);
 		}
-
-       
-   
-
-
     }
 
-	public void showBlackBack(){
+
+    // Update is called once per frame
+    void Update()
+    {
+        //나가기 팝업듸우고 4번에 1번씩 전면광고?
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            goOutPop.SetActive(true);
+        }
+    }
+
+    //나가기팝업
+    public void outYes()
+    {
+        Application.Quit();
+    }
+    public void OutNo()
+    {
+        goOutPop.SetActive(false);
+    }
+
+
+    public void showBlackBack(){
 		blackBackImg.SetActive (true);
 	}
 
 	public void showOptionWindow(){
 		string str = PlayerPrefs.GetString ("code", "");
-		Debug.Log(str);
+		//Debug.Log(str);
 		code_txt.text = "고유ID : " + str;
 		optionWindow.SetActive (true);
 		showBlackBack ();
@@ -84,7 +101,7 @@ public class TitleBtnEvt : MonoBehaviour {
 			for (int i = 0; i < DataLoad.data_list [j].Count; i++) {
 				k = DataLoad.data_list [j] [i];
 				cc = cc+ PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + k, 0);
-				Debug.Log (k+"=========="+cc);
+				//Debug.Log (k+"=========="+cc);
 
 			}
 			if (cc == 0) {
@@ -117,7 +134,7 @@ public class TitleBtnEvt : MonoBehaviour {
 				}
 				int ccc = PlayerPrefs.GetInt ("ch"+1+"cardnum"+i,0);//카드수
 				ccc--;
-				Debug.Log ("i=" + i + "cc" + ccc);
+				//Debug.Log ("i=" + i + "cc" + ccc);
 
 
 				if (PlayerPrefs.GetInt ("tutorial_i", 0) == 4) {

@@ -27,14 +27,6 @@ public class AdmobADS : MonoBehaviour {
         RequestRewardedVideo();
     }
 	
-	// Update is called once per frame
-	void Update () {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
-        }
 
     private void RequestInterstitial()
     {

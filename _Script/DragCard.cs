@@ -148,7 +148,7 @@ public class DragCard : MonoBehaviour {
 
 			if (wldObjectPos.x > -4 && wldObjectPos.x < 4.5) {
 				if (wldObjectPos.y < 3.44 && wldObjectPos.y > -2.77) {
-					Debug.Log (PrefabsMake.index_H_list [cardOrder_num]);
+					//Debug.Log (PrefabsMake.index_H_list [cardOrder_num]);
                     //튜토
                     if (PlayerPrefs.GetInt("tutorial_i", 0) == 13) {
                         if (PrefabsMake.index_H_list[cardOrder_num] == 5) {
@@ -166,14 +166,14 @@ public class DragCard : MonoBehaviour {
                                 }
                                 PrefabsMake.card_index[5] = PrefabsMake.index_H_list[cardOrder_num];
                                 PrefabsMake.end_mach = 1;
-                                Debug.Log("--------------------------------------------------------");
+                                //Debug.Log("--------------------------------------------------------");
 
                             } else {
-                                Debug.Log(PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list[cardOrder_num] + "카드");
+                                //Debug.Log(PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list[cardOrder_num] + "카드");
                                 PrefabsMake.type_num++;//턴
                                 PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
 
-                                Debug.Log(PrefabsMake.index_H_list.Count + "리스트갯수");
+                                //Debug.Log(PrefabsMake.index_H_list.Count + "리스트갯수");
                             }
 
 
@@ -205,16 +205,16 @@ public class DragCard : MonoBehaviour {
                                 }
                                 PrefabsMake.card_index[5] = PrefabsMake.index_H_list[cardOrder_num];
                                 PrefabsMake.end_mach = 1;
-                                Debug.Log("--------------------------------------------------------");
+                                //Debug.Log("--------------------------------------------------------");
 
                             }
                             else
                             {
-                                Debug.Log(PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list[cardOrder_num] + "카드");
+                                //Debug.Log(PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list[cardOrder_num] + "카드");
                                 PrefabsMake.type_num++;//턴
                                 PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
 
-                                Debug.Log(PrefabsMake.index_H_list.Count + "리스트갯수");
+                                //Debug.Log(PrefabsMake.index_H_list.Count + "리스트갯수");
                             }
 
 
@@ -250,14 +250,14 @@ public class DragCard : MonoBehaviour {
 							}
 							PrefabsMake.card_index [5] = PrefabsMake.index_H_list [cardOrder_num];
 							PrefabsMake.end_mach = 1;
-							Debug.Log ("--------------------------------------------------------");
+							//Debug.Log ("--------------------------------------------------------");
 
 						} else {
-							Debug.Log (PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list [cardOrder_num] + "카드");
+							//Debug.Log (PrefabsMake.type_num + "번에" + PrefabsMake.index_H_list [cardOrder_num] + "카드");
 							PrefabsMake.type_num++;//턴
 							PrefabsMake.call_card++;//카드생성 - 1번으로돌아간다
 
-							Debug.Log (PrefabsMake.index_H_list.Count + "리스트갯수");
+							//Debug.Log (PrefabsMake.index_H_list.Count + "리스트갯수");
 						}
 
 

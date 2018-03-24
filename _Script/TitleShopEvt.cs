@@ -159,7 +159,7 @@ public class TitleShopEvt : MonoBehaviour {
 		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
 			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
 		}
-		Debug.Log ("total" + cc);
+		//Debug.Log ("total" + cc);
 		if (cc < 100) {
 			randomCard (type_i, cardNum_i);
 		} else {
@@ -189,7 +189,7 @@ public class TitleShopEvt : MonoBehaviour {
 			for (int i = 0; i < num; i++) {
 				int r =DataLoad.data_list[type][Random.Range (0, ran)];
 				randCard_i[i] = r;
-				Debug.Log (randCard_i [i]);
+				//Debug.Log (randCard_i [i]);
 
 				int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + r, 0);
 				k++;

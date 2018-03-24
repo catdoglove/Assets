@@ -198,7 +198,7 @@ public class TitleCardEvt : MonoBehaviour {
 			cardBtn [j].GetComponent<Image> ().sprite = card_spr [num];
 			//카드의숫자를 띄워준다
 			int h =PlayerPrefs.GetInt("ch"+1+"cardnum"+num,0);//카드갯수
-			Debug.Log(h+"====------"+num);
+			//Debug.Log(h+"====------"+num);
 			cardNum_txt [j].text = ""+ h;
 			//카드가 얻은 적있는 카드인지 확인해준다
 
@@ -315,7 +315,7 @@ public class TitleCardEvt : MonoBehaviour {
 		color = cardInfoImg.GetComponent<Image>().color;	
 
 		for (float i = 0f; i < 1f; i += 0.05f) {
-			Debug.Log (i);
+			//Debug.Log (i);
 			color.a = Mathf.Lerp (0f, 1f, i);
 			cardInfoImg.GetComponent<Image>().color = color;
 			yield return null;
