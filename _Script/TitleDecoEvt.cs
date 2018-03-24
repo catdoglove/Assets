@@ -96,13 +96,15 @@ public class TitleDecoEvt : MonoBehaviour {
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
        
     }
 
     public void item_Sign1()
     { //붉은
 		int g = PlayerPrefs.GetInt("sing1",0);
-		int p = itemPrice_i [1];
+		int p = itemPrice_i [0];
 		string str = PlayerPrefs.GetString ("code", "");
 		int coin = PlayerPrefs.GetInt(str,0);
 		if (g == 1) {
@@ -118,14 +120,15 @@ public class TitleDecoEvt : MonoBehaviour {
 			//돈이모자라
 		}
 		PlayerPrefs.Save ();
-
 		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     public void item_Sign2()
     { //푸른
 		int g = PlayerPrefs.GetInt("sing2",0);
-		int p = itemPrice_i [2];
+		int p = itemPrice_i [1];
 		string str = PlayerPrefs.GetString ("code", "");
 		int coin = PlayerPrefs.GetInt(str,0);
 		if (g == 1) {
@@ -141,14 +144,15 @@ public class TitleDecoEvt : MonoBehaviour {
 			//돈이모자라
 		}
 		PlayerPrefs.Save ();
-
 		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     public void item_Sign3()
     { //덤뷸
 		int g = PlayerPrefs.GetInt("sing3",0);
-		int p = itemPrice_i [0];
+		int p = itemPrice_i [2];
 		string str = PlayerPrefs.GetString ("code", "");
 		int coin = PlayerPrefs.GetInt(str,0);
 		if (g == 1) {
@@ -164,23 +168,24 @@ public class TitleDecoEvt : MonoBehaviour {
 			//돈이모자라
 		}
 		PlayerPrefs.Save ();
-
 		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     public void item_Sign4()
     { //덩굴
-		int g = PlayerPrefs.GetInt("sing3",0);
-		int p = itemPrice_i [0];
+		int g = PlayerPrefs.GetInt("sing4",0);
+		int p = itemPrice_i [3];
 		string str = PlayerPrefs.GetString ("code", "");
 		int coin = PlayerPrefs.GetInt(str,0);
 		if (g == 1) {
-			PlayerPrefs.SetInt ("decoSign", 9);
+			PlayerPrefs.SetInt ("decoSign", 12);
 			changeSign ();
 		} else if (coin >= p) {
 			coin = coin - p;
-			PlayerPrefs.SetInt ("sing3", 1);
-			PlayerPrefs.SetInt ("decoSign", 9);
+			PlayerPrefs.SetInt ("sing4", 1);
+			PlayerPrefs.SetInt ("decoSign", 12);
 			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
 		} else {
@@ -188,8 +193,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
-        PlayerPrefs.SetInt("decoSign", 12);
-        changeSign();
+
+		Debug.Log (p);
     }
 
     public void changeSign()
@@ -204,110 +209,472 @@ public class TitleDecoEvt : MonoBehaviour {
     //배경꾸밈
     public void item_BackG1()
     {
-        PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[0], 1);
-        titleBackgGO[0].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG1",0);
+		int p = itemPrice_i [4];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[0], 1);
+			titleBackgGO[0].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG1", 1);
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[0], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[0].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_BackG2()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[1], 1);
-        titleBackgGO[1].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG2",0);
+		int p = itemPrice_i [5];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[1], 1);
+			titleBackgGO[1].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG2", 1);
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[1], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[1].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
+
     }
     public void item_BackG3()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[2], 1);
-        titleBackgGO[2].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG3",0);
+		int p = itemPrice_i [6];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[2], 1);
+			titleBackgGO[2].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG3", 1);
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[2], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[2].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_BackG4()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[3], 1);
-        titleBackgGO[3].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG4",0);
+		int p = itemPrice_i [7];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[3], 1);
+			titleBackgGO[3].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG4", 1);
+			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[3], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[3].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     public void item_BackG5()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 1);
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 0);
-        titleBackgGO[4].SetActive(true);
-        titleBackgGO[5].SetActive(false);
+		int g = PlayerPrefs.GetInt("BackG5",0);
+		int p = itemPrice_i [8];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 0);
+			titleBackgGO[4].SetActive(true);
+			titleBackgGO[5].SetActive(false);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG5", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 0);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[4].SetActive(true);
+			titleBackgGO[5].SetActive(false);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_BackG6()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 0);
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 1);
-        titleBackgGO[4].SetActive(false);
-        titleBackgGO[5].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG6",0);
+		int p = itemPrice_i [9];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 0);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 1);
+			titleBackgGO[4].SetActive(false);
+			titleBackgGO[5].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG6", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 0);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[4].SetActive(false);
+			titleBackgGO[5].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     public void item_BackG7()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[6], 1);
-        titleBackgGO[6].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG7",0);
+		int p = itemPrice_i [10];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[6], 1);
+			titleBackgGO[6].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG7", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[6], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[6].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_BackG8()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[7], 1);
-        titleBackgGO[7].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG8",0);
+		int p = itemPrice_i [11];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[7], 1);
+			titleBackgGO[7].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG8", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[7], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[7].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_BackG9()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[8], 1);
-        titleBackgGO[8].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG9",0);
+		int p = itemPrice_i [12];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[8], 1);
+			titleBackgGO[8].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG9", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[8], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[8].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_BackG10()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[9], 1);
-        titleBackgGO[9].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG10",0);
+		int p = itemPrice_i [13];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[9], 1);
+			titleBackgGO[9].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG10", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[9], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[9].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     public void item_BackG11()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 1);
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 0);
-        titleBackgGO[10].SetActive(true);
-        titleBackgGO[11].SetActive(false);
+
+		int g = PlayerPrefs.GetInt("BackG11",0);
+		int p = itemPrice_i [14];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 0);
+			titleBackgGO[10].SetActive(true);
+			titleBackgGO[11].SetActive(false);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG11", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 0);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[10].SetActive(true);
+			titleBackgGO[11].SetActive(false);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_BackG12()
     {
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 0);
-        PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
-        titleBackgGO[10].SetActive(false);
-        titleBackgGO[11].SetActive(true);
+		int g = PlayerPrefs.GetInt("BackG12",0);
+		int p = itemPrice_i [15];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 0);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
+			titleBackgGO[10].SetActive(false);
+			titleBackgGO[11].SetActive(true);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("BackG12", 1);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 0);
+			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
+			PlayerPrefs.SetInt (str, coin);
+			titleBackgGO[10].SetActive(false);
+			titleBackgGO[11].SetActive(true);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     //책꾸밈
     public void item_Book1()
     {
-        PlayerPrefs.SetInt("decoBook", 1);
+		int g = PlayerPrefs.GetInt("Book1",0);
+		int p = itemPrice_i [16];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBook", 1);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Book1", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBook", 1);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_Book2()
     {
-        PlayerPrefs.SetInt("decoBook", 2);
+		int g = PlayerPrefs.GetInt("Book2",0);
+		int p = itemPrice_i [17];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBook", 2);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Book2", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBook", 2);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_Book3()
     {
-        PlayerPrefs.SetInt("decoBook", 3);
+		int g = PlayerPrefs.GetInt("Book3",0);
+		int p = itemPrice_i [18];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBook", 3);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Book3", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBook", 3);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_Book4()
     {
-        PlayerPrefs.SetInt("decoBook", 4);
+		int g = PlayerPrefs.GetInt("Book4",0);
+		int p = itemPrice_i [19];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBook", 4);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Book4", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBook", 4);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
 
     //책갈피꾸밈
     public void item_Bookmark1()
     {
-        PlayerPrefs.SetInt("decoBookmark", 2);
+		int g = PlayerPrefs.GetInt("Bookmark1",0);
+		int p = itemPrice_i [20];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBookmark", 2);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Bookmark1", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBookmark", 2);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_Bookmark2()
     {
-        PlayerPrefs.SetInt("decoBookmark", 4);
+		int g = PlayerPrefs.GetInt("Bookmark2",0);
+		int p = itemPrice_i [21];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBookmark", 4);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Bookmark2", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBookmark", 4);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_Bookmark3()
     {
-        PlayerPrefs.SetInt("decoBookmark", 6);
+		int g = PlayerPrefs.GetInt("Bookmark3",0);
+		int p = itemPrice_i [22];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBookmark", 6);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Bookmark3", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBookmark", 6);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+
+		Debug.Log (p);
     }
     public void item_Bookmark4()
     {
-        PlayerPrefs.SetInt("decoBookmark", 8);
+		int g = PlayerPrefs.GetInt("Bookmark4",0);
+		int p = itemPrice_i [23];
+		string str = PlayerPrefs.GetString ("code", "");
+		int coin = PlayerPrefs.GetInt(str,0);
+		if (g == 1) {
+			PlayerPrefs.SetInt("decoBookmark", 8);
+		} else if (coin >= p) {
+			coin = coin - p;
+			PlayerPrefs.SetInt ("Bookmark4", 1);
+			PlayerPrefs.SetInt (str, coin);
+			PlayerPrefs.SetInt("decoBookmark", 8);
+		} else {
+			//돈이모자라
+		}
+		PlayerPrefs.Save ();
+		coin_txt.text = "" + coin;
+		Debug.Log (p);
+
     }
 
     //임시초기화
@@ -316,7 +683,6 @@ public class TitleDecoEvt : MonoBehaviour {
         PlayerPrefs.SetInt("decoBook", 0);
         PlayerPrefs.SetInt("decoBookmark", 0);
     }
-
 
 
 }
