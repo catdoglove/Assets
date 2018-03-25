@@ -34,6 +34,8 @@ public class TitleCardEvt : MonoBehaviour {
 	public GameObject cardWarring_obj;
 	public Text warringWord_txt;
 
+	public GameObject whenno_btn1,whenno_btn2;
+
 	public void showCardWindow(){
 		
 
@@ -112,12 +114,16 @@ public class TitleCardEvt : MonoBehaviour {
 
 	void changeType(){
 		initializeCard ();
+		whenno_btn1.SetActive (true);
+		whenno_btn2.SetActive (true);
 		switch (typeNum) {
 		case 1: //누가
 			allTypeClose();
 			typeBtn1.GetComponent<Image> ().sprite = typeImgSpr [1];
 			break;
 		case 2: //언제
+			whenno_btn1.SetActive (false);
+			whenno_btn2.SetActive (false);
 			allTypeClose();
 			typeBtn2.GetComponent<Image> ().sprite = typeImgSpr [3];
 			break;

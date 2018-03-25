@@ -337,6 +337,7 @@ public class TitleBookEvt : MonoBehaviour {
 						d = d + bookSeries [g];
 					}
 					d = d + s;
+					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [22];
 					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
 				} 
 			}

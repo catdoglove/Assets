@@ -12,7 +12,10 @@ public class TitleDecoEvt : MonoBehaviour {
     int MarkNum = 0;
     int signNum = 0;
 
+	public GameObject itemBuy;
 	public int[] itemPrice_i;
+	public int ip,dn;
+	public string pk,dk,dk2;
 
 
 	//돈
@@ -103,99 +106,58 @@ public class TitleDecoEvt : MonoBehaviour {
 
     public void item_Sign1()
     { //붉은
-		int g = PlayerPrefs.GetInt("sing1",0);
-		int p = itemPrice_i [0];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt ("decoSign", 3);
-			changeSign ();
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("sing1", 1);
-			PlayerPrefs.SetInt ("decoSign", 3);
-			PlayerPrefs.SetInt (str, coin);
+		ip = 0;
+		pk = "sing1";
+		dn = 3;
+		dk = "decoSign";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt ("decoSign", dn);
 			changeSign ();
 		} else {
-			StartCoroutine("cardNotReady");
-            Debug.Log("돈부족");
-        }
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
+			itemBuy.SetActive (true);
+		}
     }
 
     public void item_Sign2()
     { //푸른
-		int g = PlayerPrefs.GetInt("sing2",0);
-		int p = itemPrice_i [1];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt ("decoSign", 6);
-			changeSign ();
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("sing2", 1);
-			PlayerPrefs.SetInt ("decoSign", 6);
-			PlayerPrefs.SetInt (str, coin);
+		ip = 1;
+		pk = "sing2";
+		dn = 6;
+		dk = "decoSign";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt ("decoSign", dn);
 			changeSign ();
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
 
     public void item_Sign3()
     { //덤뷸
-		int g = PlayerPrefs.GetInt("sing3",0);
-		int p = itemPrice_i [2];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt ("decoSign", 9);
-			changeSign ();
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("sing3", 1);
-			PlayerPrefs.SetInt ("decoSign", 9);
-			PlayerPrefs.SetInt (str, coin);
+		ip = 2;
+		pk = "sing3";
+		dn = 9;
+		dk = "decoSign";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt ("decoSign", dn);
 			changeSign ();
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
 
     public void item_Sign4()
     { //덩굴
-		int g = PlayerPrefs.GetInt("sing4",0);
-		int p = itemPrice_i [3];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 3;
+		pk = "sing4";
+		dn = 12;
+		dk = "decoSign";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt ("decoSign", 12);
-			changeSign ();
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("sing4", 1);
-			PlayerPrefs.SetInt ("decoSign", 12);
-			PlayerPrefs.SetInt (str, coin);
 			changeSign ();
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
 
     public void changeSign()
@@ -210,474 +172,347 @@ public class TitleDecoEvt : MonoBehaviour {
     //배경꾸밈
     public void item_BackG1()
     {
-		int g = PlayerPrefs.GetInt("BackG1",0);
-		int p = itemPrice_i [4];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 4;
+		pk = "BackG1";
+		dn = -1;
+		dk = "decoBackG" + titleBackgGO[0];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[0], 1);
-			titleBackgGO[0].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG1", 1);
-			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[0], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[0].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_BackG2()
     {
-		int g = PlayerPrefs.GetInt("BackG2",0);
-		int p = itemPrice_i [5];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 5;
+		pk = "BackG2";
+		dn = -2;
+		dk = "decoBackG" + titleBackgGO[1];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[1], 1);
-			titleBackgGO[1].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG2", 1);
-			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[1], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[1].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
-
     }
     public void item_BackG3()
     {
-		int g = PlayerPrefs.GetInt("BackG3",0);
-		int p = itemPrice_i [6];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 6;
+		pk = "BackG3";
+		dn = -3;
+		dk = "decoBackG" + titleBackgGO[2];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[2], 1);
-			titleBackgGO[2].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG3", 1);
-			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[2], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[2].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_BackG4()
     {
-		int g = PlayerPrefs.GetInt("BackG4",0);
-		int p = itemPrice_i [7];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 7;
+		pk = "BackG4";
+		dn = -4;
+		dk = "decoBackG" + titleBackgGO[3];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[3], 1);
-			titleBackgGO[3].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG4", 1);
-			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[3], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[3].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
 
     public void item_BackG5()
     {
-		int g = PlayerPrefs.GetInt("BackG5",0);
-		int p = itemPrice_i [8];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 8;
+		pk = "BackG5";
+		dn = -5;
+		dk = "decoBackG" + titleBackgGO[4];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 1);
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 0);
-			titleBackgGO[4].SetActive(true);
-			titleBackgGO[5].SetActive(false);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG5", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 0);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[4].SetActive(true);
 			titleBackgGO[5].SetActive(false);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_BackG6()
     {
-		int g = PlayerPrefs.GetInt("BackG6",0);
-		int p = itemPrice_i [9];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 9;
+		pk = "BackG6";
+		dn = -6;
+		dk = "decoBackG" + titleBackgGO[5];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 0);
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 1);
-			titleBackgGO[4].SetActive(false);
-			titleBackgGO[5].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG6", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[4], 0);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[4].SetActive(false);
 			titleBackgGO[5].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
 
     public void item_BackG7()
     {
-		int g = PlayerPrefs.GetInt("BackG7",0);
-		int p = itemPrice_i [10];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 10;
+		pk = "BackG7";
+		dn = -7;
+		dk = "decoBackG" + titleBackgGO[6];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[6], 1);
-			titleBackgGO[6].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG7", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[6], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[6].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_BackG8()
     {
-		int g = PlayerPrefs.GetInt("BackG8",0);
-		int p = itemPrice_i [11];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 11;
+		pk = "BackG8";
+		dn = -8;
+		dk = "decoBackG" + titleBackgGO[7];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[7], 1);
-			titleBackgGO[7].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG8", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[7], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[7].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_BackG9()
     {
-		int g = PlayerPrefs.GetInt("BackG9",0);
-		int p = itemPrice_i [12];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 12;
+		pk = "BackG9";
+		dn = -9;
+		dk = "decoBackG" + titleBackgGO[8];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[8], 1);
-			titleBackgGO[8].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG9", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[8], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[8].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_BackG10()
     {
-		int g = PlayerPrefs.GetInt("BackG10",0);
-		int p = itemPrice_i [13];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 13;
+		pk = "BackG10";
+		dn = -10;
+		dk = "decoBackG" + titleBackgGO[9];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[9], 1);
-			titleBackgGO[9].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG10", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[9], 1);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[9].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
 
     public void item_BackG11()
     {
-
-		int g = PlayerPrefs.GetInt("BackG11",0);
-		int p = itemPrice_i [14];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
+		ip = 14;
+		pk = "BackG11";
+		dn = -11;
+		dk = "decoBackG" + titleBackgGO[10];
+		dk2 = "decoBackG" + titleBackgGO [11];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 1);
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 0);
-			titleBackgGO[10].SetActive(true);
-			titleBackgGO[11].SetActive(false);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG11", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 0);
-			PlayerPrefs.SetInt (str, coin);
 			titleBackgGO[10].SetActive(true);
 			titleBackgGO[11].SetActive(false);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_BackG12()
     {
-		int g = PlayerPrefs.GetInt("BackG12",0);
-		int p = itemPrice_i [15];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 0);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
-			titleBackgGO[10].SetActive(false);
-			titleBackgGO[11].SetActive(true);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("BackG12", 1);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 0);
-			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
-			PlayerPrefs.SetInt (str, coin);
-			titleBackgGO[10].SetActive(false);
-			titleBackgGO[11].SetActive(true);
+		ip = 15;
+		pk = "BackG12";
+		dn = -12;
+		dk = "decoBackG" + titleBackgGO[10];
+		dk2 = "decoBackG" + titleBackgGO [11];
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+				PlayerPrefs.SetInt("decoBackG" + titleBackgGO[10], 0);
+				PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
+				titleBackgGO[10].SetActive(false);
+				titleBackgGO[11].SetActive(true);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
 
     //책꾸밈
     public void item_Book1()
     {
-		int g = PlayerPrefs.GetInt("Book1",0);
-		int p = itemPrice_i [16];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBook", 1);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("Book1", 1);
-			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBook", 1);
+		ip = 16;
+		pk = "Book1";
+		dn = 1;
+		dk = "decoBook";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_Book2()
     {
-		int g = PlayerPrefs.GetInt("Book2",0);
-		int p = itemPrice_i [17];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBook", 2);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("Book2", 1);
-			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBook", 2);
+		ip = 17;
+		pk = "Book2";
+		dn = 2;
+		dk = "decoBook";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_Book3()
     {
-		int g = PlayerPrefs.GetInt("Book3",0);
-		int p = itemPrice_i [18];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBook", 3);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("Book3", 1);
-			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBook", 3);
+		ip = 18;
+		pk = "Book3";
+		dn = 3;
+		dk = "decoBook";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_Book4()
     {
-		int g = PlayerPrefs.GetInt("Book4",0);
-		int p = itemPrice_i [19];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBook", 4);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("Book4", 1);
-			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBook", 4);
+		ip = 19;
+		pk = "Book4";
+		dn = 4;
+		dk = "decoBook";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
-
     //책갈피꾸밈
     public void item_Bookmark1()
     {
-		int g = PlayerPrefs.GetInt("Bookmark1",0);
-		int p = itemPrice_i [20];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBookmark", 2);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("Bookmark1", 1);
-			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBookmark", 2);
+		ip = 20;
+		pk = "Bookmark1";
+		dn = 2;
+		dk = "decoBookmark";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
 		} else {
-			StartCoroutine("cardNotReady");
-            Debug.Log("돈부족");
-        }
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
+			itemBuy.SetActive (true);
+		}
     }
     public void item_Bookmark2()
     {
-		int g = PlayerPrefs.GetInt("Bookmark2",0);
-		int p = itemPrice_i [21];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBookmark", 4);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("Bookmark2", 1);
-			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBookmark", 4);
+		ip = 21;
+		pk = "Bookmark2";
+		dn = 4;
+		dk = "decoBookmark";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
 		} else {
-			StartCoroutine("cardNotReady");
-        }
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
+			itemBuy.SetActive (true);
+		}
 
-		//Debug.Log (p);
     }
     public void item_Bookmark3()
     {
-		int g = PlayerPrefs.GetInt("Bookmark3",0);
-		int p = itemPrice_i [22];
-		string str = PlayerPrefs.GetString ("code", "");
-		int coin = PlayerPrefs.GetInt(str,0);
-		if (g == 1) {
-			PlayerPrefs.SetInt("decoBookmark", 6);
-		} else if (coin >= p) {
-			coin = coin - p;
-			PlayerPrefs.SetInt ("Bookmark3", 1);
-			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBookmark", 6);
+		ip = 22;
+		pk = "Bookmark3";
+		dn = 6;
+		dk = "decoBookmark";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
 		} else {
-			StartCoroutine("cardNotReady");
+			itemBuy.SetActive (true);
 		}
-		PlayerPrefs.Save ();
-		coin_txt.text = "" + coin;
-
-		//Debug.Log (p);
     }
     public void item_Bookmark4()
     {
-		int g = PlayerPrefs.GetInt("Bookmark4",0);
-		int p = itemPrice_i [23];
+		ip = 23;
+		pk = "Bookmark4";
+		dn = 8;
+		dk = "decoBookmark";
+		if (PlayerPrefs.GetInt (pk, 0) == 1) {
+			PlayerPrefs.SetInt(dk, dn);
+		} else {
+			itemBuy.SetActive (true);
+		}
+    }
+
+	public void itemBuyYes(){
+		item_handler ();
+	}
+
+	public void item_handler(){
+		int g = PlayerPrefs.GetInt(pk,0);
+		int p = itemPrice_i [ip];
 		string str = PlayerPrefs.GetString ("code", "");
 		int coin = PlayerPrefs.GetInt(str,0);
 		if (g == 1) {
-			PlayerPrefs.SetInt("decoBookmark", 8);
+			PlayerPrefs.SetInt(dk, dn);
 		} else if (coin >= p) {
 			coin = coin - p;
-			PlayerPrefs.SetInt ("Bookmark4", 1);
+			PlayerPrefs.SetInt (pk, 1);
+			if (dn == -12) {
+				PlayerPrefs.SetInt (dk, 0);
+				PlayerPrefs.SetInt (dk2, 1);
+				titleBackgGO [10].SetActive (false);
+				titleBackgGO [11].SetActive (true);
+			} else if (dn == -11) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [10], 1);
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [11], 0);
+				titleBackgGO [10].SetActive (true);
+				titleBackgGO [11].SetActive (false);
+			} else if (dn == -10) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [9], 1);
+				titleBackgGO [9].SetActive (true);
+			} else if (dn == -9) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [8], 1);
+				titleBackgGO [8].SetActive (true);
+			} else if (dn == -8) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [7], 1);
+				titleBackgGO [7].SetActive (true);
+			} else if (dn == -7) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [6], 1);
+				titleBackgGO [6].SetActive (true);
+			} else if (dn == -6) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [4], 0);
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [5], 1);
+				titleBackgGO [4].SetActive (false);
+				titleBackgGO [5].SetActive (true);
+			} else if (dn == -5) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [4], 1);
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [5], 0);
+				titleBackgGO [4].SetActive (true);
+				titleBackgGO [5].SetActive (false);
+			} else if (dn == -4) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [3], 1);
+				titleBackgGO [3].SetActive (true);
+			} else if (dn == -3) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [2], 1);
+				titleBackgGO [2].SetActive (true);
+			} else if (dn == -2) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [1], 1);
+				titleBackgGO [1].SetActive (true);
+			} else if (dn == -1) {
+				PlayerPrefs.SetInt ("decoBackG" + titleBackgGO [0], 1);
+				titleBackgGO [0].SetActive (true);
+			} else {
+				PlayerPrefs.SetInt(dk, dn);
+				changeSign ();
+			}
 			PlayerPrefs.SetInt (str, coin);
-			PlayerPrefs.SetInt("decoBookmark", 8);
+
+
 		} else {
 			StartCoroutine("cardNotReady");
 		}
 		PlayerPrefs.Save ();
 		coin_txt.text = "" + coin;
-		//Debug.Log (p);
+		
+	}
 
-    }
 
     //임시초기화
     public void item_BookReload()
@@ -697,5 +532,8 @@ public class TitleDecoEvt : MonoBehaviour {
         warningPop.SetActive(false);
     }
 
+	public void closeBuyDeco(){
+		itemBuy.SetActive (false);
+	}
 
 }
