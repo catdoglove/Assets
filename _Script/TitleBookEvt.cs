@@ -34,7 +34,9 @@ public class TitleBookEvt : MonoBehaviour {
 	AllNumber allNum = new AllNumber ();
 
 	public void showBookWindow(){
-		bookWindow.SetActive (true);
+
+        pageTxt.text = "- 1 -";
+        bookWindow.SetActive (true);
 
 		blind [0].SetActive (true);
 		blind [1].SetActive (true);

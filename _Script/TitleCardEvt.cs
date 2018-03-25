@@ -116,15 +116,21 @@ public class TitleCardEvt : MonoBehaviour {
 		initializeCard ();
 		whenno_btn1.SetActive (true);
 		whenno_btn2.SetActive (true);
-		switch (typeNum) {
+        cardBtn[0].GetComponent<Button>().interactable = true;
+        cardBtn[1].GetComponent<Button>().interactable = true;
+        cardBtn[2].GetComponent<Button>().interactable = true;
+        switch (typeNum) {
 		case 1: //누가
 			allTypeClose();
 			typeBtn1.GetComponent<Image> ().sprite = typeImgSpr [1];
 			break;
 		case 2: //언제
-			whenno_btn1.SetActive (false);
-			whenno_btn2.SetActive (false);
-			allTypeClose();
+                cardBtn[0].GetComponent<Button>().interactable = false;
+                cardBtn[1].GetComponent<Button>().interactable = false;
+                cardBtn[2].GetComponent<Button>().interactable = false;
+                //whenno_btn1.SetActive (false);
+                //whenno_btn2.SetActive (false);
+                allTypeClose();
 			typeBtn2.GetComponent<Image> ().sprite = typeImgSpr [3];
 			break;
 		case 3: //어디서
