@@ -17,9 +17,12 @@ public class TitleDecoEvt : MonoBehaviour {
 	public int ip,dn;
 	public string pk,dk,dk2;
 
-
 	//돈
 	public Text coin_txt;
+
+    //아이템보유체크
+    public GameObject[] itemBuyCK_sign, itemBuyCK_titleBG, itemBuyCK_book, itemBuyCK_bookmark;
+    
 
     void Start()
     {
@@ -79,6 +82,24 @@ public class TitleDecoEvt : MonoBehaviour {
     // 다른 스크립트가져다쓰기
     //GM.GetComponent<TitleDecoEvt클래스명>().MarkNum = 3;
 
+
+        //아이템 재배치
+    public void item_re()
+    {
+        PlayerPrefs.SetInt("decoSign", 0);
+        changeSign();
+
+        for (int i = 0; i < 12; i++)
+        {
+            PlayerPrefs.SetInt("decoBackG" + titleBackgGO[i], 0);
+            titleBackgGO[i].SetActive(false);
+        }
+
+        PlayerPrefs.SetInt("decoBook", 0);
+        PlayerPrefs.SetInt("decoBookmark", 0);
+
+    }
+
     public void item_Sign0()
     { //기본
 		int g = PlayerPrefs.GetInt("sing0",0);
@@ -113,7 +134,9 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt ("decoSign", dn);
 			changeSign ();
-		} else {
+            itemBuyCK_sign[0].SetActive(true);
+
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -127,7 +150,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt ("decoSign", dn);
 			changeSign ();
-		} else {
+            itemBuyCK_sign[1].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -141,7 +165,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt ("decoSign", dn);
 			changeSign ();
-		} else {
+            itemBuyCK_sign[2].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -155,7 +180,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt ("decoSign", 12);
 			changeSign ();
-		} else {
+            itemBuyCK_sign[3].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -179,7 +205,9 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[0], 1);
 			titleBackgGO[0].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[0].SetActive(true);
+
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -192,7 +220,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[1], 1);
 			titleBackgGO[1].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[1].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -205,7 +234,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[2], 1);
 			titleBackgGO[2].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[2].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -218,7 +248,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG"+ titleBackgGO[3], 1);
 			titleBackgGO[3].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[3].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -234,7 +265,8 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 0);
 			titleBackgGO[4].SetActive(true);
 			titleBackgGO[5].SetActive(false);
-		} else {
+            itemBuyCK_titleBG[4].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -249,7 +281,8 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[5], 1);
 			titleBackgGO[4].SetActive(false);
 			titleBackgGO[5].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[5].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -263,7 +296,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[6], 1);
 			titleBackgGO[6].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[6].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -276,7 +310,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[7], 1);
 			titleBackgGO[7].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[7].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -289,7 +324,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[8], 1);
 			titleBackgGO[8].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[8].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -302,7 +338,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[9], 1);
 			titleBackgGO[9].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[9].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -319,7 +356,8 @@ public class TitleDecoEvt : MonoBehaviour {
 			PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 0);
 			titleBackgGO[10].SetActive(true);
 			titleBackgGO[11].SetActive(false);
-		} else {
+            itemBuyCK_titleBG[10].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -335,7 +373,8 @@ public class TitleDecoEvt : MonoBehaviour {
 				PlayerPrefs.SetInt("decoBackG" + titleBackgGO[11], 1);
 				titleBackgGO[10].SetActive(false);
 				titleBackgGO[11].SetActive(true);
-		} else {
+            itemBuyCK_titleBG[11].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -349,7 +388,9 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBook";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_book[0].SetActive(true);
+
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -361,7 +402,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBook";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_book[1].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -373,7 +415,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBook";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_book[2].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -385,7 +428,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBook";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_book[3].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -398,7 +442,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBookmark";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_bookmark[0].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -410,7 +455,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBookmark";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_bookmark[1].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
 
@@ -423,7 +469,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBookmark";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_bookmark[2].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
@@ -435,7 +482,8 @@ public class TitleDecoEvt : MonoBehaviour {
 		dk = "decoBookmark";
 		if (PlayerPrefs.GetInt (pk, 0) == 1) {
 			PlayerPrefs.SetInt(dk, dn);
-		} else {
+            itemBuyCK_bookmark[3].SetActive(true);
+        } else {
 			itemBuy.SetActive (true);
 		}
     }
