@@ -334,7 +334,7 @@ public class TutorialEvt : MonoBehaviour {
 				closeall [5].SetActive (false);
 				closeall [6].SetActive (false);
 				closeall [8].SetActive (false);
-                    //토끼
+                //토끼
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 4, 1);
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 4, 3);
 				//거북이

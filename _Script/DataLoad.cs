@@ -26,6 +26,7 @@ public class DataLoad : MonoBehaviour {
 		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 10, 2);
 
 
+
         //표지판
         titleSignGO[0].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0)];
         titleSignGO[1].GetComponent<Image>().sprite = titleSignSpr[PlayerPrefs.GetInt("decoSign", 0) + 1];

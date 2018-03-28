@@ -39,6 +39,19 @@ public class TitleShopEvt : MonoBehaviour {
 
 	public Text coind_txt;
 
+
+	//광고시간
+
+
+	System.DateTime lastAdTime,nowAdTime;
+
+
+	System.DateTime lastDateAdTime;
+	System.TimeSpan compareAdTime;
+
+	public Text AdTime_txt;
+	public GameObject AdTime_obj;
+
 	public void showShopChoWindow(){ //상점선택열기
 		shopChoPop.SetActive (true);		
 	}
@@ -73,6 +86,29 @@ public class TitleShopEvt : MonoBehaviour {
 	public void showAdCardWindow(){ //광고카드
 		cardNum_i = 2;
 		adCardWnd.SetActive (true);		
+
+		//광고시간
+		/*
+		nowAdTime=new System.DateTime(1970,1,1,0,0,0,System.DateTimeKind.Utc);
+		lastAdTime = PlayerPrefs.GetString ("saveAdtime",nowAdTime.ToString());
+		lastDateAdTime = System.DateTime.Parse(lastAdTime);
+		compareAdTime =  System.DateTime.Now - lastDateAdTime;
+		sG = (int)compareAdTime.TotalHours;
+		mG = (int)compareAdTime.TotalMinutes;
+		sG = sG-(sG / 60)*60;
+		mG = 5 - mG;
+		hG = 59- hG;
+		if (hG < 0) {
+			btn_gudoc.GetComponent<Button> ().interactable = true;
+			hG = 0;
+			mG = 0;
+
+		} else {
+			btn_gudoc.GetComponent<Button> ().interactable = false;
+			string stru= string.Format(@"{0:00}"+":",hG)+string.Format(@"{0:00}",mG);
+			txt_gudoc.text = stru;
+		}
+		*/
 	}
 
 	public void showOneCardWindow(){ //1장카드
