@@ -26,7 +26,7 @@ public class TitleDecoEvt : MonoBehaviour {
 
     void Start()
     {
-		
+        itemCK();
         changeSign();
 
         //뒷배경
@@ -45,6 +45,8 @@ public class TitleDecoEvt : MonoBehaviour {
             titleBackgGO[i].SetActive(false);
         }
         */
+
+
     }
 
         public void clickTitleMark()
@@ -488,9 +490,12 @@ public class TitleDecoEvt : MonoBehaviour {
 		}
     }
 
-	public void itemBuyYes(){
-		item_handler ();
-	}
+	public void itemBuyYes()
+    {
+        itemBuy.SetActive(false);
+        item_handler ();
+        itemCK();
+    }
 
 	public void item_handler(){
 		int g = PlayerPrefs.GetInt(pk,0);
@@ -569,7 +574,39 @@ public class TitleDecoEvt : MonoBehaviour {
         PlayerPrefs.SetInt("decoBookmark", 0);
     }
 
+    //체크표시
+    void itemCK()
+    {
+        for (int i = 1; i < 5; i++) //sing1~4 
+        {
+            if (PlayerPrefs.GetInt("sing" + i, 0) == 1)
+            {
+                itemBuyCK_sign[i - 1].SetActive(true);
+            }
+        }
+        for (int i = 1; i < 13; i++) //BackG1~12
+        {
+            if (PlayerPrefs.GetInt("BackG" + i, 0) == 1)
+            {
+                itemBuyCK_titleBG[i - 1].SetActive(true);
+            }
+        }
+        for (int i = 1; i < 5; i++) //Book1~4
+        {
+            if (PlayerPrefs.GetInt("Book" + i, 0) == 1)
+            {
+                itemBuyCK_book[i - 1].SetActive(true);
+            }
+        }
+        for (int i = 1; i < 5; i++) //Bookmark1~4
+        {
+            if (PlayerPrefs.GetInt("Bookmark" + i, 0) == 1)
+            {
+                itemBuyCK_bookmark[i - 1].SetActive(true);
+            }
+        }
 
+    }
 
                 
     //코룬틴<--
