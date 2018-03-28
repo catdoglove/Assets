@@ -60,6 +60,7 @@ public class UnityADS : MonoBehaviour {
             //Add code to reward your player here!
             //Give coins, etc
             Debug.Log("보상");
+			PlayerPrefs.SetString ("saveAdtime",System.DateTime.Now.ToString());
 			GM.GetComponent<TitleShopEvt> ().buyCardYes ();
             GM.GetComponent<TitleShopEvt>().adCardPop.SetActive(false);
         }

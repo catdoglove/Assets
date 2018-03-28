@@ -41,16 +41,14 @@ public class TitleShopEvt : MonoBehaviour {
 
 
 	//광고시간
-
-
-	System.DateTime lastAdTime,nowAdTime;
-
-
+	System.DateTime nowAdTime;
 	System.DateTime lastDateAdTime;
 	System.TimeSpan compareAdTime;
-
+	string lastAdTime;
 	public Text AdTime_txt;
 	public GameObject AdTime_obj;
+	int sG,mG;
+	public GameObject adTimeBackImg_obj;
 
 	public void showShopChoWindow(){ //상점선택열기
 		shopChoPop.SetActive (true);		
@@ -86,29 +84,10 @@ public class TitleShopEvt : MonoBehaviour {
 	public void showAdCardWindow(){ //광고카드
 		cardNum_i = 2;
 		adCardWnd.SetActive (true);		
-
 		//광고시간
-		/*
-		nowAdTime=new System.DateTime(1970,1,1,0,0,0,System.DateTimeKind.Utc);
-		lastAdTime = PlayerPrefs.GetString ("saveAdtime",nowAdTime.ToString());
-		lastDateAdTime = System.DateTime.Parse(lastAdTime);
-		compareAdTime =  System.DateTime.Now - lastDateAdTime;
-		sG = (int)compareAdTime.TotalHours;
-		mG = (int)compareAdTime.TotalMinutes;
-		sG = sG-(sG / 60)*60;
-		mG = 5 - mG;
-		hG = 59- hG;
-		if (hG < 0) {
-			btn_gudoc.GetComponent<Button> ().interactable = true;
-			hG = 0;
-			mG = 0;
+		StartCoroutine("adTimeFlow");
 
-		} else {
-			btn_gudoc.GetComponent<Button> ().interactable = false;
-			string stru= string.Format(@"{0:00}"+":",hG)+string.Format(@"{0:00}",mG);
-			txt_gudoc.text = stru;
-		}
-		*/
+
 	}
 
 	public void showOneCardWindow(){ //1장카드
@@ -124,16 +103,38 @@ public class TitleShopEvt : MonoBehaviour {
 	public void closeAOFWindow(){
 		adCardWnd.SetActive (false);		
 		oneCardWnd.SetActive (false);	
-		fiveCardWnd.SetActive (false);		
+		fiveCardWnd.SetActive (false);
+		//광고시간
+		StopCoroutine("adTimeFlow");
 	}
 
 	//구매확인창들
 	public void showBuyCard(){
-		buyCardPop.SetActive (true);
+		int cc = 0;
+		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
+			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+		}
+		if (cc < 100) {
+			buyCardPop.SetActive (true);
+		} else {
+			//카드수가너무많음ㄷ
+			GM.GetComponent<TitleCardEvt>().shopWarring();
+			GM.GetComponent<TitleCardEvt>().warringWord_txt.text="카드의 수가 너무 많아요";
+		}
 	}
 
 	public void showADSCard(){
-		adCardPop.SetActive (true);
+		int cc = 0;
+		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
+			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+		}
+		if (cc < 100) {
+			adCardPop.SetActive (true);
+		} else {
+			//카드수가너무많음ㄷ
+			GM.GetComponent<TitleCardEvt>().shopWarring();
+			GM.GetComponent<TitleCardEvt>().warringWord_txt.text="카드의 수가 너무 많아요";
+		}
 	}
 
 	public void FalseBuyAdCard(){
@@ -266,6 +267,8 @@ public class TitleShopEvt : MonoBehaviour {
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + randCard_i [0], 1);
 				PlayerPrefs.Save();
 			}
+
+			adCardWnd.SetActive (false);
 		} else {
 			//돈이부족하다
 			GM.GetComponent<TitleCardEvt>().shopWarring();
@@ -323,4 +326,36 @@ public class TitleShopEvt : MonoBehaviour {
 		}
 	}
 
+
+
+	IEnumerator adTimeFlow(){
+		while (mG>-1) {
+			nowAdTime=new System.DateTime(1970,1,1,0,0,0,System.DateTimeKind.Utc);
+			lastAdTime = PlayerPrefs.GetString ("saveAdtime",nowAdTime.ToString());
+			lastDateAdTime = System.DateTime.Parse(lastAdTime);
+			compareAdTime =  System.DateTime.Now - lastDateAdTime;
+			sG = (int)compareAdTime.TotalSeconds;
+			mG = (int)compareAdTime.TotalMinutes;
+			sG = sG-(sG / 60)*60;
+			mG = 4 - mG;
+			sG = 59- sG;
+			if (mG < 0) {
+				adTimeBackImg_obj.SetActive (false);
+				sG = 0;
+				mG = 0;
+				AdTime_txt.text = "00:00";
+				AdTime_obj.SetActive (false);
+			} else {
+				adTimeBackImg_obj.SetActive (true);
+				string stru= string.Format(@"{0:00}"+":",mG)+string.Format(@"{0:00}",sG);
+				AdTime_txt.text = stru;
+
+				AdTime_obj.SetActive (true);
+			}
+
+			yield return new WaitForSeconds(1f);
+		}
+
+		
+	}
 }
