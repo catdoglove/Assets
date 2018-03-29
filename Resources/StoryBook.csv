@@ -2,7 +2,7 @@
 1,1,The Hare and the Tortoise,토끼와 거북이,0,9,13,5,7,34,53,"One day, A Hare and a Tortoise started a race. Hare was faster than tortoise so Hare gone away from tortoise. And hare was sleeping beside rock.","어느 날, 토끼와 거북이가 경주를 했습니다. 토끼는 거북이보다 달리기가 훨씬 빨랐기 때문에 거북이를 앞질러가 바위옆에서 잠을 청했습니다."
 2,1,The Hare and the Tortoise,토끼와 거북이,0,12,13,5,29,46,54,"While Hare was sleeping, Tortoise ran hard and overtaken Hare. As a result, Tortoise won the race.",토끼가 쿨쿨 자는 동안 거북이는 열심히 달려 토끼를 따라잡았습니다. 그 결과 거북이가 달리기 경주에서 이겼습니다.
 3,1,The Hare's liver,토끼의 간,1,9,14,5,7,45,47,The Hare who was playing in the beach met a tortoise. Tortoise said that gold was full of treasures in the sea. Hare was fooled by that and followed tortoise.,바닷가 근처에서 놀고있던 토끼는 거북이를 만났습니다. 바닷속에는 금은보화가 가득있다는 거북이의 말에 넘어간 토끼는 거북이를 따라갔습니다.
-4,1,The Hare's liver,토끼의 간,1,12,15,5,26,35,53,"When arrived at The palace of Sea Kings, It was in need of a hare's liver to repair the Sea King's disease. The hare, knowing that he was deceived by a tortoise, told him that he had put the liver on the land.",용궁에 도착해보니 사실은 용왕님의 병을 고치기 위해 토끼의 간이 필요했던 것이 었습니다. 거북이에게 속은 것을 알게 된 토끼는 꾀를 내어 간을 육지에 두고 왔다고 말했습니다.
+4,1,The Hare's liver,토끼의 간,1,12,15,5,26,35,51,"When arrived at The palace of Sea Kings, It was in need of a hare's liver to repair the Sea King's disease. The hare, knowing that he was deceived by a tortoise, told him that he had put the liver on the land.",용궁에 도착해보니 사실은 용왕님의 병을 고치기 위해 토끼의 간이 필요했던 것이 었습니다. 거북이에게 속은 것을 알게 된 토끼는 꾀를 내어 간을 육지에 두고 왔다고 말했습니다.
 5,1,The Hare's liver,토끼의 간,1,12,23,5,7,36,48,Hare came back to the land with tortoise to bring the liver. Tortoise told Hare to bring the liver. Hare asked how it was possible to get the liver out of his body and raised it. Then it fled to the forest.,토끼는 간을 가져오기위해 거북이와 함께 육지로 돌아왔습니다. 거북이가 간을 가져오라 하자 토끼는 어떻게 간을 밖에 꺼내놓고 다니느냐고 약올리며 숲 속으로 도망가버렸습니다.
 6,1,The Lion and the Hare,사자와 토끼,2,9,23,5,4,36,51,"Hare, caught by the lion when it passed through forest, said it was strong enough to let the beasts run away.",숲 속을 지나가다 사자에게 잡힌 토끼는 자신을 짐승들이 도망갈 정도로 강하다고 했습니다. 숲속을 걷자 자신의 앞에 도망가는 짐승들을 본 사자는 토끼를 보고 도망하는 것으로 오해하여 겁에질려 도망쳤습니다.
 7,1,The Lion and the Hare,사자와 토끼,2,12,21,4,27,37,51,what the,다시 잡힌 토끼는 사자보다 더 센 짐승이 있다고 말했습니다. 토끼가 사자를 우물로 데려갔습니다. 사자는 물 속에 비친 자신의 그림자를 보고 싸우려고 달려들자 물에 빠지고 말았습니다.
@@ -13,11 +13,11 @@
 12,1,The Fox in the Vineyard,여우와 포도,4,12,25,3,30,40,50,,울타리 안에 들어가 포도를 배부르게 먹고 다시 나오려하자 몸이 커져서 울타리에 끼어 나올 수 없었습니다. 여우는 어쩔 수 없이 몸을 줄이기 위해 다시 굶고 나오게 되었습니다.
 13,1,The Fox and the Crane,여우와 두루미,5,9,16,3,1,39,51,,사이좋은 여우와 두루미가 있었습니다. 여우는 두루미를 식사에 초대했습니다. 그리고 넓은 그릇에 수프를 담아 두루미에게 주었습니다. 하지만 두루미는 긴 부리 때문에 수프를 먹을 수 없었습니다.
 14,1,The Fox and the Crane,여우와 두루미,5,12,16,1,3,39,51,,"다음날, 두루미가 여우를 초대 했습니다. 두루미는 긴 병에 고기를 담아왔습니다. 두루미는 긴 부리로 맛있게 식사를 했지만 여우는 짧은 입때문에 아무 것도 먹을 수 없었습니다. "
-15,1,The Town Mouse and the Country Mouse,시골쥐와 도시쥐,6,9,17,6,31,39,53,,"어느 날, 시골쥐의 집에 초대받은 도시쥐는 도시의 일들을 이야기 해주었습니다. 부러워진 시골쥐는 도시쥐와 함께 도시로 향했습니다. 시골쥐는 도시쥐를 따라가 함께 맛있는 음식들을 먹었습니다."
+15,1,The Town Mouse and the Country Mouse,시골쥐와 도시쥐,6,9,17,6,31,39,47,,"어느 날, 시골쥐의 집에 초대받은 도시쥐는 도시의 일들을 이야기 해주었습니다. 부러워진 시골쥐는 도시쥐와 함께 도시로 향했습니다. 시골쥐는 도시쥐를 따라가 함께 맛있는 음식들을 먹었습니다."
 16,1,The Town Mouse and the Country Mouse,시골쥐와 도시쥐,6,12,17,6,31,36,51,,갑자기 인간이 문을 열고 들어왔습니다. 시골쥐와 도시쥐는 서둘러 구멍으로 도망쳤습니다.
 17,1,The Town Mouse and the Country Mouse,시골쥐와 도시쥐,6,12,18,6,31,41,48,,시골쥐는 맛있는 음식이 있지만 마음 편히 있지 못하는 도시가 싫다고 도시쥐에게 말하고는 시골로 돌아갔습니다.
-18,1,Belling the cat,고양이 목에 방울달기,7,9,16,2,32,41,53,,"어느 날, 쥐들이 모여서 이야기를 했습니다. 고양이에게 잡히지 않으려면 어떻게 해야할까? 그러자 어떤 쥐 한마리가 고양이의 목에 방울을 달자고 하니 모든 쥐들이 찬성했습니다."
-19,1,Belling the cat,고양이 목에 방울달기,7,12,16,6,32,42,50,,하지만 고양이 목에 방울을 달겠다고 나서는 쥐가 한 마리도 없어 결국 평생 고양이에게 도망다니는 신세가 되었습니다.
+18,1,Belling the cat,고양이 목에 방울달기,7,9,16,6,2,41,53,,"어느 날, 쥐들이 모여서 이야기를 했습니다. 고양이에게 잡히지 않으려면 어떻게 해야할까? 그러자 어떤 쥐 한마리가 고양이의 목에 방울을 달자고 하니 모든 쥐들이 찬성했습니다."
+19,1,Belling the cat,고양이 목에 방울달기,7,12,16,2,32,42,50,,하지만 고양이 목에 방울을 달겠다고 나서는 쥐가 한 마리도 없어 결국 평생 고양이에게 도망다니는 신세가 되었습니다.
 20,1,The Lion and the Mouse,사자와 쥐,8,9,13,4,6,37,52,,들판에서 뛰어다니던 쥐는 사자앞을 지나가다 그만 사자에게 붙잡혀 버렸습니다. 쥐는 사자에게 살려준다면 은혜를 갚겠다고 했습니다. 사자는 쥐를 살려주었습니다.
 21,1,The Lion and the Mouse,사자와 쥐,8,12,13,6,33,43,52,,사자는 쥐가 은혜를 갚겠다고 이야기 한 것을 잊고 지냈습니다. 그러던 어느 날 사자가 함정에 걸리고 말았습니다. 쥐는 은혜를 잊지 않고 밧줄을 끊어서 사자를 구해주었습니다.
 22,1,The Crow and the Well,영리한 까마귀,9,9,21,8,29,44,49,"One day, A Crow with thirst found a well. But The water was too shallow for drink. Wisely, That bird collected stones and dropped in well and then it drank water.","어느 날, 목이 마른 까마귀가 우물을 찾았습니다. 우물의 물이 얕아 까마귀는 물을 마실 수 없었습니다. 까마귀는 지혜롭게 주변의 돌을 우물에 넣어 물을 마셨습니다."

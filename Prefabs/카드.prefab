@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98d2843920c23fb4390fd2b101ceaf53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newImg: {fileID: 0}
 --- !u!114 &114452220114855322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,7 +146,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   obj: {fileID: 1209084499906926}
   gameObj: []

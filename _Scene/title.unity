@@ -1694,7 +1694,7 @@ RectTransform:
   m_GameObject: {fileID: 111062311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.013888888, y: 0.013888888, z: 0.013888888}
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 303846454}
@@ -3323,7 +3323,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -6440,7 +6440,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -8675,7 +8675,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -10441,7 +10441,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -12543,7 +12543,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -14443,7 +14443,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   - {fileID: 21300022, guid: a2a6f0e6f478ddd43af4f00b256218a8, type: 3}
   cardInfoImg: {fileID: 437895289}
@@ -16192,7 +16192,7 @@ RectTransform:
   m_GameObject: {fileID: 833427199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.016666666, y: 0.016666666, z: 0.016666666}
+  m_LocalScale: {x: 0.016666668, y: 0.016666668, z: 0.016666668}
   m_Children:
   - {fileID: 912302140}
   - {fileID: 810537248}
@@ -17662,7 +17662,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 0}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -18321,7 +18321,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -21259,7 +21259,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -23602,7 +23602,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -24341,7 +24341,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -25706,7 +25706,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -26439,7 +26439,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -27410,7 +27410,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -28941,7 +28941,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -30123,7 +30123,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -32742,7 +32742,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
@@ -38747,7 +38747,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 71519aac626af5b409ded024e43c7b33, type: 3}
   - {fileID: 21300000, guid: 9d3867bbe52d93a41b6da184a7005432, type: 3}
   - {fileID: 21300000, guid: fff8c836fb8fd7141bf8f2fa350f3b88, type: 3}
-  - {fileID: 21300000, guid: 8699ab5ae825bdc4fab9fe0b335f8d99, type: 3}
+  - {fileID: 21300000, guid: b9e3eafbe2147c743b367bd961ee062b, type: 3}
   - {fileID: 21300000, guid: dd2cd03c0bcd0db4db990aeb6039fa86, type: 3}
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []

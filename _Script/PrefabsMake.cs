@@ -44,7 +44,8 @@ public class PrefabsMake : MonoBehaviour {
 	public GameObject succfailSpace, coinImg;
 	public Text succfail_text;
 	string succfail_str;
-
+	public GameObject addAdReward_obj;
+	public GameObject rewardYesNo_obj;
 
 	//튜토리얼
 	public GameObject GM;
@@ -106,6 +107,13 @@ public class PrefabsMake : MonoBehaviour {
 				PlayerPrefs.Save ();
 				succfail_text.text = succfail_str;
 				soundck = 11;
+
+				//int adRand = Random.Range (0, 3);
+				//if (adRand == 1) {
+				addAdReward_obj.SetActive (true);
+				//}
+
+
 			}else { //실패
 				//페이드인
                 
@@ -303,5 +311,25 @@ public class PrefabsMake : MonoBehaviour {
 			succfailSpace.GetComponent<Image>().color = colorS;
 			yield return null;
 		}
+	}
+	public void rewardYesNoShow(){
+		rewardYesNo_obj.SetActive (true);
+	}
+
+	public void rewardYesNoClose(){
+		rewardYesNo_obj.SetActive (false);
+	}
+
+	public void showAd(){
+		//영상보여주기
+		addAdReward_obj.SetActive (false);
+		rewardYesNo_obj.SetActive (false);
+
+		//string str = PlayerPrefs.GetString ("code", "");
+		//succfail_text.text = succfail_str;
+		//int coin = PlayerPrefs.GetInt (str,0); 
+		//coin= coin + 500;
+		//PlayerPrefs.SetInt (str, coin);
+		//PlayerPrefs.Save ();
 	}
 }
