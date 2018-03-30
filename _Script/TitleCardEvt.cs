@@ -28,6 +28,7 @@ public class TitleCardEvt : MonoBehaviour {
 	public Text[] cardNum_txt;
 	//카드가루
 	public Text cardDust_txt;
+	public GameObject GM;
 	//페이드
 	Color color;
 
@@ -272,6 +273,7 @@ public class TitleCardEvt : MonoBehaviour {
 				cardNum_txt [PlayerPrefs.GetInt ("cinstantnum", 0)].text = ""+iscn;
 				cardDust_txt.text = ""+dust;
 				powderCardWid.SetActive (false);
+				GM.GetComponent<SoundEvt>().delCardSound ();
 				StartCoroutine ("imgFadeOut");
 			}else{
 				//카드가 없어서 못갈아

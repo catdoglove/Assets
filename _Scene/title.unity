@@ -1694,7 +1694,7 @@ RectTransform:
   m_GameObject: {fileID: 111062311}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888888, y: 0.013888888, z: 0.013888888}
+  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
   m_Children:
   - {fileID: 1689771213}
   - {fileID: 303846454}
@@ -3328,6 +3328,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -4009,6 +4010,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 764904253}
         m_MethodName: tutorialTalkBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 828473471}
+        m_MethodName: tutorialSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6445,6 +6457,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -8680,6 +8693,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -10446,6 +10460,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -12548,6 +12563,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -14465,6 +14481,7 @@ MonoBehaviour:
   - {fileID: 1010027455}
   - {fileID: 1768149350}
   cardDust_txt: {fileID: 1626169508}
+  GM: {fileID: 828473470}
   cardWarring_obj: {fileID: 1271416830}
   warringWord_txt: {fileID: 1593753710}
   whenno_btn1: {fileID: 439011114}
@@ -15800,12 +15817,16 @@ MonoBehaviour:
   se_game_fail: {fileID: 0}
   se_cardup: {fileID: 0}
   se_carddown: {fileID: 0}
+  se_tutorial: {fileID: 0}
+  se_del: {fileID: 0}
   sp_touch1: {fileID: 8300000, guid: fff380aa139ca114bac7b7cf22da38c4, type: 3}
   sp_book: {fileID: 8300000, guid: f4ae33b62f077564484c6cd13cfaa649, type: 3}
   sp_game_success: {fileID: 0}
   sp_game_fail: {fileID: 0}
   sp_cardup: {fileID: 0}
   sp_carddown: {fileID: 0}
+  sp_tutorial: {fileID: 8300000, guid: 687984892790f2d42aabe6064daa2f2f, type: 3}
+  sp_del: {fileID: 8300000, guid: 53df364c813356d46acaf88d9f985a0c, type: 3}
   muteImg: {fileID: 1944277853}
   muteBGImg: {fileID: 1405852640}
   spr_mute:
@@ -16192,7 +16213,7 @@ RectTransform:
   m_GameObject: {fileID: 833427199}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.016666668, y: 0.016666668, z: 0.016666668}
+  m_LocalScale: {x: 0.016666666, y: 0.016666666, z: 0.016666666}
   m_Children:
   - {fileID: 912302140}
   - {fileID: 810537248}
@@ -17667,6 +17688,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -18326,6 +18348,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -21264,6 +21287,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -23607,6 +23631,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -24346,6 +24371,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -25711,6 +25737,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -26444,6 +26471,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -27415,6 +27443,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -28946,6 +28975,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -30128,6 +30158,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -32747,6 +32778,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}
@@ -38752,6 +38784,7 @@ MonoBehaviour:
   cardInfoImg: {fileID: 437895289}
   cardNum_txt: []
   cardDust_txt: {fileID: 0}
+  GM: {fileID: 0}
   cardWarring_obj: {fileID: 0}
   warringWord_txt: {fileID: 0}
   whenno_btn1: {fileID: 0}

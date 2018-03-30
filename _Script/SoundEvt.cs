@@ -7,8 +7,8 @@ public class SoundEvt : MonoBehaviour {
 
 	public static AudioSource se_touch;
 	public static AudioClip sp_touch;
-	public AudioSource se_touch1,se_book,se_game_success,se_game_fail,se_cardup,se_carddown;
-	public AudioClip sp_touch1,sp_book,sp_game_success,sp_game_fail,sp_cardup,sp_carddown;
+	public AudioSource se_touch1,se_book,se_game_success,se_game_fail,se_cardup,se_carddown,se_tutorial,se_del;
+	public AudioClip sp_touch1,sp_book,sp_game_success,sp_game_fail,sp_cardup,sp_carddown,sp_tutorial,sp_del;
 	public GameObject muteImg,muteBGImg;
 	public Sprite [] spr_mute;
 
@@ -37,6 +37,9 @@ public class SoundEvt : MonoBehaviour {
 		se_carddown = gameObject.GetComponent<AudioSource> ();
 		se_carddown.clip=sp_carddown;
 
+		se_del = gameObject.GetComponent<AudioSource> ();
+		se_del.clip=sp_del;
+
 
 		if (PlayerPrefs.GetInt ("soundmute", 0)==1) {
 			se_touch.mute = true;
@@ -46,6 +49,7 @@ public class SoundEvt : MonoBehaviour {
 			se_game_fail.mute = true;
 			se_cardup.mute = true;
 			se_carddown.mute = true;
+			se_del.mute = true;
 			PlayerPrefs.SetInt("soundmute",1);
 		}
 		
@@ -115,6 +119,22 @@ public class SoundEvt : MonoBehaviour {
 		se_game_fail.Play ();
 	}
 
+	public void tutorialSound(){
+		se_tutorial = gameObject.GetComponent<AudioSource> ();
+		se_tutorial.clip=sp_tutorial;
+		se_tutorial.loop = false;
+		se_tutorial.Play ();
+	}
+
+
+	public void delCardSound(){
+		se_del = gameObject.GetComponent<AudioSource> ();
+		se_del.clip=sp_del;
+		se_del.loop = false;
+		se_del.Play ();
+	}
+
+
 
 
 
@@ -128,6 +148,7 @@ public class SoundEvt : MonoBehaviour {
 			se_game_fail.mute = true;
 			se_cardup.mute = true;
 			se_carddown.mute = true;
+			se_del.mute = true;
 			muteImg.GetComponent<Image>().sprite=spr_mute[1];
 			PlayerPrefs.SetInt("soundmute",1);
 		} else {
@@ -138,6 +159,7 @@ public class SoundEvt : MonoBehaviour {
 			se_carddown.mute = false;
 			se_game_success.mute = false;
 			se_game_fail.mute = false;
+			se_del.mute = false;
 			muteImg.GetComponent<Image>().sprite=spr_mute[0];
 			PlayerPrefs.SetInt("soundmute",0);
 		}
