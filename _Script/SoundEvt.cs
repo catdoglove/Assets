@@ -7,8 +7,8 @@ public class SoundEvt : MonoBehaviour {
 
 	public static AudioSource se_touch;
 	public static AudioClip sp_touch;
-	public AudioSource se_touch1,se_book,se_game_success,se_game_fail,se_cardup,se_carddown,se_tutorial,se_del;
-	public AudioClip sp_touch1,sp_book,sp_game_success,sp_game_fail,sp_cardup,sp_carddown,sp_tutorial,sp_del;
+	public AudioSource se_touch1,se_book,se_game_success,se_game_fail,se_cardup,se_carddown,se_tutorial,se_del,se_make;
+	public AudioClip sp_touch1,sp_book,sp_game_success,sp_game_fail,sp_cardup,sp_carddown,sp_tutorial,sp_del,sp_make;
 	public GameObject muteImg,muteBGImg;
 	public Sprite [] spr_mute;
 
@@ -40,8 +40,11 @@ public class SoundEvt : MonoBehaviour {
 		se_del = gameObject.GetComponent<AudioSource> ();
 		se_del.clip=sp_del;
 
+        se_make = gameObject.GetComponent<AudioSource>();
+        se_make.clip = sp_make;
 
-		if (PlayerPrefs.GetInt ("soundmute", 0)==1) {
+
+        if (PlayerPrefs.GetInt ("soundmute", 0)==1) {
 			se_touch.mute = true;
 			se_book.mute = true;
 			se_touch1.mute = true;
@@ -50,6 +53,7 @@ public class SoundEvt : MonoBehaviour {
 			se_cardup.mute = true;
 			se_carddown.mute = true;
 			se_del.mute = true;
+            se_make.mute = true;
 			PlayerPrefs.SetInt("soundmute",1);
 		}
 		
@@ -134,12 +138,19 @@ public class SoundEvt : MonoBehaviour {
 		se_del.Play ();
 	}
 
+    public void makeCardSound()
+    {
+        se_make = gameObject.GetComponent<AudioSource>();
+        se_make.clip = sp_make;
+        se_make.loop = false;
+        se_make.Play();
+    }
 
 
 
 
 
-	public void soundMute(){
+    public void soundMute(){
 		if (se_touch.mute == false) {
 			se_touch.mute = true;
 			se_book.mute = true;

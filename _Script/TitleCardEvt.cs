@@ -311,7 +311,8 @@ public class TitleCardEvt : MonoBehaviour {
 				cardBlind [PlayerPrefs.GetInt ("cinstantnum", 0)].SetActive (false);
 				cardDust_txt.text = ""+dust;
 				newCardWid.SetActive (false);
-				StartCoroutine ("imgFadeIn");
+                    GM.GetComponent<SoundEvt>().makeCardSound();
+                    StartCoroutine ("imgFadeIn");
 			} else {
 				//가루가 없서 못만들어
 				StartCoroutine ("NotReady");

@@ -14926,7 +14926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a695b70f03b6474e9f4a74172fd436d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GM: {fileID: 764904240}
 --- !u!114 &764904252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15819,6 +15818,7 @@ MonoBehaviour:
   se_carddown: {fileID: 0}
   se_tutorial: {fileID: 0}
   se_del: {fileID: 0}
+  se_make: {fileID: 0}
   sp_touch1: {fileID: 8300000, guid: fff380aa139ca114bac7b7cf22da38c4, type: 3}
   sp_book: {fileID: 8300000, guid: f4ae33b62f077564484c6cd13cfaa649, type: 3}
   sp_game_success: {fileID: 0}
@@ -15827,6 +15827,7 @@ MonoBehaviour:
   sp_carddown: {fileID: 0}
   sp_tutorial: {fileID: 8300000, guid: 687984892790f2d42aabe6064daa2f2f, type: 3}
   sp_del: {fileID: 8300000, guid: 53df364c813356d46acaf88d9f985a0c, type: 3}
+  sp_make: {fileID: 8300000, guid: 687984892790f2d42aabe6064daa2f2f, type: 3}
   muteImg: {fileID: 1944277853}
   muteBGImg: {fileID: 1405852640}
   spr_mute:
