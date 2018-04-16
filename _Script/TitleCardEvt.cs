@@ -37,6 +37,13 @@ public class TitleCardEvt : MonoBehaviour {
 
 	public GameObject whenno_btn1,whenno_btn2;
 
+	//믹스
+	public int setCardMix_i = 0, cardMixSpace_i = 0;
+	public GameObject mixCard_obj1, mixCard_obj2, MixCard_obj, MixText_obj, mixedCard_obj;
+	public Button mixOk_btn;
+
+
+
 	public void showCardWindow(){
 		
 
@@ -176,7 +183,11 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 	public void infoCard(){
-		infoCardWid.SetActive (true);
+		if (setCardMix_i == 0) {
+			infoCardWid.SetActive (true);
+		} else {
+			
+		}
 	}
 
 	public void infoCardclose(){
@@ -200,6 +211,7 @@ public class TitleCardEvt : MonoBehaviour {
 		*/
 		//배열에들어갈숫자계산
 		i_tp = (chpNum-1) * 6 + typeNum-1;
+
 		//전부초기화
 		for (int i = 0; i < 16; i++) {
 			cardBtn[i].SetActive (false);
@@ -214,7 +226,6 @@ public class TitleCardEvt : MonoBehaviour {
 			//Debug.Log(h+"====------"+num);
 			cardNum_txt [j].text = ""+ h;
 			//카드가 얻은 적있는 카드인지 확인해준다
-
 			int iscb = PlayerPrefs.GetInt ("ch" + 1 + "newcard" + num, 0);
 			if (iscb == 0) {
 				cardBlind [j].SetActive (true);
@@ -237,10 +248,67 @@ public class TitleCardEvt : MonoBehaviour {
 		//카드의 인덱스를불러옴
 		int num = DataLoad.data_list [i_tp] [c_Num];
 		//카드그림출력
-		cardInfoImg.GetComponent<Image>().sprite=card_spr[num];
+		cardInfoImg.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[num];
 		//카드번호저장
 		PlayerPrefs.SetInt ("cinstantnum", c_Num);
 		PlayerPrefs.SetInt ("instantnum", num);
+
+		int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
+
+
+		if (GM.GetComponent<TitleCardEvt>().setCardMix_i == 0 || iscn == 0) {
+			
+		} else {
+			//카드갯수감소
+
+			GM.GetComponent<TitleCardEvt> ().initializeCard ();
+			iscn--;
+			GM.GetComponent<TitleCardEvt>().cardNum_txt [c_Num].text = "" + iscn;
+
+			if (GM.GetComponent<TitleCardEvt>().cardMixSpace_i == 0) {
+				mixCard_obj1.GetComponent<Image> ().sprite = GM.GetComponent<TitleCardEvt>().card_spr [PlayerPrefs.GetInt ("instantnum", 0)];
+				GM.GetComponent<TitleCardEvt>().cardMixSpace_i++;
+				PlayerPrefs.SetInt ("instantnum1", PlayerPrefs.GetInt ("instantnum", 0));
+				PlayerPrefs.SetInt ("c_Num", c_Num);
+			} else {
+
+				//카드갯수감소
+				if (PlayerPrefs.GetInt ("instantnum", 0) == PlayerPrefs.GetInt ("instantnum1", 0)) {
+					iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum1", 0), 0);
+					iscn=iscn-2;
+					GM.GetComponent<TitleCardEvt> ().cardNum_txt [PlayerPrefs.GetInt ("c_Num", 0)].text = "" + iscn;
+				} else {
+					iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum1", 0), 0);
+					iscn--;
+					GM.GetComponent<TitleCardEvt> ().cardNum_txt [PlayerPrefs.GetInt ("c_Num", 0)].text = "" + iscn;
+				}
+				if (iscn < 0) {
+					GM.GetComponent<TitleCardEvt> ().cardNum_txt [PlayerPrefs.GetInt ("c_Num", 0)].text = "0";
+				} else {
+					mixCard_obj2.GetComponent<Image> ().sprite = GM.GetComponent<TitleCardEvt> ().card_spr [PlayerPrefs.GetInt ("instantnum", 0)];
+					GM.GetComponent<TitleCardEvt> ().mixOk_btn.GetComponent<Button> ().interactable = true;
+					//텍스트띄워주기
+					int s = PlayerPrefs.GetInt ("instantnum", 0);
+					int f = PlayerPrefs.GetInt ("instantnum1", 0);
+					int r = -1;
+					List<Dictionary<string,object>> data = CSVReader.Read ("MixResult");
+					for (int i = 0; i < data.Count; i++) {
+						if ((int)data [i] ["First"] == f) {
+							if ((int)data [i] ["Second"] == s) {
+								r = (int)data [i] ["Result"];
+							}
+						}
+						if (r == -1) {
+							GM.GetComponent<TitleCardEvt> ().MixText_obj.SetActive (false);
+						} else {
+							GM.GetComponent<TitleCardEvt> ().MixText_obj.SetActive (true);
+						}
+					}
+
+				}
+			}
+		}
+
 	}
 
 	//다른곳으로스프라이트빌려주기
@@ -361,4 +429,67 @@ public class TitleCardEvt : MonoBehaviour {
 	public void shopWarring(){
 		StartCoroutine ("NotReady");
 	}
+
+
+	public void mixCardOpen(){
+		setCardMix_i = 1;
+		MixCard_obj.SetActive (true);
+	}
+
+	public void mixCardClose(){
+		setCardMix_i = 0;
+		MixCard_obj.SetActive (false);
+		mixCancle ();
+	}
+
+	public void mixCancle(){
+		cardMixSpace_i = 0;
+		mixCard_obj2.GetComponent<Image> ().sprite = card_spr [54];
+		mixCard_obj1.GetComponent<Image> ().sprite = card_spr [54];
+		mixOk_btn.GetComponent<Button> ().interactable = false;
+		MixText_obj.SetActive (false);
+		mixCard_obj1.SetActive (true);
+		mixCard_obj2.SetActive (true);
+		mixedCard_obj.SetActive (false);
+		initializeCard ();
+	}
+
+	public void mixOk(){
+		int s = PlayerPrefs.GetInt ("instantnum", 0);
+		int f = PlayerPrefs.GetInt ("instantnum1", 0);
+		int r = -1;
+		List<Dictionary<string,object>> data = CSVReader.Read ("MixResult");
+		for(int i=0;i<data.Count;i++){
+			if ((int)data [i] ["First"] == f) {
+				if ((int)data [i] ["Second"] == s) {
+					r = (int)data [i] ["Result"];
+					Debug.Log (r);
+				}
+			}
+
+		}
+
+		if (r == -1) {
+			//랜덤으로나옴
+			int ran = DataLoad.data_list [i_tp].Count;
+			int a = 0;
+			int rd = DataLoad.data_list [i_tp] [Random.Range (0, ran)];
+			mixedCard_obj.GetComponent<Image> ().sprite = card_spr [rd];
+
+			/*
+					int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + rd, 0);
+					k++;
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + rd, k);
+					PlayerPrefs.Save ();
+*/
+
+		} else {
+			mixedCard_obj.GetComponent<Image> ().sprite = card_spr [r];
+		}
+		mixedCard_obj.SetActive (true);
+		mixCard_obj1.SetActive (false);
+		mixCard_obj2.SetActive (false);
+
+	}
+
 }

@@ -174,6 +174,7 @@ public class DataLoad : MonoBehaviour {
 				if (ch == ch_i) {
 					if (tp == tp_i) {
 						data_list [j].Add (i);
+						Debug.Log (i);
 					}
 				}
 			}//endOfFor
@@ -181,6 +182,28 @@ public class DataLoad : MonoBehaviour {
 		}//endOfFor
 
 		//다음챕터도 반복--------------------------------4
+
+
+		//1챕터 로드-------------------------------------1
+		List<Dictionary<string,object>> data2 = CSVReader.Read ("CardData_2");
+		PlayerPrefs.SetInt ("datacount2",data2.Count);
+		int ch_i2 = 2;
+		int tp_i2 = 1;
+		for (int j = 6; j < 12; j++) {
+			//리스트1차배열생성[0][0]------------------------2
+			data_list.Add(new List<int>());
+			//포문안에서2차열생성----------------------------3
+			for (int i = 0; i < data2.Count; i++) {
+				int ch = (int)data2 [i] ["Chapter"];
+				int tp = (int)data2 [i] ["Type"];
+				if (ch == ch_i2) {
+					if (tp == tp_i2) {
+						data_list [j].Add ((int)data2 [i] ["Index"]);
+					}
+				}
+			}//endOfFor
+			tp_i2++;
+		}//endOfFor
 
 	}
 }
