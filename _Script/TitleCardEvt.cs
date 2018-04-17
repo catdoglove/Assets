@@ -39,7 +39,7 @@ public class TitleCardEvt : MonoBehaviour {
 
 	//믹스
 	public int setCardMix_i = 0, cardMixSpace_i = 0;
-	public GameObject mixCard_obj1, mixCard_obj2, MixCard_obj, MixText_obj, mixedCard_obj;
+	public GameObject mixCard_obj1, mixCard_obj2, MixCard_obj, MixText_obj, mixedCard_obj, mixedCardTouch_obj;
 	public Button mixOk_btn;
 
 
@@ -453,6 +453,7 @@ public class TitleCardEvt : MonoBehaviour {
 		mixCard_obj2.SetActive (true);
 		mixedCard_obj.SetActive (false);
 		initializeCard ();
+		mixedCardTouch_obj.SetActive (false);
 	}
 
 	public void mixOk(){
@@ -487,10 +488,36 @@ public class TitleCardEvt : MonoBehaviour {
 		} else {
 			mixedCard_obj.GetComponent<Image> ().sprite = card_spr [r];
 		}
-		mixedCard_obj.SetActive (true);
-		mixCard_obj1.SetActive (false);
-		mixCard_obj2.SetActive (false);
+		StartCoroutine ("imgFadeOutMix");
 
 	}
+
+
+	//카드를 믹스할때 페이드아웃하기
+	IEnumerator imgFadeOutMix(){
+
+		color = mixCard_obj1.GetComponent<Image>().color;	
+
+		for (float i = 1f; i > 0f; i -= 0.05f) {
+			color.a = Mathf.Lerp (0f, 1f, i);
+			mixCard_obj1.GetComponent<Image>().color = color;
+			mixCard_obj2.GetComponent<Image>().color = color;
+			yield return null;
+		}
+		color.a = Mathf.Lerp (0f, 1f, 1f);
+		mixCard_obj1.GetComponent<Image>().color = color;
+		mixCard_obj2.GetComponent<Image>().color = color;
+		mixCard_obj1.SetActive (false);
+		mixCard_obj2.SetActive (false);
+		mixedCard_obj.SetActive (true);
+		mixedCardTouch_obj.SetActive (true);
+	}
+
+	//카드믹스하고화면터치하면원래대로
+	//public void touchMixedCard(){
+		
+		//mixCardClose ();
+	//}
+
 
 }

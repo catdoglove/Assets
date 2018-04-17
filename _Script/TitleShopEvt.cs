@@ -24,6 +24,7 @@ public class TitleShopEvt : MonoBehaviour {
 	public GameObject blackBack;
 	public GameObject showCard;
 	public int[] randCard_i;
+	public int[] saveSpace_i;
 	public GameObject GM;
 	public Sprite card_spr;
 	public GameObject newCard;
@@ -221,20 +222,49 @@ public class TitleShopEvt : MonoBehaviour {
 		}
 		if (coin >= 200 * num) {
 			buyCardPop.SetActive (false);
-			int ran = DataLoad.data_list [type].Count;
-			int a = 0;
-			for (int i = 0; i < num; i++) {
-				int r =DataLoad.data_list[type][Random.Range (0, ran)];
-				randCard_i[i] = r;
-				//Debug.Log (randCard_i [i]);
 
-				int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + r, 0);
-				k++;
-				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + r, k);
-				PlayerPrefs.Save ();
+			//1챕터랜덤돌리는작업
+			if (chpNum == 1) {
+				int ran = DataLoad.data_list [type].Count;
+				int a = 0;
+				for (int i = 0; i < num; i++) {
+					int r = DataLoad.data_list [type] [Random.Range (0, ran)];
+					randCard_i [i] = r;
+					//Debug.Log (randCard_i [i]);
+
+					int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + r, 0);
+					k++;
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + r, k);
+					PlayerPrefs.Save ();
+				}
+			} else {
+				//2챕
+				List<Dictionary<string,object>> data2 = CSVReader.Read ("CardData_2");
+				int chan=0;
+				for (int i = 0; i < data2.Count; i++) {
+					int ch = (int)data2 [i] ["Chapter"];
+					int tp = (int)data2 [i] ["Type"];
+					if (ch == chpNum) {
+						if (tp == (type+1)) {
+							if ((int)data2 [i] ["Chance"] == 1) {
+								saveSpace_i [chan] = (int)data2 [i] ["Index"];
+								chan++;
+							}
+						}
+					}
+				}//endOfFor
+				for(int i=0;i<num;i++){
+					randCard_i [i] = saveSpace_i [Random.Range (0, chan)];
+					//int k = PlayerPrefs.GetInt ("ch" + chpNum + "cardnum" + randCard_i [i], 0);
+					//k++;
+					//PlayerPrefs.SetInt ("ch" + chpNum + "cardnum" + randCard_i [i], k);
+					//PlayerPrefs.Save ();
+				}
 
 
 			}
+
+
 			switch (num) {
 			case 1:
 				coin = coin - 200;
