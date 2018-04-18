@@ -25,6 +25,11 @@ public class DataLoad : MonoBehaviour {
 		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 11, 2);
 		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 10, 2);
 
+		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 67, 1);
+		PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 68, 1);
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 67, 2);
+		PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 68, 2);
+
 
 
         //표지판

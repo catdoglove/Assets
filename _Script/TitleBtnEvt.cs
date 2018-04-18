@@ -18,6 +18,9 @@ public class TitleBtnEvt : MonoBehaviour {
 	//고유코드띄워주기
 	public Text code_txt;
 
+	//챕터확인
+	public int chNum=0;
+
     // Use this for initialization
     void Start () {
 		//화면 해상도
@@ -91,11 +94,28 @@ public class TitleBtnEvt : MonoBehaviour {
 		goGameWindow.SetActive (false);
 	}
 
+	public void chanter1(){
+		chNum = 1;
+	}
+
+	public void chanter2(){
+		chNum = 2;
+	}
+
+
 	public void loadGame1(){
 		//여기서카드가 없을때를생각해주기
 		int cc = 0;
 		int f = 0;
 		int k = 1;
+		int chs = 0;
+		int che = 6;
+		if (chNum >= 2) {
+			chs = 6 * (chNum - 1);
+			che = 6 * chNum;
+		}
+		PlayerPrefs.SetInt ("savestage", chNum);
+
 		for (int j = 0; j < 6; j++) {
 			cc = 0;
 			for (int i = 0; i < DataLoad.data_list [j].Count; i++) {

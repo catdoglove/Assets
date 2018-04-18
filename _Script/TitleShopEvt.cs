@@ -255,10 +255,10 @@ public class TitleShopEvt : MonoBehaviour {
 				}//endOfFor
 				for(int i=0;i<num;i++){
 					randCard_i [i] = saveSpace_i [Random.Range (0, chan)];
-					//int k = PlayerPrefs.GetInt ("ch" + chpNum + "cardnum" + randCard_i [i], 0);
-					//k++;
-					//PlayerPrefs.SetInt ("ch" + chpNum + "cardnum" + randCard_i [i], k);
-					//PlayerPrefs.Save ();
+					int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + randCard_i [i], 0);
+					k++;
+					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + randCard_i [i], k);
+					PlayerPrefs.Save ();
 				}
 
 
