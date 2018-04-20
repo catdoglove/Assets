@@ -86,7 +86,7 @@ public class DataHandler : MonoBehaviour {
 	//데이터를 불러오는 함수 불러오는값: 게임 플레이 순서별로 해당되는 타입의 배열반환하는 값 s -1
 	public List<int> LoadData(int ch_num, int tp_num){
 		List<Dictionary<string,object>> data;
-		int help=0;
+		int help = 0;
 		if (ch_num >= 2) {
 			help = 60 * (ch_num - 1) - 1;
 			data = CSVReader.Read("CardData_2");
@@ -101,7 +101,7 @@ public class DataHandler : MonoBehaviour {
 		switch (tp_num) {
 		case 0://첫번째카드-------------------1
 			i_type = 2;//when카드번호
-			for(var i=help; i< data.Count; i++){
+			for(var i=0; i< data.Count; i++){
 				int ch = (int)data[i]["Chapter"];
 				int tp = (int)data[i]["Type"];
 				if (ch == i_chapter) {
@@ -131,8 +131,10 @@ public class DataHandler : MonoBehaviour {
 				if (ch == i_chapter) {
 					if (tp == i_type) {
 						i++;
+						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
 						i--;
+						i = i - help;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							ci++;
@@ -151,8 +153,10 @@ public class DataHandler : MonoBehaviour {
 				if (ch == i_chapter) {
 					if (tp == i_type) {
 						i++;
+						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
 						i--;
+						i = i - help;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							ci++;
@@ -170,8 +174,10 @@ public class DataHandler : MonoBehaviour {
 				if (ch == i_chapter) {
 					if (tp == i_type) {
 						i++;
+						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
 						i--;
+						i = i - help;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;
@@ -180,8 +186,10 @@ public class DataHandler : MonoBehaviour {
 						}
 					}else if (tp == i_type-3) {
 						i++;
+						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
 						i--;
+						i = i - help;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;
@@ -204,8 +212,10 @@ public class DataHandler : MonoBehaviour {
 					if (ch == i_chapter) {
 						if (tp == i_type) {
 							i++;
+						i = i + help;
 							int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
 							i--;
+						i = i - help;
 							if (h_Card == 1) {
 								index_list.Add(i + 1);
 								int k=i+1;
@@ -227,8 +237,10 @@ public class DataHandler : MonoBehaviour {
 				if (ch == i_chapter) {
 					if (tp == i_type) {
 						i++;
+						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
 						i--;
+						i = i - help;
 						if (h_Card == 1) {
 							index_list.Add(i + 1);
 							int k=i+1;

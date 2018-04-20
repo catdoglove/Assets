@@ -109,14 +109,12 @@ public class TitleBtnEvt : MonoBehaviour {
 		int f = 0;
 		int k = 1;
 		int chs = 0;
-		int che = 6;
 		if (chNum >= 2) {
 			chs = 6 * (chNum - 1);
-			che = 6 * chNum;
 		}
 		PlayerPrefs.SetInt ("savestage", chNum);
 
-		for (int j = 0; j < 6; j++) {
+		for (int j = chs; j < 6+chs; j++) {
 			cc = 0;
 			for (int i = 0; i < DataLoad.data_list [j].Count; i++) {
 				k = DataLoad.data_list [j] [i];
@@ -141,11 +139,22 @@ public class TitleBtnEvt : MonoBehaviour {
 			}
 		} else {
 			//카드초기화
-			List<Dictionary<string,object>> data = CSVReader.Read("CardData");
+			int h = 1;
+			for (int i = 0; i < 150; i++) {
+				PlayerPrefs.SetInt ("ch"+1+"haveCard"+h,0);
+			}
+			List<Dictionary<string,object>> data;
+			if (chNum >= 2) {
+				data = CSVReader.Read ("CardData_2");
+				chs = 60 * (chNum - 1);
+			} else {
+				data = CSVReader.Read("CardData");
+			}
 			for (var i = 0; i < data.Count; i++) {
-				int h = 1;
+				
 				//PlayerPrefs.SetInt ("ch" + h + "haveCard" + i, 1);
 				int hm = (int)data[i]["Index"];
+				i = i + chs;
 				h = i + 1;
 				if (PlayerPrefs.GetInt ("tutorial_i", 0) == 4) {
 
@@ -162,7 +171,7 @@ public class TitleBtnEvt : MonoBehaviour {
 				}else if (ccc >= 0) {
 					PlayerPrefs.SetInt ("ch"+1+"haveCard"+h,1);
 				}//EndOfIf
-
+				i = i - chs;
 				PlayerPrefs.Save();
 
 			}//EndOfFor
