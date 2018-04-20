@@ -7,7 +7,7 @@ public class TitleBookEvt : MonoBehaviour {
 	
 	public Sprite [] chpImgSpr,bookpageSpr,bookstorySpr;
 	public GameObject bookWindow,chpBtn1,chpBtn2,bookpageImg,pageImg;
-	int chpNum = 0, bookNum = 0, pageNum = 1;
+	int chpNum = 0, bookNum = 1, pageNum = 1;
 	public Text pageTxt;
 
 	//도감데이터불러오기
@@ -35,16 +35,28 @@ public class TitleBookEvt : MonoBehaviour {
 
 	public void showBookWindow(){
 
-        pageTxt.text = "- 1 -";
+		chpNum = allNum.chapter1;
+
+		pageTxt.text = "- " + pageNum + " -";
         bookWindow.SetActive (true);
 
 		blind [0].SetActive (true);
 		blind [1].SetActive (true);
-		List<Dictionary<string,object>> data = CSVReader.Read("StoryBook");
+
+		List<Dictionary<string,object>> data;
+
+		//k는스토리북의 인덱스넘버 데이터핸들러에서 저장됨
+		int si=0; 
+		if (chpNum >= 2) {
+			si = 30 * (chpNum - 1) - 1;
+			data = CSVReader.Read ("StoryBook_2");
+		} else {
+			data = CSVReader.Read("StoryBook");
+		}
 
 		k=0;
 		int n=0;
-		for (int i = 0; i < data.Count; i++) {
+		for (int i = si; i < data.Count+si; i++) {
 			k = i + 1;
 			//PlayerPrefs.SetInt ("books"+k, 0);
 			bookLoad [i] = PlayerPrefs.GetInt ("books"+k, 0);//도감모으기에 성공한걸불러오기
@@ -119,18 +131,17 @@ public class TitleBookEvt : MonoBehaviour {
 		//여기에서 불러온값을 확인해서 도감의책 모든페이지 완성여부판단
 		//data핸들러로간다 n/5 다모으면 max
 
-		chpNum = allNum.chapter1;
-		bookNum = 1;
-		pageNum = 1;
 		changeChapter ();
 	}
 
 	public void clickCh1(){
 		chpNum = allNum.chapter1;
+		showBookWindow ();
 		changeChapter ();
 	}
 
 	public void clickCh2(){
+		showBookWindow ();
 		chpNum = allNum.chapter2;
 		changeChapter ();
 	}

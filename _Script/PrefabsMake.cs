@@ -11,7 +11,7 @@ public class PrefabsMake : MonoBehaviour {
 	//프리펩
 	public Transform prfCard;
 	//챕터 넘버 1~~
-	public static int chapter_num=1;
+	public static int chapter_num=2;
 	public static int type_num=0;
 	public static int call_card = 0;
 	public GameObject obj;

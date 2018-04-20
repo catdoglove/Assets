@@ -478,15 +478,39 @@ public class TitleCardEvt : MonoBehaviour {
 			int rd = DataLoad.data_list [i_tp] [Random.Range (0, ran)];
 			mixedCard_obj.GetComponent<Image> ().sprite = card_spr [rd];
 
-			/*
-					int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + rd, 0);
-					k++;
-					PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + rd, k);
-					PlayerPrefs.Save ();
-*/
+
+			int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + rd, 0);
+			k++;
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + rd, k);
+			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + rd, 1);
+
+			k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + f, 0);
+			k--;
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + f, k);
+
+			k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + s, 0);
+			k--;
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + s, k);
+			PlayerPrefs.Save ();
+
 
 		} else {
 			mixedCard_obj.GetComponent<Image> ().sprite = card_spr [r];
+
+			int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + r, 0);
+			k++;
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + r, k);
+			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + r, 1);
+
+			k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + f, 0);
+			k--;
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + f, k);
+
+			k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + s, 0);
+			k--;
+			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + s, k);
+			PlayerPrefs.Save ();
+
 		}
 		StartCoroutine ("imgFadeOutMix");
 
