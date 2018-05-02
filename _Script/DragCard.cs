@@ -81,8 +81,8 @@ public class DragCard : MonoBehaviour {
 			break;
 		}
 		//랜덤으로 셔플된 카드를 중복없이 각각카드에 출력-5
-		GetComponent<SpriteRenderer>().sprite = cardWho_spr[PrefabsMake.index_H_list[cardOrder_num]];
 
+			GetComponent<SpriteRenderer> ().sprite = cardWho_spr [PrefabsMake.index_H_list [cardOrder_num]];
 	}
 	
 	// Update is called once per frame

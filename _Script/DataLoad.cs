@@ -179,7 +179,7 @@ public class DataLoad : MonoBehaviour {
 				if (ch == ch_i) {
 					if (tp == tp_i) {
 						data_list [j].Add (i);
-						Debug.Log (i);
+
 					}
 				}
 			}//endOfFor
@@ -204,6 +204,7 @@ public class DataLoad : MonoBehaviour {
 				if (ch == ch_i2) {
 					if (tp == tp_i2) {
 						data_list [j].Add ((int)data2 [i] ["Index"]);
+						Debug.Log (data2 [i] ["Index"]);
 					}
 				}
 			}//endOfFor

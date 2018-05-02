@@ -85,13 +85,17 @@ public class DataHandler : MonoBehaviour {
 		
 	//데이터를 불러오는 함수 불러오는값: 게임 플레이 순서별로 해당되는 타입의 배열반환하는 값 s -1
 	public List<int> LoadData(int ch_num, int tp_num){
+
+
 		List<Dictionary<string,object>> data;
 		int help = 0;
 		if (ch_num >= 2) {
 			help = 60 * (ch_num - 1) - 1;
 			data = CSVReader.Read("CardData_2");
+			Debug.Log ("2스테이지");
 		} else {
 			data = CSVReader.Read("CardData");
+			Debug.Log ("1스테이지");
 		}
 
 		int i_chapter = ch_num;
@@ -109,8 +113,14 @@ public class DataHandler : MonoBehaviour {
 						i++;
 						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
+
 						if (h_Card == 1) {
-							index_list.Add(i);
+							if (ch_num >= 2) {
+								index_list.Add (i+1);
+							} else {
+								index_list.Add (i);
+							}
+							Debug.Log("가지고있는시간카드"+i);
 							ci++;
 						}
 
@@ -132,13 +142,20 @@ public class DataHandler : MonoBehaviour {
 					if (tp == i_type) {
 						i++;
 						i = i + help;
+						Debug.Log (i);
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
-						i--;
-						i = i - help;
 						if (h_Card == 1) {
-							index_list.Add(i + 1);
+							if (ch_num >= 2) {
+								index_list.Add (i+1);
+						} else {
+							index_list.Add (i);
+						}
+							Debug.Log("가지고있는배경카드"+i);
 							ci++;
 						}
+						i--;
+						i = i - help;
+
 					}
 				}
 			}//EndOfFor
@@ -155,12 +172,17 @@ public class DataHandler : MonoBehaviour {
 						i++;
 						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
-						i--;
-						i = i - help;
 						if (h_Card == 1) {
-							index_list.Add(i + 1);
+							if (ch_num >= 2) {
+								index_list.Add (i+1);
+							} else {
+								index_list.Add (i);
+							}
 							ci++;
 						}
+						i--;
+						i = i - help;
+
 					}
 				}
 			}//EndOfFor
@@ -176,14 +198,29 @@ public class DataHandler : MonoBehaviour {
 						i++;
 						i = i + help;
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
+
+
 						i--;
 						i = i - help;
 						if (h_Card == 1) {
-							index_list.Add(i + 1);
+							i = i + help;
+							if (ch_num >= 2) {
+								index_list.Add (i+2);
+							} else {
+								index_list.Add (i+1);
+							}
+							i = i - help;
 							int k=i+1;
 							PlayerPrefs.SetInt (""+k,i_type);
+							if (ch_num >= 2) {
+								k = i + help+1;
+								PlayerPrefs.SetInt (""+k,i_type);
+
+								Debug.Log (i_type);
+							}
 							ci++;
 						}
+
 					}else if (tp == i_type-3) {
 						i++;
 						i = i + help;
@@ -191,10 +228,23 @@ public class DataHandler : MonoBehaviour {
 						i--;
 						i = i - help;
 						if (h_Card == 1) {
-							index_list.Add(i + 1);
+							i = i + help;
+							if (ch_num >= 2) {
+								index_list.Add (i+2);
+							} else {
+								index_list.Add (i+1);
+							}
+							i = i - help;
 							int k=i+1;
 							PlayerPrefs.SetInt (""+k,i_type-3);
+							if (ch_num >= 2) {
+								k = i + help+1;
+								PlayerPrefs.SetInt (""+k,i_type);
+
+								Debug.Log (i_type);
+							}
 							ci++;
+
 						}
 					}
 				}
@@ -214,13 +264,26 @@ public class DataHandler : MonoBehaviour {
 							i++;
 						i = i + help;
 							int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
-							i--;
+						i--;
 						i = i - help;
-							if (h_Card == 1) {
-								index_list.Add(i + 1);
+						if (h_Card == 1) {
+							i = i + help;
+							if (ch_num >= 2) {
+								index_list.Add (i+2);
+							} else {
+								index_list.Add (i+1);
+							}
+							i = i - help;
 								int k=i+1;
 								PlayerPrefs.SetInt (""+k,i_type);
+							if (ch_num >= 2) {
+								k = i + help+1;
+								PlayerPrefs.SetInt (""+k,i_type);
+
+								Debug.Log (i_type);
+							}
 								ci++;
+
 							}
 						}
 					}
@@ -242,10 +305,22 @@ public class DataHandler : MonoBehaviour {
 						i--;
 						i = i - help;
 						if (h_Card == 1) {
-							index_list.Add(i + 1);
+							i = i + help;
+							if (ch_num >= 2) {
+								index_list.Add (i+2);
+							} else {
+								index_list.Add (i+1);
+							}
+							i = i - help;
 							int k=i+1;
 							PlayerPrefs.SetInt (""+k,i_type);
+							if (ch_num >= 2) {
+								k = i + help+1;
+								PlayerPrefs.SetInt (""+k,i_type);
+								Debug.Log (i_type);
+							}
 							ci++;
+
 						}
 					}
 				}
