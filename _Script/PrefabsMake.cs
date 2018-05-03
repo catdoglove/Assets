@@ -154,7 +154,8 @@ public class PrefabsMake : MonoBehaviour {
 				spr_illust [1].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
 				break;
 			case 4:
-				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
+				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num - 1], 0);
+				Debug.Log (type_check+"??????");
 				if (type_check == 5) {
 					spr_illust [3].SetActive (true);
 					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
@@ -165,13 +166,13 @@ public class PrefabsMake : MonoBehaviour {
 				break;
 			case 5:
 				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
+				Debug.Log (type_check+"??????");
 				if (type_check == 5) {
 					spr_illust [3].SetActive (true);
 					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
-				} else {
-					spr_illust [2].SetActive (true);
-					spr_illust [2].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index [PrefabsMake.type_num - 1] - 1];
 				}
+					spr_illust [3].SetActive (true);
+					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
 				break;
 
 

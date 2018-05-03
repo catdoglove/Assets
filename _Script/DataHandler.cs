@@ -51,14 +51,14 @@ public class DataHandler : MonoBehaviour {
 									if (end_num [5] == one) {
 										//SceneManager.LoadScene("title");
 
-										k=i+1;
-										//새로얻은카드인지확인해서뉴표시를띄워주자!
+										k = i + 1;
+										//새로얻은이야기인지확인해서뉴표시를띄워주자!
 										//돈500+500
 										if (PlayerPrefs.GetInt ("books" + k, 0) == 0) {
 											newImg.SetActive (true);
-											PlayerPrefs.SetInt ("new",1);
+											PlayerPrefs.SetInt ("new", 1);
 										}
-										PlayerPrefs.SetInt ("books"+k, 1);//도감에저장
+										PlayerPrefs.SetInt ("books" + k, 1);//도감에저장
 										//Debug.Log ("---------------------------------------성공");
 										//카드소모
 										for (int j = 1; j < 6; j++) {
@@ -66,9 +66,11 @@ public class DataHandler : MonoBehaviour {
 											int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + end_num [j], 0);
 											iscn--;
 											PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
-											PlayerPrefs.Save();
+											PlayerPrefs.Save ();
 										}//endOfFor
 
+									} else {
+										k = 0;
 									}
 								}
 							}
@@ -77,7 +79,6 @@ public class DataHandler : MonoBehaviour {
 				}
 			}
 		}//endOfFor
-
 		return k;
 	}
 
@@ -120,7 +121,6 @@ public class DataHandler : MonoBehaviour {
 							} else {
 								index_list.Add (i);
 							}
-							Debug.Log("가지고있는시간카드"+i);
 							ci++;
 						}
 
@@ -150,7 +150,6 @@ public class DataHandler : MonoBehaviour {
 						} else {
 							index_list.Add (i);
 						}
-							Debug.Log("가지고있는배경카드"+i);
 							ci++;
 						}
 						i--;
