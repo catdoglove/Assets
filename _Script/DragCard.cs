@@ -158,8 +158,16 @@ public class DragCard : MonoBehaviour {
                             int end_check = 0;
                             PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
                             //이미 낸카드는 다안나오게함
-                            PlayerPrefs.SetInt("ch" + 1 + "haveCard" + PrefabsMake.index_H_list[cardOrder_num], 0);
-                            end_check = PlayerPrefs.GetInt("" + PrefabsMake.card_index[PrefabsMake.type_num], 0);
+							if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {
+								int inst = PrefabsMake.index_H_list [cardOrder_num];
+								Debug.Log (inst+"뭐가나오는거야");
+								PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + inst, 0);
+
+							} else {
+								PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + PrefabsMake.index_H_list [cardOrder_num], 0);
+								Debug.Log (PrefabsMake.index_H_list [cardOrder_num]+"뭐가나오는거야");
+							}
+							end_check = PlayerPrefs.GetInt("" + PrefabsMake.card_index[PrefabsMake.type_num], 0);
                             if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
                                 if (PrefabsMake.card_index[5] == 0) {
                                     PrefabsMake.card_index[4] = 0;
@@ -193,8 +201,10 @@ public class DragCard : MonoBehaviour {
                             soundck = 88;//효과음소리
 
                             int end_check = 0;
+
                             PrefabsMake.card_index[PrefabsMake.type_num] = PrefabsMake.index_H_list[cardOrder_num];
                             //이미 낸카드는 다안나오게함
+
                             PlayerPrefs.SetInt("ch" + 1 + "haveCard" + PrefabsMake.index_H_list[cardOrder_num], 0);
                             end_check = PlayerPrefs.GetInt("" + PrefabsMake.card_index[PrefabsMake.type_num], 0);
                             if (end_check == 6)
@@ -242,8 +252,18 @@ public class DragCard : MonoBehaviour {
 						int end_check = 0;
 						PrefabsMake.card_index [PrefabsMake.type_num] = PrefabsMake.index_H_list [cardOrder_num];
 						//이미 낸카드는 다안나오게함
-						PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + PrefabsMake.index_H_list [cardOrder_num], 0);
-						end_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num], 0);
+						if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {
+							int inst = PrefabsMake.index_H_list [cardOrder_num]-1;
+							Debug.Log (inst+"뭐가나오는거야");
+							PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + inst, 0);
+							end_check = PlayerPrefs.GetInt ("" + inst, 0);
+						} else {
+							PlayerPrefs.SetInt ("ch" + 1 + "haveCard" + PrefabsMake.index_H_list [cardOrder_num], 0);
+							Debug.Log (PrefabsMake.index_H_list [cardOrder_num]+"뭐가나오는거야");
+							end_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num], 0);
+						}
+
+
 						if (end_check == 6) {////////////////////////////////////////////////////게임끝/////////여기를 수정
 							if (PrefabsMake.card_index [5] == 0) {
 								PrefabsMake.card_index [4] = 0;

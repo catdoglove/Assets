@@ -37,17 +37,22 @@ public class DataHandler : MonoBehaviour {
 		for (var i = 0; i < data.Count; i++) {
 			int ch = (int)data[i]["Chapter"];
 			int one = (int)data[i]["First"];
+			if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {one++;}
 			if (ch == ch_num) {
 				if (end_num [0] == one) {
 					one = (int)data[i]["Second"];
 					if (end_num [1] == one) {
 						one = (int)data[i]["Third"];
+						if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {one++;}
 						if (end_num [2] == one) {
 							one = (int)data[i]["Fourth"];
+							if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {one++;}
 							if (end_num [3] == one) {
 								one = (int)data[i]["Fifth"];
+								if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {one++;}
 								if (end_num [4] == one) {
 									one = (int)data[i]["Sixth"];
+									if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {one++;}
 									if (end_num [5] == one) {
 										//SceneManager.LoadScene("title");
 
@@ -67,10 +72,9 @@ public class DataHandler : MonoBehaviour {
 											iscn--;
 											PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
 											PlayerPrefs.Save ();
+											Debug.Log("성공----------------------"+k);
 										}//endOfFor
 
-									} else {
-										k = 0;
 									}
 								}
 							}
@@ -79,6 +83,9 @@ public class DataHandler : MonoBehaviour {
 				}
 			}
 		}//endOfFor
+		if(k==29){
+			k = 0;
+		}
 		return k;
 	}
 

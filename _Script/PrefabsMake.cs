@@ -87,6 +87,7 @@ public class PrefabsMake : MonoBehaviour {
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
 
+				Debug.Log("성공----------------------");
                 coinImg.SetActive(true);
 				spr_illust [4].SetActive (true);
 			
@@ -119,7 +120,7 @@ public class PrefabsMake : MonoBehaviour {
 
 			}else { //실패
 				//페이드인
-                
+				Debug.Log("실패----------------------");
                 coinImg.SetActive(false);
 				StartCoroutine ("imgFadeInS");
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
