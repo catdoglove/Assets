@@ -7,11 +7,11 @@ public class TitleBookEvt : MonoBehaviour {
 	
 	public Sprite [] chpImgSpr,bookpageSpr,bookstorySpr;
 	public GameObject bookWindow,chpBtn1,chpBtn2,bookpageImg,pageImg;
-	int chpNum = 0, bookNum = 1, pageNum = 1;
+	int chpNum = 1, bookNum = 1, pageNum = 1;
 	public Text pageTxt;
 
 	//도감데이터불러오기
-	public int[] bookLoad = new int[23];
+	public int[] bookLoad;
 	public GameObject[] blind;
 	public GameObject[] booksImg;
 	public Sprite[] books_spr;
@@ -35,7 +35,7 @@ public class TitleBookEvt : MonoBehaviour {
 
 	public void showBookWindow(){
 
-		chpNum = allNum.chapter1;
+		//chpNum = allNum.chapter1;
 
 		pageTxt.text = "- " + pageNum + " -";
         bookWindow.SetActive (true);
@@ -50,6 +50,7 @@ public class TitleBookEvt : MonoBehaviour {
 		if (chpNum >= 2) {
 			si = 30 * (chpNum - 1) - 1;
 			data = CSVReader.Read ("StoryBook_2");
+			Debug.Log ("2챕터도감");
 		} else {
 			data = CSVReader.Read("StoryBook");
 		}
@@ -58,7 +59,6 @@ public class TitleBookEvt : MonoBehaviour {
 		int n=0;
 		for (int i = si; i < data.Count+si; i++) {
 			k = i + 1;
-			//PlayerPrefs.SetInt ("books"+k, 0);
 			bookLoad [i] = PlayerPrefs.GetInt ("books"+k, 0);//도감모으기에 성공한걸불러오기
 
 		}
@@ -90,7 +90,6 @@ public class TitleBookEvt : MonoBehaviour {
 			PlayerPrefs.SetInt ("clearbook" + j, 0);
 			int s = 0;
 			for (int i = 0; i < bookSeries [j]; i++) {
-				//Debug.Log (bookLoad [h]+"--"+h);
 				if (bookLoad [h] == 1) {
 					
 					s++;
@@ -100,9 +99,6 @@ public class TitleBookEvt : MonoBehaviour {
 			}
 
 			if (s == bookSeries [j]) {
-
-				//Debug.Log (s+"="+j);
-				//Debug.Log (bookSeries [j]);
 				PlayerPrefs.SetInt ("clearbook" + j, 1);
 			}
 		}
@@ -135,15 +131,20 @@ public class TitleBookEvt : MonoBehaviour {
 	}
 
 	public void clickCh1(){
+		pageTxt.text = "- " + pageNum + " -";
 		chpNum = allNum.chapter1;
 		showBookWindow ();
 		changeChapter ();
+		closeBlind ();
 	}
 
 	public void clickCh2(){
+		pageTxt.text = "- " + pageNum + " -";
+		chpNum = allNum.chapter2;
 		showBookWindow ();
 		chpNum = allNum.chapter2;
 		changeChapter ();
+		closeBlind ();
 	}
 
 	void changeChapter(){
@@ -200,7 +201,6 @@ public class TitleBookEvt : MonoBehaviour {
 
 		booksImg [0].GetComponent<Image> ().sprite = books_spr[p]; //p 페이지넘버
 		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
-			//Debug.Log (PlayerPrefs.GetInt ("clearbook" + p, 0)+"clearbook" + p);
 			blind [0].SetActive (false);
 		}
 		p=p+1;
@@ -232,8 +232,22 @@ public class TitleBookEvt : MonoBehaviour {
 
 		bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [22];
 		//bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
-		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
+
+		int instant;
+		if (chpNum >= 2) {
+			instant = DataLoad.story_list_2 [p].Count;
+		} else {
+			Debug.Log (p);
+			instant = DataLoad.story_list [p].Count;
+		}
+		Debug.Log (instant);
+		for (int i = 0; i < instant; i++) {
 			int st = DataLoad.story_list [p] [i]-1;
+			if (chpNum >= 2) {
+				st = DataLoad.story_list_2 [p] [i]-1;
+			} else {
+				st = DataLoad.story_list [p] [i]-1;
+			}
 			bookPageNum [i].SetActive (true);
 			if (bookLoad [st] == 1) {
 				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
@@ -272,11 +286,21 @@ public class TitleBookEvt : MonoBehaviour {
 			bookPageNum [i].GetComponent<Image> ().sprite = page_spr [0];
 		}
 		bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [22];
-		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
-			int st = DataLoad.story_list [p] [i] - 1;
+		int instant;
+		if (chpNum >= 2) {
+			instant = DataLoad.story_list_2 [p].Count;
+		} else {
+			instant = DataLoad.story_list [p].Count;
+		}
+		for (int i = 0; i < instant; i++) {
+			int st = DataLoad.story_list [p] [i]-1;
+			if (chpNum >= 2) {
+				st = DataLoad.story_list_2 [p] [i]-1;
+			} else {
+				st = DataLoad.story_list [p] [i]-1;
+			}
 			bookPageNum [i].SetActive (true);
 			if (bookLoad [st] == 1) {
-				//Debug.Log (bookLoad [st] + "-" + st);
 				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
 				//이야기안에페이지그림변경하기
 				if (i == 0) {
@@ -328,18 +352,28 @@ public class TitleBookEvt : MonoBehaviour {
 	//bookPageChange에서중복코드
 	public void bookPageChangeShot(int s){
 		int d = 0;
-		for (int i = 0; i < DataLoad.story_list [p].Count; i++) {
-			int st = DataLoad.story_list [p] [i] - 1;
+		int instant;
+
+		if (chpNum >= 2) {
+			instant = DataLoad.story_list_2 [p].Count;
+		} else {
+			instant = DataLoad.story_list [p].Count;
+		}
+		for (int i = 0; i < instant; i++) {
+			int st = DataLoad.story_list [p] [i]-1;
+			if (chpNum >= 2) {
+				st = DataLoad.story_list_2 [p] [i]-1;
+			} else {
+				st = DataLoad.story_list [p] [i]-1;
+			}
 			bookPageNum [i].SetActive (true);
 			if (bookLoad [st] == 1) {
-				//Debug.Log (bookLoad [st] + "-------------------------------------" + st);
 				bookPageNum [i].GetComponent<Image> ().sprite = page_spr [i + 1];
 				//이야기안에페이지그림변경하기
 				if (i == s) {
 					for (int g = 0; g < p; g++) {
 						d = d + bookSeries [g];
 					}
-					//Debug.Log (d + "---------------------");
 					d = d + s;
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];

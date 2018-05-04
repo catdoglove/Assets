@@ -156,6 +156,9 @@ public class TitleBtnEvt : MonoBehaviour {
 				int hm = (int)data[i]["Index"];
 				i = i + chs;
 				h = i + 1;
+				if (chNum >= 2) {
+					h = i;
+				}
 				if (PlayerPrefs.GetInt ("tutorial_i", 0) == 4) {
 
 				} else {

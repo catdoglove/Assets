@@ -297,6 +297,10 @@ public class TitleCardEvt : MonoBehaviour {
 							if ((int)data [i] ["Second"] == s) {
 								r = (int)data [i] ["Result"];
 							}
+						} else if ((int)data [i] ["Second"] == f) {
+							if ((int)data [i] ["First"] == s) {
+								r = (int)data [i] ["Result"];
+							}
 						}
 						if (r == -1) {
 							GM.GetComponent<TitleCardEvt> ().MixText_obj.SetActive (false);
@@ -465,7 +469,10 @@ public class TitleCardEvt : MonoBehaviour {
 			if ((int)data [i] ["First"] == f) {
 				if ((int)data [i] ["Second"] == s) {
 					r = (int)data [i] ["Result"];
-					Debug.Log (r);
+				}
+			} else if ((int)data [i] ["Second"] == f) {
+				if ((int)data [i] ["First"] == s) {
+					r = (int)data [i] ["Result"];
 				}
 			}
 

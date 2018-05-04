@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class DataLoad : MonoBehaviour {
-	public static List<List<int>> data_list =new List<List<int>>();
+	public static List<List<int>> data_list = new List<List<int>> ();
+	public static List<List<int>> story_list_2 = new List<List<int>> ();
 	public static List<List<int>> story_list =new List<List<int>>();
 	string str;
 
@@ -111,6 +112,7 @@ public class DataLoad : MonoBehaviour {
 				//PlayerPrefs.SetInt (str, 0);
 				//튜토리얼 보여주기
 			}
+
 			PlayerPrefs.SetString ("code", str);
 			Debug.Log(str);
 			PlayerPrefs.SetInt ("first", 1);
@@ -163,6 +165,28 @@ public class DataLoad : MonoBehaviour {
 			}//endOfFor
 			sr_c++;
 		}//endOfFor
+
+		int series_2=0;
+		List<Dictionary<string,object>> dataStory = CSVReader.Read ("StoryBook_2");
+		for(int j=0;j<8;j++){
+			story_list_2.Add (new List<int> ());
+			for(int i=0;i<dataStory.Count;i++){
+				int sr = (int)dataStory [i] ["Series"];
+				if (sr == series_2) {
+					story_list_2 [j].Add ((int)dataStory [i] ["Index"]);
+					Debug.Log (dataStory [i] ["Index"]);
+				} else if(sr==series_2+1){
+					story_list_2 [j].Add ((int)dataStory [i] ["Index"]);
+					series_2++;
+					Debug.Log (dataStory [i] ["Index"]+"끝");
+					break;
+				}
+			}
+			series_2++;
+		}
+
+
+
 		
 		//1챕터 로드-------------------------------------1
 		List<Dictionary<string,object>> data = CSVReader.Read ("CardData");
@@ -179,7 +203,7 @@ public class DataLoad : MonoBehaviour {
 				if (ch == ch_i) {
 					if (tp == tp_i) {
 						data_list [j].Add (i);
-						Debug.Log (i);
+
 					}
 				}
 			}//endOfFor

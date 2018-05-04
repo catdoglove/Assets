@@ -53,8 +53,11 @@ public class PrefabsMake : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		chapter_num=PlayerPrefs.GetInt ("savestage", 1);
+
 		//생성된 리스트에 받아온 데이터값을 넣어준다-1
 		index_H_list = obj.GetComponent<DataHandler>().LoadData (chapter_num,type_num);/////////////////매우중요스태틱이아닌다른함수부르기
+
 		//리스트에 입력된 데이터를 랜덤으로 섞어준다-2
 		index_H_list = obj.GetComponent<CardShuffler> ().ShuffleHandler (index_H_list);
 		//카드를 클론으로 처음 생성해준다-3
@@ -84,6 +87,7 @@ public class PrefabsMake : MonoBehaviour {
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
 
+				Debug.Log("성공----------------------");
                 coinImg.SetActive(true);
 				spr_illust [4].SetActive (true);
 			
@@ -116,7 +120,7 @@ public class PrefabsMake : MonoBehaviour {
 
 			}else { //실패
 				//페이드인
-                
+				Debug.Log("실패----------------------");
                 coinImg.SetActive(false);
 				StartCoroutine ("imgFadeInS");
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
@@ -151,7 +155,8 @@ public class PrefabsMake : MonoBehaviour {
 				spr_illust [1].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
 				break;
 			case 4:
-				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
+				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num - 1], 0);
+				Debug.Log (type_check+"??????");
 				if (type_check == 5) {
 					spr_illust [3].SetActive (true);
 					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
@@ -162,21 +167,22 @@ public class PrefabsMake : MonoBehaviour {
 				break;
 			case 5:
 				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
+				Debug.Log (type_check+"??????");
 				if (type_check == 5) {
 					spr_illust [3].SetActive (true);
 					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
-				} else {
-					spr_illust [2].SetActive (true);
-					spr_illust [2].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index [PrefabsMake.type_num - 1] - 1];
 				}
+					spr_illust [3].SetActive (true);
+					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
 				break;
 
 
 			}
 
+			index_H_list.Clear ();
 				//생성된 리스트에 받아온 데이터값을 넣어준다-1
 				index_H_list = obj.GetComponent<DataHandler> ().LoadData (chapter_num, type_num);
-				//리스트에 입력된 데이터를 랜덤으로 섞어준다-2
+
 				index_H_list = obj.GetComponent<CardShuffler> ().ShuffleHandler (index_H_list);
 				//카드를 클론으로 처음 생성해준다-3
 				MakingCard (index_H_list.Count);

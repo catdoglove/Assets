@@ -341,7 +341,7 @@ RectTransform:
   m_GameObject: {fileID: 305367044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.01387894, y: 0.01387894, z: 0.01387894}
   m_Children:
   - {fileID: 1489420176}
   - {fileID: 778274387}
@@ -1041,7 +1041,7 @@ RectTransform:
   m_GameObject: {fileID: 561107449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.01387894, y: 0.01387894, z: 0.01387894}
   m_Children:
   - {fileID: 334077468}
   - {fileID: 566789344}
@@ -1652,6 +1652,43 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 303957a71a5dabf4dbac829fbd63f9e2, type: 3}
   - {fileID: 21300000, guid: cd3fb5c329fc9c24cb6cfcd2b078b916, type: 3}
   - {fileID: 21300000, guid: cd3fb5c329fc9c24cb6cfcd2b078b916, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   succfail_spr:
   - {fileID: 21300000, guid: 2ad69426209e3544080de1f3df1f293f, type: 3}
   - {fileID: 21300002, guid: 2ad69426209e3544080de1f3df1f293f, type: 3}
@@ -4017,7 +4054,7 @@ RectTransform:
   m_GameObject: {fileID: 2089707586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.01387894, y: 0.01387894, z: 0.01387894}
   m_Children:
   - {fileID: 1113987149}
   - {fileID: 909310226}
