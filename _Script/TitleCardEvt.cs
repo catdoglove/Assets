@@ -55,7 +55,6 @@ public class TitleCardEvt : MonoBehaviour {
 
 		int d = PlayerPrefs.GetInt ("dust", 0);
 		cardDust_txt.text = d.ToString ();
-
 		cardWindow.SetActive (true);
 		chpNum = allNum.chapter1;
 		typeNum = allNum.typeWho;
@@ -223,6 +222,10 @@ public class TitleCardEvt : MonoBehaviour {
 			cardBtn [j].GetComponent<Image> ().sprite = card_spr [num];
 			//카드의숫자를 띄워준다
 			int h =PlayerPrefs.GetInt("ch"+1+"cardnum"+num,0);//카드갯수
+			//카드의 숫자가 있다면 얻은적있는걸로 취급한다
+			if (h > 0) {
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + num, 1);
+			}
 			//Debug.Log(h+"====------"+num);
 			cardNum_txt [j].text = ""+ h;
 			//카드가 얻은 적있는 카드인지 확인해준다

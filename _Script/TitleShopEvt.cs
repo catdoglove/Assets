@@ -263,6 +263,11 @@ public class TitleShopEvt : MonoBehaviour {
 
 
 			}
+			if (PlayerPrefs.GetInt ("tutorial_i", 0) == 99) {
+				
+			} else {
+				PlayerPrefs.SetInt ("tutorial_i", 1800);
+			}
 
 
 			switch (num) {

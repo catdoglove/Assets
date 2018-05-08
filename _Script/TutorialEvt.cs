@@ -47,6 +47,9 @@ public class TutorialEvt : MonoBehaviour {
 			tutorial_i = PlayerPrefs.GetInt ("tutorial_i", 0);
 			
 		}
+		if (PlayerPrefs.GetInt ("tutorial_i", 0) == 1800) {
+			tutorial_i = 45;
+		}
 	}
 	
 	// Update is called once per frame

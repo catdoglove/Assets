@@ -41,6 +41,7 @@ public class DataHandler : MonoBehaviour {
 			if (ch == ch_num) {
 				if (end_num [0] == one) {
 					one = (int)data[i]["Second"];
+					if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {one++;}
 					if (end_num [1] == one) {
 						one = (int)data[i]["Third"];
 						if (PlayerPrefs.GetInt ("savestage", 1) >= 2) {one++;}
@@ -56,7 +57,7 @@ public class DataHandler : MonoBehaviour {
 									if (end_num [5] == one) {
 										//SceneManager.LoadScene("title");
 
-										k = i + 1;
+										k = k + i + 1;
 										//새로얻은이야기인지확인해서뉴표시를띄워주자!
 										//돈500+500
 										if (PlayerPrefs.GetInt ("books" + k, 0) == 0) {
