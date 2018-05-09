@@ -182,6 +182,8 @@ public class TitleBookEvt : MonoBehaviour {
 			//pageTxt.text = "끝 " + pageNum + "페이지";
 		}
 		else if(pageNum > 0){
+			if (chpNum >= 2) {
+			}
 			pageNum = pageNum + 1;
 			pageTxt.text = "- " + pageNum + " -";
 			//다모은건 없ㅐ기

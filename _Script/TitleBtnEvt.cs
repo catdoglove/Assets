@@ -23,6 +23,11 @@ public class TitleBtnEvt : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+		string st = PlayerPrefs.GetString ("code", "");
+		PlayerPrefs.SetInt(st,10000);
+
+
 		//화면 해상도
 		Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		float screenNum =(float)Screen.height/(float)Screen.width;
@@ -123,7 +128,12 @@ public class TitleBtnEvt : MonoBehaviour {
 
 			}
 			if (cc == 0) {
-				not_str[6] = not_str[6]  + not_str [j];
+				if (chNum >= 2) {
+					not_str [6] = not_str [6] + not_str [j-6];
+				} else {
+					not_str [6] = not_str [6] + not_str [j];
+
+				}
 				f = 1;
 			}
 		}//endOfFor
