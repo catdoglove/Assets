@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class DataLoad : MonoBehaviour {
 	public static List<List<int>> data_list = new List<List<int>> ();
+	public static List<List<int>> data_list_unmix = new List<List<int>> ();
 	public static List<List<int>> story_list_2 = new List<List<int>> ();
 	public static List<List<int>> story_list =new List<List<int>>();
 	string str;
@@ -221,6 +222,7 @@ public class DataLoad : MonoBehaviour {
 		for (int j = 6; j < 12; j++) {
 			//리스트1차배열생성[0][0]------------------------2
 			data_list.Add(new List<int>());
+			data_list_unmix.Add(new List<int>());
 			//포문안에서2차열생성----------------------------3
 			for (int i = 0; i < data2.Count; i++) {
 				int ch = (int)data2 [i] ["Chapter"];
@@ -228,6 +230,9 @@ public class DataLoad : MonoBehaviour {
 				if (ch == ch_i2) {
 					if (tp == tp_i2) {
 						data_list [j].Add ((int)data2 [i] ["Index"]);
+						if ((int)data2 [i] ["Chance"] == 1) {
+							data_list_unmix[j-6].Add ((int)data2 [i] ["Index"]);
+						}
 					}
 				}
 			}//endOfFor

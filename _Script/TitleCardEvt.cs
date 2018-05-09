@@ -485,7 +485,12 @@ public class TitleCardEvt : MonoBehaviour {
 			//랜덤으로나옴
 			int ran = DataLoad.data_list [i_tp].Count;
 			int a = 0;
+
 			int rd = DataLoad.data_list [i_tp] [Random.Range (0, ran)];
+			if(chpNum>=2){
+				ran = DataLoad.data_list_unmix [i_tp-6].Count;
+				rd = DataLoad.data_list_unmix [i_tp-6] [Random.Range (0, ran)];
+			}
 			mixedCard_obj.GetComponent<Image> ().sprite = card_spr [rd];
 
 
