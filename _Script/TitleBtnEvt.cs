@@ -21,15 +21,16 @@ public class TitleBtnEvt : MonoBehaviour {
 	//챕터확인
 	public int chNum=0;
 
+    public Sprite[] windowBGImg;
+    public GameObject[] windowBG;
+
+
     // Use this for initialization
-    void Start () {
+    void Start () {                
+        PlayerPrefs.SetInt(PlayerPrefs.GetString("code", ""), 100000); //돈코딩★★★★
 
-		string st = PlayerPrefs.GetString ("code", "");
-		PlayerPrefs.SetInt(st,10000);
-
-
-		//화면 해상도
-		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        //화면 해상도
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
 		float screenNum =(float)Screen.height/(float)Screen.width;
 		if (screenNum < 0.57f) {						
 			Screen.SetResolution (Screen.width, Screen.width / 16 * 9, true);
@@ -128,12 +129,7 @@ public class TitleBtnEvt : MonoBehaviour {
 
 			}
 			if (cc == 0) {
-				if (chNum >= 2) {
-					not_str [6] = not_str [6] + not_str [j-6];
-				} else {
-					not_str [6] = not_str [6] + not_str [j];
-
-				}
+				not_str[6] = not_str[6]  + not_str [j];
 				f = 1;
 			}
 		}//endOfFor
@@ -214,5 +210,21 @@ public class TitleBtnEvt : MonoBehaviour {
 		goGameWindow.SetActive (false);
 	}
 
+
+    public void changeChapterBG1()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            windowBG[i].GetComponent<Image>().sprite = windowBGImg[i];
+        }
+    }
+
+    public void changeChapterBG2()
+    {
+        for (int i = 3; i < 6; i++)
+        {
+            windowBG[i-3].GetComponent<Image>().sprite = windowBGImg[i];
+        }
+    }
 
 }
