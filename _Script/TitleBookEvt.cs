@@ -35,115 +35,135 @@ public class TitleBookEvt : MonoBehaviour {
 
 	public void showBookWindow(){
 
-		//chpNum = allNum.chapter1;
-
-		pageTxt.text = "- " + pageNum + " -";
-        bookWindow.SetActive (true);
-
-		blind [0].SetActive (true);
-		blind [1].SetActive (true);
-
-		List<Dictionary<string,object>> data;
-
-		//k는스토리북의 인덱스넘버 데이터핸들러에서 저장됨
-		int si=0; 
-		if (chpNum >= 2) {
-			si = 30 * (chpNum - 1) - 1;
-			data = CSVReader.Read ("StoryBook_2");
-			Debug.Log ("2챕터도감");
-		} else {
-			data = CSVReader.Read("StoryBook");
-		}
-
-		k=0;
-		int n=0;
-		for (int i = si; i < data.Count+si; i++) {
-			k = i + 1;
-			bookLoad [i] = PlayerPrefs.GetInt ("books"+k, 0);//도감모으기에 성공한걸불러오기
-
-		}
-		//이야기데이터불러오기
-		//시리즈넘버가달라지는 부분을체크해서 어디서부터 어디까지가 하나 인지 확인해줌
-		//가변2차원리스트배열
-		k = 0;
-		for (var i = 0; i < data.Count; i++) {
-			int sr = (int)data[i]["Series"];
-			bookLoadSeries [i] = sr;
-			if (i != 0) {
-				if (bookLoadSeries [i - 1] != bookLoadSeries [i]) {
-					if (k == 0) {
-						bookSeries [k] = i;
-					} else {
-						bookSeries [k] = i;
-						for (int j = k; j > 0; j--) {
-							bookSeries [k] = bookSeries [k] - bookSeries [k - j];
-						}
-					}
-					k++;
-				}
-			}
-		}//EndOfFor
-		//도감완성여부판단
-		PlayerPrefs.SetInt("k",k);
-		int h = 0;
-		for (int j = 0; j < k+1; j++) {
-			PlayerPrefs.SetInt ("clearbook" + j, 0);
-			int s = 0;
-			for (int i = 0; i < bookSeries [j]; i++) {
-				if (bookLoad [h] == 1) {
-					
-					s++;
-
-				}
-				h++;
-			}
-
-			if (s == bookSeries [j]) {
-				PlayerPrefs.SetInt ("clearbook" + j, 1);
-			}
-		}
-		//다모은건 없ㅐ기\
-		booksImg [0].GetComponent<Image> ().sprite = books_spr[0];
-		if (PlayerPrefs.GetInt ("clearbook" + 0, 0) == 1) {
-
-			blind [0].SetActive (false);
-		}
-		booksImg [1].GetComponent<Image> ().sprite = books_spr[1];
-		if (PlayerPrefs.GetInt ("clearbook" + 1, 0) == 1) {
-			blind [1].SetActive (false);
-		}
-
-
-		//그림표시하기
-		//int l=0;
-		//for (int i = 0; i < k; i++) {
-			//booksImg [i].GetComponent<Image> ().sprite = books_spr[i];
-		//}
-
-
-		//if (bookLoad[0] == 1) {
-				//blind [0].SetActive (false);
-			//}
-		//여기에서 불러온값을 확인해서 도감의책 모든페이지 완성여부판단
-		//data핸들러로간다 n/5 다모으면 max
-
-		changeChapter ();
+        chpNum = allNum.chapter1;
+        doBookWindow();
 	}
+
+    public void doBookWindow()
+    {
+        pageTxt.text = "- " + pageNum + " -";
+        bookWindow.SetActive(true);
+
+        blind[0].SetActive(true);
+        blind[1].SetActive(true);
+
+        List<Dictionary<string, object>> data;
+
+        //k는스토리북의 인덱스넘버 데이터핸들러에서 저장됨
+        int si = 0;
+        if (chpNum >= 2)
+        {
+            si = 30 * (chpNum - 1) - 1;
+            data = CSVReader.Read("StoryBook_2");
+            Debug.Log("2챕터도감");
+        }
+        else
+        {
+            data = CSVReader.Read("StoryBook");
+        }
+
+        k = 0;
+        int n = 0;
+        for (int i = si; i < data.Count + si; i++)
+        {
+            k = i + 1;
+            bookLoad[i] = PlayerPrefs.GetInt("books" + k, 0);//도감모으기에 성공한걸불러오기
+
+        }
+        //이야기데이터불러오기
+        //시리즈넘버가달라지는 부분을체크해서 어디서부터 어디까지가 하나 인지 확인해줌
+        //가변2차원리스트배열
+        k = 0;
+        for (var i = 0; i < data.Count; i++)
+        {
+            int sr = (int)data[i]["Series"];
+            bookLoadSeries[i] = sr;
+            if (i != 0)
+            {
+                if (bookLoadSeries[i - 1] != bookLoadSeries[i])
+                {
+                    if (k == 0)
+                    {
+                        bookSeries[k] = i;
+                    }
+                    else
+                    {
+                        bookSeries[k] = i;
+                        for (int j = k; j > 0; j--)
+                        {
+                            bookSeries[k] = bookSeries[k] - bookSeries[k - j];
+                        }
+                    }
+                    k++;
+                }
+            }
+        }//EndOfFor
+         //도감완성여부판단
+        PlayerPrefs.SetInt("k", k);
+        int h = 0;
+        for (int j = 0; j < k + 1; j++)
+        {
+            PlayerPrefs.SetInt("clearbook" + j, 0);
+            int s = 0;
+            for (int i = 0; i < bookSeries[j]; i++)
+            {
+                if (bookLoad[h] == 1)
+                {
+
+                    s++;
+
+                }
+                h++;
+            }
+
+            if (s == bookSeries[j])
+            {
+                PlayerPrefs.SetInt("clearbook" + j, 1);
+            }
+        }
+        //다모은건 없ㅐ기\
+        booksImg[0].GetComponent<Image>().sprite = books_spr[0];
+        if (PlayerPrefs.GetInt("clearbook" + 0, 0) == 1)
+        {
+
+            blind[0].SetActive(false);
+        }
+        booksImg[1].GetComponent<Image>().sprite = books_spr[1];
+        if (PlayerPrefs.GetInt("clearbook" + 1, 0) == 1)
+        {
+            blind[1].SetActive(false);
+        }
+
+
+        //그림표시하기
+        //int l=0;
+        //for (int i = 0; i < k; i++) {
+        //booksImg [i].GetComponent<Image> ().sprite = books_spr[i];
+        //}
+
+
+        //if (bookLoad[0] == 1) {
+        //blind [0].SetActive (false);
+        //}
+        //여기에서 불러온값을 확인해서 도감의책 모든페이지 완성여부판단
+        //data핸들러로간다 n/5 다모으면 max
+
+        changeChapter();
+    }
 
 	public void clickCh1(){
 		pageTxt.text = "- " + pageNum + " -";
 		chpNum = allNum.chapter1;
-		showBookWindow ();
-		changeChapter ();
+        doBookWindow();
+        changeChapter ();
 		closeBlind ();
 	}
 
 	public void clickCh2(){
 		pageTxt.text = "- " + pageNum + " -";
 		chpNum = allNum.chapter2;
-		showBookWindow ();
-		chpNum = allNum.chapter2;
-		changeChapter ();
+        doBookWindow();
+        changeChapter ();
 		closeBlind ();
 	}
 
