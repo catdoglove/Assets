@@ -209,30 +209,30 @@ public class TitleBookEvt : MonoBehaviour {
 			//다모은건 없ㅐ기
 			closeBlind();
 
-
-
 		}
 	}
 
 	public void closeBlind(){
 		p = pageNum;
-		p = p*2;
+		p = p * 2;
 		blind [0].SetActive (true);
 		blind [1].SetActive (true);
-		p=p-2;
-
+		p = p - 2;
+		if (chpNum >= 2) {
+			p = p + 11;
+			Debug.Log ("p"+p);
+		}
 		booksImg [0].GetComponent<Image> ().sprite = books_spr[p]; //p 페이지넘버
 		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
 			blind [0].SetActive (false);
 		}
-		p=p+1;
+		p = p + 1;
 		booksImg [1].GetComponent<Image> ().sprite = books_spr[p];
 		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
 			blind [1].SetActive (false);
 		}
 	}
-
-
+		
 	//총22페지
 	public void showBookPage1(){
 		//pageImg.GetComponent<Image> ().sprite = bookpageSpr[0];
@@ -240,9 +240,11 @@ public class TitleBookEvt : MonoBehaviour {
 
 		//도감에서 터치했을때 자세한내용을보여준다
 		//페이지넘버를불러와 모은 도감커버를 보여준다
-		p = pageNum;
-		p = p * 2;
-		p = p - 2;
+
+			p = pageNum;
+			p = p * 2;
+			p = p - 2;
+
 		//이야기안에페이지가몇개있는지수를세어주는변수
 		int d = 0;
 
@@ -264,7 +266,7 @@ public class TitleBookEvt : MonoBehaviour {
 		}
 		Debug.Log (instant);
 		for (int i = 0; i < instant; i++) {
-			int st = DataLoad.story_list [p] [i]-1;
+			int st=0;
 			if (chpNum >= 2) {
 				st = DataLoad.story_list_2 [p] [i]-1;
 			} else {
@@ -278,6 +280,9 @@ public class TitleBookEvt : MonoBehaviour {
 					for (int g = 0; g < p; g++) {
 						d = d + bookSeries [g];
 					}
+					if (chpNum >= 2) {
+						d = d + 30;
+					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
 				}
@@ -285,6 +290,10 @@ public class TitleBookEvt : MonoBehaviour {
 				if (i == 0) {
 					for (int g = 0; g < p; g++) {
 						d = d + bookSeries [g];
+
+					}
+					if (chpNum >= 2) {
+						d = d + 30;
 					}
 					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
 				}
@@ -315,7 +324,7 @@ public class TitleBookEvt : MonoBehaviour {
 			instant = DataLoad.story_list [p].Count;
 		}
 		for (int i = 0; i < instant; i++) {
-			int st = DataLoad.story_list [p] [i]-1;
+			int st = 0;
 			if (chpNum >= 2) {
 				st = DataLoad.story_list_2 [p] [i]-1;
 			} else {
@@ -328,6 +337,10 @@ public class TitleBookEvt : MonoBehaviour {
 				if (i == 0) {
 					for (int g = 0; g < p; g++) {
 						d = d + bookSeries [g];
+
+					}
+					if (chpNum >= 2) {
+						d = d + 30;
 					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
@@ -336,6 +349,10 @@ public class TitleBookEvt : MonoBehaviour {
 				if (i == 0) {
 					for (int g = 0; g < p; g++) {
 						d = d + bookSeries [g];
+
+					}
+					if (chpNum >= 2) {
+						d = d + 30;
 					}
 					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
 				}
@@ -382,7 +399,7 @@ public class TitleBookEvt : MonoBehaviour {
 			instant = DataLoad.story_list [p].Count;
 		}
 		for (int i = 0; i < instant; i++) {
-			int st = DataLoad.story_list [p] [i]-1;
+			int st =0;
 			if (chpNum >= 2) {
 				st = DataLoad.story_list_2 [p] [i]-1;
 			} else {
@@ -397,6 +414,9 @@ public class TitleBookEvt : MonoBehaviour {
 						d = d + bookSeries [g];
 					}
 					d = d + s;
+					if (chpNum >= 2) {
+						d = d + 30;
+					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
 				}
@@ -406,6 +426,9 @@ public class TitleBookEvt : MonoBehaviour {
 						d = d + bookSeries [g];
 					}
 					d = d + s;
+					if (chpNum >= 2) {
+						d = d + 30;
+					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [22];
 					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
 				} 
