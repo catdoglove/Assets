@@ -51,8 +51,14 @@ public class PrefabsMake : MonoBehaviour {
 	public GameObject GM;
 
 
-	// Use this for initialization
-	void Start () {
+    //팁
+    public GameObject tipBox;
+    public Text tipTxt;
+    int tipPageNum;
+    List<Dictionary<string, object>> tipList;
+
+    // Use this for initialization
+    void Start () {
 		chapter_num=PlayerPrefs.GetInt ("savestage", 1);
 
 		//생성된 리스트에 받아온 데이터값을 넣어준다-1
@@ -62,14 +68,29 @@ public class PrefabsMake : MonoBehaviour {
 		//카드를 클론으로 처음 생성해준다-3
 		MakingCard(index_H_list.Count);
 
-		/*
+        /*
 		List<Dictionary<string,object>> data = CSVReader.Read("CardData");
 		for(var i=0; i< data.Count; i++){
 			//Debug.Log("Index" + (i).ToString() + " : " + data[i]["Chapter"] + " " + data[i]["Type"] + " " + data[i]["Name"]);
 		}
 		//_exp = (int)data[0]["EXP"];
 		*/
-	}//End of Start
+
+        //팁
+        //PlayerPrefs.SetInt("tipnum", 12);
+        if(PlayerPrefs.GetInt("tipnum", tipPageNum) < 14)
+        {
+            tipPageNum = PlayerPrefs.GetInt("tipnum", tipPageNum) + 1;
+            PlayerPrefs.SetInt("tipnum", tipPageNum);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("tipnum", 0);
+        }        
+        tipList = CSVReader.Read("tipdata");
+        tipTxt.text = (string)tipList[tipPageNum]["tip"];
+
+    }//End of Start
 	// Update is called once per frame
 	void Update () {
 
@@ -118,12 +139,16 @@ public class PrefabsMake : MonoBehaviour {
 			}else { //실패
 				//페이드인
 				Debug.Log("실패----------------------");
+                tipBox.SetActive(true);
                 coinImg.SetActive(false);
 				StartCoroutine ("imgFadeInS");
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
 				succfail_str="";
 				succfail_text.text = succfail_str;
-				soundck = 22;				
+				soundck = 22;	
+                
+
+
 			}
 			spr_illust [5].SetActive (true);
 			end_mach = 0;
@@ -335,4 +360,35 @@ public class PrefabsMake : MonoBehaviour {
 		//PlayerPrefs.SetInt (str, coin);
 		//PlayerPrefs.Save ();
 	}
+
+
+    public void showTipLeft()
+    {
+        tipList = CSVReader.Read("tipdata");
+        if (tipPageNum > 0)
+        {
+            tipPageNum--;
+            tipTxt.text = (string)tipList[tipPageNum]["tip"];
+        }
+        else
+        {
+            tipPageNum = 14;
+            tipTxt.text = (string)tipList[tipPageNum]["tip"];
+        }
+    }
+
+    public void showTipRight()
+    {
+        tipList = CSVReader.Read("tipdata");
+        if (tipPageNum < 14)
+        {
+            tipPageNum++;
+            tipTxt.text = (string)tipList[tipPageNum]["tip"];
+        }
+        else
+        {
+            tipPageNum = 0;
+            tipTxt.text = (string)tipList[tipPageNum]["tip"];
+        }
+    }
 }
