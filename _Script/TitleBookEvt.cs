@@ -7,7 +7,7 @@ public class TitleBookEvt : MonoBehaviour {
 	
 	public Sprite [] chpImgSpr,bookpageSpr,bookstorySpr;
 	public GameObject bookWindow,chpBtn1,chpBtn2,bookpageImg,pageImg;
-	int chpNum = 1, bookNum = 1, pageNum = 1;
+	int chpNum = 1, bookNum = 1, pageNum = 1, bookCoverPage_i=5;
 	public Text pageTxt;
 
 	//도감데이터불러오기
@@ -115,7 +115,6 @@ public class TitleBookEvt : MonoBehaviour {
                 }
                 h++;
             }
-
             if (s == bookSeries[j])
             {
                 PlayerPrefs.SetInt("clearbook" + j, 1);
@@ -134,6 +133,23 @@ public class TitleBookEvt : MonoBehaviour {
             blind[1].SetActive(false);
         }
 
+
+		int slc=0;
+		int bnc = 11;
+		if (chpNum >= 2) {
+			for (int i = 0; i < DataLoad.story_list_2.Count; i++) {
+				slc=0;
+				for (int j = 0; j < DataLoad.story_list_2[i].Count; j++) {
+					slc = slc + PlayerPrefs.GetInt("books" + DataLoad.story_list_2[i][j], 0);
+					PlayerPrefs.SetInt("clearbook" + bnc, 0);
+					if (slc == DataLoad.story_list_2 [i].Count) {
+						PlayerPrefs.SetInt("clearbook" + bnc, 1);
+						Debug.Log ("bnc : "+bnc);
+					}
+				}
+				bnc++;
+			}
+		}
 
         //그림표시하기
         //int l=0;
@@ -169,13 +185,15 @@ public class TitleBookEvt : MonoBehaviour {
 
 	void changeChapter(){
 		switch(chpNum){
-		case 1 : //챕터1
+		case 1: //챕터1
 			chpBtn1.GetComponent<Image> ().sprite = chpImgSpr [1];
 			chpBtn2.GetComponent<Image> ().sprite = chpImgSpr [2];
+			bookCoverPage_i = 5;
 			break;
 		case 2: //챕터2
 			chpBtn1.GetComponent<Image> ().sprite = chpImgSpr [0];
 			chpBtn2.GetComponent<Image> ().sprite = chpImgSpr [3];
+			bookCoverPage_i = 4;
 			break;
 		}
 	}
@@ -198,7 +216,7 @@ public class TitleBookEvt : MonoBehaviour {
 	}
 
 	public void clickRight(){
-		if(pageNum >= 5){
+		if(pageNum >= bookCoverPage_i){
 			//pageTxt.text = "끝 " + pageNum + "페이지";
 		}
 		else if(pageNum > 0){
@@ -284,7 +302,7 @@ public class TitleBookEvt : MonoBehaviour {
 						d = d + 30;
 					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
-					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
+					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [st];
 				}
 			} else {
 				if (i == 0) {
@@ -295,7 +313,7 @@ public class TitleBookEvt : MonoBehaviour {
 					if (chpNum >= 2) {
 						d = d + 30;
 					}
-					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
+					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [st];
 				}
 			}
 			 
@@ -343,7 +361,7 @@ public class TitleBookEvt : MonoBehaviour {
 						d = d + 30;
 					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
-					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
+					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [st];
 				}
 			} else {
 				if (i == 0) {
@@ -354,7 +372,7 @@ public class TitleBookEvt : MonoBehaviour {
 					if (chpNum >= 2) {
 						d = d + 30;
 					}
-					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
+					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [st];
 				}
 			} 
 		}
@@ -418,7 +436,7 @@ public class TitleBookEvt : MonoBehaviour {
 						d = d + 30;
 					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
-					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [d];
+					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [st];
 				}
 			} else {
 				if (i == s) {
@@ -430,7 +448,7 @@ public class TitleBookEvt : MonoBehaviour {
 						d = d + 30;
 					}
 					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [22];
-					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [d];
+					bookExplainImg.GetComponent<Image> ().sprite = bookHint_spr [st];
 				} 
 			}
 		}

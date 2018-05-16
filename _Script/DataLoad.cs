@@ -9,7 +9,7 @@ public class DataLoad : MonoBehaviour {
 	public static List<List<int>> story_list_2 = new List<List<int>> ();
 	public static List<List<int>> story_list =new List<List<int>>();
 	string str;
-
+	List<Dictionary<string,object>> data1;
 
     public GameObject[] titleSignGO, titleBackgGO;
     public Sprite[] titleSignSpr;
@@ -150,7 +150,7 @@ public class DataLoad : MonoBehaviour {
 
 	public void dataLoadFirst(){
 		//이야기로딩및도감모음여부확인
-		List<Dictionary<string,object>> data1 = CSVReader.Read ("StoryBook");
+		data1 = CSVReader.Read ("StoryBook");
 		int ch_c = 1;
 		int sr_c = 0;
 		for (int j = 0; j < 10; j++) {

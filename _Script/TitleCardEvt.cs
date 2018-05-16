@@ -79,10 +79,16 @@ public class TitleCardEvt : MonoBehaviour {
 			chpBtn1.GetComponent<Image> ().sprite = chpImgSpr [1];
 			chpBtn2.GetComponent<Image> ().sprite = chpImgSpr [2];
 			break;
-		case 2 : //챕터2
+		case 2: //챕터2
 			chpBtn1.GetComponent<Image> ().sprite = chpImgSpr [0];
 			chpBtn2.GetComponent<Image> ().sprite = chpImgSpr [3];
+
 			break;
+		}
+		if (typeNum == 2) {
+			for (int j = 0; j < 15; j++) {
+				cardNum_txt [j].text = "∞";
+			}
 		}
 	}
 
