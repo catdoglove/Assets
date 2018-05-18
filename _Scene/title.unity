@@ -3268,6 +3268,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -6551,6 +6553,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -8901,6 +8905,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -10790,6 +10796,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -12914,6 +12922,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -14758,7 +14768,6 @@ GameObject:
   - component: {fileID: 764904251}
   - component: {fileID: 764904252}
   - component: {fileID: 764904253}
-  - component: {fileID: 764904254}
   m_Layer: 0
   m_Name: gameEvt
   m_TagString: Untagged
@@ -14941,6 +14950,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 2086562573}
   newCardWid: {fileID: 976100816}
   infoCardWid: {fileID: 1704546417}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn:
   - {fileID: 378189535}
   - {fileID: 1274280475}
@@ -15745,20 +15756,6 @@ MonoBehaviour:
   - {fileID: 1704546417}
   - {fileID: 303846453}
   - {fileID: 0}
---- !u!114 &764904254
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 764904240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7aae3f86a4b671b45a7618d2c5e97a72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  recipeImg: {fileID: 0}
-  markImg: {fileID: 0}
-  leftrightMark: []
 --- !u!1 &765138520
 GameObject:
   m_ObjectHideFlags: 0
@@ -16522,6 +16519,74 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 811969568}
+--- !u!1 &820543274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 820543275}
+  - component: {fileID: 820543277}
+  - component: {fileID: 820543276}
+  m_Layer: 5
+  m_Name: "\uCE74\uB4DC2"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &820543275
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820543274}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.199993, y: -76.95, z: 0}
+  m_LocalScale: {x: 1.0001134, y: 1.0001134, z: 1.0001134}
+  m_Children: []
+  m_Father: {fileID: 1908839252}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 12.199993, y: -76.95}
+  m_SizeDelta: {x: 100, y: 128.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &820543276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820543274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &820543277
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 820543274}
 --- !u!1 &823074864
 GameObject:
   m_ObjectHideFlags: 0
@@ -18486,6 +18551,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 0}
+  mixRecipeSecond: {fileID: 0}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -19355,6 +19422,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -22447,6 +22516,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -24995,6 +25066,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -25745,6 +25818,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -27190,6 +27265,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -27934,6 +28011,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -28916,6 +28995,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -30548,6 +30629,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -31752,6 +31835,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -31827,6 +31912,74 @@ MonoBehaviour:
   mixedCard_obj: {fileID: 0}
   mixedCardTouch_obj: {fileID: 0}
   mixOk_btn: {fileID: 0}
+--- !u!1 &1592372303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1592372304}
+  - component: {fileID: 1592372306}
+  - component: {fileID: 1592372305}
+  m_Layer: 5
+  m_Name: "\uCE74\uB4DC1"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1592372304
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592372303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.200001, y: 76.950005, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1908839252}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 12.200001, y: 76.950005}
+  m_SizeDelta: {x: 100, y: 128.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1592372305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592372303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1592372306
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1592372303}
 --- !u!1 &1593753708
 GameObject:
   m_ObjectHideFlags: 0
@@ -34654,6 +34807,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
@@ -38295,6 +38450,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 707554197}
+  - {fileID: 1592372304}
+  - {fileID: 820543275}
   m_Father: {fileID: 1704546418}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40699,6 +40856,8 @@ MonoBehaviour:
   powderCardWid: {fileID: 0}
   newCardWid: {fileID: 0}
   infoCardWid: {fileID: 0}
+  mixRecipeFirst: {fileID: 1592372303}
+  mixRecipeSecond: {fileID: 820543274}
   cardBtn: []
   cardBlind: []
   card_spr:
