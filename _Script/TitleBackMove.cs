@@ -12,7 +12,8 @@ public class TitleBackMove : MonoBehaviour {
 	float imgSpeed = 11f;
 	private Vector2 backImgPos2;
 
-	void OnMouseDown(){		
+	void OnMouseDown(){
+        Debug.Log("t");
 		switch (bgck) {
 		case true:
 			StartCoroutine ("moveImg");
