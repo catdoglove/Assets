@@ -52,6 +52,10 @@ public class AdmobADS : MonoBehaviour {
         {
             interstitial.Show();
             Debug.Log("보고왔습니다");
+			string str = PlayerPrefs.GetString ("code", "");
+			int coin = PlayerPrefs.GetInt (str, 0);
+			coin = coin + 50;
+			PlayerPrefs.SetInt (str, coin);
             interstitial.Destroy();
         }
     }

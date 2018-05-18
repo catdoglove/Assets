@@ -168,6 +168,7 @@ public class TitleBookEvt : MonoBehaviour {
     }
 
 	public void clickCh1(){
+		pageNum = 1;
 		pageTxt.text = "- " + pageNum + " -";
 		chpNum = allNum.chapter1;
         doBookWindow();
@@ -176,6 +177,7 @@ public class TitleBookEvt : MonoBehaviour {
 	}
 
 	public void clickCh2(){
+		pageNum = 1;
 		pageTxt.text = "- " + pageNum + " -";
 		chpNum = allNum.chapter2;
         doBookWindow();

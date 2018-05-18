@@ -12,7 +12,7 @@ public class TitleCardEvt : MonoBehaviour {
 	//미리로드해둔 데이터를 가져오기위해서
 
 
-	public GameObject mixCardWid, powderCardWid, newCardWid, infoCardWid;
+	public GameObject mixCardWid, powderCardWid, newCardWid, infoCardWid, mixRecipeFirst, mixRecipeSecond;
 
 
 	/// <summary>
@@ -261,6 +261,30 @@ public class TitleCardEvt : MonoBehaviour {
 		//카드번호저장
 		PlayerPrefs.SetInt ("cinstantnum", c_Num);
 		PlayerPrefs.SetInt ("instantnum", num);
+		//조합법창띄우기
+		List<Dictionary<string,object>> data = CSVReader.Read ("MixResult");
+		for(int i=0;i<DataLoad.data_list_unmix [i_tp].Count;i++){
+			if(DataLoad.data_list_unmix[i_tp][i]==num){
+				//조합법.SetActive (true);
+			}
+		}
+		//조합법을알고있다면
+		//초기화
+		//mixRecipeFirst.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[55];
+		//mixRecipeSecond.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[55];
+		if (PlayerPrefs.GetInt ("mixcheck" + num, 0) == 1) {
+			int ff = 0;
+			int ss = 0;
+			for (int i = 0; i < data.Count; i++) {
+				if (num == (int)data [i] ["Result"]) {
+					ff = (int)data [i] ["First"];
+					ss = (int)data [i] ["Second"];
+				}
+			}
+			//mixRecipeFirst.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[ff];
+			//mixRecipeSecond.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[ss];
+		}
+
 
 		int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
 
@@ -300,7 +324,7 @@ public class TitleCardEvt : MonoBehaviour {
 					int s = PlayerPrefs.GetInt ("instantnum", 0);
 					int f = PlayerPrefs.GetInt ("instantnum1", 0);
 					int r = -1;
-					List<Dictionary<string,object>> data = CSVReader.Read ("MixResult");
+
 					for (int i = 0; i < data.Count; i++) {
 						if ((int)data [i] ["First"] == f) {
 							if ((int)data [i] ["Second"] == s) {
@@ -516,12 +540,14 @@ public class TitleCardEvt : MonoBehaviour {
 
 
 		} else {
+			//믹스했을때정해진카드가나오고조합법이밝혀짐
 			mixedCard_obj.GetComponent<Image> ().sprite = card_spr [r];
 
 			int k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + r, 0);
 			k++;
 			PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + r, k);
 			PlayerPrefs.SetInt ("ch" + 1 + "newcard" + r, 1);
+			PlayerPrefs.SetInt ("mixcheck" + r,1);
 
 			k = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + f, 0);
 			k--;

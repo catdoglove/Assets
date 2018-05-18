@@ -78,7 +78,8 @@ public class PrefabsMake : MonoBehaviour {
 
         //팁
         //PlayerPrefs.SetInt("tipnum", 12);
-        if(PlayerPrefs.GetInt("tipnum", tipPageNum) < 14)
+		tipList = CSVReader.Read("tipdata");
+		if(PlayerPrefs.GetInt("tipnum", tipPageNum) < tipList.Count)
         {
             tipPageNum = PlayerPrefs.GetInt("tipnum", tipPageNum) + 1;
             PlayerPrefs.SetInt("tipnum", tipPageNum);
@@ -87,7 +88,7 @@ public class PrefabsMake : MonoBehaviour {
         {
             PlayerPrefs.SetInt("tipnum", 0);
         }        
-        tipList = CSVReader.Read("tipdata");
+        
         tipTxt.text = (string)tipList[tipPageNum]["tip"];
 
     }//End of Start
@@ -132,7 +133,9 @@ public class PrefabsMake : MonoBehaviour {
 
 				//int adRand = Random.Range (0, 3);
 				//if (adRand == 1) {
-				addAdReward_obj.SetActive (true);
+				if (PlayerPrefs.GetInt ("tutorial", 0) >= 99) {
+					addAdReward_obj.SetActive (true);
+				}
 				//}
 
 
@@ -372,7 +375,7 @@ public class PrefabsMake : MonoBehaviour {
         }
         else
         {
-            tipPageNum = 14;
+			tipPageNum = tipList.Count;
             tipTxt.text = (string)tipList[tipPageNum]["tip"];
         }
     }
@@ -380,7 +383,7 @@ public class PrefabsMake : MonoBehaviour {
     public void showTipRight()
     {
         tipList = CSVReader.Read("tipdata");
-        if (tipPageNum < 14)
+		if (tipPageNum < tipList.Count)
         {
             tipPageNum++;
             tipTxt.text = (string)tipList[tipPageNum]["tip"];
