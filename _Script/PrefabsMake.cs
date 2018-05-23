@@ -79,7 +79,7 @@ public class PrefabsMake : MonoBehaviour {
         //팁
         //PlayerPrefs.SetInt("tipnum", 12);
 		tipList = CSVReader.Read("tipdata");
-		if(PlayerPrefs.GetInt("tipnum", tipPageNum) < tipList.Count)
+		if(PlayerPrefs.GetInt("tipnum", tipPageNum) < tipList.Count-1)
         {
             tipPageNum = PlayerPrefs.GetInt("tipnum", tipPageNum) + 1;
             PlayerPrefs.SetInt("tipnum", tipPageNum);
@@ -378,7 +378,7 @@ public class PrefabsMake : MonoBehaviour {
     public void showTipRight()
     {
         tipList = CSVReader.Read("tipdata");
-		if (tipPageNum < tipList.Count)
+		if (tipPageNum < tipList.Count-1)
         {
             tipPageNum++;
             tipTxt.text = (string)tipList[tipPageNum]["tip"];
