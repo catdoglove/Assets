@@ -13,7 +13,6 @@ public class TitleBackMove : MonoBehaviour {
 	private Vector2 backImgPos2;
 
 	void OnMouseDown(){
-        Debug.Log("t");
 		switch (bgck) {
 		case true:
 			StartCoroutine ("moveImg");

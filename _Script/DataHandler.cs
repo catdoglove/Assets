@@ -76,7 +76,18 @@ public class DataHandler : MonoBehaviour {
 											Debug.Log("성공----------------------"+k);
 										}//endOfFor
 
-									}
+                                        //돈
+                                        string str = PlayerPrefs.GetString("code", "");
+                                        int coin = PlayerPrefs.GetInt(str, 0);
+                                        coin = coin + 500;
+                                        if (PlayerPrefs.GetInt("new", 0) == 1)
+                                        {
+                                            coin = coin + 500;
+                                        }
+                                        PlayerPrefs.SetInt(str, coin);
+                                        PlayerPrefs.Save();
+
+                                    }
 								}
 							}
 						}

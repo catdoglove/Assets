@@ -114,21 +114,16 @@ public class PrefabsMake : MonoBehaviour {
 				StartCoroutine ("imgFadeIn");
 				spr_illust [4].GetComponent<SpriteRenderer> ().sprite = endIllust_spr [end-1];
 				succfailImg.GetComponent<Image> ().sprite = succfail_spr [0];
-				//돈
-				string str = PlayerPrefs.GetString ("code", "");
-				int coin=PlayerPrefs.GetInt(str,0);
-				coin = coin + 500;
+		
 				//페이드인
 				StartCoroutine ("imgFadeInS");
 				succfail_str="500";
-				if(PlayerPrefs.GetInt ("new",0)==1){
-					succfail_str="500 + 500";
-					PlayerPrefs.SetInt ("new",0);
-					coin = coin + 500;
-				}
-				PlayerPrefs.SetInt (str, coin);
-				PlayerPrefs.Save ();
-				succfail_text.text = succfail_str;
+                if (PlayerPrefs.GetInt("new", 0) == 1)
+                {
+                    succfail_str = "500 + 500";
+                    PlayerPrefs.SetInt("new", 0);
+                }
+                succfail_text.text = succfail_str;
 				soundck = 11;
 
 				//int adRand = Random.Range (0, 3);
