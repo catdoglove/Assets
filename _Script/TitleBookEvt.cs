@@ -27,6 +27,7 @@ public class TitleBookEvt : MonoBehaviour {
 	public GameObject bookExplainImg;
 	public Sprite[] bookHint_spr;
 
+
 	//도감페이지넘버표시
 	public GameObject[] bookPageNum;
 	public Sprite[] page_spr;

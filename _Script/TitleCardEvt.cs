@@ -41,7 +41,8 @@ public class TitleCardEvt : MonoBehaviour {
 	public int setCardMix_i = 0, cardMixSpace_i = 0;
 	public GameObject mixCard_obj1, mixCard_obj2, MixCard_obj, MixText_obj, mixedCard_obj, mixedCardTouch_obj;
 	public Button mixOk_btn;
-
+	public GameObject mixCardRecipe_obj;
+	int hp;
 
 
 	public void showCardWindow(){
@@ -74,6 +75,7 @@ public class TitleCardEvt : MonoBehaviour {
 
 	void changeChapter(){
 		initializeCard ();
+		mixCardRecipe_obj.SetActive (false);
 		switch(chpNum){
 		case 1 : //챕터1
 			chpBtn1.GetComponent<Image> ().sprite = chpImgSpr [1];
@@ -188,7 +190,9 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 	public void infoCard(){
+		
 		if (setCardMix_i == 0) {
+			
 			infoCardWid.SetActive (true);
 		} else {
 			
@@ -196,6 +200,7 @@ public class TitleCardEvt : MonoBehaviour {
 	}
 
 	public void infoCardclose(){
+		mixCardRecipe_obj.SetActive (false);
 		infoCardWid.SetActive (false);
 	}
 
@@ -263,29 +268,35 @@ public class TitleCardEvt : MonoBehaviour {
 		PlayerPrefs.SetInt ("instantnum", num);
         //조합법창띄우기
         //조합법.SetActive(false);
+
+
         List<Dictionary<string,object>> data = CSVReader.Read ("MixResult");
-		for(int i=0;i<DataLoad.data_list_unmix [i_tp-6].Count;i++){
-			if(DataLoad.data_list_unmix[i_tp-6][i]==num){
-				//조합법.SetActive (true);
-			}
-		}
-		//조합법을알고있다면
-		//초기화
-		mixRecipeFirst.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[55];
-		mixRecipeSecond.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[55];
-		if (PlayerPrefs.GetInt ("mixcheck" + num, 0) == 1) {
-			int ff = 0;
-			int ss = 0;
-			for (int i = 0; i < data.Count; i++) {
-				if (num == (int)data [i] ["Result"]) {
-					ff = (int)data [i] ["First"];
-					ss = (int)data [i] ["Second"];
+		if (GM.GetComponent<TitleCardEvt>().chpNum >= 2) {
+			mixCardRecipe_obj.SetActive (true);
+			for (int i = 0; i < DataLoad.data_list_unmix [i_tp - 6].Count; i++) {
+				if (DataLoad.data_list_unmix [i_tp - 6] [i] == num) {
+					mixCardRecipe_obj.SetActive (false);
 				}
 			}
-			mixRecipeFirst.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[ff];
-			mixRecipeSecond.GetComponent<Image>().sprite=GM.GetComponent<TitleCardEvt>().card_spr[ss];
-		}
+			//조합법을알고있다면
+			//초기화
+				mixRecipeFirst.GetComponent<Image> ().sprite = GM.GetComponent<TitleCardEvt> ().card_spr [55];
+				mixRecipeSecond.GetComponent<Image> ().sprite = GM.GetComponent<TitleCardEvt> ().card_spr [55];
+				if (PlayerPrefs.GetInt ("mixcheck" + num, 0) == 1) {
+			
+					int ff = 0;
+					int ss = 0;
+					for (int i = 0; i < data.Count; i++) {
+						if (num == (int)data [i] ["Result"]) {
+							ff = (int)data [i] ["First"];
+							ss = (int)data [i] ["Second"];
+						}
+					}
+					mixRecipeFirst.GetComponent<Image> ().sprite = GM.GetComponent<TitleCardEvt> ().card_spr [ff];
+					mixRecipeSecond.GetComponent<Image> ().sprite = GM.GetComponent<TitleCardEvt> ().card_spr [ss];
+				}
 
+		}
 
 		int iscn = PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + PlayerPrefs.GetInt ("instantnum", 0), 0);
 
