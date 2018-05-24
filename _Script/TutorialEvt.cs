@@ -10,12 +10,19 @@ public class TutorialEvt : MonoBehaviour {
 	public GameObject[] tutorialBack_obj;
 	public int tutorial_i, game_i;
 	List<Dictionary<string,object>> data;
+	List<Dictionary<string,object>> data2;
 	int b = 0;
 
 	public GameObject[] closeall;
 
+
+	public int mixTutorial_i=0;
+
 	// Use this for initialization
 	void Start () {
+		//믹스튜토리얼불러오기
+		data2 = CSVReader.Read ("tutorial");
+
 		int s = PlayerPrefs.GetInt ("tutorial_i", 0);
 		if (s == 4 && game_i == 4) {
 			data = CSVReader.Read ("tutorial");
@@ -413,5 +420,32 @@ public class TutorialEvt : MonoBehaviour {
 
 	public void closeReward(){
 		tutorialreward_obj.SetActive (false);
+	}
+
+
+
+	//2챕터와 합성잠금풀기및튜토리얼
+
+	public void mixTutorial(){
+		tutorialSpace_obj.SetActive (true);
+		tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+		switch (mixTutorial_i) {
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		case 5:
+			break;
+		case 6:
+			break;
+		}
+
+		mixTutorial_i++;
 	}
 }
