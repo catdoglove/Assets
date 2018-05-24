@@ -12,6 +12,7 @@ public class AdmobADS : MonoBehaviour {
     //영상
     private RewardBasedVideoAd rewardBasedVideo;
     string adUnitIdvideo;
+    
 
     // Use this for initialization
     void Start () {
@@ -90,15 +91,19 @@ public class AdmobADS : MonoBehaviour {
     //시청보상
     public void HandleRewardBasedVideoRewarded(object sender, Reward args)
     {
+        if (PlayerPrefs.GetInt("fcorin", 0) == 1)
+        {
+            int coins = PlayerPrefs.GetInt(PlayerPrefs.GetString("code", ""), 0);
+            coins = coins + 250;
+            PlayerPrefs.SetInt(PlayerPrefs.GetString("code", ""), coins);
+
+            PlayerPrefs.SetInt("fcorin", 2);
+        }
     }
 
     //동영상닫음
     private void HandleRewardBasedVideoClosed(object sender, System.EventArgs args)
     {
-        string str = PlayerPrefs.GetString("code", "");
-        int coin = PlayerPrefs.GetInt(str, 0);
-        coin = coin + 500;
-        PlayerPrefs.SetInt(str, coin);
         RequestRewardedVideo();
     }
 
@@ -106,8 +111,8 @@ public class AdmobADS : MonoBehaviour {
     {
         if (rewardBasedVideo.IsLoaded())
         {
+            PlayerPrefs.SetInt("fcorin", 1);
             rewardBasedVideo.Show();
-            //Debug.Log("영상보고왔습니다");
         }
         else
         {
