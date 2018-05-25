@@ -21,7 +21,7 @@ public class TutorialEvt : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//믹스튜토리얼불러오기
-		data2 = CSVReader.Read ("tutorial");
+		data2 = CSVReader.Read ("MixTutotial");
 
 		int s = PlayerPrefs.GetInt ("tutorial_i", 0);
 		if (s == 4 && game_i == 4) {
@@ -56,6 +56,18 @@ public class TutorialEvt : MonoBehaviour {
 		}
 		if (PlayerPrefs.GetInt ("tutorial_i", 0) == 1800) {
 			tutorial_i = 45;
+		}
+
+		int k = 0;
+		int h = 0;
+		for (int i = 0; i < 24; i++)
+		{
+			k = i + 1;
+			h=h+PlayerPrefs.GetInt("books" + k, 0);//도감모으기에 성공한걸불러오기
+
+		}
+		if(h>=5){
+			mixTutorialreward_obj.SetActive (true);
 		}
 	}
 	
@@ -443,10 +455,26 @@ public class TutorialEvt : MonoBehaviour {
 			mixTutorial_i--;
 			break;
 		case 4:
+			tutorialSpace_obj.SetActive (false);
+			mixTutorialBack_obj [1].SetActive (true);
+			mixTutorial_i--;
 			break;
 		case 5:
+			tutorialSpace_obj.SetActive (false);
+			mixTutorialBack_obj [2].SetActive (true);
+			mixTutorial_i--;
 			break;
 		case 6:
+			tutorialSpace_obj.SetActive (false);
+			mixTutorialBack_obj [2].SetActive (true);
+			mixTutorial_i--;
+			break;
+		case 7:
+			tutorialSpace_obj.SetActive (false);
+			mixTutorialBack_obj [3].SetActive (true);
+			mixTutorial_i--;
+			break;
+		case 8:
 			break;
 		}
 
@@ -455,8 +483,37 @@ public class TutorialEvt : MonoBehaviour {
 
 	public void mixTutorialBtn(){
 		switch (mixTutorial_i) {
-		case 0:
+		case 3:
+			tutorialSpace_obj.SetActive (true);
+			mixTutorialBack_obj [0].SetActive (false);
+			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_i++;
+			break;
+		case 4:
+			tutorialSpace_obj.SetActive (true);
+			mixTutorialBack_obj [1].SetActive (false);
+			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_i++;
+			break;
+		case 5:
+			tutorialSpace_obj.SetActive (true);
+			mixTutorialBack_obj [2].SetActive (false);
+			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_i++;
+			break;
+		case 6:
+			tutorialSpace_obj.SetActive (true);
+			mixTutorialBack_obj [2].SetActive (false);
+			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_i++;
+			break;
+		case 7:
+			tutorialSpace_obj.SetActive (true);
+			mixTutorialBack_obj [3].SetActive (false);
+			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_i++;
 			break;
 		}
 	}
+
 }

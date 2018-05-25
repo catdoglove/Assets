@@ -112,8 +112,14 @@ public class TitleShopEvt : MonoBehaviour {
 	//구매확인창들
 	public void showBuyCard(){
 		int cc = 0;
-		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
-			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+		if (chpNum >= 2) {
+			for (int i = 60; i < PlayerPrefs.GetInt ("datacount2", 0)+60; i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
+		} else {
+			for (int i = 0; i < PlayerPrefs.GetInt ("datacount", 0); i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
 		}
 		if (cc < 100) {
 			buyCardPop.SetActive (true);
@@ -126,8 +132,14 @@ public class TitleShopEvt : MonoBehaviour {
 
 	public void showADSCard(){
 		int cc = 0;
-		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
-			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+		if (chpNum >= 2) {
+			for (int i = 60; i < PlayerPrefs.GetInt ("datacount2", 0)+60; i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
+		} else {
+			for (int i = 0; i < PlayerPrefs.GetInt ("datacount", 0); i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
 		}
 		if (cc < 100) {
 			adCardPop.SetActive (true);
@@ -194,8 +206,14 @@ public class TitleShopEvt : MonoBehaviour {
 	void cardNumCk(){
 		num_i = cardNum_i;
 		int cc = 0;
-		for (int i = 0; i < PlayerPrefs.GetInt ("datacount",0); i++) {
-			cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+		if (chpNum >= 2) {
+			for (int i = 60; i < PlayerPrefs.GetInt ("datacount2", 0)+60; i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
+		} else {
+			for (int i = 0; i < PlayerPrefs.GetInt ("datacount", 0); i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
 		}
 		//Debug.Log ("total" + cc);
 		if (cc < 100) {
