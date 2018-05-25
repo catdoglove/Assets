@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class TutorialEvt : MonoBehaviour {
 	public Text tutorial_txt;
-	public GameObject tutorialSpace_obj, tutorialreward_obj, tutotialdel_btn;
+	public GameObject tutorialSpace_obj, tutorialreward_obj, tutotialdel_btn, mixTutorialreward_obj;
 	public GameObject tutorialTalk_btn;
-	public GameObject[] tutorialBack_obj;
+	public GameObject[] tutorialBack_obj, mixTutorialBack_obj;
 	public int tutorial_i, game_i;
 	List<Dictionary<string,object>> data;
 	List<Dictionary<string,object>> data2;
@@ -420,6 +420,7 @@ public class TutorialEvt : MonoBehaviour {
 
 	public void closeReward(){
 		tutorialreward_obj.SetActive (false);
+		mixTutorialreward_obj.SetActive (false);
 	}
 
 
@@ -437,6 +438,9 @@ public class TutorialEvt : MonoBehaviour {
 		case 2:
 			break;
 		case 3:
+			tutorialSpace_obj.SetActive (false);
+			mixTutorialBack_obj [0].SetActive (true);
+			mixTutorial_i--;
 			break;
 		case 4:
 			break;
@@ -447,5 +451,12 @@ public class TutorialEvt : MonoBehaviour {
 		}
 
 		mixTutorial_i++;
+	}
+
+	public void mixTutorialBtn(){
+		switch (mixTutorial_i) {
+		case 0:
+			break;
+		}
 	}
 }
