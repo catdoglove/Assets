@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class TutorialEvt : MonoBehaviour {
 	public Text tutorial_txt;
-	public GameObject tutorialSpace_obj, tutorialreward_obj, tutotialdel_btn, mixTutorialreward_obj;
+	public Text mixTutorial_txt;
+	public GameObject tutorialSpace_obj,tutorialSpace_obj_2, tutorialreward_obj, tutotialdel_btn, mixTutorialreward_obj;
 	public GameObject tutorialTalk_btn;
 	public GameObject[] tutorialBack_obj, mixTutorialBack_obj;
 	public int tutorial_i, game_i;
@@ -15,8 +16,9 @@ public class TutorialEvt : MonoBehaviour {
 
 	public GameObject[] closeall;
 
-
+	//합성
 	public int mixTutorial_i=0;
+	public GameObject[] chapter_2_lock;
 
 	// Use this for initialization
 	void Start () {
@@ -66,8 +68,56 @@ public class TutorialEvt : MonoBehaviour {
 			h=h+PlayerPrefs.GetInt("books" + k, 0);//도감모으기에 성공한걸불러오기
 
 		}
+
 		if(h>=5){
-			mixTutorialreward_obj.SetActive (true);
+			mixTutorial_i = PlayerPrefs.GetInt ("mixTutorial_i",0);
+			switch (mixTutorial_i) {
+			case 0:
+				//mixTutorialreward_obj.SetActive (true);
+				break;
+			case 1:
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			case 2:
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			case 3:
+				mixTutorial_i = 2;
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			case 4:
+				mixTutorial_i = 2;
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			case 5:
+				mixTutorial_i = 2;
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			case 6:
+				mixTutorial_i = 2;
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			case 7:
+				mixTutorial_i = 2;
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			case 8:
+				mixTutorial_i = 2;
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				break;
+			}
+			chapter_2_lock [0].SetActive (false);
+			chapter_2_lock [1].SetActive (false);
+			chapter_2_lock [2].SetActive (false);
+			chapter_2_lock [3].SetActive (false);
 		}
 	}
 	
@@ -440,8 +490,8 @@ public class TutorialEvt : MonoBehaviour {
 	//2챕터와 합성잠금풀기및튜토리얼
 
 	public void mixTutorial(){
-		tutorialSpace_obj.SetActive (true);
-		tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+		tutorialSpace_obj_2.SetActive (true);
+		mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
 		switch (mixTutorial_i) {
 		case 0:
 			break;
@@ -450,70 +500,92 @@ public class TutorialEvt : MonoBehaviour {
 		case 2:
 			break;
 		case 3:
-			tutorialSpace_obj.SetActive (false);
+			tutorialSpace_obj_2.SetActive (false);
 			mixTutorialBack_obj [0].SetActive (true);
 			mixTutorial_i--;
 			break;
 		case 4:
-			tutorialSpace_obj.SetActive (false);
+			tutorialSpace_obj_2.SetActive (false);
 			mixTutorialBack_obj [1].SetActive (true);
 			mixTutorial_i--;
 			break;
 		case 5:
-			tutorialSpace_obj.SetActive (false);
+			tutorialSpace_obj_2.SetActive (false);
 			mixTutorialBack_obj [2].SetActive (true);
 			mixTutorial_i--;
 			break;
 		case 6:
-			tutorialSpace_obj.SetActive (false);
+			tutorialSpace_obj_2.SetActive (false);
 			mixTutorialBack_obj [2].SetActive (true);
 			mixTutorial_i--;
 			break;
 		case 7:
-			tutorialSpace_obj.SetActive (false);
+			tutorialSpace_obj_2.SetActive (false);
 			mixTutorialBack_obj [3].SetActive (true);
 			mixTutorial_i--;
 			break;
 		case 8:
+			tutorialSpace_obj_2.SetActive (false);
+			mixTutorialBack_obj [4].SetActive (true);
+			mixTutorial_i--;
+			break;
+		case 9:
+			tutorialSpace_obj_2.SetActive (false);
+			mixTutorial_i--;
 			break;
 		}
 
 		mixTutorial_i++;
+		PlayerPrefs.SetInt ("mixTutorial_i",mixTutorial_i);
 	}
 
 	public void mixTutorialBtn(){
 		switch (mixTutorial_i) {
 		case 3:
-			tutorialSpace_obj.SetActive (true);
+			tutorialSpace_obj_2.SetActive (true);
 			mixTutorialBack_obj [0].SetActive (false);
-			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
 			mixTutorial_i++;
 			break;
 		case 4:
-			tutorialSpace_obj.SetActive (true);
+			tutorialSpace_obj_2.SetActive (true);
 			mixTutorialBack_obj [1].SetActive (false);
-			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
 			mixTutorial_i++;
 			break;
 		case 5:
-			tutorialSpace_obj.SetActive (true);
+			tutorialSpace_obj_2.SetActive (true);
 			mixTutorialBack_obj [2].SetActive (false);
-			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
 			mixTutorial_i++;
 			break;
 		case 6:
-			tutorialSpace_obj.SetActive (true);
+			tutorialSpace_obj_2.SetActive (true);
 			mixTutorialBack_obj [2].SetActive (false);
-			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
 			mixTutorial_i++;
 			break;
 		case 7:
-			tutorialSpace_obj.SetActive (true);
+			tutorialSpace_obj_2.SetActive (true);
 			mixTutorialBack_obj [3].SetActive (false);
-			tutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			mixTutorial_i++;
+			break;
+		case 8:
+			tutorialSpace_obj_2.SetActive (true);
+			mixTutorialBack_obj [4].SetActive (false);
+			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
 			mixTutorial_i++;
 			break;
 		}
+		PlayerPrefs.SetInt ("mixTutorial_i",mixTutorial_i);
+	}
+
+	public void mixReward(){
+		mixTutorialreward_obj.SetActive (false);
+		tutorialSpace_obj_2.SetActive (true);
+		mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+		mixTutorial_i++;
 	}
 
 }
