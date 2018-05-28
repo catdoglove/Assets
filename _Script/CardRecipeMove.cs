@@ -44,8 +44,6 @@ public class CardRecipeMove : MonoBehaviour {
             float imgSpeed = 20f;
             transform.position = Vector3.Lerp(backImgPos2, transform.position, imgSpeed * Time.deltaTime);
         }
-
-
     }
 
     IEnumerator moveImg2()

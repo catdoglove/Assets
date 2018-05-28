@@ -44,8 +44,11 @@ public class TitleCardEvt : MonoBehaviour {
 	public GameObject mixCardRecipe_obj;
 	int hp;
 
+    public int popInt;
 
-	public void showCardWindow(){
+
+
+    public void showCardWindow(){
 		
 
 		//카드코딩을할것임

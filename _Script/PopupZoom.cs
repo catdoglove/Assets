@@ -60,11 +60,14 @@ public class PopupZoom : MonoBehaviour
     }
 
     
+    public void ZoomIn2()
+    {
+        StartCoroutine("popupZoomInSpecial");
+    }
 
 
     public void ZoomInSpecial()
-    {
-                
+    {                
         //합성창
         if (GM.GetComponent<TitleCardEvt>().setCardMix_i == 1)
         {
@@ -73,29 +76,22 @@ public class PopupZoom : MonoBehaviour
                 StartCoroutine("popupZoomInSpecial");
                 GM.GetComponent<TitleCardEvt>().popInt = 0;
             }
-
         }
-        else
+        else // 상점창
         {
-            StartCoroutine("popupZoomInSpecial");
-        }
-
-        
-
+            if (GM.GetComponent<TitleDecoEvt>().itemBuy.activeSelf == false)
+            {
+                //자체제작 트라이캐치
+            }
+            else
+            {
+                StartCoroutine("popupZoomInSpecial");
+            }
+        }      
     }
 
     IEnumerator popupZoomInSpecial()
     {
-        /*
-        try
-        {
-            transform.localScale = scalee;
-        }
-        catch (Exception ex)
-        {
-            Debug.Log("inactive");
-        }
-        */
         scalee.x = 0.9f;
         scalee.y = 0.9f;
         transform.localScale = scalee;
