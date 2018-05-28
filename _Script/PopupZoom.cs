@@ -111,7 +111,6 @@ public class PopupZoom : MonoBehaviour
             scalee.y = scalee.y - 0.03f;
             transform.localScale = scalee;
         }
-
     }
 
 

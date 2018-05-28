@@ -57,6 +57,11 @@ public class PrefabsMake : MonoBehaviour {
     int tipPageNum;
     List<Dictionary<string, object>> tipList;
 
+
+
+    Vector3 scalee;
+    public GameObject resultImg;
+
     // Use this for initialization
     void Start () {
 		chapter_num=PlayerPrefs.GetInt ("savestage", 1);
@@ -140,7 +145,8 @@ public class PrefabsMake : MonoBehaviour {
                 tipBox.SetActive(true);
                 coinImg.SetActive(false);
 				StartCoroutine ("imgFadeInS");
-				succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
+                StartCoroutine("popupZoomIn");
+                succfailImg.GetComponent<Image> ().sprite = succfail_spr [1];
 				succfail_str="";
 				succfail_text.text = succfail_str;
 				soundck = 22;	
@@ -387,6 +393,20 @@ public class PrefabsMake : MonoBehaviour {
         {
             tipPageNum = 0;
             tipTxt.text = (string)tipList[tipPageNum]["tip"];
+        }
+    }
+
+
+
+    IEnumerator popupZoomIn()
+    {
+        scalee = resultImg.transform.localScale;
+        while (scalee.x >= 0.9f)
+        {
+            yield return new WaitForSeconds(0.01f);
+            scalee.x = scalee.x - 0.008f;
+            scalee.y = scalee.y - 0.008f;
+            resultImg.transform.localScale = scalee;
         }
     }
 }
