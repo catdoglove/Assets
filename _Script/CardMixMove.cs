@@ -44,9 +44,9 @@ public class CardMixMove : MonoBehaviour {
     IEnumerator moveImg2()
     {
         // backImgPos = mixImg.transform.position;
-        backImgPos.x = 7.4f;
+        backImgPos.x = 7.3f;
 
-        while (mixImg.transform.position.x > 7.4f)
+        while (mixImg.transform.position.x > 7.3f)
         {
             yield return new WaitForSeconds(0.03f);
             transform.position = Vector3.Lerp(backImgPos, transform.position, imgSpeed * Time.deltaTime);
