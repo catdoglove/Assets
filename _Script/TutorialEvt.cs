@@ -19,6 +19,7 @@ public class TutorialEvt : MonoBehaviour {
 	//합성
 	public int mixTutorial_i=0;
 	public GameObject[] chapter_2_lock;
+	int mix_2=0;
 
 	// Use this for initialization
 	void Start () {
@@ -65,59 +66,62 @@ public class TutorialEvt : MonoBehaviour {
 		for (int i = 0; i < 24; i++)
 		{
 			k = i + 1;
-			h=h+PlayerPrefs.GetInt("books" + k, 0);//도감모으기에 성공한걸불러오기
+			h = h + PlayerPrefs.GetInt ("books" + k, 0);//도감모으기에 성공한걸불러오기
 
 		}
 
-		if(h>=5){
-			mixTutorial_i = PlayerPrefs.GetInt ("mixTutorial_i",0);
-			switch (mixTutorial_i) {
-			case 0:
-				//mixTutorialreward_obj.SetActive (true);
-				break;
-			case 1:
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
-			case 2:
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
-			case 3:
-				mixTutorial_i = 2;
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
-			case 4:
-				mixTutorial_i = 2;
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
-			case 5:
-				mixTutorial_i = 2;
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
-			case 6:
-				mixTutorial_i = 2;
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
-			case 7:
-				mixTutorial_i = 2;
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
-			case 8:
-				mixTutorial_i = 2;
-				tutorialSpace_obj_2.SetActive (true);
-				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-				break;
+		//PlayerPrefs.SetInt ("mixTutorial_i", 0);
+		if (game_i != 4) {
+			if (h >= 5) {
+				mixTutorial_i = PlayerPrefs.GetInt ("mixTutorial_i", 0);
+				switch (mixTutorial_i) {
+				case 0:
+					mixTutorialreward_obj.SetActive (true);
+					break;
+				case 1:
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				case 2:
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				case 3:
+					mixTutorial_i = 2;
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				case 4:
+					mixTutorial_i = 2;
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				case 5:
+					mixTutorial_i = 2;
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				case 6:
+					mixTutorial_i = 2;
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				case 7:
+					mixTutorial_i = 2;
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				case 8:
+					mixTutorial_i = 2;
+					tutorialSpace_obj_2.SetActive (true);
+					mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+					break;
+				}
+				chapter_2_lock [0].SetActive (false);
+				chapter_2_lock [1].SetActive (false);
+				chapter_2_lock [2].SetActive (false);
+				chapter_2_lock [3].SetActive (false);
 			}
-			chapter_2_lock [0].SetActive (false);
-			chapter_2_lock [1].SetActive (false);
-			chapter_2_lock [2].SetActive (false);
-			chapter_2_lock [3].SetActive (false);
 		}
 	}
 	
@@ -490,62 +494,100 @@ public class TutorialEvt : MonoBehaviour {
 	//2챕터와 합성잠금풀기및튜토리얼
 
 	public void mixTutorial(){
-		tutorialSpace_obj_2.SetActive (true);
-		mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-		switch (mixTutorial_i) {
-		case 0:
-			break;
-		case 1:
-			break;
-		case 2:
-			break;
-		case 3:
+		if (mixTutorial_i == 9) {
 			tutorialSpace_obj_2.SetActive (false);
-			mixTutorialBack_obj [0].SetActive (true);
-			mixTutorial_i--;
-			break;
-		case 4:
-			tutorialSpace_obj_2.SetActive (false);
-			mixTutorialBack_obj [1].SetActive (true);
-			mixTutorial_i--;
-			break;
-		case 5:
-			tutorialSpace_obj_2.SetActive (false);
-			mixTutorialBack_obj [2].SetActive (true);
-			mixTutorial_i--;
-			break;
-		case 6:
-			tutorialSpace_obj_2.SetActive (false);
-			mixTutorialBack_obj [2].SetActive (true);
-			mixTutorial_i--;
-			break;
-		case 7:
-			tutorialSpace_obj_2.SetActive (false);
-			mixTutorialBack_obj [3].SetActive (true);
-			mixTutorial_i--;
-			break;
-		case 8:
-			tutorialSpace_obj_2.SetActive (false);
-			mixTutorialBack_obj [4].SetActive (true);
-			mixTutorial_i--;
-			break;
-		case 9:
-			tutorialSpace_obj_2.SetActive (false);
-			mixTutorial_i--;
-			break;
-		}
+		} else {
+			tutorialSpace_obj_2.SetActive (true);
+			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+			switch (mixTutorial_i) {
+			case 0:
+				break;
+			case 1:
+			//보상
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 60, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 61, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 72, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 89, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 92, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 93, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 94, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 99, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 104, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 105, 1);
+				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 101, 1);
 
-		mixTutorial_i++;
-		PlayerPrefs.SetInt ("mixTutorial_i",mixTutorial_i);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 60, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 61, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 72, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 89, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 92, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 93, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 94, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 99, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 104, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 105, 3);
+				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 101, 3);
+
+
+				break;
+			case 2:
+				break;
+			case 3:
+				tutorialSpace_obj_2.SetActive (false);
+				mixTutorialBack_obj [0].SetActive (true);
+				mixTutorial_i--;
+				break;
+			case 4:
+				tutorialSpace_obj_2.SetActive (false);
+				mixTutorialBack_obj [1].SetActive (true);
+				mixTutorial_i--;
+				break;
+			case 5:
+				tutorialSpace_obj_2.SetActive (false);
+				mixTutorialBack_obj [2].SetActive (true);
+				mixTutorial_i--;
+				break;
+			case 6:
+				tutorialSpace_obj_2.SetActive (false);
+				mixTutorialBack_obj [2].SetActive (true);
+				mixTutorial_i--;
+				break;
+			case 7:
+				tutorialSpace_obj_2.SetActive (false);
+				mixTutorialBack_obj [3].SetActive (true);
+				mixTutorial_i--;
+				break;
+			case 8:
+				tutorialSpace_obj_2.SetActive (false);
+				mixTutorialBack_obj [4].SetActive (true);
+				mixTutorial_i--;
+				break;
+			case 9:
+				tutorialSpace_obj_2.SetActive (false);
+				mixTutorial_i--;
+				break;
+			}
+		
+			mixTutorial_i++;
+
+		}
+		PlayerPrefs.SetInt ("mixTutorial_i", mixTutorial_i);
+		PlayerPrefs.Save ();
 	}
 
 	public void mixTutorialBtn(){
 		switch (mixTutorial_i) {
 		case 3:
-			tutorialSpace_obj_2.SetActive (true);
-			mixTutorialBack_obj [0].SetActive (false);
-			mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
-			mixTutorial_i++;
+			if (mix_2 == 3) {
+				mixTutorial_txt.text = "" + data2 [mixTutorial_i] ["txt"];
+				mixTutorial_i++;
+				tutorialSpace_obj_2.SetActive (true);
+				mixTutorialBack_obj [5].SetActive (false);
+			} else {
+				mixTutorialBack_obj [0].SetActive (false);
+				mixTutorialBack_obj [5].SetActive (true);
+				mix_2 = 3;
+			}
 			break;
 		case 4:
 			tutorialSpace_obj_2.SetActive (true);

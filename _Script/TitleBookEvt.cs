@@ -304,7 +304,7 @@ public class TitleBookEvt : MonoBehaviour {
 					if (chpNum >= 2) {
 						d = d + 30;
 					}
-					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
+					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [st];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [st];
 				}
 			} else {
@@ -363,7 +363,10 @@ public class TitleBookEvt : MonoBehaviour {
 					if (chpNum >= 2) {
 						d = d + 30;
 					}
-					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
+					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [st];
+					if(chpNum >= 2){
+						bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [st];
+					}
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [st];
 				}
 			} else {
@@ -438,7 +441,7 @@ public class TitleBookEvt : MonoBehaviour {
 					if (chpNum >= 2) {
 						d = d + 30;
 					}
-					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [d];
+					bookStoryImg.GetComponent<Image> ().sprite = bookPage_spr [st];
 					bookExplainImg.GetComponent<Image> ().sprite = bookExplain_spr [st];
 				}
 			} else {
