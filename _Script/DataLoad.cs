@@ -115,7 +115,7 @@ public class DataLoad : MonoBehaviour {
 			}
 
 			PlayerPrefs.SetString ("code", str);
-			Debug.Log(str);
+			//Debug.Log(str);
 			PlayerPrefs.SetInt ("first", 1);
 
 			//언제카드처음부터가지고있게하기
@@ -175,11 +175,11 @@ public class DataLoad : MonoBehaviour {
 				int sr = (int)dataStory [i] ["Series"];
 				if (sr == series_2) {
 					story_list_2 [j].Add ((int)dataStory [i] ["Index"]);
-					Debug.Log (dataStory [i] ["Index"]);
+					//Debug.Log (dataStory [i] ["Index"]);
 				} else if(sr==series_2+1){
 					story_list_2 [j].Add ((int)dataStory [i] ["Index"]);
 					series_2++;
-					Debug.Log (dataStory [i] ["Index"]+"끝");
+					//Debug.Log (dataStory [i] ["Index"]+"끝");
 					break;
 				}
 			}

@@ -111,7 +111,7 @@ public class PrefabsMake : MonoBehaviour {
 			end=obj.GetComponent<DataHandler> ().LoadEnd(chapter_num,card_index);
 			if (end != 0) { //성공
 
-				Debug.Log("성공----------------------");
+				//Debug.Log("성공----------------------");
                 coinImg.SetActive(true);
 				spr_illust [4].SetActive (true);
 			
@@ -141,7 +141,7 @@ public class PrefabsMake : MonoBehaviour {
 
 			}else { //실패
 				//페이드인
-				Debug.Log("실패----------------------");
+				//Debug.Log("실패----------------------");
                 tipBox.SetActive(true);
                 coinImg.SetActive(false);
 				StartCoroutine ("imgFadeInS");
@@ -182,18 +182,14 @@ public class PrefabsMake : MonoBehaviour {
 				break;
 			case 4:
 				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num - 1], 0);
-				Debug.Log (type_check+"??????");
-				if (type_check == 5) {
-					spr_illust [3].SetActive (true);
-					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];
-				} else {
+				//Debug.Log (type_check+"??????");
 					spr_illust [2].SetActive (true);
 					spr_illust [2].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index [PrefabsMake.type_num - 1] - 1];
-				}
+
 				break;
 			case 5:
 				type_check = PlayerPrefs.GetInt ("" + PrefabsMake.card_index [PrefabsMake.type_num-1], 0);
-				Debug.Log (type_check+"??????");
+				//Debug.Log (type_check+"??????");
 				if (type_check == 5) {
 					spr_illust [3].SetActive (true);
 					spr_illust [3].GetComponent<SpriteRenderer> ().sprite = cardIllust_spr [PrefabsMake.card_index[PrefabsMake.type_num-1]-1];

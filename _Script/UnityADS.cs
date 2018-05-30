@@ -56,7 +56,7 @@ public class UnityADS : MonoBehaviour {
         switch (result)
         {
             case ShowResult.Finished:
-                Debug.Log("The ad was successfully shown.");
+                //Debug.Log("The ad was successfully shown.");
                 //
                 // YOUR CODE TO REWARD THE GAMER
                 // Give coins etc.

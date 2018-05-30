@@ -73,7 +73,7 @@ public class DataHandler : MonoBehaviour {
 											iscn--;
 											PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + end_num [j], iscn);
 											PlayerPrefs.Save ();
-											Debug.Log("성공----------------------"+k);
+											//Debug.Log("성공----------------------"+k);
 										}//endOfFor
 
                                         //돈
@@ -112,10 +112,10 @@ public class DataHandler : MonoBehaviour {
 		if (ch_num >= 2) {
 			help = 60 * (ch_num - 1) - 1;
 			data = CSVReader.Read("CardData_2");
-			Debug.Log ("2스테이지");
+			//Debug.Log ("2스테이지");
 		} else {
 			data = CSVReader.Read("CardData");
-			Debug.Log ("1스테이지");
+			//Debug.Log ("1스테이지");
 		}
 
 		int i_chapter = ch_num;
@@ -161,7 +161,7 @@ public class DataHandler : MonoBehaviour {
 					if (tp == i_type) {
 						i++;
 						i = i + help;
-						Debug.Log (i);
+						//Debug.Log (i);
 						int h_Card = PlayerPrefs.GetInt ("ch"+1+"haveCard"+i,1);
 						if (h_Card == 1) {
 							if (ch_num >= 2) {
@@ -234,7 +234,7 @@ public class DataHandler : MonoBehaviour {
 								k = i + help+1;
 								PlayerPrefs.SetInt (""+k,i_type);
 
-								Debug.Log (i_type);
+								//Debug.Log (i_type);
 							}
 							ci++;
 						}
@@ -259,7 +259,7 @@ public class DataHandler : MonoBehaviour {
 								k = i + help+1;
 								PlayerPrefs.SetInt (""+k,i_type);
 
-								Debug.Log (i_type);
+								//Debug.Log (i_type);
 							}
 							ci++;
 
@@ -298,7 +298,7 @@ public class DataHandler : MonoBehaviour {
 								k = i + help+1;
 								PlayerPrefs.SetInt (""+k,i_type);
 
-								Debug.Log (i_type);
+								//Debug.Log (i_type);
 							}
 								ci++;
 
@@ -335,7 +335,7 @@ public class DataHandler : MonoBehaviour {
 							if (ch_num >= 2) {
 								k = i + help+1;
 								PlayerPrefs.SetInt (""+k,i_type);
-								Debug.Log (i_type);
+								//Debug.Log (i_type);
 							}
 							ci++;
 

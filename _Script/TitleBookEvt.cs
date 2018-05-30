@@ -56,7 +56,7 @@ public class TitleBookEvt : MonoBehaviour {
         {
             si = 30 * (chpNum - 1) - 1;
             data = CSVReader.Read("StoryBook_2");
-            Debug.Log("2챕터도감");
+            //Debug.Log("2챕터도감");
         }
         else
         {
@@ -145,7 +145,7 @@ public class TitleBookEvt : MonoBehaviour {
 					PlayerPrefs.SetInt("clearbook" + bnc, 0);
 					if (slc == DataLoad.story_list_2 [i].Count) {
 						PlayerPrefs.SetInt("clearbook" + bnc, 1);
-						Debug.Log ("bnc : "+bnc);
+						//Debug.Log ("bnc : "+bnc);
 					}
 				}
 				bnc++;
@@ -241,7 +241,7 @@ public class TitleBookEvt : MonoBehaviour {
 		p = p - 2;
 		if (chpNum >= 2) {
 			p = p + 11;
-			Debug.Log ("p"+p);
+			//Debug.Log ("p"+p);
 		}
 		booksImg [0].GetComponent<Image> ().sprite = books_spr[p]; //p 페이지넘버
 		if (PlayerPrefs.GetInt ("clearbook" + p, 0) == 1) {
@@ -282,10 +282,10 @@ public class TitleBookEvt : MonoBehaviour {
 		if (chpNum >= 2) {
 			instant = DataLoad.story_list_2 [p].Count;
 		} else {
-			Debug.Log (p);
+			//Debug.Log (p);
 			instant = DataLoad.story_list [p].Count;
 		}
-		Debug.Log (instant);
+		//Debug.Log (instant);
 		for (int i = 0; i < instant; i++) {
 			int st=0;
 			if (chpNum >= 2) {
