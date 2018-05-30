@@ -25,11 +25,29 @@ public class UnityADS : MonoBehaviour {
 
     public void ShowRewardedAd()
     {
-        if (Advertisement.IsReady("rewardedVideo"))
-        {
-            ShowOptions options = new ShowOptions { resultCallback = HandleShowResult };
-            Advertisement.Show("rewardedVideo", options);
-        }
+		int cc = 0;
+		if (GM.GetComponent<TitleShopEvt>().chpNum >= 2) {
+			for (int i = 60; i < PlayerPrefs.GetInt ("datacount2", 0)+60; i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
+		} else {
+			for (int i = 0; i < PlayerPrefs.GetInt ("datacount", 0); i++) {
+				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
+			}
+		}
+		//Debug.Log ("total" + cc);
+		if (cc < 100) {
+			if (Advertisement.IsReady("rewardedVideo"))
+			{
+				ShowOptions options = new ShowOptions { resultCallback = HandleShowResult };
+				Advertisement.Show("rewardedVideo", options);
+			}
+		} else {
+			//카드수가너무많음ㄷ
+			GM.GetComponent<TitleCardEvt>().shopWarring();
+			GM.GetComponent<TitleCardEvt>().warringWord_txt.text="카드의 수가 너무 많아요";
+		}
+        
     }
 
     /*
