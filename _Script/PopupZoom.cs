@@ -69,12 +69,13 @@ public class PopupZoom : MonoBehaviour
     public void ZoomInSpecial()
     {                
         //합성창
-        if (GM.GetComponent<TitleCardEvt>().setCardMix_i == 1)
+        if (GM.GetComponent<TitleCardEvt>().setCardMix_i == 0)
         {
             if (GM.GetComponent<TitleCardEvt>().popInt == 1)
             {
                 StartCoroutine("popupZoomInSpecial");
-                GM.GetComponent<TitleCardEvt>().popInt = 0;
+                //GM.GetComponent<TitleCardEvt>().popInt = 0;
+                Debug.Log("is it work?");
             }
         }
         else // 상점창

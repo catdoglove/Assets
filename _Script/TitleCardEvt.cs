@@ -197,7 +197,9 @@ public class TitleCardEvt : MonoBehaviour {
 		if (setCardMix_i == 0) {
 			
 			infoCardWid.SetActive (true);
-		} else {
+            popInt = 1;
+
+        } else {
 			
 		}
 	}
@@ -205,7 +207,8 @@ public class TitleCardEvt : MonoBehaviour {
 	public void infoCardclose(){
 		mixCardRecipe_obj.SetActive (false);
 		infoCardWid.SetActive (false);
-	}
+        popInt = 0;
+    }
 
 
 	public void cardWidClose(){
