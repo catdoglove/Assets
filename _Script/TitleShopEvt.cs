@@ -10,7 +10,7 @@ public class TitleShopEvt : MonoBehaviour {
 	public GameObject shopWindow, shopIWindow, chpBtn1,chpBtn2;
 
 	public GameObject shopChoPop, adCardWnd, oneCardWnd, fiveCardWnd, buyCardPop, adCardPop;
-	int chpNum = 0;
+	public int chpNum = 0;
 
 
 
@@ -121,13 +121,16 @@ public class TitleShopEvt : MonoBehaviour {
 				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
 			}
 		}
+		buyCardPop.SetActive (true);
+		/*
 		if (cc < 100) {
-			buyCardPop.SetActive (true);
+			
 		} else {
 			//카드수가너무많음ㄷ
 			GM.GetComponent<TitleCardEvt>().shopWarring();
 			GM.GetComponent<TitleCardEvt>().warringWord_txt.text="카드의 수가 너무 많아요";
 		}
+		*/
 	}
 
 	public void showADSCard(){
@@ -141,13 +144,16 @@ public class TitleShopEvt : MonoBehaviour {
 				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
 			}
 		}
+		adCardPop.SetActive (true);
+		/*
 		if (cc < 100) {
-			adCardPop.SetActive (true);
+			
 		} else {
 			//카드수가너무많음ㄷ
 			GM.GetComponent<TitleCardEvt>().shopWarring();
 			GM.GetComponent<TitleCardEvt>().warringWord_txt.text="카드의 수가 너무 많아요";
 		}
+		*/
 	}
 
 	public void FalseBuyAdCard(){
