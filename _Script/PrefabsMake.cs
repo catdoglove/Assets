@@ -46,9 +46,10 @@ public class PrefabsMake : MonoBehaviour {
 	string succfail_str;
 	public GameObject addAdReward_obj;
 	public GameObject rewardYesNo_obj;
+    public GameObject reloadCard;
 
-	//튜토리얼
-	public GameObject GM;
+    //튜토리얼
+    public GameObject GM;
 
 
     //팁
@@ -364,6 +365,22 @@ public class PrefabsMake : MonoBehaviour {
 		//PlayerPrefs.SetInt (str, coin);
 		//PlayerPrefs.Save ();
 	}
+
+    public void reloadYesNoShow()
+    {
+        if (PlayerPrefs.GetInt("reloadCard", 0)==16)
+        {
+            reloadCard.SetActive(true);
+        }
+        
+    }
+
+    public void reloadYesNoClose()
+    {
+        reloadCard.SetActive(false);
+    }
+
+    
 
 
     public void showTipLeft()

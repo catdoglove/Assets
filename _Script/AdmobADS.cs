@@ -12,6 +12,8 @@ public class AdmobADS : MonoBehaviour {
     //영상
     private RewardBasedVideoAd rewardBasedVideo;
     string adUnitIdvideo;
+
+    public GameObject GM;
     
 
     // Use this for initialization
@@ -38,9 +40,10 @@ public class AdmobADS : MonoBehaviour {
         rewardBasedVideo.OnAdClosed += HandleRewardBasedVideoClosed;
 
         RequestRewardedVideo();
+        RequestInterstitial();
     }
 
-    /* 전면광고
+   
    private void RequestInterstitial()
    {
        //ca-app-pub-9179569099191885/5213228385 우리id바꿀것★
@@ -60,6 +63,7 @@ public class AdmobADS : MonoBehaviour {
    {
        if (interstitial.IsLoaded())
        {
+            GM.GetComponent<PrefabsMake>().reloadCard.SetActive(false);
            interstitial.Show();
            Debug.Log("보고왔습니다");
            string str = PlayerPrefs.GetString ("code", "");
@@ -67,17 +71,19 @@ public class AdmobADS : MonoBehaviour {
            coin = coin + 500;
            PlayerPrefs.SetInt (str, coin);
            interstitial.Destroy();
-       }
+
+            PlayerPrefs.SetInt("reloadCard", 0);
+            PlayerPrefs.Save();
+        }
    }
 
 
    // 전면닫음
    private void EventAdClose(object sender, System.EventArgs args)
    {
-       //GM.GetComponent<TitleShopEvt>().adCardPop.SetActive(false);
-       interstitial.LoadAd(request);// 전면 광고 요청	
+        interstitial.LoadAd(request);// 전면 광고 요청	
    }
-   */
+   
 
     private void RequestRewardedVideo()
     {
