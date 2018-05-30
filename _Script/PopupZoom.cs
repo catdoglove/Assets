@@ -75,10 +75,8 @@ public class PopupZoom : MonoBehaviour
             {
                 StartCoroutine("popupZoomInSpecial");
                 //GM.GetComponent<TitleCardEvt>().popInt = 0;
-<<<<<<< HEAD
                 //Debug.Log("is it work?");
-=======
->>>>>>> 440f254fd5934f91f930f3471516a1b1aec546bd
+
             }
         }
         else // 상점창
