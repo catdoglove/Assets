@@ -83,7 +83,7 @@ public class TitleShopEvt : MonoBehaviour {
 		shopIWindow.SetActive (true);		
 	}
 	public void showAdCardWindow(){ //광고카드
-		cardNum_i = 2;
+		cardNum_i = 3;
 		adCardWnd.SetActive (true);		
 		//광고시간
 		StartCoroutine("adTimeFlow");
@@ -397,6 +397,8 @@ public class TitleShopEvt : MonoBehaviour {
 			mG = (int)compareAdTime.TotalMinutes;
 			sG = sG-(sG / 60)*60;
 			mG = 4 - mG;
+            //광고시간 오버플로우 막기위해 5넘으면 4로 변경
+            if (mG>=5) { mG = 4;}
 			sG = 59- sG;
 			if (mG < 0) {
 				adTimeBackImg_obj.SetActive (false);

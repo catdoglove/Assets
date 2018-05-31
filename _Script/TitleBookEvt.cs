@@ -35,7 +35,8 @@ public class TitleBookEvt : MonoBehaviour {
 	AllNumber allNum = new AllNumber ();
 
 	public void showBookWindow(){
-
+        pageNum = 1;
+        pageTxt.text = "- " + pageNum + " -";
         chpNum = allNum.chapter1;
         doBookWindow();
 	}

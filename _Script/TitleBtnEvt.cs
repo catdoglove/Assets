@@ -26,8 +26,8 @@ public class TitleBtnEvt : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start () {                
-        //PlayerPrefs.SetInt(PlayerPrefs.GetString("code", ""), 10); //돈코딩★★★★
+    void Start () {
+        //PlayerPrefs.SetInt(PlayerPrefs.GetString("ㅗ", ""), 0); //돈코딩★★★★
 
         //화면 해상도
         Screen.sleepTimeout = SleepTimeout.NeverSleep;

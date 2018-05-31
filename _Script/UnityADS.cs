@@ -5,7 +5,7 @@ using UnityEngine.Advertisements;
 
 public class UnityADS : MonoBehaviour {
 
-    private string gameId = "1486550";//★테스트ID , Window > Services 설정 테스트 바꿀것 1744485
+    private string gameId = "1744485";//★테스트ID , Window > Services 설정 테스트 바꿀것 1744485 test1486550
     public string placementId = "rewardedVideo";
 
     public GameObject GM;
@@ -41,7 +41,13 @@ public class UnityADS : MonoBehaviour {
 			{
 				ShowOptions options = new ShowOptions { resultCallback = HandleShowResult };
 				Advertisement.Show("rewardedVideo", options);
-			}
+            }
+            else
+            {
+                //광고끝
+                GM.GetComponent<TitleCardEvt>().shopWarring();
+                GM.GetComponent<TitleCardEvt>().warringWord_txt.text = "일일 광고 소진\n 24시간 후 사용";
+            }
 		} else {
 			//카드수가너무많음ㄷ
 			GM.GetComponent<TitleCardEvt>().shopWarring();
@@ -81,6 +87,10 @@ public class UnityADS : MonoBehaviour {
 			PlayerPrefs.SetString ("saveAdtime",System.DateTime.Now.ToString());
 			GM.GetComponent<TitleShopEvt> ().buyCardYes ();
             GM.GetComponent<TitleShopEvt>().adCardPop.SetActive(false);
+        }
+        else
+        {
+
         }
     }
 

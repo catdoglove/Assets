@@ -7,8 +7,9 @@ public class TutorialEvt : MonoBehaviour {
 	public Text tutorial_txt;
 	public Text mixTutorial_txt;
 	public GameObject tutorialSpace_obj,tutorialSpace_obj_2, tutorialreward_obj, tutotialdel_btn, mixTutorialreward_obj;
-	public GameObject tutorialTalk_btn;
+	public GameObject tutorialTalk_btn, tutoriallock_obj;
 	public GameObject[] tutorialBack_obj, mixTutorialBack_obj;
+
 	public int tutorial_i, game_i;
 	List<Dictionary<string,object>> data;
 	List<Dictionary<string,object>> data2;
@@ -35,7 +36,9 @@ public class TutorialEvt : MonoBehaviour {
 			tutorial_i++;
 			tutorial_txt.text = "" + data [tutorial_i] ["txt"];
 			tutotialdel_btn.SetActive (false);
-		} else {
+            tutoriallock_obj.SetActive(true);
+
+        } else {
 			int c = PlayerPrefs.GetInt ("tutorial", 0);
 			if (c == 0) {
 				data = CSVReader.Read ("tutorial");
@@ -121,7 +124,8 @@ public class TutorialEvt : MonoBehaviour {
 				chapter_2_lock [1].SetActive (false);
 				chapter_2_lock [2].SetActive (false);
 				chapter_2_lock [3].SetActive (false);
-			}
+                chapter_2_lock[4].SetActive(false);
+            }
 		}
 	}
 	
@@ -506,8 +510,12 @@ public class TutorialEvt : MonoBehaviour {
 			//보상
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 60, 1);
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 61, 1);
-				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 72, 1);
-				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 89, 1);
+                    PlayerPrefs.SetInt("ch" + 1 + "newcard" + 69, 1);
+                    PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 70, 1);
+                    PlayerPrefs.SetInt("ch" + 1 + "newcard" + 71, 1);
+                    PlayerPrefs.SetInt("ch" + 1 + "newcard" + 76, 1);
+                    PlayerPrefs.SetInt("ch" + 1 + "newcard" + 80, 1);
+                    PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 89, 1);
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 92, 1);
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 93, 1);
 				PlayerPrefs.SetInt ("ch" + 1 + "newcard" + 94, 1);
@@ -518,8 +526,12 @@ public class TutorialEvt : MonoBehaviour {
 
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 60, 3);
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 61, 3);
-				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 72, 3);
-				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 89, 3);
+                    PlayerPrefs.SetInt("ch" + 1 + "cardnum" + 69, 3);
+                    PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 70, 3);
+                    PlayerPrefs.SetInt("ch" + 1 + "cardnum" + 71, 3);
+                    PlayerPrefs.SetInt("ch" + 1 + "cardnum" + 76, 3);
+                    PlayerPrefs.SetInt("ch" + 1 + "cardnum" + 80, 3);
+                    PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 89, 3);
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 92, 3);
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 93, 3);
 				PlayerPrefs.SetInt ("ch" + 1 + "cardnum" + 94, 3);

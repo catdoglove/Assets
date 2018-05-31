@@ -20,7 +20,7 @@ public class AdmobADS : MonoBehaviour {
     void Start () {
 
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-3940256099942544~3347511713"; //ID바ㄲ기★★★
+        string appId = "ca-app-pub-9179569099191885~8804989038"; //ID바ㄲ기★★★ test ca-app-pub-3940256099942544~3347511713
 #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
 #else
@@ -47,7 +47,7 @@ public class AdmobADS : MonoBehaviour {
    private void RequestInterstitial()
    {
        //ca-app-pub-9179569099191885/5213228385 우리id바꿀것★
-       string adUnitId = "ca-app-pub-3940256099942544/1033173712";
+       string adUnitId = "ca-app-pub-9179569099191885/5213228385";
        // Initialize an InterstitialAd.
        interstitial = new InterstitialAd(adUnitId);
        // Create an empty ad request.
@@ -65,29 +65,25 @@ public class AdmobADS : MonoBehaviour {
        {
             GM.GetComponent<PrefabsMake>().reloadCard.SetActive(false);
            interstitial.Show();
-           Debug.Log("보고왔습니다");
-           string str = PlayerPrefs.GetString ("code", "");
-           int coin = PlayerPrefs.GetInt (str, 0);
-           coin = coin + 500;
-           PlayerPrefs.SetInt (str, coin);
+           //Debug.Log("보고왔습니다");
            interstitial.Destroy();
 
-            PlayerPrefs.SetInt("reloadCard", 0);
-            PlayerPrefs.Save();
         }
    }
 
 
    // 전면닫음
    private void EventAdClose(object sender, System.EventArgs args)
-   {
+    {
+        PlayerPrefs.SetInt("reloadCard", 0);
+        PlayerPrefs.Save();
         interstitial.LoadAd(request);// 전면 광고 요청	
    }
    
 
     private void RequestRewardedVideo()
     {
-        adUnitIdvideo = "ca-app-pub-3940256099942544/5224354917"; //ID바꿀것★★★★
+        adUnitIdvideo = "ca-app-pub-9179569099191885/2677632172"; //ID바꿀것★★★★
         // Create an empty ad request.
         request = new AdRequest.Builder().Build();
         // Load the rewarded video ad with the request.
@@ -100,7 +96,7 @@ public class AdmobADS : MonoBehaviour {
         if (PlayerPrefs.GetInt("fcorin", 0) == 1)
         {
             int coins = PlayerPrefs.GetInt(PlayerPrefs.GetString("code", ""), 0);
-            coins = coins + 250;
+            coins = coins + 500;
             PlayerPrefs.SetInt(PlayerPrefs.GetString("code", ""), coins);
 
             PlayerPrefs.SetInt("fcorin", 2);
