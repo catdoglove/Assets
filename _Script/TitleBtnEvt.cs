@@ -126,10 +126,14 @@ public class TitleBtnEvt : MonoBehaviour {
 				k = DataLoad.data_list [j] [i];
 				cc = cc+ PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + k, 0);
 				//Debug.Log (k+"=========="+cc);
-
 			}
 			if (cc == 0) {
-				not_str[6] = not_str[6]  + not_str [j];
+				//Debug.Log (j);
+				if (chNum >= 2) {
+					not_str [6] = not_str [6] + not_str [j-6];
+				} else {
+					not_str [6] = not_str [6] + not_str [j];
+				}
 				f = 1;
 			}
 		}//endOfFor
