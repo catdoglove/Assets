@@ -49,33 +49,25 @@ public class DragCard : MonoBehaviour {
 				cardOrder_num = 1;
 				GetComponent<SpriteRenderer> ().sortingOrder = 9;
 				break;
-			case 0:
+			case -1:
 				cardOrder_num = 2;
 				GetComponent<SpriteRenderer> ().sortingOrder = 8;
-				break;
-			case -1:
-				cardOrder_num = 3;
-				GetComponent<SpriteRenderer> ().sortingOrder = 7;
 				break;
 			}
 			break;
 		case 7:
 			switch (posY) {
 			case 3:
-				cardOrder_num = 4;
+				cardOrder_num = 3;
 				GetComponent<SpriteRenderer> ().sortingOrder = 10;
 				break;
 			case 1:
-				cardOrder_num = 5;
+				cardOrder_num = 4;
 				GetComponent<SpriteRenderer> ().sortingOrder = 9;
 				break;
-			case 0:
-				cardOrder_num = 6;
-				GetComponent<SpriteRenderer> ().sortingOrder = 8;
-				break;
 			case -1:
-				cardOrder_num = 7;
-				GetComponent<SpriteRenderer> ().sortingOrder = 7;
+				cardOrder_num = 5;
+				GetComponent<SpriteRenderer> ().sortingOrder = 8;
 				break;
 			}
 			break;
@@ -102,25 +94,19 @@ public class DragCard : MonoBehaviour {
 				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, 2.95f),cardSpeed);
 				break;
 			case 1 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, 1.3f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, 0.5f),cardSpeed);
 				break;
 			case 2 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, -0.35f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, -1.95f),cardSpeed);
 				break;
 			case 3 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (-7f, -2f),cardSpeed);
-				break;
-			case 4 :
 				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, 2.95f),cardSpeed);
 				break;
+			case 4 :
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, 0.5f),cardSpeed);
+				break;
 			case 5 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, 1.3f),cardSpeed);
-				break;
-			case 6 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, -0.35f),cardSpeed);
-				break;
-			case 7 :
-				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, -2f),cardSpeed);
+				transform.position = Vector2.MoveTowards(transform.position,new Vector2 (7f, -1.95f),cardSpeed);
 				break;
 			}//EndOfSwitch
 		}

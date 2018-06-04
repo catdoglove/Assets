@@ -214,7 +214,7 @@ public class DataLoad : MonoBehaviour {
 		//다음챕터도 반복--------------------------------4
 
 
-		//1챕터 로드-------------------------------------1
+		//2챕터 로드-------------------------------------1
 		List<Dictionary<string,object>> data2 = CSVReader.Read ("CardData_2");
 		PlayerPrefs.SetInt ("datacount2",data2.Count);
 		int ch_i2 = 2;

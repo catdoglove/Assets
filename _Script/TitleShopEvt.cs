@@ -241,8 +241,8 @@ public class TitleShopEvt : MonoBehaviour {
 		if (num == 5) {
 			coin = coin + 100;
 		}
-		if (num == 2) {
-			coin = coin + 400;
+		if (num == 3) {
+			coin = coin + 600;
 		}
 		if (coin >= 200 * num) {
 			buyCardPop.SetActive (false);
@@ -298,8 +298,8 @@ public class TitleShopEvt : MonoBehaviour {
 			case 1:
 				coin = coin - 200;
 				break;
-			case 2:
-				coin = coin - 400;
+			case 3:
+				coin = coin - 600;
 				break;
 			case 5:
 				coin = coin - 1000;

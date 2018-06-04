@@ -30,11 +30,20 @@ public class GameBtnEvt : MonoBehaviour {
 
 	public void cardRefresh(){
 
-
         ads = PlayerPrefs.GetInt("reloadCard", 0);
-        ads++;
-        PlayerPrefs.SetInt("reloadCard", ads);
-        PlayerPrefs.Save();
+
+        if (ads < 16)
+        {            
+            ads++;
+            PlayerPrefs.SetInt("reloadCard", ads);
+            PlayerPrefs.Save();
+            //Debug.Log(ads);
+        }
+        else
+        {
+           // Debug.Log("취소했습니다.");
+        }
+        
 
         if (ads == 16)
         {
@@ -43,7 +52,7 @@ public class GameBtnEvt : MonoBehaviour {
         }
         else
         {
-            if (PrefabsMake.index_H_list.Count > 8)
+            if (PrefabsMake.index_H_list.Count > 6)
             {
                 //ref_check = 1;
                 PrefabsMake.call_card = 1;

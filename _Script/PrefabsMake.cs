@@ -27,7 +27,7 @@ public class PrefabsMake : MonoBehaviour {
 
 	float lCardX = -7f;
 	float rCardX = 7f;
-	float[] CardY = {3.5f,1.8f,0.15f,-1.5f};
+	float[] CardY = {3.5f,1.05f,-1.4f,-1.5f};
 
 	//일러스트 보여주기
 	public GameObject[] spr_illust;
@@ -243,14 +243,7 @@ public class PrefabsMake : MonoBehaviour {
 			break;
 		case 4:
 			i = 0;
-			while(i < 4){
-				Instantiate (prfCard, new Vector3 (lCardX, CardY[i], 0), Quaternion.identity);
-				i++;
-			}
-			break;
-		case 5:
-			i = 0;
-			while(i < 4){
+			while(i < 3){
 				Instantiate (prfCard, new Vector3 (lCardX, CardY[i], 0), Quaternion.identity);
 				i++;
 			}
@@ -261,9 +254,9 @@ public class PrefabsMake : MonoBehaviour {
 			}
 
 			break;
-		case 6:
+		case 5:
 			i = 0;
-			while(i < 4){
+			while(i < 3){
 				Instantiate (prfCard, new Vector3 (lCardX, CardY[i], 0), Quaternion.identity);
 				i++;
 			}
@@ -273,9 +266,9 @@ public class PrefabsMake : MonoBehaviour {
 				i++;
 			}
 			break;
-		case 7:
+		case 6:
 			i = 0;
-			while(i < 4){
+			while(i < 3){
 				Instantiate (prfCard, new Vector3 (lCardX, CardY[i], 0), Quaternion.identity);
 				i++;
 			}
@@ -285,27 +278,15 @@ public class PrefabsMake : MonoBehaviour {
 				i++;
 			}
 			break;
-		case 8:
-			i = 0;
-			while(i < 4){
-				Instantiate (prfCard, new Vector3 (lCardX, CardY[i], 0), Quaternion.identity);
-				i++;
-			}
-			i = 0;
-			while(i < 4){
-				Instantiate (prfCard, new Vector3 (rCardX, CardY[i], 0), Quaternion.identity);
-				i++;
-			}
-			break;
 		}
-		if (cardcnt > 8) {
+		if (cardcnt > 6) {
 			i = 0;
-			while(i < 4){
+			while(i < 3){
 				Instantiate (prfCard, new Vector3 (lCardX, CardY[i], 0), Quaternion.identity);
 				i++;
 			}
 			i = 0;
-			while(i < 4){
+			while(i < 3){
 				Instantiate (prfCard, new Vector3 (rCardX, CardY[i], 0), Quaternion.identity);
 				i++;
 			}
