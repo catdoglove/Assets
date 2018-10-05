@@ -35,7 +35,7 @@ public class UnityADS : MonoBehaviour {
 				cc = cc + PlayerPrefs.GetInt ("ch" + 1 + "cardnum" + i, 0);
 			}
 		}
-		//Debug.Log ("total" + cc);
+
 		if (cc < 100) {
 			if (Advertisement.IsReady("rewardedVideo"))
 			{

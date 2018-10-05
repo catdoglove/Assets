@@ -83,7 +83,7 @@ public class TitleShopEvt : MonoBehaviour {
 		shopIWindow.SetActive (true);		
 	}
 	public void showAdCardWindow(){ //광고카드
-		cardNum_i = 3;
+		cardNum_i = 4;
 		adCardWnd.SetActive (true);		
 		//광고시간
 		StartCoroutine("adTimeFlow");
@@ -241,8 +241,8 @@ public class TitleShopEvt : MonoBehaviour {
 		if (num == 5) {
 			coin = coin + 100;
 		}
-		if (num == 3) {
-			coin = coin + 600;
+		if (num == 4) {
+			coin = coin + 800;
 		}
 		if (coin >= 200 * num) {
 			buyCardPop.SetActive (false);
@@ -298,8 +298,8 @@ public class TitleShopEvt : MonoBehaviour {
 			case 1:
 				coin = coin - 200;
 				break;
-			case 3:
-				coin = coin - 600;
+			case 4:
+				coin = coin - 800;
 				break;
 			case 5:
 				coin = coin - 1000;

@@ -9,6 +9,7 @@ public class TutorialEvt : MonoBehaviour {
 	public GameObject tutorialSpace_obj,tutorialSpace_obj_2, tutorialreward_obj, tutotialdel_btn, mixTutorialreward_obj;
 	public GameObject tutorialTalk_btn, tutoriallock_obj;
 	public GameObject[] tutorialBack_obj, mixTutorialBack_obj;
+    public GameObject tutoTxtbook_obj;
 
 	public int tutorial_i, game_i;
 	List<Dictionary<string,object>> data;
@@ -24,8 +25,9 @@ public class TutorialEvt : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//믹스튜토리얼불러오기
-		data2 = CSVReader.Read ("MixTutotial");
+        
+        //믹스튜토리얼불러오기
+        data2 = CSVReader.Read ("MixTutotial");
 
 		int s = PlayerPrefs.GetInt ("tutorial_i", 0);
 		if (s == 4 && game_i == 4) {
@@ -271,13 +273,15 @@ public class TutorialEvt : MonoBehaviour {
 				} else {
 					tutorial_i++;
 					tutorial_txt.text = "" + data [tutorial_i] ["txt"];
-					b = 0;
+                        tutoTxtbook_obj.SetActive(true);
+                    b = 0;
 				}
 				break;
 			case 30:
 				tutorial_i++;
 				tutorial_txt.text = "" + data [tutorial_i] ["txt"];
-				closeall [0].SetActive (false);
+                    tutoTxtbook_obj.SetActive(false);
+                    closeall [0].SetActive (false);
 				closeall [1].SetActive (false);
 				closeall [2].SetActive (false);
 				break;
@@ -480,7 +484,7 @@ public class TutorialEvt : MonoBehaviour {
 				PlayerPrefs.Save ();
 				break;
 			}
-		} else {
+        } else {
 			tutorialSpace_obj.SetActive (false);
 			//tutorialBack_obj.SetActive (false);
 			//tutorialreward_obj.SetActive (true);
@@ -633,6 +637,7 @@ public class TutorialEvt : MonoBehaviour {
 			break;
 		}
 		PlayerPrefs.SetInt ("mixTutorial_i",mixTutorial_i);
+        
 	}
 
 	public void mixReward(){

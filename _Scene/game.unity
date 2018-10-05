@@ -427,7 +427,7 @@ RectTransform:
   m_GameObject: {fileID: 305367044}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013885668, y: 0.013885668, z: 0.013885668}
+  m_LocalScale: {x: 0.013887238, y: 0.013887238, z: 0.013887238}
   m_Children:
   - {fileID: 1489420176}
   - {fileID: 778274387}
@@ -1128,7 +1128,7 @@ RectTransform:
   m_GameObject: {fileID: 561107449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013885668, y: 0.013885668, z: 0.013885668}
+  m_LocalScale: {x: 0.013887238, y: 0.013887238, z: 0.013887238}
   m_Children:
   - {fileID: 334077468}
   - {fileID: 566789344}
@@ -3390,7 +3390,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 0.8
-  m_Text: "\uCD94\uAC00\uB85C \uBCF4\uC0C1 \uBC1B\uAE30"
+  m_Text: "\uAD11\uACE0\uB97C \uC2DC\uCCAD \uD6C4\n\uCD94\uAC00\uB85C \uBCF4\uC0C1
+    \uBC1B\uAE30"
 --- !u!222 &1446917442
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5031,7 +5032,7 @@ RectTransform:
   m_GameObject: {fileID: 2089707586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013885668, y: 0.013885668, z: 0.013885668}
+  m_LocalScale: {x: 0.013887238, y: 0.013887238, z: 0.013887238}
   m_Children:
   - {fileID: 128600823}
   - {fileID: 1113987149}
